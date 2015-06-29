@@ -21,25 +21,22 @@
  
 <body class="container" data-ng-controller="homeController">
     <div data-ng-include src="navBarSrc"></div>
-    <div style="height: 340px">
-        <carousel interval="myInterval">
-            <slide ng-repeat="slide in slides" active="slide.active">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
-            </slide>
-        </carousel>
-    </div>
+
+        <h1>SPACE Tool</h1>
+        <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
+    <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
+
     <div class="row">
         <div class="col-lg-4">
         </div>
         <div class="col-lg-4">
             <div id="button">
-                <a type="button" href="/tool" class="btn btn-default btn-block">Go to the tool!</a>
+                <a type="button" id="roundedbutton" href="/tool"  class="btn btn-success btn-block btn-lg btn-round">Try it Now</a>
             </div>
         </div>
         <div class="col-lg-4">
         </div>
     </div>
-    <div class = "dividerlarger"></div>
     <hr>
     <div data-ng-include src="footerSrc"></div>
     <div class = "divider"></div>

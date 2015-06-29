@@ -5,6 +5,8 @@
     <title>SPACE Tool</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.min.js"></script>
@@ -20,18 +22,27 @@
  
 <body class="container" data-ng-controller="toolController">
     <div data-ng-include src="navBarSrc"></div>
+    <div style="height: 340px">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+            </slide>
+        </carousel>
+    </div>
     <div class="row">
         <div class="col-lg-4">
         </div>
         <div class="col-lg-4">
             <div id="button">
-                <a type="button" href="/tool1" class="btn btn-default btn-block">Get Started!</a>
+                <a type="button" href="/tool1" class="btn btn-lg btn-success btn-circle">Get Started!</a>
             </div>
         </div>
         <div class="col-lg-4">
         </div>
     </div>
+    <hr>
     <div data-ng-include src="footerSrc"></div>
+    <div class = "divider"></div>
 </body>
  
 </html>

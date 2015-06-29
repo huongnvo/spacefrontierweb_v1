@@ -50,7 +50,10 @@
             <div class="col-lg-12">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary">Search Database</button>
+                    <button type="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
+                        <span ng-show="loading">Searching...</span>
+                        <span ng-hide="loading">Search Database</span>
+                    </button>
                 </div>
             </div>
         </div>
