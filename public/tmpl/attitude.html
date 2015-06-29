@@ -11,9 +11,11 @@
 
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/lib/tooltip.js"></script>
     <script type="text/javascript" src="js/lib/jquery.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lib/ui-bootstrap.min.js"></script>
+
     <script type="text/javascript" src="js/controller/app.js"></script>
     <script type="text/javascript" src="js/controller/attitudeController.js"></script>
 
@@ -31,20 +33,39 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>User Input</h3>
-                Altitude (km):<input class="form-control" placeholder="100" data-ng-model="altitude"/>
+                Attitude:
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="attitude" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">km</span>
+                </div>
                 <div class = "divider"></div>
-                Maximum Spatial Resolution (m):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+                Maximum Spatial Resolution:
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="attitude" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">m</span>
+                </div>
             </div>
             <div class="col-lg-6">
                 <h3>Calculation Results</h3>
-                Angle of Knowledge (deg):<input class="form-control" placeholder="100" data-ng-model="altitude"/>
+                Angle of Knowledge:
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="attitude" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">deg</span>
+                </div>
                 <div class = "divider"></div>
-                Angle of Control (deg):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+                Angle of Control:
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="resolution" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">deg</span>
+                </div>
             </div>
             <div class="col-lg-12">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary">Search Database</button>
+                    <button type="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
+                        <span ng-show="loading">Searching...</span>
+                        <span ng-hide="loading">Search Database</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -74,8 +95,17 @@
                     </label>
                 </div>
             </div>
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <div id="button">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a type="button" href="/tool1" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                        <a type="button" href="/tool3" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class = "divider"></div>
+        <div class = "dividersmall"></div>
         <hr>
         <div data-ng-include src="footerSrc"></div>
         <div class = "divider"></div>

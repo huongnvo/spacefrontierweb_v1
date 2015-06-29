@@ -21,13 +21,26 @@
  
 <body class="container" data-ng-controller="homeController">
     <div data-ng-include src="navBarSrc"></div>
-    <div style="height: 800px">
+    <div style="height: 340px">
         <carousel interval="myInterval">
             <slide ng-repeat="slide in slides" active="slide.active">
                 <img ng-src="{{slide.image}}" style="margin:auto;">
             </slide>
         </carousel>
     </div>
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            <div id="button">
+                <a type="button" href="/tool" class="btn btn-default btn-block">Go to the tool!</a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <div class = "dividerlarger"></div>
+    <hr>
     <div data-ng-include src="footerSrc"></div>
     <div class = "divider"></div>
 </body>

@@ -13,4 +13,11 @@ spaceFrontierApp.controller("attitudeController", function($scope) {
     $scope.maxSize = 8;
     $scope.bigTotalItems = 72;
     $scope.bigCurrentPage = 2;
+
+    $scope.loading = false;
+    $scope.myClick = function() {
+        $scope.loading = true;
+        //
+        //$scope.loading = false;
+    }
 });
