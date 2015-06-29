@@ -1,0 +1,40 @@
+#user {
+	float:left;
+}
+
+#calculation {
+	float:right;
+}
+
+#search {
+	text-align: right;	
+}
+
+#button {
+	text-align: center;	
+}
+
+
+.divider{
+    margin-bottom:30px;
+    height:auto;
+    display:inline-block;
+}
+
+.dividersmall{
+    margin-bottom:10px;
+    height:auto;
+    display:inline-block;
+}
+
+.dividerlarge{
+    margin-bottom:25px;
+    height:auto;
+    display:inline-block;
+}
+
+.dividerlarger{
+    margin-bottom:42px;
+    height:auto;
+    display:inline-block;
+}
