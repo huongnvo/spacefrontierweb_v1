@@ -36,6 +36,9 @@ spaceFrontierApp.config(function ($routeProvider) {
         }).when('/tool8', {
             templateUrl: 'tmpl/results.html',
             controller: 'resultsController'
+        }).when('/userlist', {
+            templateUrl: 'tmpl/userlist.ejs',
+            controller: 'userlistController'
         }).otherwise({
             redirectTo: '/'
         });

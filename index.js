@@ -1,8 +1,11 @@
+/* Setting up the express app */
+
 var express = require("express"),
     fs = require('fs'),
     port = process.env.PORT || 3000;
  
 var app = express();
+
 app.use(express.logger());
 app.use(express.json());
 app.use(express.urlencoded());
@@ -10,12 +13,46 @@ app.set("view options", {
     layout: false
 });
 
-app.set('view engine', 'html');
+/* Setting up the database */
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test', function(err) {
+    if(err) {
+        console.log('connection error', err);
+    } else {
+        console.log('connection successful');
+    }
+});
+
+var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function (callback) {
+  // yay!
+});
+
+/* Sample calls on the database */
+// var Kitten = require('./public/js/models/kittySchema');
+// var fluffy = new Kitten({ name: 'fluffy' });
+// fluffy.speak(); // "Meow name is fluffy"
+
+// fluffy.save(function (err, fluffy) {
+//     if (err) return console.error(err);
+//     fluffy.speak();
+// });
+
+// Kitten.find(function (err, kittens) {
+//     if (err) return console.error(err);
+//     console.log(kittens);
+// });
+
+/* Setting the routes and html file paths */
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
  
 app.get('/', function (req, res) {
-    res.render('public/index.html');
+    res.sendfile('public/index.html');
 });
 
 app.get('/home', function (req, res) {
@@ -64,3 +101,5 @@ app.get('/tool8', function (req, res) {
 
 app.listen(port);
 console.log('Express server running at http://localhost:' + port);
+
+
