@@ -6,7 +6,7 @@ var Sample = require('../models/kittySchema.js');
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
-	Sample.find(function (err, todos) {
+  Sample.find(function (err, todos) {
 		if (err) return next(err);
 		res.json(todos);
 	});
