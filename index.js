@@ -46,57 +46,57 @@ var db = mongoose.connection;
 // });
 
 /* Setting the routes and html file paths */
-app.engine('html', require('ejs').renderFile);
+//app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
  
 app.get('/', function (req, res) {
-    res.sendfile('public/index.html');
+    res.render('../public/tmpl/index.ejs', { title: 'SPACE Tool' });
 });
 
 app.get('/home', function (req, res) {
-    res.sendfile('public/index.html');
+    res.render('../public/tmpl/index.ejs', { title: 'SPACE Tool' });
 });
 
 app.get('/tool', function (req, res) {
-    res.sendfile('public/tmpl/tool.html');
+    res.render('../public/tmpl/tool.ejs', { title: 'SPACE Tool' });
 });
  
 app.get('/about', function (req, res) {
-    res.sendfile('public/tmpl/about.html');
+    res.render('../public/tmpl/about.ejs', { title: 'About' });
 });
 
 app.get('/tool1', function (req, res) {
-    res.sendfile('public/tmpl/instruments.html');
+    res.render('../public/tmpl/instruments.ejs', { title: 'Instruments Selection' });
 });
 
 app.get('/tool2', function (req, res) {
-    res.sendfile('public/tmpl/attitude.html');
+    res.render('../public/tmpl/attitude.ejs', { title: 'Attitude Selection' });
 });
 
 app.get('/tool3', function (req, res) {
-    res.sendfile('public/tmpl/trajectory.html');
+    res.render('../public/tmpl/trajectory.ejs', { title: 'Trajectory Selection' });
 });
 
 app.get('/tool4', function (req, res) {
-    res.sendfile('public/tmpl/comm.html');
+    res.render('../public/tmpl/comm.ejs', { title: 'Communication Selection' });
 });
 
 app.get('/tool5', function (req, res) {
-    res.sendfile('public/tmpl/data.html');
+    res.render('../public/tmpl/data.ejs', { title: 'Data Selection' });
 });
 
 app.get('/tool6', function (req, res) {
-    res.sendfile('public/tmpl/power.html');
+    res.render('../public/tmpl/power.ejs', { title: 'Power Selection' });
 });
 
 app.get('/tool7', function (req, res) {
-    res.sendfile('public/tmpl/bus.html');
+    res.render('../public/tmpl/bus.ejs', { title: 'Bus Selection' });
 });
 
 app.get('/tool8', function (req, res) {
-    res.sendfile('public/tmpl/results.html');
+    res.render('../public/tmpl/results.ejs', { title: 'Results Selection' });
 });
 
 app.listen(port);
