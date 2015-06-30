@@ -1,11 +1,10 @@
-{
+[{
   "DSS 34 S-Band": { "Uplink Frequency (MHz)":"2025-2120", "EIRP (dBW)":"78.7-98.7", "EIRP (dBW, ave)":"88.7", "Downlink Frequency (MHz)":"2200-2300", "Gain (dBI)":"56.7", "G/T (dB/K)":"40.5", "Diameter (m)":"34", "Location":"Canberra, Australia", "Band":"S-Band", "Coordinates":""},
   "DSS 34 X-Band": { "Uplink Frequency (MHz)":"7146-7235", "EIRP (dBW)":"89.5-109.5", "EIRP (dBW, ave)":"99.5", "Downlink Frequency (MHz)":"8400-8500", "Gain (dBI)":"68.2", "G/T (dB/K)":"53.9", "Diameter (m)":"34", "Location":"Canberra, Australia", "Band":"X-Band", "Coordinates":""},
   "DSS 34 Ka-Band": { "Uplink Frequency (MHz)":"-", "EIRP (dBW)":"-", "EIRP (dBW, ave)":"-", "Downlink Frequency (MHz)":"25500-27000, 31800-32300", "Gain (dBI)":"76.5, 78.4", "G/T (dB/K)":"58.6, 60.8", "Diameter (m)":"34", "Location":"Canberra, Australia", "Band":"Ka-Band", "Coordinates":""},
   "DSS 45 S-Band": { "Uplink Frequency (MHz)":"2025-2100", "EIRP (dBW)":"71.8-78.8", "EIRP (dBW, ave)":"75.3", "Downlink Frequency (MHz)":"2200-2300", "Gain (dBI)":"56", "G/T (dB/K)":"39", "Diameter (m)":"34", "Location":"Canberra, Australia", "Band":"S-Band", "Coordinates":""},
   "DSS 45 X-Band": { "Uplink Frequency (MHz)":"7145-7190", "EIRP (dBW)":"89.8-109.8", "EIRP (dBW, ave)":"99.8", "Downlink Frequency (MHz)":"8400-8500", "Gain (dBI)":"68.3", "G/T (dB/K)":"53.1", "Diameter (m)":"34", "Location":"Canberra, Australia", "Band":"X-Band", "Coordinates":""},
-  "DSS 43 S-Band": { "Uplink Frequency (MHz)":"2110-2118, 2110-2118, 2090-2091", "EIRP (dBW)":"85.6-105.6, \n 106.7-118.7
- 85.6-97.4", "EIRP (dBW, ave)":"95.6, 112.7, 91.5", "Downlink Frequency (MHz)":"2270-2300", "Gain (dBI)":"63.5", "G/T (dB/K)":"50.1", "Diameter (m)":"70", "Location":"Canberra, Australia", "Band":"S-Band", "Coordinates":""},
+  "DSS 43 S-Band": { "Uplink Frequency (MHz)":"2110-2118, 2110-2118, 2090-2091", "EIRP (dBW)":"85.6-105.6, 106.7-118.7, 85.6-97.4", "EIRP (dBW, ave)":"95.6, 112.7, 91.5", "Downlink Frequency (MHz)":"2270-2300", "Gain (dBI)":"63.5", "G/T (dB/K)":"50.1", "Diameter (m)":"70", "Location":"Canberra, Australia", "Band":"S-Band", "Coordinates":""},
   "DSS 43 X-Band": { "Uplink Frequency (MHz)":"7145-7190", "EIRP (dBW)":"95.8-115.8", "EIRP (dBW, ave)":"105.8", "Downlink Frequency (MHz)":"8400-8500", "Gain (dBI)":"74.6", "G/T (dB/K)":"61.3", "Diameter (m)":"70", "Location":"Canberra, Australia", "Band":"X-Band", "Coordinates":""},
   "DSS 24 S-Band": { "Uplink Frequency (MHz)":"2025-2120", "EIRP (dBW)":"78.7-98.7", "EIRP (dBW, ave)":"88.7", "Downlink Frequency (MHz)":"2200-2300", "Gain (dBI)":"56.7", "G/T (dB/K)":"40.5", "Diameter (m)":"34", "Location":"Goldstone, California", "Band":"S-Band", "Coordinates":""},
   "DSS 25, 26 X-Band": { "Uplink Frequency (MHz)":"7145-7235", "EIRP (dBW)":"89.5-109.5", "EIRP (dBW, ave)":"99.5", "Downlink Frequency (MHz)":"8400-8500", "Gain (dBI)":"68.2", "G/T (dB/K)":"53.9", "Diameter (m)":"34", "Location":"Goldstone, California", "Band":"X-Band", "Coordinates":""},
@@ -58,4 +57,4 @@
   "HBK": { "Uplink Frequency (MHz)":"2025-2100", "EIRP (dBW)":"66", "EIRP (dBW, ave)":"66", "Downlink Frequency (MHz)":"2200-2300, 8000-8400, 1650-17500", "Gain (dBI)":"-", "G/T (dB/K)":"22.4, 31.0, 19.0", "Diameter (m)":"10", "Location":"Hartebeesthoek South Africa", "Band":"UHF, S-Band, Ka-Band", "Coordinates":"25°S 27°E"},
   "KIR 13M": { "Uplink Frequency (MHz)":"2025-2120", "EIRP (dBW)":"70", "EIRP (dBW, ave)":"70", "Downlink Frequency (MHz)":"2200-2300", "Gain (dBI)":"-", "G/T (dB/K)":"23", "Diameter (m)":"13", "Location":"Kiruna, Sweden", "Band":"UHF, S-Band", "Coordinates":"68°N 21°E"},
   "WAL 15M": { "Uplink Frequency (MHz)":"2025-2120", "EIRP (dBW)":"78", "EIRP (dBW, ave)":"78", "Downlink Frequency (MHz)":"2200-2300", "Gain (dBI)":"-", "G/T (dB/K)":"26.7", "Diameter (m)":"15", "Location":"Weilheim, Germany", "Band":"UHF, S-Band", "Coordinates":"48°N 11°E"}
-}
+}]

@@ -16,7 +16,7 @@ app.set("view options", {
 /* Setting up the database */
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', function(err) {
+mongoose.connect('mongodb://localhost:27017/test', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -29,6 +29,8 @@ var db = mongoose.connection;
     db.once('open', function (callback) {
   // yay!
 });
+
+var Kitten = require('./public/js/models/kittySchema');
 
 /* Sample calls on the database */
 // var Kitten = require('./public/js/models/kittySchema');
@@ -45,8 +47,26 @@ var db = mongoose.connection;
 //     console.log(kittens);
 // });
 
+
+
 /* Setting the routes and html file paths */
 //app.engine('html', require('ejs').renderFile);
+
+// console.log("Begin Parsing >>");
+ 
+// var schema = fs.readFileSync('schema.hbs', {encoding: 'utf8'});
+// var result = dummyjson.parse(schema, {helpers: helpers});
+
+// console.log("Begin Database Insert >>");
+ 
+// db.sourceData.remove(function (argument) {
+//     console.log("DB Cleanup Completd");
+// });
+ 
+// db.sourceData.insert(JSON.parse(result), function (err, docs) {
+//     console.log("DB Insert Completed");
+// });
+
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
