@@ -41,10 +41,6 @@ app.get('/parts/cdh', function(req, res) {
      var resp = cdhfactory.getPart({},res);
 });
 
-app.get('/parts/cdh/results', function(req, res) {
-     var resp = cdhfactory.getPart({Type: 'Cubesat Bus'},res);
-});
-
 var AttitudeFactory = require('./public/js/models/AttitudeFactory.js');
 var attitudefactory = new AttitudeFactory(Schema,mongoose);
 attitudefactory.createSchemas();
@@ -59,6 +55,22 @@ stationfactory.createSchemas();
 // stationfactory.insertPart();
 app.get('/parts/station', function(req, res) {
      var resp = stationfactory.getPart({},res);
+});
+
+var ThermalFactory = require('./public/js/models/ThermalFactory.js');
+var thermalfactory = new ThermalFactory(Schema,mongoose);
+thermalfactory.createSchemas();
+// thermalfactory.insertPart();
+app.get('/parts/thermal', function(req, res) {
+     var resp = thermalfactory.getPart({},res);
+});
+
+var PowerFactory = require('./public/js/models/PowerFactory.js');
+var powerfactory = new PowerFactory(Schema,mongoose);
+powerfactory.createSchemas();
+powerfactory.insertPart();
+app.get('/parts/power', function(req, res) {
+     var resp = powerfactory.getPart({},res);
 });
 
 
