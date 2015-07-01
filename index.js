@@ -27,46 +27,30 @@ mongoose.connect('mongodb://localhost:27017/test', function(err) {
 var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function (callback) {
-  // yay!
 });
 
-var Kitten = require('./public/js/models/kittySchema');
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
+var Factory = require('./public/js/models/Factory.js');
 
-/* Sample calls on the database */
-// var Kitten = require('./public/js/models/kittySchema');
-// var fluffy = new Kitten({ name: 'fluffy' });
-// fluffy.speak(); // "Meow name is fluffy"
+var factory = new Factory(Schema,mongoose);
+factory.createSchemas();
+factory.insertPart();
 
-// fluffy.save(function (err, fluffy) {
-//     if (err) return console.error(err);
-//     fluffy.speak();
-// });
+app.get('/ping', function(req, res) {
+    res.send({ping:'hello this is server and I am alive!'});
+});
 
-// Kitten.find(function (err, kittens) {
-//     if (err) return console.error(err);
-//     console.log(kittens);
-// });
+app.get('/ping/:id', function(req, res) {
+    res.send({ping:'hello this is server and I am got '+req.params.id});
+});
 
-
+app.get('/person/obc', function(req, res) {
+     var resp = factory.getPart({Type:'On-Board Computer (OBC)'},res);
+});
 
 /* Setting the routes and html file paths */
 //app.engine('html', require('ejs').renderFile);
-
-// console.log("Begin Parsing >>");
- 
-// var schema = fs.readFileSync('schema.hbs', {encoding: 'utf8'});
-// var result = dummyjson.parse(schema, {helpers: helpers});
-
-// console.log("Begin Database Insert >>");
- 
-// db.sourceData.remove(function (argument) {
-//     console.log("DB Cleanup Completd");
-// });
- 
-// db.sourceData.insert(JSON.parse(result), function (err, docs) {
-//     console.log("DB Insert Completed");
-// });
-
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
