@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+
+<body class="container" data-ng-controller="commController">
+    <% include navbar %>
+    <h1>Communication Selection</h1>
+    <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
+    <hr>
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>User Input</h3>
+            Frequency:
+            <select class="form-control">
+                <option>UHF</option>
+                <option>VHF</option>
+                <option>S-Band</option>
+                <option>X-Band</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <h3>Calculation Results</h3>
+            Space Loss:<input class="form-control" placeholder="100" data-ng-model="altitude"/>
+            <div class = "divider"></div>
+            Signal to Noise Ratio:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+            <div class = "divider"></div>
+            Receiver:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+            <div class = "divider"></div>
+            Bit Rate:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+        </div>
+        <div class="col-lg-12">
+            <div class = "dividerlarge"></div>
+            <div id="button">
+                <button type="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
+                    <span ng-show="loading">Searching...</span>
+                    <span ng-hide="loading">Search Database</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Search Results</h3>
+            <h6>Click on the link of each subsystem to learn more.</h6>
+            <div class = "divider"></div>
+            Ground Station:
+            <select multiple class="form-control">
+                <option></option>
+            </select>
+            <div class = "divider"></div>
+            Antenna:
+            <select multiple class="form-control">
+                <option></option>
+            </select>
+            <div class = "divider"></div>
+            Receiver:
+            <select multiple class="form-control">
+                <option></option>
+            </select>
+        </div>
+        <!--<div class="col-lg-4" id="search">
+            <h3>Search Filters</h3>
+            <div class = "dividersmall"></div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        Attitude Control System
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        Sensor and/or Actuator
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        No Filter
+                </label>
+            </div>
+        </div>-->
+        <div class="col-lg-12">
+            <div class = "divider"></div>
+            <div id="button">
+                <div class="btn-group" role="group" aria-label="...">
+                    <a type="button" href="/tool3" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                    <a type="button" href="/tool5" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "divider"></div>
+    <hr>
+    <div data-ng-include src="footerSrc"></div>
+    <% include footer %>
+</body>
+
+</html>

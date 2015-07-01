@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+ 
+<body class="container" data-ng-controller="toolController">
+    <% include navbar %>
+    <div style="height: 340px">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+            </slide>
+        </carousel>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            <div id="button">
+                <a type="button" href="/tool1" class="btn btn-lg btn-success btn-circle">Get Started!</a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <hr>
+    <% include footer %>
+    <div class = "divider"></div>
+</body>
+ 
+</html>

@@ -2,15 +2,22 @@ spaceFrontierApp.controller("commController", function($scope) {
     $scope.navBarSrc = "tmpl/navbar.html";
     $scope.footerSrc = "tmpl/footer.html";
 
-    $scope.totalItems = 100;
-    $scope.currentPage = 1;
-    $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
-    };
-    $scope.pageChanged = function() {
-        $log.log('Page changed to: ' + $scope.currentPage);
-    };
-    $scope.maxSize = 8;
-    $scope.bigTotalItems = 72;
-    $scope.bigCurrentPage = 4;
+    $scope.loading = false;
+    $scope.myClick = function() {
+        $scope.loading = true;
+        //
+        //$scope.loading = false;
+    }
+
+    $scope.commparts = [];
+    $scope.stationparts = [];
+    $scope.init = function() { 
+		$http.get('http://localhost:3000/parts/comm').then(function(result) { 
+			$scope.commparts = result.data; 
+		});
+		$http.get('http://localhost:3000/parts/station').then(function(result) { 
+			$scope.stationparts = result.data; 
+		});
+    } 
+    $scope.init(); 
 });
