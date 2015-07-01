@@ -8,4 +8,12 @@ spaceFrontierApp.controller("attitudeController", function($scope) {
         //
         //$scope.loading = false;
     }
+
+  	$scope.attitudeparts = [];
+    $scope.init = function() { 
+		$http.get('http://localhost:3000/parts/attitude').then(function(result) { 
+			$scope.attitudeparts = result.data; 
+		});
+    } 
+    $scope.init(); 
 });

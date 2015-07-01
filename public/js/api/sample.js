@@ -2,7 +2,7 @@ var express = require('express');
 var router = express();
 
 var mongoose = require('mongoose');
-var Sample = require('../models/kittySchema.js');
+var Sample = require('../models/Sample.js');
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {

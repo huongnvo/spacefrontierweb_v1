@@ -1,4 +1,4 @@
-/* Setting up the express app */
+/* Setting up the express app -------------------------------------------------------*/
 
 var express = require("express"),
     fs = require('fs'),
@@ -13,10 +13,10 @@ app.set("view options", {
     layout: false
 });
 
-/* Setting up the database */
+/* Setting up the database connection ------------------------------------------------*/
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', function(err) {
+mongoose.connect('mongodb://localhost:27017/cubesat_v1', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -29,27 +29,27 @@ var db = mongoose.connection;
     db.once('open', function (callback) {
 });
 
+/* Setting up the database for each subsystem -----------------------------------------*/
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-var Factory = require('./public/js/models/Factory.js');
 
-var factory = new Factory(Schema,mongoose);
-factory.createSchemas();
-factory.insertPart();
-
-app.get('/ping', function(req, res) {
-    res.send({ping:'hello this is server and I am alive!'});
+var CdhFactory = require('./public/js/models/CdhFactory.js');
+var cdhfactory = new CdhFactory(Schema,mongoose);
+cdhfactory.createSchemas();
+// cdhfactory.insertPart();
+app.get('/parts/cdh', function(req, res) {
+     var resp = cdhfactory.getPart({Type: 'Cubesat Bus'},res);
 });
 
-app.get('/ping/:id', function(req, res) {
-    res.send({ping:'hello this is server and I am got '+req.params.id});
+var AttitudeFactory = require('./public/js/models/AttitudeFactory.js');
+var attitudefactory = new AttitudeFactory(Schema,mongoose);
+attitudefactory.createSchemas();
+// attitudefactory.insertPart();
+app.get('/parts/attitude', function(req, res) {
+     var resp = attitudefactory.getPart({},res);
 });
 
-app.get('/person/obc', function(req, res) {
-     var resp = factory.getPart({Type:'On-Board Computer (OBC)'},res);
-});
-
-/* Setting the routes and html file paths */
+/* Setting the routes and html file paths -----------------------------------------------*/
 //app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 

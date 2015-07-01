@@ -1,4 +1,4 @@
-var Factory = function(Schema,mongoose) {
+var CdhFactory = function(Schema,mongoose) {
 
 	this.Schema = Schema;
 	this.mongoose = mongoose;
@@ -9,7 +9,7 @@ var Factory = function(Schema,mongoose) {
 		    Type: String, 
 		    Name: String, 
 		    Manufacturer: String, 
-		    Website: String, 
+		    Reference: String, 
 		    Heritage: String, 
 		    Mass: Number, 
 		    Mass_further: String, 
@@ -25,17 +25,17 @@ var Factory = function(Schema,mongoose) {
 		    Temp_low: Number, 
 		    Temp_high: Number, 
 		    Scientific_obj: String, 
-		    Cost: String
+		    Cost: Number
 		});
-		this.Parts = mongoose.model('Parts', Schema);
+		this.cdh_parts = mongoose.model('cdh_parts', Schema);
 	}
 
 	this.insertPart = function() {
-		var obc1 = new this.Parts({
+		var obc1 = new this.cdh_parts({
 			Type:'On-Board Computer (OBC)', 
 			Name:'ISIS On Board Computer w/ Daughter board (COTS)', 
 			Manufacturer:'ISIS', 
-			Website:'http://www.cubesatshop.com/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=119&category_id=8&option=com_virtuemart&Itemid=75', 
+			Reference:'http://www.cubesatshop.com/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=119&category_id=8&option=com_virtuemart&Itemid=75', 
 			Heritage:'Available at cubesatshop. TRL 4-6', 
 			Mass:94, 
 			Mass_further:'', 
@@ -51,14 +51,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-20, 
 			Temp_high:60, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc2 = new this.Parts({ 
+		var obc2 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'NanoMind A712D OBC', 
 			Manufacturer:'GOMspace', 
-			Website:'http://gomspace.com/index.php?p=products-a712c', 
+			Reference:'http://gomspace.com/index.php?p=products-a712c', 
 			Heritage:'Available at cubesatshop, GOM. Includes a magnetometer. Optional features. Flight tested, TRL 4-6', 
 			Mass:52.5, 
 			Mass_further:'50-55 g', 
@@ -74,15 +74,15 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-40, 
 			Temp_high:85, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc3 = new this.Parts({ 
+		var obc3 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Dependable Multiprocessor', 
 			Manufacturer:'Maryland Aerospace', 
-			Website:'http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5747461', 
-			Heritage:'In development by Honeywell Aerospace, prototyped. COTS parts w/ fault tolerant software. May fly on Lunar Flashlight. TRL 1-3', 
+			Reference:'http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5747461', 
+			Heritage:'In development by Honeywell Aerospace, prototyped. COTS cdh_parts w/ fault tolerant software. May fly on Lunar Flashlight. TRL 1-3', 
 			Mass:4080, 
 			Mass_further:'prototype. Overestimate', 
 			Power:25, 
@@ -97,14 +97,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-300, 
 			Temp_high:-300, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc4 = new this.Parts({ 
+		var obc4 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)', 
 			Name:'SpaceCube 2.0 Mini Processor', 
 			Manufacturer:'Goddard', 
-			Website:'http://lunarinitiatives.com/lunar-cubes.com/docs/Clark-Science-Concepts-LWaDi-LunarCube-110713.pdf', 
+			Reference:'http://lunarinitiatives.com/lunar-cubes.com/docs/Clark-Science-Concepts-LWaDi-LunarCube-110713.pdf', 
 			Heritage:'In development by GSFC, radation resistant components. Planned to fly on IPEX', 
 			Mass:400, 
 			Mass_further:'< 400 g', 
@@ -120,14 +120,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-300, 
 			Temp_high:-300, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc5 = new this.Parts({ 
+		var obc5 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'COTS Cubesat single board Motherboard (for harsh environments)', 
 			Manufacturer:'Pumpkin', 
-			Website:'http://www.clyde-space.com/cubesat_shop/obdh/pumpkin_cubesat_obc/pumpkin_motherboard/146_motherboard', 
+			Reference:'http://www.clyde-space.com/cubesat_shop/obdh/pumpkin_cubesat_obc/pumpkin_motherboard/146_motherboard', 
 			Heritage:'cubesatkit, Clyde. Developed by Pumpkin', 
 			Mass:90, 
 			Mass_further:'77-103 g, depends on hardware', 
@@ -143,14 +143,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-40, 
 			Temp_high:85, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var image1 = new this.Parts({ 
+		var image1 = new this.cdh_parts({ 
 			Type:'Image Processor',
 			Name:'Xilinx Virtex-5QV rad-hard-by-design (RHBD) FPGA', 
 			Manufacturer:'JPL', 
-			Website:'http://esto.nasa.gov/conferences/estf2011/papers/Pingree_ESTF2011.pdf', 
+			Reference:'http://esto.nasa.gov/conferences/estf2011/papers/Pingree_ESTF2011.pdf', 
 			Heritage:'Developed by JPL Launched on M3 (Michigan Multipurpose Minisat), being tested.Not yet spaceflight qualified, TRL 4-6.', 
 			Mass:0, 
 			Mass_further:'', 
@@ -166,14 +166,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-300, 
 			Temp_high:-300, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc6 = new this.Parts({ 
+		var obc6 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Stamp9G20 (COTS)', 
 			Manufacturer:'Taskit', 
-			Website:'http://esto.nasa.gov/conferences/estf2011/papers/Pingree_ESTF2011.pdf', 
+			Reference:'http://esto.nasa.gov/conferences/estf2011/papers/Pingree_ESTF2011.pdf', 
 			Heritage:'Developed/sold by Taskit. Operated on Mcubed', 
 			Mass:0, 
 			Mass_further:'very light', 
@@ -189,14 +189,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-40, 
 			Temp_high:85, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc7 = new this.Parts({ 
+		var obc7 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Cube Computer', 
 			Manufacturer:'ESL, Stellenbosch University', 
-			Website:'http://www.isispace.nl/brochures/CubeComputerV3_Brochure.pdf', 
+			Reference:'http://www.isispace.nl/brochures/CubeComputerV3_Brochure.pdf', 
 			Heritage:'Developed by ESL, Stellenbosch University. 32-bit ARM Cortex-M3. TRL 4-6', 
 			Mass:60, 
 			Mass_further:'50-70 g', 
@@ -212,14 +212,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-10, 
 			Temp_high:70, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc8 = new this.Parts({ 
+		var obc8 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Q6 Processor Board', 
 			Manufacturer:'Xiphos', 
-			Website:'http://www.cubesatshop.com/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=111&category_id=8&option=com_virtuemart&Itemid=75', 
+			Reference:'http://www.cubesatshop.com/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=111&category_id=8&option=com_virtuemart&Itemid=75', 
 			Heritage:'Available on cubesatshop. Flight tested, previous models used on the ISS. TRL 7-9', 
 			Mass:23, 
 			Mass_further:'17 excluding connector', 
@@ -235,14 +235,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-40, 
 			Temp_high:85, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc9 = new this.Parts({ 
+		var obc9 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Cortex 110 Motor/Valve Driver Card', 
 			Manufacturer:'Andrews Space', 
-			Website:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b84ade4b0f71082cab478/1377535149941/201308%20-%20CORTEX%20110%20Datasheet.pdf', 
+			Reference:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b84ade4b0f71082cab478/1377535149941/201308%20-%20CORTEX%20110%20Datasheet.pdf', 
 			Heritage:'', 
 			Mass:275, 
 			Mass_further:'68 g card, 275 g assembly mass', 
@@ -258,14 +258,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-20, 
 			Temp_high:60, 
 			Scientific_obj:'General purpose driver card, including attitude system control. 3 yrs on orbit, 15 krad TID', 
-			Cost:'$20,000'
+			Cost:20000
 		});
 
-		var obc10 = new this.Parts({ 
+		var obc10 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Cortex 120 Instrumentation Card', 
 			Manufacturer:'Andrews Space', 
-			Website:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b84cae4b08ade0785550d/1377535178618/201308%20-%20CORTEX%20120%20Datasheet.pdf', 
+			Reference:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b84cae4b08ade0785550d/1377535178618/201308%20-%20CORTEX%20120%20Datasheet.pdf', 
 			Heritage:'Xilinx Spartan FPGA', 
 			Mass:283, 
 			Mass_further:'76 g card, 283 g assembly', 
@@ -281,14 +281,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-20, 
 			Temp_high:60, 
 			Scientific_obj:'Controls propulsion systems, telemetry, lifetime 3 yrs on orbit, 15 krad TID', 
-			Cost:'$20,000'
+			Cost:20000
 		});
 
-		var obc11 = new this.Parts({ 
+		var obc11 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Cortex 140 Communication Card', 
 			Manufacturer:'Andrews Space', 
-			Website:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b850ee4b0d492d86c4695/1377535246081/201308%20-%20CORTEX%20140%20Datasheet.pdf', 
+			Reference:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b850ee4b0d492d86c4695/1377535246081/201308%20-%20CORTEX%20140%20Datasheet.pdf', 
 			Heritage:'Xilinx Spartan FPGA', 
 			Mass:307, 
 			Mass_further:'90 g card, 307 g assembly', 
@@ -304,14 +304,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-20, 
 			Temp_high:60, 
 			Scientific_obj:'Interfaces with external components, other networked elements. Lifetime 3 yrs on orbit, 15 krad TID', 
-			Cost:'$20,000'
+			Cost:20000
 		});
 
-		var obc12 = new this.Parts({ 
+		var obc12 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Cortext 150 Subsystem Controller Card', 
 			Manufacturer:'Andrews Space', 
-			Website:'https://static.squarespace.com/static/5020983784ae954efd30c570/t/50ad42e2e4b01709c2632c66/1353532130326/201211CORTEX_150_Datasheet.pdf', 
+			Reference:'https://static.squarespace.com/static/5020983784ae954efd30c570/t/50ad42e2e4b01709c2632c66/1353532130326/201211CORTEX_150_Datasheet.pdf', 
 			Heritage:'Xilinx Virtex 4LX w/ embedded Microblaze processor', 
 			Mass:70, 
 			Mass_further:'', 
@@ -327,14 +327,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-30, 
 			Temp_high:90, 
 			Scientific_obj:'Flight computer/subsystem controller', 
-			Cost:'$35,000'
+			Cost:35000
 		});
 
-		var obc13 = new this.Parts({ 
+		var obc13 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Cortext 160 Flight Computer Card', 
 			Manufacturer:'Andrews Space', 
-			Website:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b8528e4b03e2198317e30/1377535272447/201308%20-%20CORTEX%20160%20Datasheet.pdf', 
+			Reference:'http://static.squarespace.com/static/5020983784ae954efd30c570/t/521b8528e4b03e2198317e30/1377535272447/201308%20-%20CORTEX%20160%20Datasheet.pdf', 
 			Heritage:'Dual core processors, 400 MHz, Xilinx Virtex 4FX', 
 			Mass:356, 
 			Mass_further:'94 g card, 356 g assembly mass', 
@@ -350,14 +350,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-20, 
 			Temp_high:60, 
 			Scientific_obj:'Flight computer and payload controller s/ significant processing power. Lifetime 3 yrs, 15 krad TID', 
-			Cost:'$77,500'
+			Cost:77500
 		});
 
-		var obc14 = new this.Parts({ 
+		var obc14 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'Intrepid Pico-Class CubeSat System Board', 
 			Manufacturer:'Tyvak', 
-			Website:'http://tyvak.com/intrepidsystemboard/', 
+			Reference:'http://tyvak.com/intrepidsystemboard/', 
 			Heritage:'Linux. Includes magnetometer and temp sensors. AT91SAM9G20 processor', 
 			Mass:55, 
 			Mass_further:'board mass', 
@@ -373,14 +373,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:0, 
 			Temp_high:0, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc15 = new this.Parts({ 
+		var obc15 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'NanoHub ATMEGA1281', 
 			Manufacturer:'GOMspace', 
-			Website:'http://gomspace.com/documents/GS-DS-NANOHUB-1.3.pdf', 
+			Reference:'http://gomspace.com/documents/GS-DS-NANOHUB-1.3.pdf', 
 			Heritage:'', 
 			Mass:45, 
 			Mass_further:'', 
@@ -396,16 +396,16 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:-40, 
 			Temp_high:85, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var bus1 = new this.Parts({ 
+		var bus1 = new this.cdh_parts({ 
 			Type:'Cubesat Bus',
 			Name:'XB1 Modular Cubesat Bus', 
 			Manufacturer:'Blue Canyon Technology', 
-			Website:'http://bluecanyontech.com/product/xb1/', 
-			Heritage:'', 
-			Mass:'Module includes high precision atittude control, C&DH, EPS, and communication all in one package. Many options, configurable flight software, and many propulsion and payload interfaces included. Not yet flown, TRL 4-6', 
+			Reference:'http://bluecanyontech.com/product/xb1/', 
+			Heritage:'Module includes high precision atittude control, C&DH, EPS, and communication all in one package. Many options, configurable flight software, and many propulsion and payload interfaces included. Not yet flown, TRL 4-6', 
+			Mass:0, 
 			Mass_further:'1500', 
 			Power:2.5, 
 			Power_further:'less than, 12 +- 2 V', 
@@ -419,14 +419,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:0, 
 			Temp_high:0, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var bus2 = new this.Parts({ 
+		var bus2 = new this.cdh_parts({ 
 			Type:'Cubesat Bus',
 			Name:'Intrepid Platform (3U)', 
 			Manufacturer:'Tyvak', 
-			Website:'http://tyvak.com/intrepid-suite-1-1/', 
+			Reference:'http://tyvak.com/intrepid-suite-1-1/', 
 			Heritage:'AT91SAM9G20 Processor. Whole platform, not just board', 
 			Mass:1200, 
 			Mass_further:'includes batteries', 
@@ -442,14 +442,14 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:0, 
 			Temp_high:0, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
-		var obc16 = new this.Parts({ 
+		var obc16 = new this.cdh_parts({ 
 			Type:'On-Board Computer (OBC)',
 			Name:'CSP', 
 			Manufacturer:'CHREC', 
-			Website:'', 
+			Reference:'', 
 			Heritage:'Xilinx Zynq FPGA. COTS, radhard, and highrel. Up to version 2 in 2014, TRL 1-3', 
 			Mass:100, 
 			Mass_further:'less than', 
@@ -465,7 +465,7 @@ var Factory = function(Schema,mongoose) {
 			Temp_low:0, 
 			Temp_high:0, 
 			Scientific_obj:'', 
-			Cost:''
+			Cost:0
 		});
 
 		obc1.save();
@@ -484,16 +484,16 @@ var Factory = function(Schema,mongoose) {
 		obc14.save();
 		obc15.save();
 		obc16.save();
-		image1.save();
 		bus1.save();
 		bus2.save();
+		image1.save();
 	}
 
 	this.getPart = function(query,res) {
-		this.Parts.find(query,function(error,output) {
+		this.cdh_parts.find(query,function(error,output) {
 			res.json(output);
 		});
 	}
 }
 
-module.exports = Factory;
+module.exports = CdhFactory;

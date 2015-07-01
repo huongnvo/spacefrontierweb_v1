@@ -8,4 +8,15 @@ spaceFrontierApp.controller("dataController", function($scope) {
         //
         //$scope.loading = false;
     }
+
+  	$scope.cdhparts = [];
+    $scope.init = function() { 
+		$http.get('http://localhost:3000/parts/cdh').then(function(result) { 
+			$scope.cdhparts = result.data; 
+		});
+    } 
+    $scope.init(); 
+}]);
+
+
 });
