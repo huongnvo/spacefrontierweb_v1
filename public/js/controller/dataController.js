@@ -16,7 +16,4 @@ spaceFrontierApp.controller("dataController", function($scope) {
 		});
     } 
     $scope.init(); 
-}]);
-
-
 });

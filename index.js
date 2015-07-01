@@ -38,6 +38,10 @@ var cdhfactory = new CdhFactory(Schema,mongoose);
 cdhfactory.createSchemas();
 // cdhfactory.insertPart();
 app.get('/parts/cdh', function(req, res) {
+     var resp = cdhfactory.getPart({},res);
+});
+
+app.get('/parts/cdh/results', function(req, res) {
      var resp = cdhfactory.getPart({Type: 'Cubesat Bus'},res);
 });
 
@@ -48,6 +52,15 @@ attitudefactory.createSchemas();
 app.get('/parts/attitude', function(req, res) {
      var resp = attitudefactory.getPart({},res);
 });
+
+var StationFactory = require('./public/js/models/StationFactory.js');
+var stationfactory = new StationFactory(Schema,mongoose);
+stationfactory.createSchemas();
+// stationfactory.insertPart();
+app.get('/parts/station', function(req, res) {
+     var resp = stationfactory.getPart({},res);
+});
+
 
 /* Setting the routes and html file paths -----------------------------------------------*/
 //app.engine('html', require('ejs').renderFile);
