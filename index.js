@@ -68,11 +68,34 @@ app.get('/parts/thermal', function(req, res) {
 var PowerFactory = require('./public/js/models/PowerFactory.js');
 var powerfactory = new PowerFactory(Schema,mongoose);
 powerfactory.createSchemas();
-powerfactory.insertPart();
+// powerfactory.insertPart();
 app.get('/parts/power', function(req, res) {
      var resp = powerfactory.getPart({},res);
 });
 
+var CommFactory = require('./public/js/models/CommFactory.js');
+var commfactory = new CommFactory(Schema,mongoose);
+commfactory.createSchemas();
+// commfactory.insertPart();
+app.get('/parts/comm', function(req, res) {
+     var resp = commfactory.getPart({},res);
+});
+
+var InstrumentsFactory = require('./public/js/models/InstrumentsFactory.js');
+var instrumentsfactory = new InstrumentsFactory(Schema,mongoose);
+instrumentsfactory.createSchemas();
+// instrumentsfactory.insertPart();
+app.get('/parts/instruments', function(req, res) {
+     var resp = instrumentsfactory.getPart({},res);
+});
+
+var PropulsionFactory = require('./public/js/models/PropulsionFactory.js');
+var propulsionfactory = new PropulsionFactory(Schema,mongoose);
+propulsionfactory.createSchemas();
+propulsionfactory.insertPart();
+app.get('/parts/propulsion', function(req, res) {
+     var resp = propulsionfactory.getPart({},res);
+});
 
 /* Setting the routes and html file paths -----------------------------------------------*/
 //app.engine('html', require('ejs').renderFile);

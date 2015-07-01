@@ -20,11 +20,11 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Volume_further: String,
 		    Objectives: String,
 		});
-		this.ThermalParts = mongoose.model('ThermalParts',Schema);
+		this.thermal_parts = mongoose.model('thermal_parts',Schema);
 	}
 
 	this.insertPart = function() {
-		var th_m1 = new this.ThermalParts({
+		var th_m1 = new this.thermal_parts({
 			Type:'Active Thermal Control',
 			Name:'th_mace Qualified Batteries w/ Integrated Battery Heater (COTS)',
 			Manufacturer:'',
@@ -40,7 +40,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m2 = new this.ThermalParts({
+		var th_m2 = new this.thermal_parts({
 			Type:'Passive Thermal Control',
 			Name:'Multi-Layer Insulation (MLI)',
 			Manufacturer:'',
@@ -56,7 +56,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:'Passive thermal control/insulation, some protection from th_mace debris, Various blankets insulate up to 1000 C'
 		});
 
-		var th_m3 = new this.ThermalParts({
+		var th_m3 = new this.thermal_parts({
 			Type:'Passive Thermal Control',
 			Name:'Thermal Coating',
 			Manufacturer:'',
@@ -72,7 +72,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:'Passive thermal insulation'
 		});
 
-		var th_m4 = new this.ThermalParts({
+		var th_m4 = new this.thermal_parts({
 			Type:'Passive Thermal Control',
 			Name:'Heat pipes (basic, flat plate, or loop)',
 			Manufacturer:'',
@@ -87,7 +87,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Volume_further:'',
 			Objectives:''
 		});
-		var th_m5 = new this.ThermalParts({
+		var th_m5 = new this.thermal_parts({
 			Type:'Active Thermal Control',
 			Name:'Electrical Resistance Heaters',
 			Manufacturer:'',
@@ -103,7 +103,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m6 = new this.ThermalParts({
+		var th_m6 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'XB1 Modular Cubesat Bus',
 			Manufacturer:'Blue Canyon Technology',
@@ -119,7 +119,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:'4 Gbytes (optional)'
 		});
 
-		var th_m7 = new this.ThermalParts({
+		var th_m7 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'CubeSat Structures (ISIS)',
 			Manufacturer:'ISIS',
@@ -135,7 +135,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m8 = new this.ThermalParts({
+		var th_m8 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'CubeSat Structures (ISIS)',
 			Manufacturer:'ISIS',
@@ -151,7 +151,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m9 = new this.ThermalParts({
+		var th_m9 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'CubeSat Structures (ISIS)',
 			Manufacturer:'ISIS',
@@ -167,7 +167,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m10 = new this.ThermalParts({
+		var th_m10 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'CubeSat Structures (ISIS)',
 			Manufacturer:'ISIS',
@@ -183,7 +183,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m11 = new this.ThermalParts({
+		var th_m11 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'CubeSat Skeletonized Structure (Pumpkin)',
 			Manufacturer:'Pumpkin',
@@ -199,7 +199,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m12 = new this.ThermalParts({
+		var th_m12 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'MISC 3 Chassis',
 			Manufacturer:'Pumpkin',
@@ -215,7 +215,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m13 = new this.ThermalParts({
+		var th_m13 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'Planetary Systems Corporation 3U',
 			Manufacturer:'Planetary Systems Corporation',
@@ -231,7 +231,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m14 = new this.ThermalParts({
+		var th_m14 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'Planetary Systems Corporation 6U',
 			Manufacturer:'Planetary Systems Corporation',
@@ -247,7 +247,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m15 = new this.ThermalParts({
+		var th_m15 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'Planetary Systems Corporation 12U',
 			Manufacturer:'Planetary Systems Corporation',
@@ -263,7 +263,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m16 = new this.ThermalParts({
+		var th_m16 = new this.thermal_parts({
 			Type:'Cubesat Bus',
 			Name:'Intrepid Platform (3U)',
 			Manufacturer:'Tyvak',
@@ -279,7 +279,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m17 = new this.ThermalParts({
+		var th_m17 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
@@ -295,7 +295,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m18 = new this.ThermalParts({
+		var th_m18 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'X-POD DUO',
 			Manufacturer:'University of Toronto Institute for Aeroth_mace Studies',
@@ -311,7 +311,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m19 = new this.ThermalParts({
+		var th_m19 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'X-POD Triple',
 			Manufacturer:'University of Toronto Institute for Aeroth_mace Studies',
@@ -327,7 +327,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m20 = new this.ThermalParts({
+		var th_m20 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'th_mL',
 			Manufacturer:'Astro und Feinwerktechnik Adlershof GmbH',
@@ -343,7 +343,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m21 = new this.ThermalParts({
+		var th_m21 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'ISIth_mOD 1U',
 			Manufacturer:'ISIS',
@@ -359,7 +359,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m22 = new this.ThermalParts({
+		var th_m22 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'ISIth_mOD 2U',
 			Manufacturer:'ISIS',
@@ -375,7 +375,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m23 = new this.ThermalParts({
+		var th_m23 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'ISIth_mOD 3U',
 			Manufacturer:'ISIS',
@@ -391,7 +391,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m24 = new this.ThermalParts({
+		var th_m24 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'ISIth_mOD Variable Size',
 			Manufacturer:'ISIS',
@@ -407,7 +407,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m25 = new this.ThermalParts({
+		var th_m25 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NLAS 1U',
 			Manufacturer:'Ames Research Center',
@@ -423,7 +423,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m26 = new this.ThermalParts({
+		var th_m26 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NLAS 1.5U',
 			Manufacturer:'Ames Research Center',
@@ -439,7 +439,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m27 = new this.ThermalParts({
+		var th_m27 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NLAS 2U',
 			Manufacturer:'Ames Research Center',
@@ -455,7 +455,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m28 = new this.ThermalParts({
+		var th_m28 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NLAS 3U',
 			Manufacturer:'Ames Research Center',
@@ -471,7 +471,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m29 = new this.ThermalParts({
+		var th_m29 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NLAS 6U',
 			Manufacturer:'Ames Research Center',
@@ -487,7 +487,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		}); 
 
-		var th_m30 = new this.ThermalParts({
+		var th_m30 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NRCSD 1U',
 			Manufacturer:'NanoRacks, LLC',
@@ -503,7 +503,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m31 = new this.ThermalParts({
+		var th_m31 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NRCSD 2U',
 			Manufacturer:'NanoRacks, LLC',
@@ -519,7 +519,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m32 = new this.ThermalParts({
+		var th_m32 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NRCSD 3U',
 			Manufacturer:'NanoRacks, LLC',
@@ -535,7 +535,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m33 = new this.ThermalParts({
+		var th_m33 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NRCSD 4U',
 			Manufacturer:'NanoRacks, LLC',
@@ -551,7 +551,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m34 = new this.ThermalParts({
+		var th_m34 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NRCSD 5U',
 			Manufacturer:'NanoRacks, LLC',
@@ -567,7 +567,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Objectives:''
 		});
 
-		var th_m35 = new this.ThermalParts({
+		var th_m35 = new this.thermal_parts({
 			Type:'Deployer',
 			Name:'NRCSD 6U',
 			Manufacturer:'NanoRacks, LLC',
@@ -621,7 +621,7 @@ var ThermalFactory = function(Schema,mongoose) {
 	}
 
 	this.getPart = function(query,res) {
-		this.ThermalParts.find(query,function(error,output) {
+		this.thermal_parts.find(query,function(error,output) {
 			res.json(output);
 		});
 	}

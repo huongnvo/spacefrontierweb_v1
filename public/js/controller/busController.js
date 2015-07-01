@@ -8,4 +8,12 @@ spaceFrontierApp.controller("busController", function($scope) {
         //
         //$scope.loading = false;
     }
+
+    $scope.thermalparts = [];
+    $scope.init = function() { 
+		$http.get('http://localhost:3000/parts/thermal').then(function(result) { 
+			$scope.thermalparts = result.data; 
+		});
+    } 
+    $scope.init(); 
 });

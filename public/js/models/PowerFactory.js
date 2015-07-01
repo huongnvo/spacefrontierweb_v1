@@ -25,15 +25,15 @@ var PowerFactory = function(Schema,mongoose) {
 		    Temp_low: Number,
 		    Temp_high: Number,
 		    Energy_Storage: Number,
-		    PperWing:Number,
-		    Wings:Number,
+		    PperWing: Number,
+		    Wings: Number,
 		    Cost: Number
 		});
-		this.PowerParts = mongoose.model('PowerParts',Schema);
+		this.power_parts = mongoose.model('power_parts',Schema);
 	}
 
 	this.insertPart = function() {
-		var sp1 = new this.PowerParts({
+		var sp1 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'NanoPower Solar Panels P110 Series',
 			Manufacturer:'GOMspace',
@@ -57,7 +57,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp2 = new this.PowerParts({
+		var sp2 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'NanoPower Solar Panels P110 Series',
 			Manufacturer:'GOMspace',
@@ -81,7 +81,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp3 = new this.PowerParts({
+		var sp3 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'NanoPower Solar Panels P110 Series',
 			Manufacturer:'GOMspace',
@@ -105,7 +105,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp4 = new this.PowerParts({
+		var sp4 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'NanoPower Solar Panels P110 Series',
 			Manufacturer:'GOMspace',
@@ -129,7 +129,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp5 = new this.PowerParts({
+		var sp5 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -153,7 +153,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp6 = new this.PowerParts({
+		var sp6 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -177,7 +177,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp7 = new this.PowerParts({
+		var sp7 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -201,7 +201,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp8 = new this.PowerParts({
+		var sp8 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -225,7 +225,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp9 = new this.PowerParts({
+		var sp9 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -249,7 +249,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp10 = new this.PowerParts({
+		var sp10 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -273,7 +273,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp11 = new this.PowerParts({
+		var sp11 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -297,7 +297,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp12 = new this.PowerParts({
+		var sp12 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -321,7 +321,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp13 = new this.PowerParts({
+		var sp13 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -345,7 +345,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp14 = new this.PowerParts({
+		var sp14 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -369,7 +369,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp15 = new this.PowerParts({
+		var sp15 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -393,7 +393,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp16 = new this.PowerParts({
+		var sp16 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -417,7 +417,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp17 = new this.PowerParts({
+		var sp17 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -441,7 +441,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp18 = new this.PowerParts({
+		var sp18 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -465,7 +465,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp19 = new this.PowerParts({
+		var sp19 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -489,7 +489,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp20 = new this.PowerParts({
+		var sp20 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -513,7 +513,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp21 = new this.PowerParts({
+		var sp21 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -537,7 +537,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp22 = new this.PowerParts({
+		var sp22 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -561,7 +561,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp23 = new this.PowerParts({
+		var sp23 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -585,7 +585,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp24 = new this.PowerParts({
+		var sp24 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'Small Satellite Solar Panels',
 			Manufacturer:'Clyde',
@@ -609,7 +609,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp25 = new this.PowerParts({
+		var sp25 = new this.power_parts({
  			Type: 'Solar Panels',
  			Name:'ISIS CubeSat Solar Panels',
  			Manufacturer:'ISIS and Selex Galileo',
@@ -631,7 +631,7 @@ var PowerFactory = function(Schema,mongoose) {
  			Wings:0,
  			Cost:0
  		});
- 		var sp26 = new this.PowerParts({
+ 		var sp26 = new this.power_parts({
   			Type: 'Solar Panels',
   			Name:'ISIS CubeSat Solar Panels',
   			Manufacturer:'ISIS and Selex Galileo',
@@ -655,7 +655,7 @@ var PowerFactory = function(Schema,mongoose) {
   			Cost:0
 		});
 
-		var sp27 = new this.PowerParts({
+		var sp27 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'ISIS CubeSat Solar Panels',
 			Manufacturer:'ISIS and Selex Galileo',
@@ -678,7 +678,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp28 = new this.PowerParts({
+		var sp28 = new this.power_parts({
 			Type: 'Solar Panels',
 			Name:'ISIS CubeSat Solar Panels',
 			Manufacturer:'ISIS and Selex Galileo',
@@ -699,7 +699,7 @@ var PowerFactory = function(Schema,mongoose) {
   			Wings:0,
 			Cost:0
 		});
-		var sp29 = new this.PowerParts({
+		var sp29 = new this.power_parts({
 			Type:'Battery',
 			Name:'NanoPower BP4',
 			Manufacturer:'GOMspace',
@@ -722,7 +722,7 @@ var PowerFactory = function(Schema,mongoose) {
   			Wings:0,
   			Cost:0
   		});
-	  	var sp30 = new this.PowerParts({
+	  	var sp30 = new this.power_parts({
 			Type:'Battery',
 			Name:'NanoPower BPx',
 			Manufacturer:'GOMspace',
@@ -740,12 +740,12 @@ var PowerFactory = function(Schema,mongoose) {
 			Thermal_further: '',
 			Temp_low:-40,
 	  		Temp_high:125,
-	  		Energy_Storage:'21.8-77 (depends on configuration)',
+	  		Energy_Storage:49.4,
 	  		PperWing:0,
 			Wings:0,
 			Cost:0
 		});
-		var sp31 = new this.PowerParts({
+		var sp31 = new this.power_parts({
 			Type:'Power Control Unit',
 			Name:'XB1 Modular Cubesat Bus',
 			Manufacturer:'Blue Canyon Technology',
@@ -765,7 +765,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Wings:0,
 			Cost:0
 		});
-		var sp32 = new this.PowerParts({
+		var sp32 = new this.power_parts({
 			Type:'Power Control Unit',
 			Name:'NanoPower P31us',
 			Manufacturer:'GOMspace',
@@ -789,7 +789,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp33 = new this.PowerParts({
+		var sp33 = new this.power_parts({
 			Type:'Power Control Unit',
 			Name:'NanoPower P31u',
 			Manufacturer:'GOMspace',
@@ -812,7 +812,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp34 = new this.PowerParts({
+		var sp34 = new this.power_parts({
 			Type:'Power Control Unit',
 			Name:'CubeSat EPS (Available for 1,1.5,2,and 3U)',
 			Manufacturer:'Clyde',
@@ -836,7 +836,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp35 = new this.PowerParts({
+		var sp35 = new this.power_parts({
 			Type:'Battery',
 			Name:'Cubesat Standalone Battery',
 			Manufacturer:'Clyde',
@@ -852,13 +852,13 @@ var PowerFactory = function(Schema,mongoose) {
 			Thermal_further: '',
 			Temp_low:-300,
 			Temp_high:-300,
-			Energy_Storage:'10,20,or 30',
+			Energy_Storage:10,
 			PperWing:0,
 			Wings:0,
 			Cost:0
 		});
 
-		var sp36 = new this.PowerParts({
+		var sp36 = new this.power_parts({
 			Type:'Battery',
 			Name:'Remote Battery Board',
 			Manufacturer:'Clyde',
@@ -872,12 +872,13 @@ var PowerFactory = function(Schema,mongoose) {
 			Objectives:'Power storage',
 			Thermal_further: '',
 			Temp_low:-300,
-			Temp_high:-300,Energy_Storage:10,PperWing:0,
+			Temp_high:-300,
+			Energy_Storage:10,PperWing:0,
 			Wings:0,
 			Cost:0
 		});
 
-		var sp37 = new this.PowerParts({
+		var sp37 = new this.power_parts({
 			Type:'Battery',
 			Name:'Polymer Li-Ion Rechargeable Battery',
 			Manufacturer:'',
@@ -899,7 +900,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Wings:0,
 			Cost:0
 		});
-		var sp38 = new this.PowerParts({
+		var sp38 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'HaWK Nanosat Solar Array',
 			Manufacturer:'MMA Design',
@@ -922,17 +923,19 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp39 = new this.PowerParts({
+		var sp39 = new this.power_parts({
 			Type:'Deployed Solar Panels',
 			Name:'HaWK Nanosat Solar Array',
 			Manufacturer:'MMA Design',
 			Website:'http://www.mmadesignllc.com/products/hawk-and-e-hawk-nanosat-solar-arrays',
 			Description:'TRL 4-6. Planned flight on Ors-2 cubesat,2015. Includes Sun tracker',
-			Mass:500,Mass_further:'',
+			Mass:500,
+			Mass_further:'',
 			Power:36,Power_further:'36 W peak power (scales up 140 W/kg)',
 			Volume:6,Proportions:'',
 			Volume_further:'uses space btw P-POD and cubesat (6.5 mm). For 3U',
-			Efficiency:'',Objectives:'power generation,attitude determination,2 yrs',
+			Efficiency:'',
+			Objectives:'power generation,attitude determination,2 yrs',
 			Thermal_further: '',
 			Temp_low:0,
 			Temp_high:0,
@@ -941,7 +944,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Wings:2,
 			Cost:0
 		});
-		var sp40 = new this.PowerParts({
+		var sp40 = new this.power_parts({
 			Type:'Power Control Unit',
 			Name:'XEPS CubeSat Electrical Power System',
 			Manufacturer:'Blue Canyon Technology',
@@ -962,7 +965,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Wings:0,
 			Cost:0
 		});
-		var sp41 = new this.PowerParts({
+		var sp41 = new this.power_parts({
 			Type:'Cubesat Bus',Name:'Intrepid Platform (3U)',
 			Manufacturer:'Tyvak',
 			Website:'http://tyvak.com/intrepid-suite-1-1/',
@@ -984,7 +987,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:0
 		});
 
-		var sp42 = new this.PowerParts({
+		var sp42 = new this.power_parts({
 			Type:'Solar Panels',
 			Name:'6U Solar Panel',
 			Manufacturer:'Andrews Space',
@@ -1007,7 +1010,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:17500
 		});
 
-		var sp43 = new this.PowerParts({
+		var sp43 = new this.power_parts({
 			Type:'Power Control Unit',
 			Name:'Cortex 130 Electrical Power Subsystem Card',
 			Manufacturer:'',
@@ -1077,7 +1080,7 @@ var PowerFactory = function(Schema,mongoose) {
 	}
 
 	this.getPart = function(query,res) {
-		this.PowerParts.find(query,function(error,output) {
+		this.power_parts.find(query,function(error,output) {
 			res.json(output);
 		});
 	}

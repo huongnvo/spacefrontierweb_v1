@@ -12,4 +12,12 @@ spaceFrontierApp.controller("trajectoryController", function($scope) {
     $(function () {
   		$('[data-toggle="tooltip"]').tooltip()
 	})
+
+    $scope.trajectoryparts = [];
+    $scope.init = function() { 
+        $http.get('http://localhost:3000/parts/propulsion').then(function(result) { 
+            $scope.trajectoryparts = result.data; 
+        });
+    } 
+    $scope.init(); 
 });

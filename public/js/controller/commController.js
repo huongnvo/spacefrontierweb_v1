@@ -8,4 +8,16 @@ spaceFrontierApp.controller("commController", function($scope) {
         //
         //$scope.loading = false;
     }
+
+    $scope.commparts = [];
+    $scope.stationparts = [];
+    $scope.init = function() { 
+		$http.get('http://localhost:3000/parts/comm').then(function(result) { 
+			$scope.commparts = result.data; 
+		});
+		$http.get('http://localhost:3000/parts/station').then(function(result) { 
+			$scope.stationparts = result.data; 
+		});
+    } 
+    $scope.init(); 
 });
