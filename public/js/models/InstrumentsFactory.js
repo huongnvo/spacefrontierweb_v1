@@ -6,30 +6,30 @@ var InstrumentsFactory = function(Schema,mongoose) {
 
 	this.createSchemas = function() {
 		Schema = new this.Schema({
-		   Type: String,
-		   Name:String,
-		   Manufacturer:String,
-		   Reference:String,
-		   Heritage:String,
-		   Mass:Number, 
-		   Mass_further:String,
-		   Power:Number, 
-		   Power_further:String,
-		   Volume:String,
-		   Proportions:String,
-		   Volume_further:String,
-		   Measurement:String,
-		   Sensitivity:String,
-		   Resolution:String,
-		   Pixels:String,
-		   Objectives:String,
-		   Venue:String,
-		   FOV:String, 
-		   T_lo:Number, 
-		   T_hi:Number, 
-		   Thermal_further:String,
-		   Datarate:Number, 
-		   Cost:Number
+			Type: String,
+			Name:String,
+			Manufacturer:String,
+			Reference:String,
+			Heritage:String,
+			Mass:Number, 
+			Mass_further:String,
+			Power:Number, 
+			Power_further:String,
+			Volume:String,
+			Proportions:String,
+			Volume_further:String,
+			Measurement:String,
+			Sensitivity:String,
+			Resolution:String,
+			Pixels:String,
+			Objectives:String,
+			Venue:String,
+			FOV:String, 
+			T_lo:Number, 
+			T_hi:Number, 
+			Thermal_further:String,
+			Datarate:Number, 
+			Cost:Number
 		});
 		this.instrument_parts = mongoose.model('instrument_parts',Schema);
 	}
@@ -1765,6 +1765,86 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			res.json(output);
 		});
 	}
+
+	this.putPart = function(req, res) {
+		var newpart = new this.instrument_parts({
+			Type: req.body.Type,
+			Name: req.body.Name,
+			Manufacturer: req.body.Manufacturer,
+			Reference: req.body.Reference,
+			Heritage: req.body.Heritage,
+			Mass: req.body.Mass, 
+			Mass_further: req.body.Mass_further,
+			Power: req.body.Power, 
+			Power_further: req.body.Power_further,
+			Volume: req.body.Volume,
+			Proportions: req.body.Proportions,
+			Volume_further: req.body.Volume_further,
+			Measurement: req.body.Measurement,
+			Sensitivity: req.body.Sensitivity,
+			Resolution: req.body.Resolution,
+			Pixels: req.body.Pixels,
+			Objectives: req.body.Objectives,
+			Venue: req.body.Venue,
+			FOV: req.body.FOV, 
+			T_lo: req.body.T_lo, 
+			T_hi: req.body.T_hi, 
+			Thermal_further: req.body.Thermal_further,
+			Datarate: req.body.Datarate, 
+			Cost: req.body.Cost
+    	});
+		newpart.save(function (error, output) {
+			res.json(output);
+		});
+	};
+
+	this.updatePart = function(req, res) {
+		this.instrument_parts.update(
+ 		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	{
+			Type: req.body.Type,
+			Name: req.body.Name,
+			Manufacturer: req.body.Manufacturer,
+			Reference: req.body.Reference,
+			Heritage: req.body.Heritage,
+			Mass: req.body.Mass, 
+			Mass_further: req.body.Mass_further,
+			Power: req.body.Power, 
+			Power_further: req.body.Power_further,
+			Volume: req.body.Volume,
+			Proportions: req.body.Proportions,
+			Volume_further: req.body.Volume_further,
+			Measurement: req.body.Measurement,
+			Sensitivity: req.body.Sensitivity,
+			Resolution: req.body.Resolution,
+			Pixels: req.body.Pixels,
+			Objectives: req.body.Objectives,
+			Venue: req.body.Venue,
+			FOV: req.body.FOV, 
+			T_lo: req.body.T_lo, 
+			T_hi: req.body.T_hi, 
+			Thermal_further: req.body.Thermal_further,
+			Datarate: req.body.Datarate, 
+			Cost: req.body.Cost
+    	}, 
+    	{}, 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
+
+	this.deletePart = function(req, res) {
+		this.instrument_parts.remove(
+		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	'', 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
 }
 
 module.exports = InstrumentsFactory;

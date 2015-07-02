@@ -1,7 +1,4 @@
-spaceFrontierApp.controller("busController", function($scope) {
-    $scope.navBarSrc = "tmpl/navbar.html";
-    $scope.footerSrc = "tmpl/footer.html";
-
+spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.loading = false;
     $scope.myClick = function() {
         $scope.loading = true;
@@ -9,10 +6,10 @@ spaceFrontierApp.controller("busController", function($scope) {
         //$scope.loading = false;
     }
 
-    $scope.thermalparts = [];
+    $scope.parts = [];
     $scope.init = function() { 
 		$http.get('http://localhost:3000/parts/thermal').then(function(result) { 
-			$scope.thermalparts = result.data; 
+			$scope.parts = result.data; 
 		});
     } 
     $scope.init(); 

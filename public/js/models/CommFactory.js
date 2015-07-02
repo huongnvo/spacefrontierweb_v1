@@ -8,7 +8,7 @@ var CommFactory = function(Schema, mongoose) {
 		Schema = new this.Schema({
 			Type: String,
 			Name: String,
-			Manufactuer: String,
+			Manufacturer: String,
 			Website: String,
 			Heritage: String,
 			Mass: Number,
@@ -819,6 +819,84 @@ var CommFactory = function(Schema, mongoose) {
 			res.json(output);
 		});
 	}
+
+	this.putPart = function(req, res) {
+		var newpart = new this.comm_parts({
+			Type: req.body.Type,
+			Name: req.body.Name,
+			Manufacturer: req.body.Manufacturer,
+			Website: req.body.Website,
+			Heritage: req.body.Heritage,
+			Mass: req.body.Mass,
+			Mass_further: req.body.Mass_further,
+			Power: req.body.Power,
+			Power_further: req.body.Power_further,
+			Volume: req.body.Volume,
+			Proportions: req.body.Proportions,
+			Volume_further: req.body.Volume_further,
+			Frequency: req.body.Frequency,
+			Data_and_Objectives: req.body.Data_and_Objectives,
+			Receiver_Sensitivity: req.body.Receiver_Sensitivity,
+			Transmit_Power: req.body.Transmit_Power,
+			Transmit_Power_further: req.body.Transmit_Power_further,
+			Beamwidth: req.body.Beamwidth,
+			Gain: req.body.Gain,
+			Gain_further: req.body.Gain_further,
+			Life_and_Use: req.body.Life_and_Use,
+			Temp_Low: req.body.Temp_Low,
+			Temp_High: Req.body.Temp_High
+    	});
+		newpart.save(function (error, output) {
+			res.json(output);
+		});
+	};
+
+	this.updatePart = function(req, res) {
+		this.comm_parts.update(
+ 		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	{
+			Type: req.body.Type,
+			Name: req.body.Name,
+			Manufacturer: req.body.Manufacturer,
+			Website: req.body.Website,
+			Heritage: req.body.Heritage,
+			Mass: req.body.Mass,
+			Mass_further: req.body.Mass_further,
+			Power: req.body.Power,
+			Power_further: req.body.Power_further,
+			Volume: req.body.Volume,
+			Proportions: req.body.Proportions,
+			Volume_further: req.body.Volume_further,
+			Frequency: req.body.Frequency,
+			Data_and_Objectives: req.body.Data_and_Objectives,
+			Receiver_Sensitivity: req.body.Receiver_Sensitivity,
+			Transmit_Power: req.body.Transmit_Power,
+			Transmit_Power_further: req.body.Transmit_Power_further,
+			Beamwidth: req.body.Beamwidth,
+			Gain: req.body.Gain,
+			Gain_further: req.body.Gain_further,
+			Life_and_Use: req.body.Life_and_Use,
+			Temp_Low: req.body.Temp_Low,
+			Temp_High: Req.body.Temp_High
+    	}, 
+    	{}, 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
+
+	this.deletePart = function(req, res) {
+		this.comm_parts.remove(
+		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	'', 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
 }
 
 module.exports = CommFactory;

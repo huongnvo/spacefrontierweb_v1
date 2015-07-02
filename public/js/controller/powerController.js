@@ -1,4 +1,4 @@
-spaceFrontierApp.controller("powerController", function($scope) {
+spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.navBarSrc = "tmpl/navbar.html";
     $scope.footerSrc = "tmpl/footer.html";
 
@@ -9,10 +9,10 @@ spaceFrontierApp.controller("powerController", function($scope) {
         //$scope.loading = false;
     }
 
-    $scope.powerparts = [];
+    $scope.parts = [];
     $scope.init = function() { 
 		$http.get('http://localhost:3000/parts/power').then(function(result) { 
-			$scope.powerparts = result.data; 
+			$scope.parts = result.data; 
 		});
     } 
     $scope.init(); 

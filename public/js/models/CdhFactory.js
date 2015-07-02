@@ -489,11 +489,83 @@ var CdhFactory = function(Schema,mongoose) {
 		image1.save();
 	}
 
-	this.getPart = function(query,res) {
-		this.cdh_parts.find(query,function(error,output) {
+	this.getPart = function(query, res) {
+		this.cdh_parts.find(query,function(error, output) {
 			res.json(output);
 		});
 	}
+
+	this.putPart = function(req, res) {
+		var newpart = new this.cdh_parts({
+			Type: req.body.Type, 
+		    Name: req.body.Name, 
+		    Manufacturer: req.body.Manufacturer, 
+		    Reference: req.body.Reference, 
+		    Heritage: req.body.Heritage, 
+		    Mass: req.body.Mass, 
+		    Mass_further: req.body.Mass_further, 
+		    Power: req.body.Power, 
+		    Power_further: req.body.Power_further, 
+		    Volume: req.body.Volume, 
+		    Proportions: req.body.Proportions, 
+		    Volume_further: req.body.Volume_further, 
+		    MIPS: req.body.MIPS, 
+		    MHz: req.body.MHz, 
+		    Processing_further: req.body.Processing_further, 
+		    Memory: req.body.Memory, 
+		    Temp_low: req.body.Temp_low, 
+		    Temp_high: req.body.Temp_high, 
+		    Scientific_obj: req.body.Scientific_obj, 
+		    Cost: req.body.Cost
+    	});
+		newpart.save(function (error, output) {
+			res.json(output);
+		});
+	};
+
+	this.updatePart = function(req, res) {
+		this.cdh_parts.update(
+ 		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	{
+			Type: req.body.Type, 
+		    Name: req.body.Name, 
+		    Manufacturer: req.body.Manufacturer, 
+		    Reference: req.body.Reference, 
+		    Heritage: req.body.Heritage, 
+		    Mass: req.body.Mass, 
+		    Mass_further: req.body.Mass_further, 
+		    Power: req.body.Power, 
+		    Power_further: req.body.Power_further, 
+		    Volume: req.body.Volume, 
+		    Proportions: req.body.Proportions, 
+		    Volume_further: req.body.Volume_further, 
+		    MIPS: req.body.MIPS, 
+		    MHz: req.body.MHz, 
+		    Processing_further: req.body.Processing_further, 
+		    Memory: req.body.Memory, 
+		    Temp_low: req.body.Temp_low, 
+		    Temp_high: req.body.Temp_high, 
+		    Scientific_obj: req.body.Scientific_obj, 
+		    Cost: req.body.Cost
+    	}, 
+    	{}, 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
+
+	this.deletePart = function(req, res) {
+		this.cdh_parts.remove(
+		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	'', 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
 }
 
 module.exports = CdhFactory;

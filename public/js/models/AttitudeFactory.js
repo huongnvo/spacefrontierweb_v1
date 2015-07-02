@@ -682,13 +682,89 @@ var AttitudeFactory = function(Schema,mongoose) {
   		acs6.save();
   		actuator1.save();
   		actuator2.save();
-	}
+	};
 
 	this.getPart = function(query,res) {
-		this.attitude_parts.find(query,function(error,output) {
+		this.attitude_parts.find(query, function(error,output) {
 			res.json(output);
 		});
-	}
+	};
+
+	this.putPart = function(req, res) {
+		var newpart = new this.attitude_parts({
+			Type: req.body.Type,
+			Type_further: req.body.Type_further,
+			Name: req.body.Name,
+			Manufacturer: req.body.Manufacturer,
+			Reference: req.body.Reference,
+			Heritage: req.body.Heritage,
+			Mass: req.body.Mass,
+			Mass_further: req.body.Mass_further,
+			Power: req.body.Power,
+			Power_further: req.body.Power_further,
+			Volume: req.body.Volume,
+			Proportions: req.body.Proportions,
+			Volume_further: req.body.Volume_further,
+			Angle_prec: req.body.Angle_prec,
+			Attitude_control_further: req.body.Attitude_control_further,
+			Ac_sensors: req.body.Ac_sensors,
+			Scientific_obj: req.body.Scientific_obj,
+			Venue: req.body.Venue,
+			Temp_low: req.body.Temp_low,
+			Temp_high: req.body.Temp_high,
+			Datarate: req.body.Datarate,
+			Cost: req.body.Cost
+    	});
+		newpart.save(function (error, output) {
+			res.json(output);
+		});
+	};
+
+	this.updatePart = function(req, res) {
+		this.attitude_parts.update(
+ 		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	{
+			Type: req.body.Type,
+			Type_further: req.body.Type_further,
+			Name: req.body.Name,
+			Manufacturer: req.body.Manufacturer,
+			Reference: req.body.Reference,
+			Heritage: req.body.Heritage,
+			Mass: req.body.Mass,
+			Mass_further: req.body.Mass_further,
+			Power: req.body.Power,
+			Power_further: req.body.Power_further,
+			Volume: req.body.Volume,
+			Proportions: req.body.Proportions,
+			Volume_further: req.body.Volume_further,
+			Angle_prec: req.body.Angle_prec,
+			Attitude_control_further: req.body.Attitude_control_further,
+			Ac_sensors: req.body.Ac_sensors,
+			Scientific_obj: req.body.Scientific_obj,
+			Venue: req.body.Venue,
+			Temp_low: req.body.Temp_low,
+			Temp_high: req.body.Temp_high,
+			Datarate: req.body.Datarate,
+			Cost: req.body.Cost
+    	}, 
+    	{}, 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
+
+	this.deletePart = function(req, res) {
+		this.attitude_parts.remove(
+		{
+      		_id: mongoose.ObjectId(req.params._id)
+    	}, 
+    	'', 
+    	function(error, output) {
+      		res.json(output);
+    	});
+	};
 }
 
 module.exports = AttitudeFactory;

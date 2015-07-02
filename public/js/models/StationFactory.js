@@ -957,6 +957,60 @@ var StationFactory = function(Schema,mongoose) {
 			res.json(output);
 		});
 	}
+
+	this.putPart = function(req, res) {
+        var newpart = new this.station_parts({
+			Name: req.body.Name,
+		    Uplink_freq: req.body.Uplink_freq, 
+		    EIRP: req.body.EIRP, 
+		    EIRP_ave: req.body.EIRP_ave, 
+		    Downlink_freq: req.body.Downlink_freq, 
+		    Gain: req.body.Gain, 
+		    Per_gain: req.body.Per_gain, 
+		    Diameter: req.body.Diameter, 
+		    Loc: req.body.Loc, 
+		    Band: req.body.Band,
+		    Coordinates: req.body.Coordinates
+        });
+        newpart.save(function (error, output) {
+            res.json(output);
+        });
+    };
+
+    this.updatePart = function(req, res) {
+        this.station_parts.update(
+        {
+            _id: mongoose.ObjectId(req.params._id)
+        }, 
+        {
+			Name: req.body.Name,
+		    Uplink_freq: req.body.Uplink_freq, 
+		    EIRP: req.body.EIRP, 
+		    EIRP_ave: req.body.EIRP_ave, 
+		    Downlink_freq: req.body.Downlink_freq, 
+		    Gain: req.body.Gain, 
+		    Per_gain: req.body.Per_gain, 
+		    Diameter: req.body.Diameter, 
+		    Loc: req.body.Loc, 
+		    Band: req.body.Band,
+		    Coordinates: req.body.Coordinates
+        }, 
+        {}, 
+        function(error, output) {
+            res.json(output);
+        });
+    };
+
+    this.deletePart = function(req, res) {
+        this.station_parts.remove(
+        {
+            _id: mongoose.ObjectId(req.params._id)
+        }, 
+        '', 
+        function(error, output) {
+            res.json(output);
+        });
+    };
 }
 
 module.exports = StationFactory;

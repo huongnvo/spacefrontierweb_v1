@@ -624,7 +624,66 @@ var ThermalFactory = function(Schema,mongoose) {
 		this.thermal_parts.find(query,function(error,output) {
 			res.json(output);
 		});
-	}
+	};
+
+
+	this.putPart = function(req, res) {
+        var newpart = new this.thermal_parts({
+		    Type: req.body.Type,
+		    Name: req.body.Name,
+		    Manufacturer: req.body.Manufacturer,
+		    Website: req.body.Website,
+		    Heritage: req.body.Heritage,
+		    Mass: req.body.Mass,
+		    Mass_further: req.body.Mass_further,
+		    Power: req.body.Power,
+		    Power_further: req.body.Power_further,
+		    Volume: req.body.Volume,
+		    Proportions: req.body.Proportions,
+		    Volume_further: req.body.Volume_further,
+		    Objectives: req.body.Objectives,
+        });
+        newpart.save(function (error, output) {
+            res.json(output);
+        });
+    };
+
+    this.updatePart = function(req, res) {
+        this.thermal_parts.update(
+        {
+            _id: mongoose.ObjectId(req.params._id)
+        }, 
+        {
+		    Type: req.body.Type,
+		    Name: req.body.Name,
+		    Manufacturer: req.body.Manufacturer,
+		    Website: req.body.Website,
+		    Heritage: req.body.Heritage,
+		    Mass: req.body.Mass,
+		    Mass_further: req.body.Mass_further,
+		    Power: req.body.Power,
+		    Power_further: req.body.Power_further,
+		    Volume: req.body.Volume,
+		    Proportions: req.body.Proportions,
+		    Volume_further: req.body.Volume_further,
+		    Objectives: req.body.Objectives,
+        }, 
+        {}, 
+        function(error, output) {
+            res.json(output);
+        });
+    };
+
+    this.deletePart = function(req, res) {
+        this.thermal_parts.remove(
+        {
+            _id: mongoose.ObjectId(req.params._id)
+        }, 
+        '', 
+        function(error, output) {
+            res.json(output);
+        });
+    };
 }
 
 module.exports = ThermalFactory;

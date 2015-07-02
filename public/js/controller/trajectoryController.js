@@ -1,4 +1,4 @@
-spaceFrontierApp.controller("trajectoryController", function($scope) {
+spaceFrontierApp.controller("trajectoryController", function($scope, $http) {
     $scope.navBarSrc = "tmpl/navbar.html";
     $scope.footerSrc = "tmpl/footer.html";
 
@@ -13,10 +13,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope) {
   		$('[data-toggle="tooltip"]').tooltip()
 	})
 
-    $scope.trajectoryparts = [];
+    $scope.parts = [];
     $scope.init = function() { 
         $http.get('http://localhost:3000/parts/propulsion').then(function(result) { 
-            $scope.trajectoryparts = result.data; 
+            $scope.parts = result.data; 
         });
     } 
     $scope.init(); 

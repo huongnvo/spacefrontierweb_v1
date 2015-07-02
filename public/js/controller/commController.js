@@ -1,7 +1,4 @@
-spaceFrontierApp.controller("commController", function($scope) {
-    $scope.navBarSrc = "tmpl/navbar.html";
-    $scope.footerSrc = "tmpl/footer.html";
-
+spaceFrontierApp.controller("commController", function($scope, $http) {
     $scope.loading = false;
     $scope.myClick = function() {
         $scope.loading = true;
@@ -11,13 +8,16 @@ spaceFrontierApp.controller("commController", function($scope) {
 
     $scope.commparts = [];
     $scope.stationparts = [];
-    $scope.init = function() { 
+    $scope.initcomm = function() { 
 		$http.get('http://localhost:3000/parts/comm').then(function(result) { 
 			$scope.commparts = result.data; 
 		});
+    };
+    $scope.initstat = function() {
 		$http.get('http://localhost:3000/parts/station').then(function(result) { 
 			$scope.stationparts = result.data; 
 		});
-    } 
-    $scope.init(); 
+    };
+    $scope.initcomm();
+    $scope.initstat(); 
 });

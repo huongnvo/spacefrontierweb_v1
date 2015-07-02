@@ -1,4 +1,4 @@
-spaceFrontierApp.controller("resultsController", function($scope) {
+spaceFrontierApp.controller("resultsController", function($scope, $http) {
     $scope.navBarSrc = "tmpl/navbar.html";
     $scope.footerSrc = "tmpl/footer.html";
 
