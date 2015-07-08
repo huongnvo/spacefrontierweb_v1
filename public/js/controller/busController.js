@@ -8,7 +8,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
 
     $scope.parts = [];
     $scope.init = function() { 
-		$http.get('http://localhost:3000/parts/thermal').then(function(result) { 
+		$http.get('/parts/thermal').then(function(result) { 
 			$scope.parts = result.data; 
 		});
     } 

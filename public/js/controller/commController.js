@@ -9,12 +9,12 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
     $scope.commparts = [];
     $scope.stationparts = [];
     $scope.initcomm = function() { 
-		$http.get('http://localhost:3000/parts/comm').then(function(result) { 
+		$http.get('/parts/comm').then(function(result) { 
 			$scope.commparts = result.data; 
 		});
     };
     $scope.initstat = function() {
-		$http.get('http://localhost:3000/parts/station').then(function(result) { 
+		$http.get('/parts/station').then(function(result) { 
 			$scope.stationparts = result.data; 
 		});
     };

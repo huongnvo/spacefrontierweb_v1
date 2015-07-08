@@ -37,7 +37,7 @@
                 <h6>Click on the link of each subsystem to learn more.</h6>
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control">
-                    <option></option>
+                    <option ng-repeat="part in parts">{{part.Name}}</option>
                 </select>
             </div>
             <div class="col-lg-4" id="search">

@@ -2,131 +2,169 @@
 <html data-ng-app="spaceFrontierApp">
 <% include header %>
 
+
 <body class="container" data-ng-controller="trajectoryController">
     <% include navbar %>
-    <h1>Trajectory Selection</h1>
+    <h1>Propulsion Selection</h1>
     <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
     <hr>
     <div class="row">
         <div class="col-lg-6">
             <h3>User Input</h3>
-            Starting Point:
-            <select class="form-control">
-                <option>GEO/GTO</option>
-                <option>Earth Escape</option>
-            </select>
-            <div class = "divider"></div>
-            Target:
-            <select class="form-control">
-                <option>Earth</option>
-                <option>Mercury</option>
-                <option>Mars</option>
-                <option>Venus</option>
-                <option>Moon</option>
-            </select>
-            <div class = "divider"></div>
-            Type of Systems:
-            <select class="form-control">
-                <option>Sail</option>
-                <option>Thruster</option>
-                <option>All</option>
-            </select>
-            <div class = "divider"></div>
-            Orbital Angle Change:
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2">
-                <span class="input-group-addon" id="basic-addon2">deg</span>
-            </div>
-            <div class = "divider"></div>
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Orbit Type - Circular:
-                            </a>
-                        </h4>
+            <div class="accordion" id="accordion1">
+                <div class="accordion-group"> 
+                    <div class = "accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                            <b>Target</b>
+                        </a>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                            <select class="form-control">
+                                <option>Earth</option>
+                                <option>Mercury</option>
+                                <option>Mars</option>
+                                <option>Venus</option>
+                                <option>Moon</option>
+                            </select>
+                        </div>
+                    </div>    
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+                            <b>Trajectory Type</b>
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class"accordion-body collapse in">
+                        <div class="accordion-inner">
+                            <div class="radio">
+                                <input type="radio" name="picktrajectoryRadio" value="trajectoryoption1">
+                                <label>Pick Trajectory:</label>
+                                <select class="form-control"></select>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="inputowndvRadio" value="trajectoryoption2">
+                                <label>Input Trajectory deltaV: (Input 0 if your CubeSat will be delivered to orbit)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"> <span class="input-group-addon" id="dvaddon">deltaV</span>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
+                            <b>Orbit Type</b>
+                        </a>
+                    </div>
+                    <div id="collapseThree" class"accordion-body collapse in">
+                        <div class="accordion-inner">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                        Low: 
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Science Orbit 1
+                                    <div class="row">
+                                        <label>Apoapsis</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">units</span>
+
+                                        </div>
+                                        <label>Periapsis</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">units</span>
+
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                        Medium:
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Science Orbit 2
+                                    <div class="row">
+                                        <label>Apoapsis</label>
+                                        <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">units</span>
+                                        </div>
+                                        <label>Periapsis</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">units</span>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                        High: 
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Science Orbit 3
+                                    <div class="row">
+                                        <label>Apoapsis</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">units</span>
+                                        </div>
+                                        <label>Periapsis</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">units</span>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                             <div class="form-inline">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2">
-                                                <span class="input-group-addon" id="basic-addon2">deg</span>
-                                            </div>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Input Orbital Maintenance deltaV
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"> <span class="input-group-addon" id="basic-addon2">deltaV</span>
+                                        </div>
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                                Orbit Type - Elliptical:
-                            </a>
-                        </h4>
+                <div class="accordion-group"> 
+                    <div class = "accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour"> 
+                            <b>Orbital Angle Change</b>
+                        </a>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
-                            <div class="form-inline">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                            Apoapsis: <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2">
-                                                <span class="input-group-addon" id="basic-addon2">deg</span>
-                                            </div>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-inline">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                            Periapsis:<div class="input-group">
-                                                <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2">
-                                                <span class="input-group-addon" id="basic-addon2">deg</span>
-                                            </div>
-                                    </label>
-                                </div>
+                    <div id="collapseFour" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                            <div class="input-group">
+                            <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">deg</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <h5>Or</h5>
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group"> 
+                        <div class = "accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive"> 
+                                <b>Input deltaV</b>
+                            </a>
+                        </div>
+                        <div id="collapseFive" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+                                <div class="input-group">
+                                <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2">deltaV</span>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <h3>Calculation Results</h3>
-            DV:<input class="form-control" placeholder="100" data-ng-model="altitude"/>
+            DV:<input class="form-control" placeholder="100" data-ng-model="altitude" readonly="readonly"/>
             <div class = "divider"></div>
-            DV Capture:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
-        </div>
-        
-        
+            DV Capture:<input class="form-control" placeholder="10" data-ng-model="resolution" readonly="readonly"/>
+        </div>   
+        <div class="divider"></div>
         <div class="col-lg-12">
+            <div class="divider"></div>
             <div id="button">
                 <button type="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
                     <span ng-show="loading">Searching...</span>
@@ -135,8 +173,23 @@
             </div>
         </div>
     </div>
-    <hr>
     <div class="row">
+        <div class="col-lg-12" id="trajectorysearch">
+            <h3>List Showing...</h3>
+            <div class = "checkbox">
+                <label>
+                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios1" value = "type1" data-ng-model = "Thruster" ng-checked=true>
+                        Thruster
+                </label>
+            </div>
+            <div class = "checkbox">
+                <label>
+                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios2" value = "type2" data-ng-model = "Sail" ng-checked = true>
+                        Sail
+                </label>
+            </div>
+        </div>
+        <div class = "divider"></div>
         <div class="col-lg-12">
             <h3>Search Results</h3>
             <h6>Click on the link of each subsystem to learn more.</h6>
@@ -145,6 +198,7 @@
                 <option></option>
             </select>
         </div>
+
         <!--<div class="col-lg-4">
             <h3>Search Filters</h3>
             <div class = "dividersmall"></div>
@@ -167,6 +221,7 @@
                 </label>
             </div>
         </div>-->
+    </div>
         <div class="col-lg-12">
             <div class = "divider"></div>
             <div id="button">
@@ -182,5 +237,6 @@
     <% include footer %>
     <div class = "divider"></div>
 </body>
+
 
 </html>

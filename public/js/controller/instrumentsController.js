@@ -1,7 +1,4 @@
 spaceFrontierApp.controller("instrumentsController", function($scope, $http) {
-    $scope.navBarSrc = "tmpl/navbar.html";
-    $scope.footerSrc = "tmpl/footer.html";
-
     $scope.loading = false;
     $scope.myClick = function() {
         $scope.loading = true;
@@ -11,7 +8,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http) {
 
     $scope.instruments = [];
     $scope.init = function() { 
-		$http.get('http://localhost:3000/parts/instruments').then(function(result) { 
+		$http.get('/parts/instruments').then(function(result) { 
 			$scope.instruments = result.data; 
 		});
     } 

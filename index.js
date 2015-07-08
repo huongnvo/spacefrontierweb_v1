@@ -38,7 +38,7 @@ var ObjectId = Schema.ObjectId;
 var AttitudeFactory = require('./public/js/models/AttitudeFactory.js');
 var attitudefactory = new AttitudeFactory(Schema,mongoose);
 attitudefactory.createSchemas();
-attitudefactory.insertPart();
+// attitudefactory.insertPart();
 
 app.get('/parts/attitude', function(req, res) {
     var resp = attitudefactory.getPart({},res);
@@ -149,7 +149,7 @@ app.delete('/parts/power/:id', function(req, res) {
 var PropulsionFactory = require('./public/js/models/PropulsionFactory.js');
 var propulsionfactory = new PropulsionFactory(Schema,mongoose);
 propulsionfactory.createSchemas();
-propulsionfactory.insertPart();
+// propulsionfactory.insertPart();
 
 app.get('/parts/propulsion', function(req, res) {
     var resp = propulsionfactory.getPart({},res);
@@ -269,38 +269,37 @@ app.get('/list', function (req, res) {
     res.render('../public/tmpl/search.ejs', { title: 'Subsystem Lists' });
 });
 
-app.get('/display/parts/attitude', function (req, res) {
+app.get('/attitude', function (req, res) {
     res.render('../public/tmpl/displayAttitude.ejs', { title: 'Attitude Subsystem' });
 });
 
-app.get('/display/parts/cdh', function (req, res) {
+app.get('/cdh', function (req, res) {
     res.render('../public/tmpl/displayCdh.ejs', { title: 'CDH Subsystem' });
 });
 
-app.get('/display/parts/comm', function (req, res) {
+app.get('/comm', function (req, res) {
     res.render('../public/tmpl/displayComm.ejs', { title: 'Communication Subsystem' });
 });
 
-app.get('/display/parts/instruments', function (req, res) {
+app.get('/instruments', function (req, res) {
     res.render('../public/tmpl/displayInstruments.ejs', { title: 'Instrumentations' });
 });
 
-app.get('/display/parts/power', function (req, res) {
+app.get('/power', function (req, res) {
     res.render('../public/tmpl/displayCdh.ejs', { title: 'Power Subsystem' });
 });
 
-app.get('/display/parts/propulsion', function (req, res) {
+app.get('/propulsion', function (req, res) {
     res.render('../public/tmpl/displayPropulsion.ejs', { title: 'Propulsion Subsystem' });
 });
 
-app.get('/display/parts/station', function (req, res) {
+app.get('/station', function (req, res) {
     res.render('../public/tmpl/displayStation.ejs', { title: 'Ground Stations' });
 });
 
-app.get('/display/parts/thermal', function (req, res) {
+app.get('/thermal', function (req, res) {
     res.render('../public/tmpl/displayThermal.ejs', { title: 'Thermal Subsystem' });
 });
-
 
 app.listen(port);
 console.log('Express server running at http://localhost:' + port);

@@ -1,7 +1,4 @@
 spaceFrontierApp.controller("toolController", function($scope) {
-    $scope.navBarSrc = "tmpl/navbar.html";
-    $scope.footerSrc = "tmpl/footer.html";
-
     $scope.myInterval = 5000;
     var slides = $scope.slides = [];
     $scope.addSlide = function() {
