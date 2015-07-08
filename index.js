@@ -13,6 +13,13 @@ app.set("view options", {
     layout: false
 });
 
+var bodyParser = require('body-parser');
+
+// configure app to use bodyParser()
+// this will let us get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 /* Setting up the database connection ------------------------------------------------*/
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
@@ -48,14 +55,13 @@ app.post('/parts/attitude', function(req, res) {
     var resp = attitudefactory.putPart(req, res);
 });
 
-app.put('/parts/attitude/:id', function(req, res) {
+app.put('/parts/attitude/:_id', function(req, res) {
     var resp = attitudefactory.updatePart(req, res);
 });
 
-app.delete('/parts/attitude/:id', function(req, res) {
-    var resp = attitudefactory.deletePart(req, res);
+app.delete('/parts/attitude/:_id', function(req, res) {
+    var resp = attitudefactory.removePart(req, res);
 });
-
 
 /* Setting up the database for command and data handling ------------------------------*/
 var CdhFactory = require('./public/js/models/CdhFactory.js');
@@ -286,7 +292,7 @@ app.get('/instruments', function (req, res) {
 });
 
 app.get('/power', function (req, res) {
-    res.render('../public/tmpl/displayCdh.ejs', { title: 'Power Subsystem' });
+    res.render('../public/tmpl/displayPower.ejs', { title: 'Power Subsystem' });
 });
 
 app.get('/propulsion', function (req, res) {

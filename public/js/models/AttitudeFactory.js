@@ -723,7 +723,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 	this.updatePart = function(req, res) {
 		this.attitude_parts.update(
  		{
-      		_id: mongoose.ObjectId(req.params._id)
+      		_id: req.params._id
     	}, 
     	{
 			Type: req.body.Type,
@@ -755,15 +755,16 @@ var AttitudeFactory = function(Schema,mongoose) {
     	});
 	};
 
-	this.deletePart = function(req, res) {
-		this.attitude_parts.remove(
-		{
-      		_id: mongoose.ObjectId(req.params._id)
-    	}, 
-    	'', 
-    	function(error, output) {
-      		res.json(output);
-    	});
+	this.removePart = function(req, res) {
+    	this.attitude_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+
+            res.json({ message: 'Successfully deleted' });
+        });
+
 	};
 }
 

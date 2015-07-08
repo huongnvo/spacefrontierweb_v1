@@ -10,15 +10,20 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>User Input</h3>
-                Altitude:<input class="form-control" placeholder="100" data-ng-model="attitude"/>
-                <div class = "divider"></div>
-                Maximum Spatial Resolution:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+              
+                    Altitude:<input class="form-control" placeholder="100" data-ng-model="attitude"/>
+                    <div class = "divider"></div>
+                    Maximum Spatial Resolution:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+
             </div>
             <div class="col-lg-6">
                 <h3>Calculation Results</h3>
-                Angle of Knowledge:<input class="form-control" data-ng-model="result"/>
-                <div class = "divider"></div>
-                Angle of Control:<input class="form-control" data-ng-model="spatial"/>
+                
+                    Angle of Knowledge:<input  class="form-control" data-ng-model="knowledge" readonly="readonly"/>
+                    <div class = "divider"></div>
+                    Angle of Control:<input class="form-control" data-ng-model="control" readonly="readonly"/>
+
+
             </div>
             <div class="col-lg-12">
                 <div class = "dividerlarge"></div>
@@ -32,32 +37,60 @@
         </div>
         <hr>
         <div class="row">
+
+            <div class="col-lg-2" id="search">
+                <h3>List Showing...</h3>
+                <div class = "dividersmall"></div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="ACS" ng-checked=false>
+                            Attitude Control System
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Sensor" ng-checked=false >
+                            Sensor
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Actuator" ng-checked=false>
+                            Actuator
+                    </label>
+                </div>
+            </div>
             <div class="col-lg-8">
                 <h3>Search Results</h3>
                 <h6>Click on the link of each subsystem to learn more.</h6>
+
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control">
-                    <option ng-repeat="part in parts">{{part.Name}}</option>
+                <select multiple class="form-control" data-ng-model="results">
+                    <option ng-repeat="part in parts|filter:okAngle|filter:okType|orderBy:order">
+                       Part Name: {{part.Name}} Recorded Angle: {{part.Angle_prec}} Mass: {{part.Mass}} Power: {{part.Power}} Volume: {{part.Volume}}
+                    </option>
                 </select>
+
+               
             </div>
-            <div class="col-lg-4" id="search">
-                <h3>Search Filters</h3>
+            <div class="col-lg-2" id="search">
+                <h3>Sort by:</h3>
                 <div class = "dividersmall"></div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
                             Mass
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
                             Power
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
                             Volume
                     </label>
                 </div>
