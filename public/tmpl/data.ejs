@@ -115,7 +115,7 @@
 
             <div class = "dividersmall"></div>
             <select multiple class="form-control" data-ng-model="result">
-                <option ng-repeat="part in cdhparts|filter:throughputfilter1|filter>
+                <option ng-repeat="part in cdhparts|filter:throughputfilter1|filter">
                        Part Name: {{part.Name}} MHz: {{part.MHz}} Mass: {{part.Mass}} Power: {{part.Power}} Volume: {{part.Volume}}
                 </option>
             </select>     
@@ -132,7 +132,7 @@
             <div class="radio">
                 <label>
                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Power">
-                            Power
+                        Power
                 </label>
             </div>
             <div class="radio">
@@ -146,8 +146,8 @@
             <div class = "divider"></div>
             <div id="button">
                 <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" href="/tool4" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
-                    <a type="button" href="/tool6" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    <a type="button" ng-click="prevPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                    <a type="button" ng-click="nextPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                 </div>
             </div>
         </div>

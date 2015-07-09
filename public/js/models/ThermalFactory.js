@@ -18,7 +18,7 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Volume: Number,
 		    Proportions: String,
 		    Volume_further: String,
-		    Objectives: String,
+		    Objectives: String
 		});
 		this.thermal_parts = mongoose.model('thermal_parts',Schema);
 	}

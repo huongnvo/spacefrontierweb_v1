@@ -1,8 +1,15 @@
 spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
+    var idstring = window.location.search.slice(1);
+    var cubesatPath = '/parts/cubesat/' + idstring;
+
+    $scope.cubesat = [];
+    $http.get(cubesatPath).then(function(result) { 
+        $scope.cubesat = result.data; 
+    });
 
     $scope.trajectoryparts = [];
     $scope.init = function() { 
-        $http.get('http://localhost:3000/parts/propulsion').then(function(result) { 
+        $http.get('/parts/propulsion').then(function(result) { 
             $scope.trajectoryparts = result.data; 
         });
     } 
@@ -12,38 +19,47 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     $scope.loading = false;
     $scope.myClick = function() {
         $scope.loading = true;
-          var inputspecifics, inputown = 0
-          if($scope.inputoptionOne){
+        var inputspecifics, inputown = 0
+        if($scope.inputoptionOne){
             var inputspecifics = $scope.inputtrajectorydV;
-          }
-          if($scope.inputoptionTwo) {
+        }
+        if($scope.inputoptionTwo) {
             var inputown = $scope.inputown;
-          }
-          var dV = inputown + inputspecifics;
-          $scope.totaldV = dV;
-          $scope.loading = false;
+        }
+        var dV = inputown + inputspecifics;
+        $scope.totaldV = dV;
+        $scope.loading = false;
     }
 
-   $(function () {
+    $(function () {
   		$('[data-toggle="tooltip"]').tooltip()
-	})
+	});
 
-    $scope.okdV=function(part){
-      return part.DeltaV >= $scope.totaldV;
+    $scope.okdV = function(part) {
+        return part.DeltaV >= $scope.totaldV;
     };
-    
 
+    $scope.okType = function(part) {
+        var okType = false;
+        if ($scope.Thruster && part.Type == 'Thruster')
+        {
+            okType = true;
+        }
+        if ($scope.Sail && part.Type == 'Sail')
+        {
+            okType = true;
+        }
+        return okType;
+    };
 
-    $scope.okType=function(part){
-       var okType=false;
-       if($scope.Thruster&&part.Type=='Thruster'){
-            okType=true;
-       }
-       if($scope.Sail&&part.Type=='Sail'){
-            okType=true;
-       }
-       return okType;
-     };
-    
-        
+    $scope.nextPage = function() {
+        var path = '/tool4?' + idstring;
+        window.location = path;    
+    };
+
+    $scope.prevPage = function() {
+        var path = '/tool2?' + idstring;
+        window.location = path; 
+    };
+
 });

@@ -1,8 +1,4 @@
 spaceFrontierApp.controller("dataController", function($scope, $http) {
-    $scope.navBarSrc = "tmpl/navbar.html";
-    $scope.footerSrc = "tmpl/footer.html";
-
-
     //$scope.throughputfilter = function(part) {
     //    var throughput = 0
     //    if($scope.input1 = "option1") {
@@ -16,6 +12,16 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     //    }
     //    return parts.MHz >= $scope.totalbits;
     //}
+    var idstring = window.location.search.slice(1);
+    var cubesatPath = '/parts/cubesat/' + idstring;
+
+    $scope.cubesat = [];
+    $http.get(cubesatPath).then(function(result) { 
+        $scope.cubesat = result.data; 
+    });
+
+    $scope.parts = [];
+    $scope.stations = [];
 
     $scope.loading = false;
     $scope.myClick = function() {
@@ -25,25 +31,35 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
   	$scope.cdhparts = [];
     $scope.init = function() { 
-		$http.get('http://localhost:3000/parts/cdh').then(function(result) { 
+		$http.get('/parts/cdh').then(function(result) { 
 			$scope.cdhparts = result.data; 
 		});
     } 
     $scope.init(); 
+
+    $scope.okType=function(part){
+        var okType=false;
+        if ($scope.OBC && part.Type == 'On-Board Computer (OBC)'){
+            okType = true;
+        }
+        else if ($scope.bus && part.Type == 'Cubesat Bus'){
+            okType = true;
+        }
+        else if ($scope.imageprocessor && part.Type == 'Image Processor'){
+            okType = true;
+        }
+        return okType;
+    };
+
+    $scope.nextPage = function() {
+        var path = '/tool6?' + idstring;
+        window.location = path;    
+    };
+
+    $scope.prevPage = function() {
+        var path = '/tool4?' + idstring;
+        window.location = path; 
+    };
 });
     
 
-
-    $scope.okType=function(part){
-       var okType=false;
-       if($scope.OBC&&part.Type=='On-Board Computer (OBC)'){
-            okType=true;
-       }
-       else if($scope.bus&&part.Type=='Cubesat Bus'){
-            okType=true;
-       }
-       else if($scope.imageprocessor&&part.Type=='Image Processor'){
-            okType=true;
-       }
-       return okType;
-     };
