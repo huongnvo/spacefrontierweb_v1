@@ -785,6 +785,7 @@ var CubesatFactory = function(Schema,mongoose) {
 	this.insertEmptyPart = function(req, res) {
 		var Inst1 = new this.cubesat({
 			Attitude: {
+				id: undefined,
 				Type: undefined,
 				Type_further: undefined,
 				Name: undefined,
