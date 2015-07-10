@@ -9,6 +9,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         partextracted = $scope.cubesat[0];
         $scope.target = partextracted['Target'];
     });
+    $scope.poop='poop';
     $scope.parts = [];
     $scope.stations = [];
 
@@ -22,6 +23,64 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
     } 
     $scope.init(); 
 
+    var dist=0;
+    var frequency=0;
+
+    $scope.loading=false;
+    $scope.myClick=function(){
+        $scope.loading = true;
+        if($scope.target=="Earth_Low"){
+            dist=2000000;
+        }
+        else if($scope.target=='Earth_Medium'){
+            dist=20200000;
+        }
+        else if($scope.target=='High'){
+            dist=40000000;
+        }
+        else if($scope.target=='Moon'){
+            dist=384400000;
+        }else if($scope.target=='Venus'){
+            dist=2.61*Math.pow(10,11);
+        }else if($scope.target=='Mercury'){
+            dist=2.22*Math.pow(10,11);
+        }else if($scope.target=='Mars'){
+            dist=4.01*Math.pow(10,11);
+        }
+
+        if($scope.frequency=="UHF"){
+            frequency=1.65*Math.pow(10,9);
+        }else if($scope.frequency=="S-Band"){
+            frequency=3*Math.pow(10,9);
+        }else if($scope.frequency=="X-Band"){
+            frequency=10*Math.pow(10,9);
+        }else if($scope.frequency=="VHF"){
+            frequency=0.165*Math.pow(10,9);
+        }
+        $scope.spaceLoss=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
+       
+        if($scope.selectedStation.EIRP_ave!=='-'){
+            $scope.receiver=""+parseInt($scope.selectedStation.EIRP_ave)-parseInt($scope.spaceLoss);
+        }else{
+            scope.receiver=$scope.selectedStation.EIRP_ave;
+        }
+        
+        
+        var perGain=0;
+        var perGainString=$scope.selectedStation.Per_gain;
+        if(perGainString.indexOf(',')!==-1){
+            perGain=parseInt(perGainString.substring(0,perGainString.indexOf(',')));
+        }else if(perGainString.indexOf("-")==-1){
+            perGain = parseInt(perGainString);
+        }
+
+        var sigNoise=$scope.selectedAntenna.Gain+$scope.selectedReceiver.Transmit_Power+perGain+228.6-parseInt($scope.spaceLoss)-30;
+        $scope.sigNoise=""+sigNoise;
+        $scope.bitRate=""+Math.pow(10, ((sigNoise-10)/10))/1000;   
+      
+        $scope.loading=false;
+        
+    }
     $scope.getParts = function() {
         $http.get('/parts/comm').then(function(result) { 
             $scope.parts = result.data; 
