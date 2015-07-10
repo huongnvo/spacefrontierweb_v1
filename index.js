@@ -61,6 +61,10 @@ app.delete('/parts/cubesat/:_id', function(req, res) {
     var resp = cubesatfactory.removePart(req, res);
 });
 
+app.put('/parts/cubesat-target/:_id', function(req, res) {
+    var resp = cubesatfactory.updateTarget(req, res);
+});
+
 app.put('/parts/cubesat-attitude/:_id', function(req, res) {
     var resp = cubesatfactory.updateAttitude(req, res);
 });

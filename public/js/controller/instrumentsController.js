@@ -22,7 +22,21 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     };
     $scope.init();
 
+    $scope.targetJson = [{
+        Target: "Earth"
+    }];
+
+    $scope.savePlanet = function(planet) {
+        $scope.targetJson = [{
+            Target: planet
+        }];
+    };
+
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-target/' + idstring, $scope.targetJson[0])
+            .success(function(data) {
+                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+            })
         var path = '/tool2?' + idstring;
         window.location = path;    
     };

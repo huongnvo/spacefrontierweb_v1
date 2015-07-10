@@ -6,6 +6,7 @@ var CubesatFactory = function(Schema,mongoose) {
 
 	this.createSchemas = function() {
 		Schema = new this.Schema({
+			Target: String,
 			Attitude: {
 				id: String,
 				Type: String,
@@ -306,6 +307,18 @@ var CubesatFactory = function(Schema,mongoose) {
     		res.json(output);
     	});
 	};
+
+	this.updateTarget = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Target: req.body.Target}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
 
 	this.updateAttitude = function(req, res) {
 		this.cubesat.update(
@@ -784,6 +797,7 @@ var CubesatFactory = function(Schema,mongoose) {
 
 	this.insertEmptyPart = function(req, res) {
 		var Inst1 = new this.cubesat({
+			Target: undefined,
 			Attitude: {
 				id: undefined,
 				Type: undefined,

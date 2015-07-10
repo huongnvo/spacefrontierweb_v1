@@ -5,6 +5,9 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     $scope.cubesat = [];
     $http.get(cubesatPath).then(function(result) { 
         $scope.cubesat = result.data; 
+        var partextracted = {};
+        partextracted = $scope.cubesat[0];
+        $scope.target = partextracted['Target'];
     });
 
     $scope.trajectoryparts = [];
