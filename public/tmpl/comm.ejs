@@ -79,36 +79,16 @@
 
         <div class="col-lg-6">
             <h3>Calculation Results</h3>
-            Space Loss:<input class="form-control" placeholder="100" data-ng-model="altitude" readonly="readonly"/>
+            Space Loss:<input type="text" class="form-control" placeholder="100" data-ng-model="spaceLoss" readonly="readonly"/>
             <div class = "divider"></div>
-            Signal to Noise Ratio:<input class="form-control" placeholder="10" data-ng-model="resolution" readonly="readonly"/>
+            Signal to Noise Ratio:<input class="form-control" placeholder="10" data-ng-model="sigNoise" readonly="readonly"/>
             <div class = "divider"></div>
-            Receiver:<input class="form-control" placeholder="10" data-ng-model="resolution" readonly="readonly"/>
+            Receiver:<input class="form-control" placeholder="10" data-ng-model="receiver" readonly="readonly"/>
             <div class = "divider"></div>
-            Bit Rate:<input class="form-control" placeholder="10" data-ng-model="resolution" readonly="readonly"/>
+            Bit Rate:<input class="form-control" placeholder="10" data-ng-model="bitRate" readonly="readonly"/>
+
+           
         </div>
-        <!--<div class="col-lg-4" id="search">
-            <h3>Search Filters</h3>
-            <div class = "dividersmall"></div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Attitude Control System
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Sensor and/or Actuator
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        No Filter
-                </label>
-            </div>
-        </div>-->
         <div class="col-lg-12">
             <div class = "divider"></div>
             <div id="button">
@@ -119,8 +99,9 @@
             </div>
         </div>
     </div>
+
     <div class = "divider"></div>
-    <hr>
+    </hr>
     <div data-ng-include src="footerSrc"></div>
     <% include footer %>
     <div class = "divider"></div>
