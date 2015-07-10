@@ -37,6 +37,10 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     } 
     $scope.init(); 
 
+    $scope.savePart = function(part) {
+        $scope.selectedPart = part;
+    };
+
     $scope.okType=function(part){
         var okType=false;
         if ($scope.OBC && part.Type == 'On-Board Computer (OBC)'){
@@ -52,6 +56,10 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     };
 
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-cdh/' + idstring, $scope.selectedPart)
+            .success(function(data) {
+                $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+            });
         var path = '/tool6?' + idstring;
         window.location = path;    
     };

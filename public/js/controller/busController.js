@@ -34,7 +34,31 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
         return part.Type == 'Active Thermal Control' || part.Type == 'Passive Thermal Control';
     };
 
+    $scope.saveBus = function(part) {
+        $scope.selectedBus = part;
+    };
+
+    $scope.saveDeployer = function(part) {
+        $scope.selectedDeployer = part;
+    };
+
+    $scope.saveThermal = function(part) {
+        $scope.selectedThermal = part;
+    };
+
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-bus/' + idstring, $scope.selectedBus)
+            .success(function(data) {
+                $scope.selectedBus = {}; // clear the form so our user is ready to enter another
+            });
+        $http.put('/parts/cubesat-deployer/' + idstring, $scope.selectedDeployer)
+            .success(function(data) {
+                $scope.selectedDeployer = {}; // clear the form so our user is ready to enter another
+            });
+        $http.put('/parts/cubesat-thermal/' + idstring, $scope.selectedThermal)
+            .success(function(data) {
+                $scope.selectedThermal = {}; // clear the form so our user is ready to enter another
+            });
         var path = '/tool8?' + idstring;
         window.location = path;    
     };

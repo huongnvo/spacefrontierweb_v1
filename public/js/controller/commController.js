@@ -45,7 +45,31 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         return part.Band.indexOf($scope.frequency) !== -1;
     };
 
+    $scope.saveStation = function(part) {
+        $scope.selectedStation = part;
+    };
+
+    $scope.saveAntenna = function(part) {
+        $scope.selectedAntenna = part;
+    };
+
+    $scope.saveReceiver = function(part) {
+        $scope.selectedReceiver = part;
+    };  
+
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-station/' + idstring, $scope.selectedStation)
+            .success(function(data) {
+                $scope.selectedStation = {}; // clear the form so our user is ready to enter another
+            });
+        $http.put('/parts/cubesat-antenna/' + idstring, $scope.selectedAntenna)
+            .success(function(data) {
+                $scope.selectedAntenna = {}; // clear the form so our user is ready to enter another
+            });
+        $http.put('/parts/cubesat-receiver/' + idstring, $scope.selectedReceiver)
+            .success(function(data) {
+                $scope.selectedReceiver = {}; // clear the form so our user is ready to enter another
+            });
         var path = '/tool5?' + idstring;
         window.location = path;    
     };

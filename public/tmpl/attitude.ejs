@@ -65,13 +65,12 @@
                 <h6>Click on the link of each subsystem to learn more.</h6>
 
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" data-ng-model="results">
-                    <option ng-repeat="part in parts|filter:okAngle|filter:okType|orderBy:order">
-                       Part Name: {{part.Name}} Recorded Angle: {{part.Angle_prec}} Mass: {{part.Mass}} Power: {{part.Power}} Volume: {{part.Volume}}
+                <select multiple class="form-control">
+                    <option ng-click="savePart(part)" ng-repeat="part in parts|filter:okAngle|filter:okType|orderBy:order">
+                       {{part.Name}}
                     </option>
                 </select>
-
-               
+                <div>{{selectedPart}}</div>
             </div>
             <div class="col-lg-2" id="search">
                 <h3>Sort by:</h3>

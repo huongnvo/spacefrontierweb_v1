@@ -666,7 +666,7 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Volume: req.body.Volume,
 		    Proportions: req.body.Proportions,
 		    Volume_further: req.body.Volume_further,
-		    Objectives: req.body.Objectives,
+		    Objectives: req.body.Objectives
         }, 
         {}, 
         function(error, output) {

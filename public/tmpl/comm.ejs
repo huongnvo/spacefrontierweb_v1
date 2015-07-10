@@ -44,21 +44,21 @@
             <div class = "divider"></div>
             Ground Station:
             <select multiple class="form-control">
-                <option ng-repeat="station in stations|filter: stationFilter">
+                <option ng-click="saveStation(station)" ng-repeat="station in stations|filter: stationFilter">
                     {{station.Name}} 
                 </option>
             </select>
             <div class = "divider"></div>
             Antenna:
             <select multiple class="form-control">
-               <option ng-repeat="part in parts|filter:antennaFilter|filter:frequencyFilter">
+               <option ng-click="saveAntenna(part)" ng-repeat="part in parts|filter:antennaFilter|filter:frequencyFilter">
                     {{part.Frequency}}
                 </option>
             </select>
             <div class = "divider"></div>
             Receiver:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter:radioFilter|filter:frequencyFilter">
+                <option ng-click="saveReceiver(part)" ng-repeat="part in parts|filter:radioFilter|filter:frequencyFilter">
                    {{part.Frequency}}
                 </option>
             </select>
@@ -72,6 +72,7 @@
                 </button>
             </div>
         </div>
+        
     </div>
     <hr>
     <div class="row">

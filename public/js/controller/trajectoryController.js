@@ -14,7 +14,6 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         });
     } 
     $scope.init();
-  
 
     $scope.loading = false;
     $scope.myClick = function() {
@@ -52,7 +51,15 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         return okType;
     };
 
+    $scope.savePart = function(part) {
+        $scope.selectedPart = part;
+    }
+
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-propulsion/' + idstring, $scope.selectedPart)
+            .success(function(data) {
+                $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+            })
         var path = '/tool4?' + idstring;
         window.location = path;    
     };

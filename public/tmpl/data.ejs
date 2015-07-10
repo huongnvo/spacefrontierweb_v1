@@ -115,10 +115,10 @@
 
             <div class = "dividersmall"></div>
             <select multiple class="form-control" data-ng-model="result">
-                <option ng-repeat="part in cdhparts|filter:throughputfilter1|filter">
+                <option ng-click="savePart(part)" ng-repeat="part in cdhparts|filter:throughputfilter1|filter">
                        Part Name: {{part.Name}} MHz: {{part.MHz}} Mass: {{part.Mass}} Power: {{part.Power}} Volume: {{part.Volume}}
                 </option>
-            </select>     
+            </select>    
         </div>
         <div class="col-lg-2" id="search">
             <h3>Sort by:</h3>

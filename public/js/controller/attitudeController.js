@@ -57,7 +57,15 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
         return part.Mass;
     };
 
+    $scope.savePart = function(part) {
+        $scope.selectedPart = part;
+    }
+
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-attitude/' + idstring, $scope.selectedPart)
+            .success(function(data) {
+                $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+            })
         var path = '/tool3?' + idstring;
         window.location = path;    
     };

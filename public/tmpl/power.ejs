@@ -79,21 +79,21 @@
             <div class = "divider"></div>
             Solar Panels:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter: filterSolar">
+                <option ng-click="savePanels(part)" ng-repeat="part in parts|filter: filterSolar">
                        {{part.Name}}
                 </option>
             </select>
             <div class = "divider"></div>
             Batteries:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter: filterBattery">
+                <option ng-click="saveBatteries(part)" ng-repeat="part in parts|filter: filterBattery">
                        {{part.Name}}
                 </option>
             </select>
             <div class = "divider"></div>
             EPS:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter: filterEPS">
+                <option ng-click="saveEPS(part)" ng-repeat="part in parts|filter: filterEPS">
                        {{part.Name}}
                 </option>
             </select>

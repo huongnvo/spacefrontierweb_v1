@@ -227,15 +227,16 @@
             </div>
         </div>
         <div class="col-lg-8">
-                <h3>Search Results</h3>
-                <h6>Click on the link of each subsystem to learn more.</h6>
+            <h3>Search Results</h3>
+            <h6>Click on the link of each subsystem to learn more.</h6>
 
-                <div class = "dividersmall"></div>
-                <select multiple class="form-control" data-ng-model="result">
-                    <option ng-repeat="part in trajectoryparts|filter:okType|filter:okdV">
-                       {{part.Name}}, Manufacturer: {{part.Manufacturer}}, Mass: {{part.Mass}}, Power: {{part.Power}}, Volume: {{part.Volume}}, DeltaV: {{part.DeltaV}}
-                    </option>
-                </select>
+            <div class = "dividersmall"></div>
+            <select multiple class="form-control" data-ng-model="result">
+                <!-- <option ng-repeat="part in trajectoryparts|filter:okType|filter:okdV"> -->
+                <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts">
+                   {{part.Name}}, Manufacturer: {{part.Manufacturer}}, Mass: {{part.Mass}}, Power: {{part.Power}}, Volume: {{part.Volume}}, DeltaV: {{part.DeltaV}}
+                </option>
+            </select>
         </div>
         <div class="col-lg-2">
                 <h3>Sort by:</h3>

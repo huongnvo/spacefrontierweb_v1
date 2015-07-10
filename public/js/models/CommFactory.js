@@ -879,7 +879,7 @@ var CommFactory = function(Schema, mongoose) {
 			Gain_further: req.body.Gain_further,
 			Life_and_Use: req.body.Life_and_Use,
 			Temp_Low: req.body.Temp_Low,
-			Temp_High: Req.body.Temp_High
+			Temp_High: req.body.Temp_High
     	}, 
     	{}, 
     	function(error, output) {

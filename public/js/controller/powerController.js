@@ -38,6 +38,18 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
 
     }; 
 
+    $scope.savePanels = function(part) {
+        $scope.selectedPanels = part;
+    };
+
+    $scope.saveBatteries = function(part) {
+        $scope.selectedBatteries = part;
+    };
+
+    $scope.saveEPS = function(part) {
+        $scope.selectedEPS = part;
+    };
+
     $scope.filterBattery = function(part) {
         return part.Type=='Battery';
     };
@@ -47,6 +59,18 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     };
 
     $scope.nextPage = function() {
+        $http.put('/parts/cubesat-panels/' + idstring, $scope.selectedPanels)
+            .success(function(data) {
+                $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
+            });
+        $http.put('/parts/cubesat-batteries/' + idstring, $scope.selectedBatteries)
+            .success(function(data) {
+                $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
+            });
+        $http.put('/parts/cubesat-eps/' + idstring, $scope.selectedEPS)
+            .success(function(data) {
+                $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
+            });
         var path = '/tool7?' + idstring;
         window.location = path;    
     };

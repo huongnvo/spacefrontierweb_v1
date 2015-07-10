@@ -24,21 +24,21 @@
             <div class = "dividersmall"></div>
             Bus:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter:busType">
+                <option ng-click="saveBus(part)" ng-repeat="part in parts|filter:busType">
                        Part Name: {{part.Name}} Type: {{part.Type}} Volume: {{part.Volume}}
                     </option>
             </select>
             <div class = "divider"></div>
             Deployer:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter:deployerType">
+                <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter:deployerType">
                        Part Name: {{part.Name}} Type: {{part.Type}}
                     </option>
             </select>
             <div class = "divider"></div>
             Thermal:
             <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter:thermalType">
+                <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter:thermalType">
                        Part Name: {{part.Name}} Type: {{part.Type}}
                     </option>
             </select>
