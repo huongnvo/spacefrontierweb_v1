@@ -31,10 +31,6 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>
-                        <a href="" ng-click="order('_id')">_id</a>
-                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
-                    </th>
                     <th> 
                         <a href="" ng-click="order('Band')">Band</a>
                         <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
@@ -47,18 +43,25 @@
                         <a href="" ng-click="order('Location')">Location</a>
                         <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
                     </th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat ="part in parts | orderBy:predicate:reverse">
-                    <td>{{part._id}}</td>
                     <td>{{part.Band}}</td>
                     <td data-toggle="modal" data-target="#myModal">{{part.Name}}</td>
                     <td>{{part.Loc}}</td>
+                    <td> <a type="button" type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-warning">Edit</a> </td>
+                    <td> <a type="button" class="btn btn-danger" ng-click="deletePart(part._id)">Delete</a> </td>
                 </tr>
             </tbody>
         </table>
-
+        <hr>
+        <div id="button">
+            <a type="button" href="/list" class="btn btn-default">Return to Main</a>
+            <a type="button" data-toggle="modal" data-target="#addNewPartModal" class="btn btn-success">Add New Part</a>
+        </div>
         <hr>
         <% include footer %>
         <div class = "divider"></div>
