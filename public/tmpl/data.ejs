@@ -14,7 +14,7 @@
                 <h3>User Input</h3>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="input1"c>
+                        <input type="radio" name="optionsRadios" ng-model= "calc" value="channels">
                             Channels 
                     </label>
                     <input type="number" class="form-control" placeholder="100" data-ng-model="channel"/>
@@ -28,7 +28,7 @@
                 <div class = "dividerlarger"></div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option2" data-ng-model="input1">
+                       <input type="radio" name="optionsRadios" ng-model= "calc" value="arrayx">
                             Array Size - x:
                     </label>
                     <input type="number" class="form-control" placeholder="100" data-ng-model="sizex"/>
@@ -42,39 +42,32 @@
                 <div class = "dividerlarger"></div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option3" data-ng-model="input1">
+                        <input type="radio" name="optionsRadios" ng-model= "calc" value="bps">
                             Bits/Second 
                     </label>
                     <input type="number" class="form-control" placeholder="100" data-ng-model="bitssecond"/>
                 </div>
             </div>
-        </div>
 
-            <!---<div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Array Size (x by y)
-                </label>
+            <div class="col-lg-6">
+                <div class = "divider"></div>
+                Percent of Time Generating Data (x/100):<input class="form-control" type="number" placeholder="10" data-ng-model="percent"/>
             </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Bits per Second
-                </label>
+
+            <div class="col-lg-6">
+                <div class = "divider"></div>
+                Required MIPS:<input class="form-control" type="text" placeholder="0" data-ng-model="mips"/>
             </div>
-        </div> -->
+        </div>
         <div class="col-lg-6">
             <h3>Calculation Results</h3>
             Bits/Second:<input type="number" class="form-control" data-ng-model="totalbits" readonly="readonly"/>
             <div class = "divider"></div>
-            Required Downlink:<input type="number" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+            Required Downlink:<input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            <div class = "divider"></div>
-            Percent of Time Generating Data (x/100):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
-        </div>
+       
         <div class="col-lg-12">
             <div class = "dividerlarge"></div>
             <div id="button">
@@ -113,34 +106,36 @@
             <h3>Search Results</h3>
             <h6>Click on the link of each subsystem to learn more.</h6>
 
-            <div class = "dividersmall"></div>
+            <div class = "dividersmall"></div> 
             <select multiple class="form-control" data-ng-model="result">
-                <option ng-click="savePart(part)" ng-repeat="part in cdhparts|filter:throughputfilter1|filter">
-                       Part Name: {{part.Name}} MHz: {{part.MHz}} Mass: {{part.Mass}} Power: {{part.Power}} Volume: {{part.Volume}}
+                <option ng-click="savePart(part)" ng-repeat="part in cdhparts|filter:okType|filter:okData|orderBy:order">
+                       Part Name: {{part.Name}} Type: {{part.Type}}
                 </option>
             </select>    
         </div>
         <div class="col-lg-2" id="search">
             <h3>Sort by:</h3>
             <div class = "dividersmall"></div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model= "Mass" ng-checked=true>
-                        Mass
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Power">
-                        Power
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Volume">
-                        Volume
-                </label>
-            </div>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
+                                Mass
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
+                                Power
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
+                                Volume
+                        </label>
+                    </div>
+                </div>
         </div>
         <div class="col-lg-12">
             <div class = "divider"></div>
