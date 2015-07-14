@@ -243,7 +243,7 @@
                                                     <button class="button" style="height:43px;width:100px" ng-click="activeButton('Radiowave')" id='Radiowave' data-ng-model="radiowave"> Radiowave </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button  class="button"style="height:105px;width:100px" ng-click="activeButton('Microwave')" id='Microwave' data-ng-model="microwave"> Microwave </button>
+                                                    <button  class="button" style="height:105px;width:100px" ng-click="activeButton('Microwave')" id='Microwave' data-ng-model="microwave"> Microwave </button>
                                                 </div>
                                                 <div class="row">
                                                     <button class="button" style="height:55px;width:100px" ng-click="activeButton('Far-IR')" id='Far-IR' data-ng-model="farIR"> Far-IR </button>
@@ -483,7 +483,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <hr>
@@ -511,13 +510,16 @@
         <div class="row">
             <div class="col-lg-8">
                 <h3>Search Results</h3>
-                <h6>Click on the link of each subsystem to learn more.</h6>
+                <h6>Click on the link of each subsystem to learn more.  {{wavelengths}}</h6>
 
                 <div class = "dividersmall"></div>
+                
+
                 <select multiple class="form-control" data-ng-model="result">
                     <option ng-repeat="instrument in instruments|filter:searchInstruments"> 
-                        {{instrument.Name}}
+                       {{instrument.Name}}
                     </option>
+
                 </select>
             </div>
         </div>
