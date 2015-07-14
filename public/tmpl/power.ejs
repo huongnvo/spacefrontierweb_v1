@@ -14,7 +14,7 @@
                 <h3>Search Results
                 <div class="btn-group">
                     <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Show 
+                    Show (Wing Design):
                     <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="btn-group">
                     <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Show 
+                    Show (Volume):
                     <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
@@ -72,7 +72,7 @@
                 </div>
 
                 </h3>
-                <h6>Click on the link of each subsystem to learn more.</h6>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -90,20 +90,20 @@
             </div>
             <div class="col-lg-6">
                 <h3>Current Design</h3>
-                <h6>Page 6/8</h6>
+                <h6>Solar Panels Selection<br>Page 6/7</h6>
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control" size="14">
                     <option>Target: {{target}}</option>
                     <option>Instrumentation:{{instrumentPart.Name}}</option>
                     <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
                     <option>Antenna: {{antennaPart.Name}}</option>
                     <option>Receiver: {{receiverPart.Name}}</option>
                     <option>CDH: {{cdhPart.Name}}</option>
                     <option>Solar Panels: {{panelsPart.Name}}</option>
                     <option>Batteries: {{batteriesPart.Name}}</option>
                     <option>EPS: {{epsPart.Name}}</option>
-                    <option>Propulsion: {{propulsionPart.Name}}</option>
-                    <option>Ground Station: {{stationPart.Name}}</option>
                     <option>Bus: {{busPart.Name}}</option>
                     <option>Deployer: {{deployerPart.Name}}</option>
                     <option>Thermal: {{thermalPart.Name}}</option>
@@ -117,7 +117,7 @@
             <div class="col-lg-2">
                 <div id="button">
                     <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextBat()">
-                        Search Database
+                        Search Batteries (2/3)
                     </button>
                 </div>
             </div>
@@ -129,7 +129,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Search Results</h3>
-                <h6>Click on the link of each subsystem to learn more.</h6>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -147,20 +147,20 @@
             </div>
             <div class="col-lg-6">
                 <h3>Current Design</h3>
-                <h6>Page 4/8</h6>
+                <h6>Battery Selection<br>Page 6/7</h6>
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control" size="14">
                     <option>Target: {{target}}</option>
                     <option>Instrumentation:{{instrumentPart.Name}}</option>
                     <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
                     <option>Antenna: {{antennaPart.Name}}</option>
                     <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
                     <option>CDH: {{cdhPart.Name}}</option>
                     <option>Solar Panels: {{panelsPart.Name}}</option>
                     <option>Batteries: {{batteriesPart.Name}}</option>
                     <option>EPS: {{epsPart.Name}}</option>
-                    <option>Propulsion: {{propulsionPart.Name}}</option>
-                    <option>Ground Station: {{stationPart.Name}}</option>
                     <option>Bus: {{busPart.Name}}</option>
                     <option>Deployer: {{deployerPart.Name}}</option>
                     <option>Thermal: {{thermalPart.Name}}</option>
@@ -174,7 +174,7 @@
             <div class="col-lg-2">
                 <div id="button">
                     <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextEPS()">
-                        Search Database
+                        Search EPS (3/3)
                     </button>
                 </div>
             </div>
@@ -186,7 +186,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Search Results</h3>
-                <h6>Click on the link of each subsystem to learn more.</h6>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -204,20 +204,20 @@
             </div>
             <div class="col-lg-6">
                 <h3>Current Design</h3>
-                <h6>Page 4/8</h6>
+                <h6>EPS Selection<br>Page 6/7</h6>
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control" size="14">
                     <option>Target: {{target}}</option>
                     <option>Instrumentation:{{instrumentPart.Name}}</option>
                     <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
                     <option>Antenna: {{antennaPart.Name}}</option>
                     <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
                     <option>CDH: {{cdhPart.Name}}</option>
                     <option>Solar Panels: {{panelsPart.Name}}</option>
                     <option>Batteries: {{batteriesPart.Name}}</option>
                     <option>EPS: {{epsPart.Name}}</option>
-                    <option>Propulsion: {{propulsionPart.Name}}</option>
-                    <option>Ground Station: {{stationPart.Name}}</option>
                     <option>Bus: {{busPart.Name}}</option>
                     <option>Deployer: {{deployerPart.Name}}</option>
                     <option>Thermal: {{thermalPart.Name}}</option>

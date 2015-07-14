@@ -4,7 +4,7 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
 
     $scope.cubesat = [];
     $scope.id = '';
-    $scope.attitude = {};
+
     $http.get(cubesatPath).then(function(result) { 
         $scope.cubesat = result.data;
         var partextracted = {};

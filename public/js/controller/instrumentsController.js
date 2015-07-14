@@ -23,7 +23,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.init();
 
     $scope.targetJson = [{
-        Target: "Earth"
+        Target: "Moon"
     }];
 
     

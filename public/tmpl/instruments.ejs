@@ -487,27 +487,15 @@
             </div>
         </div>
         <hr>
-<!--         <div class="divider"></div>
-        <div class="col-lg-12">
-            <div class="divider"></div>
-            <div id="button">
-                <button class="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
-                    <span ng-show="loading">Searching...</span>
-                    <span ng-hide="loading">Search Database</span>
-                </button>
-            </div>
-        </div> -->
-
-            <!-- <select multiple-class="form-control"> -->
-            <select multiple class="form-control">
-                <option ng-click="savePlanet('Earth_Low')">Earth-Low</option>
-                <option ng-click="savePlanet('Earth_Medium')">Earth-Medium</option>
-                 <option ng-click="savePlanet('Earth_High')">Earth-High</option>
-                <option ng-click="savePlanet('Mercury')">Mercury</option>
-                <option ng-click="savePlanet('Mars')">Mars</option>
-                <option ng-click="savePlanet('Venus')">Venus</option>
-                <option ng-click="savePlanet('Moon')">Moon</option>
-            </select>
+        <select multiple class="form-control" size="6">
+            <option ng-click="savePlanet('Earth_Low')">Earth-Low</option>
+            <option ng-click="savePlanet('Earth_Medium')">Earth-Medium</option>
+            <option ng-click="savePlanet('Earth_High')">Earth-High</option>
+            <option ng-click="savePlanet('Mercury')">Mercury</option>
+            <option ng-click="savePlanet('Mars')">Mars</option>
+            <option ng-click="savePlanet('Venus')">Venus</option>
+            <option ng-click="savePlanet('Moon')">Moon</option>
+        </select>
         <div class="row">
             <div class="col-lg-8">
                 <h3>Search Results</h3>

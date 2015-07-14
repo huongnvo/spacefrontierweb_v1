@@ -49,15 +49,34 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         var dV = inputown + inputspecifics;
         $scope.totaldV = dV;
         $scope.showDatabase = true;
-    }
+    };
+
+    var EarthMass=5973600000000000000000000;
+    var MercuryMass=328500000000000000000000;
+    var MarsMass=639000000000000000000000;
+    var VenusMass=4867000000000000000000000;
+    var MoonMass=73467209000000000000000;
+    var G=.0000000000667384;
+    var M;
+    var EarthDirect=0.5;
+    var EarthIndirect=0.02;
+    var dV;
+    var trajectorydV;
+    var RA;
+    var RP;
+    var E;
+    var A;
+    var orbitdV;
+    var incdV;
+    var deg;
 
     $(function () {
-  		$('[data-toggle="tooltip"]').tooltip()
-	});
+        $(".carousel").carousel({ interval: false });
+    });
 
-    $scope.okdV = function(part) {
-        return part.DeltaV >= $scope.totaldV;
-    };
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
 
     $scope.okType = function(part) {
         var okType = false;
@@ -65,11 +84,28 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         {
             okType = true;
         }
-        if ($scope.Sail && part.Type == 'Sail')
+        else if ($scope.Sail && part.Type == 'Sail')
         {
             okType = true;
         }
         return okType;
+    };
+
+    $scope.okdV = function(part) {
+        if($scope.picktrajectoryRadio2){
+          trajectorydV = $scope.inputtrajectorydV;
+        }
+        RA=$scope.apoapsis;
+        RP=$scope.periapsis;
+        E= (2*RA/(RA+RP)) + 1;
+        if($scope.target == "Moon") {
+          M = MoonMass;
+          orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
+        }
+
+        dV = trajectorydV;
+        $scope.totaldV=dV;
+        return part.DeltaV >= dV;
     };
 
     $scope.savePart = function(part) {
@@ -85,7 +121,6 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     };
 
     $scope.nextPage = function() {
-       
         var path = '/tool4?' + idstring;
         window.location = path;    
     };
