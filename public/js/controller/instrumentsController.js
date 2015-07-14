@@ -37,13 +37,18 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     }
   }
 
+  $scope.isSelected = function(id){
+
+    return document.getElementById(id).style.backgroundColor == "blue";
+  }
+
     $scope.searchInstruments=function(Part){
-/*
-        if(Part.Measurement.indexOf("gamma")!=-1&&($scope.gamma||$scope.O|| $scope.Mg||$scope.Si||$scope.K||$scope.Ti||$scope.Fe||$scope.Th||$scope.U)){
+
+        if(Part.Measurement.indexOf("gamma")!=-1&&(isSelected('Gamma')||isSelected('O')||isSelected('Mg')||isSelected('Si')||isSelected('K')||isSelected('Ti')||isSelected('Fe')||isSelected('Th')||isSelected('U'))){
             return true;
-        }else if(Part.Measurement.indexOf("x-ray")!=-1&&($scope.xRay||$scope.Na||$scope.Mg||$scope.Al||$scope.Si||$scope.S||$scope.Ca||K||$scope.Ti||$scope.Fe)){
+        }else if(Part.Measurement.indexOf("x-ray")!=-1&&(isSelected('xRay')||isSelected('Na')||isSelected('Mg')||isSelected('Al')||isSelected('Si')||isSelected('S')||isSelected('Ca')||isSelected('K')||isSelected('Ti')||isSelected('Fe'))){
             return true;
-        }else if(*//*return (Part.Measurement.indexOf("UV")!==-1||Part.Measurement.indexOf("ultraviolet")!==-1);/*&&($scope.ultraviolet||$scope.H||$scope.He||$scope.O||$scope.Na||$scope.Ar||$scope.Ne||$scope.Mg||$scope.Fe||$scope.Si||$scope.S||$scope.Al||$scope.co2)){
+        }/*else if((Part.Measurement.indexOf("UV")!==-1||Part.Measurement.indexOf("ultraviolet")!==-1)&&($scope.ultraviolet||$scope.H||$scope.He||$scope.O||$scope.Na||$scope.Ar||$scope.Ne||$scope.Mg||$scope.Fe||$scope.Si||$scope.S||$scope.Al||$scope.co2)){
             return true;
         }else if(Part.Measurement.indexOf("visible")!=-1&&($scope.visible||$scope.K||$scope.ions||$scope.Li||$scope.hematite||$scope.feldspar||$scope.tiBearing||$scope.sulfatesites||$scope.oxides||$scope.nitrates||$scope.carbonates||$scope.h2o)){
             return true;
@@ -59,13 +64,13 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             return true;
         }else if(Part.Measurement.indexOf("microwave")!=-1&&($scope.microwave||$scope.h2o)){
             return true;
-        }else if(Part.Measurement.indexOf("radio")!=-1&&($scope.radio||$scope.altimetry)){
+        }*/else if(Part.Measurement.indexOf("radio")!=-1&&($scope.radio||$scope.altimetry)){
             return true;
         }else if(Part.Measurement.indexOf("magnetic")!=-1&&$scope.magnetic){
             return true;
         }
         //Measurement-particle detection
-        else if(Part.Measurement.indexOf("particle")!=-1&&($scope.ions||$scope.electrons||$scope.neutrons||$scope.decayParticles||$scope.magnetic)){
+         else if(Part.Measurement.indexOf("particle")!=-1&&($scope.ions||$scope.electrons||$scope.neutrons||$scope.decayParticles||$scope.magnetic)){
             return true;
         }else if(Part.Measurement.indexOf("particle")!=-1&&$scope.electrons){
             return true;
@@ -81,9 +86,9 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         else if(Part.Measurement.indexOf("heavy")!=-1&&$scope.decayParticles){
             return true;
         }
-        return false;*/
+        
 
-        return true;
+        return false;
     }
 
     $scope.savePlanet = function(planet) {
