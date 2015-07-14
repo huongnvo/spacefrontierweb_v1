@@ -82,4 +82,15 @@ a {
     display: block;
 }
 
+.button {
+  border: none;
+  color: #fff;
+  background: #87CEFA;
+  font-weight: 700;
+  text-align:right;
+  border-radius: 4px;
+  outline-style: dotted;
+  outline-color: #fff
+}
+
 
