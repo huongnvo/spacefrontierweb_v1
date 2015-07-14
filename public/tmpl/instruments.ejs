@@ -14,15 +14,18 @@
                 <div class="accordion" id="accordion1">
                     <div class="accordion-group">
                         <div class = "accordion-heading">
+
+
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
                                 <b>Elements</b>
                             </a>
                         </div>
                         <div id="collapseOne" class="accordion-body collapse in" collapse=true>
                                 <div class="accordion-inner">
+
                                     <div class="row">
                                             <div class="col-lg-12">
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="H"> H </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('H')" id='H' ng-data-model="H" > H </button>
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -39,11 +42,14 @@
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="He"> He </button>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('He')" id='He' ng-data-model="He"> He </button>
                                             </div> 
                                             <div class="col-lg-12">
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Li"> Li </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Be"> Be </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Li')" id='Li' ng-data-model="Li"> Li </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Be')" id='Be' ng-data-model="Be"> Be </button>
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -54,17 +60,20 @@
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                &nbsp&nbsp
+
                                                
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="B"> B </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="C"> C </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="N"> N </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="O"> O </button>
-                                                <button type="button" style="height:35px;width:35px"ng-data-model= "F"> F </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ne"> Ne </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('B')" id='B' ng-data-model="B"> B </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('C')" id='C' ng-data-model="C"> C </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('N')" id='N' ng-data-model="N"> N </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('O')" id='O' ng-data-model="O"> O </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('F')" id='F' ng-data-model= "F"> F </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ne')" id='Ne' ng-data-model="Ne"> Ne </button>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Na"> Na </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Mg"> Mg </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Na')" id='Na' ng-data-model="Na"> Na </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Mg')" id='Mg' ng-data-model="Mg"> Mg </button>
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -75,131 +84,139 @@
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Al"> Al </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Si"> Si </button>
-                                                <button type="button" style="height:35px;width:35px"ng-data-model="P"> P </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="S"> S </button>
-                                                <button type="button" style="height:35px;width:35px"ng-data-model="Cl"> Cl </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ar"> Ar </button>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                 &nbsp&nbsp
+                                               
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Al')" id='Al' ng-data-model="Al"> Al </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Si')" id='Si' ng-data-model="Si"> Si </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('P')" id='P' ng-data-model="P"> P </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('S')" id='S' ng-data-model="S"> S </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cl')" id='Cl' ng-data-model="Cl"> Cl </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ar')" id='Ar' ng-data-model="Ar"> Ar </button>
                                             </div>
                                             <div class="col-lg-12"> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="K"> K </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ca"> Ca </button>
-                                                <button type="button" style="height:35px;width:35px"ng-data-model="Sc"> Sc </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ti"> Ti </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="V"> V </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Cr"> Cr </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Mn"> Mn </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Fe"> Fe </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Co"> Co </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ni"> Ni </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Cu"> Cu </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Zn"> Zn </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ga"> Ga </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ge"> Ge </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="As"> As </button>
-                                                <button type="button" style="height:35px;width:35px"ng-data-model="Se"> Se </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Br"> Br </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Kr"> Kr </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('K')" id='K' ng-data-model="K"> K </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ca')" id='Ca' ng-data-model="Ca"> Ca </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Sc')" id='Sc' ng-data-model="Sc"> Sc </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ti')" id='Ti' ng-data-model="Ti"> Ti </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('V')" id='V' ng-data-model="V"> V </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cr')" id='Cr' ng-data-model="Cr"> Cr </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Mn')" id='Mn' ng-data-model="Mn"> Mn </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Fe')" id='Fe' ng-data-model="Fe"> Fe </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Co')" id='Co' ng-data-model="Co"> Co </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ni')" id='Ni' ng-data-model="Ni"> Ni </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cu')" id='Cu' ng-data-model="Cu"> Cu </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Zn')" id='Zn' ng-data-model="Zn"> Zn </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ga')" id='Ga' ng-data-model="Ga"> Ga </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ge')" id='Ge' ng-data-model="Ge"> Ge </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('As')" id='As' ng-data-model="As"> As </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Se')" id='Se' ng-data-model="Se"> Se </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Br')" id='Br' ng-data-model="Br"> Br </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Kr')" id='Kr' ng-data-model="Kr"> Kr </button>
                                             </div>
                                             <div class="col-lg-12"> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Rb"> Rb </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Sr"> Sr </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Y"> Y </button>
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Zr"> Zr </button> 
-                                                <button type="button" style="height:35px;width:35px"  ng-data-model="Nb"> Nb </button>
-                                                <button type="button" style="height:35px;width:35px"  ng-data-model="Mo"> Mo </button>  
-                                                <button type="button" style="height:35px;width:35px"> Tc </button>
-                                                <button type="button" style="height:35px;width:35px"> Ru </button> 
-                                                <button type="button" style="height:35px;width:35px"> Rh </button> 
-                                                <button type="button" style="height:35px;width:35px"> Pd </button>
-                                                <button type="button" style="height:35px;width:35px"> Ag </button>
-                                                <button type="button" style="height:35px;width:35px"> Cd </button>  
-                                                <button type="button" style="height:35px;width:35px"> In </button>
-                                                <button type="button" style="height:35px;width:35px"> Sn </button> 
-                                                <button type="button" style="height:35px;width:35px"> Sb </button>  
-                                                <button type="button" style="height:35px;width:35px"> Te </button> 
-                                                <button type="button" style="height:35px;width:35px"> I </button>
-                                                <button type="button" style="height:35px;width:35px"> Xe </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Rb')" id='Rb' ng-data-model="Rb"> Rb </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Sr')" id='Sr' ng-data-model="Sr"> Sr </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Y')" id='Y' ng-data-model="Y"> Y </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Zr')" id='Zr' ng-data-model="Zr"> Zr </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Nb')" id='Nb' ng-data-model="Nb"> Nb </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Mo')" id='Mo' ng-data-model="Mo"> Mo </button>  
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Tc')" id='Tc' ng-data-model="Tc"> Tc </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ru')" id='Ru' ng-data-model="Ru"> Ru </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Rh')" id='Rh' ng-data-model="Rh"> Rh </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pd')" id='Pd' ng-data-model="Pd"> Pd </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ag')" id='Ag' ng-data-model="Ag"> Ag </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cd')" id='Cd' ng-data-model="Cd"> Cd </button>  
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('In')" id='In' ng-data-model="In"> In </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Sn')" id='Sn' ng-data-model="Sn"> Sn </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Sb')" id='Sb' ng-data-model="Sb"> Sb </button>  
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Te')" id='Te' ng-data-model="Te"> Te </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('I')" id='I' ng-data-model="I"> I </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Xe')" id='Xe' ng-data-model="Xe"> Xe </button>
                                             </div>
                                             <div class="col-lg-12"> 
-                                                <button type="button" style="height:35px;width:35px"> Cs </button>
-                                                <button type="button" style="height:35px;width:35px"> Ba </button> 
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
-                                                <button type="button" style="height:35px;width:35px"> Hf </button> 
-                                                <button type="button" style="height:35px;width:35px"> Ta </button>
-                                                <button type="button" style="height:35px;width:35px"> W </button>
-                                                <button type="button" style="height:35px;width:35px"> Re </button>
-                                                <button type="button" style="height:35px;width:35px"> Os </button> 
-                                                <button type="button" style="height:35px;width:35px"> Ir </button> 
-                                                <button type="button" style="height:35px;width:35px"> Pt </button> 
-                                                <button type="button" style="height:35px;width:35px"> Au </button>
-                                                <button type="button" style="height:35px;width:35px"> Hg </button> 
-                                                <button type="button" style="height:35px;width:35px"> Tl </button>
-                                                <button type="button" style="height:35px;width:35px"> Pb </button>
-                                                <button type="button" style="height:35px;width:35px"> Bi </button>
-                                                <button type="button" style="height:35px;width:35px"> Po </button> 
-                                                <button type="button" style="height:35px;width:35px"> At </button> 
-                                                <button type="button" style="height:35px;width:35px"> Rn </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cs')" id='Cs' ng-data-model="Cs"> Cs </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ba')" id='Ba' ng-data-model="Ba"> Ba </button> 
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Hf')" id='Hf' ng-data-model="Hf"> Hf </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ta')" id='Ta' ng-data-model="Ta"> Ta </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('W')" id='W' ng-data-model="W"> W </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Re')" id='Re' ng-data-model="Re"> Re </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Os')" id='Os' ng-data-model="Os"> Os </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ir')" id='Ir' ng-data-model="Ir"> Ir </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pt')" id='Pt' ng-data-model="Pt"> Pt </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Au')" id='Au' ng-data-model="Au"> Au </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Hg')" id='Hg' ng-data-model="Hg"> Hg </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Tl')" id='Tl' ng-data-model="Tl"> Tl </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pb')" id='Pb' ng-data-model="Pb"> Pb </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Bi')" id='Bi' ng-data-model="Bi"> Bi </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Po')" id='Po' ng-data-model="Po"> Po </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('At')" id='At' ng-data-model="At"> At </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Rn')" id='Rn' ng-data-model="Rn"> Rn </button> 
                                             </div>
                                             <div class="col-lg-12"> 
-                                                <button type="button" style="height:35px;width:35px"> Fr </button> 
-                                                <button type="button" style="height:35px;width:35px"> Ra </button> 
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
-                                                <button type="button" style="height:35px;width:35px"> Rf </button> 
-                                                <button type="button" style="height:35px;width:35px"> Db </button>
-                                                <button type="button" style="height:35px;width:35px"> Sg </button>
-                                                <button type="button" style="height:35px;width:35px"> Bh </button> 
-                                                <button type="button" style="height:35px;width:35px"> Hs </button> 
-                                                <button type="button" style="height:35px;width:35px"> Mt </button> 
-                                                <button type="button" style="height:35px;width:35px"> Ds </button>
-                                                <button type="button" style="height:35px;width:35px"> Rg </button>
-                                                <button type="button" style="height:35px;width:35px"> Cn </button>
-                                                <button type="button" style="height:35px;width:35px"> Uut </button>
-                                                <button type="button" style="height:35px;width:35px"> Fi </button> 
-                                                <button type="button" style="height:35px;width:35px"> Uup </button>
-                                                <button type="button" style="height:35px;width:35px"> Lv </button> 
-                                                <button type="button" style="height:35px;width:35px"> Uus </button>
-                                                <button type="button" style="height:35px;width:35px"> Uuo </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Fr')" id='Fr' ng-data-model="Fr"> Fr </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ra')" id='Ra' ng-data-model="Ra"> Ra </button> 
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Rf')" id='Rf' ng-data-model="Rf"> Rf </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Db')" id='Db' ng-data-model="Db"> Db </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Sg')" id='Sg' ng-data-model="Sg"> Sg </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Bh')" id='Bh' ng-data-model="Bh"> Bh </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Hs')" id='Hs' ng-data-model="Hs"> Hs </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Mt')" id='Mt' ng-data-model="Mt"> Mt </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ds')" id='Ds' ng-data-model="Ds"> Ds </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Rg')" id='Rg' ng-data-model="Rg"> Rg </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cn')" id='Cn' ng-data-model="Cn"> Cn </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Uut')" id='Uut' ng-data-model="Uut"> Uut </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Fi')" id='Fi' ng-data-model="Fi"> Fi </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Uup')" id='Uup' ng-data-model="Uup"> Uup </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Lv')" id='Lv' ng-data-model="Lv"> Lv </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Uus')" id='Uus' ng-data-model="Uus"> Uus </button>
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Uuo')" id='Uuo' ng-data-model="Uuo"> Uuo </button>
                                             </div>
                                             <div class = "divider"></div>
                                             <div class="bottom">
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                <button type="button" style="height:35px;width:35px"> La </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Ca"> Ca </button> 
-                                                <button type="button" style="height:35px;width:35px"> Pr </button> 
-                                                <button type="button" style="height:35px;width:35px"> Nd </button> 
-                                                <button type="button" style="height:35px;width:35px"> Pm </button> 
-                                                <button type="button" style="height:35px;width:35px"> Sm </button> 
-                                                <button type="button" style="height:35px;width:35px"> Eu </button> 
-                                                <button type="button" style="height:35px;width:35px"> Gd </button> 
-                                                <button type="button" style="height:35px;width:35px"> Tb </button> 
-                                                <button type="button" style="height:35px;width:35px"> Dy </button> 
-                                                <button type="button" style="height:35px;width:35px"> Ho </button> 
-                                                <button type="button" style="height:35px;width:35px"> Er </button> 
-                                                <button type="button" style="height:35px;width:35px"> Tm </button> 
-                                                <button type="button" style="height:35px;width:35px"> Yb </button> 
-                                                <button type="button" style="height:35px;width:35px"> Lu </button> 
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                               
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('La')" id='La' ng-data-model="La"> La </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ca')" id='Ca' ng-data-model="Ca"> Ca </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pr')" id='Pr' ng-data-model="Pr"> Pr </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Nd')" id='Nd' ng-data-model="Nd"> Nd </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pm')" id='Pm' ng-data-model="Pm"> Pm </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Sm')" id='Sm' ng-data-model="Sm"> Sm </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Eu')" id='Eu' ng-data-model="Eu"> Eu </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Gd')" id='Gd' ng-data-model="Gd"> Gd </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Tb')" id='Tb' ng-data-model="Tb"> Tb </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Dy')" id='Dy' ng-data-model="Dy"> Dy </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ho')" id='Ho' ng-data-model="Ho"> Ho </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Er')" id='Er' ng-data-model="Er"> Er </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Tm')" id='Tm' ng-data-model="Tm"> Tm </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Yb')" id='Yb' ng-data-model="Yb"> Yb </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Lu')" id='Lu' ng-data-model="Lu"> Lu </button> 
                                             </div>
                                             <div class="bottom">
+                                               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                <button type="button" style="height:35px;width:35px"> Ac </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="Th"> Th </button> 
-                                                <button type="button" style="height:35px;width:35px"> Pa </button> 
-                                                <button type="button" style="height:35px;width:35px" ng-data-model="U"> U </button> 
-                                                <button type="button" style="height:35px;width:35px"> Np </button> 
-                                                <button type="button" style="height:35px;width:35px"> Pu </button> 
-                                                <button type="button" style="height:35px;width:35px"> Am </button> 
-                                                <button type="button" style="height:35px;width:35px"> Cm </button> 
-                                                <button type="button" style="height:35px;width:35px"> Bk </button> 
-                                                <button type="button" style="height:35px;width:35px"> Cf </button> 
-                                                <button type="button" style="height:35px;width:35px"> Es </button> 
-                                                <button type="button" style="height:35px;width:35px"> Fm </button> 
-                                                <button type="button" style="height:35px;width:35px"> Md </button> 
-                                                <button type="button" style="height:35px;width:35px"> No </button> 
-                                                <button type="button" style="height:35px;width:35px"> Lr </button> 
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Ac')" id='Ac' ng-data-model="Ac"> Ac </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Th')" id='Th' ng-data-model="Th"> Th </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pa')" id='Pa' ng-data-model="Pa"> Pa </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('U')" id='U' ng-data-model="U"> U </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Np')" id='Np' ng-data-model="Np"> Np </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Pu')" id='Pu' ng-data-model="Pu"> Pu </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Am')" id='Am' ng-data-model="Am"> Am </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cm')" id='Cm' ng-data-model="Cm"> Cm </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Bk')" id='Bk' ng-data-model="Bk"> Bk </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Cf')" id='Cf' ng-data-model="Cf"> Cf </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Es')" id='Es' ng-data-model="Es"> Es </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Fm')" id='Fm' ng-data-model="Fm"> Fm </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Md')" id='Md' ng-data-model="Md"> Md </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('No')" id='No' ng-data-model="No"> No </button> 
+                                                <button class="button" style="height:40px;width:40px" ng-click="activeButton('Lr')" id='Lr' ng-data-model="Lr"> Lr </button> 
                                             </div> 
                                     </div>
                                 </div>
@@ -216,44 +233,44 @@
                                     <div class = "row">
                                         <div class= "col">
                                             <div class="col-lg-1">
-                                                <img src = "/img/wavelengthRuler.jpg"  style = " width:85px;height:535px"> </img>
+                                                <img src = "/img/wavelengthRuler.jpg"  style = " width:85px;height:540px" ng-click="activeButton('id')"> </img>
                                             </div>
                                             
                                             <div class="col-lg-11">
                                                 <div class = "divider"></div>
                                                 <div class = "divider"></div>
                                                 <div class="row">
-                                                    <button type="button" style="height:43px;width:100px" ng-data-model="radiowave"> Radiowave </button>
+                                                    <button class="button" style="height:43px;width:100px" ng-click="activeButton('Radiowave')" id='Radiowave' ng-data-model="radiowave"> Radiowave </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:105px;width:100px" ng-data-model="microwave"> Microwave </button>
+                                                    <button  class="button"style="height:105px;width:100px" ng-click="activeButton('Microwave')" id='Microwave' ng-data-model="microwave"> Microwave </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:55px;width:100px" ng-data-model="farIR"> Far-IR </button>
+                                                    <button class="button" style="height:55px;width:100px" ng-click="activeButton('Far-IR')" id='Far-IR' ng-data-model="farIR"> Far-IR </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:22px;width:100px" ng-data-model="longIR"> Long-IR </button>
+                                                    <button class="button" style="height:22px;width:100px" ng-click="activeButton('Long-IR')" id='Long-IR' ng-data-model="longIR"> Long-IR </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:22px;width:100px" ng-data-model="midIR"> Mid-IR </button>
+                                                    <button class="button" style="height:22px;width:100px" ng-click="activeButton('Mid-IR')" id='Mid-IR' ng-data-model="midIR"> Mid-IR </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:22px;width:100px" ng-data-model="shortIR"> Short-IR </button>
+                                                    <button class="button" style="height:22px;width:100px" ng-click="activeButton('Short-IR')" id='Short-IR' ng-data-model="shortIR"> Short-IR </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:22px;width:100px" ng-data-model="nearIR"> Near-IR </button>
+                                                    <button class="button" style="height:22px;width:100px" ng-click="activeButton('Near-IR')" id='Near-IR' ng-data-model="nearIR"> Near-IR </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:22px;width:100px" ng-data-model="visible"> Visible </button>
+                                                    <button class="button" style="height:22px;width:100px" ng-click="activeButton('Visible')" id='Visible' ng-data-model="visible"> Visible </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:53px;width:100px" ng-data-model="ultraviolet"> Ultraviolet </button>
+                                                    <button class="button" style="height:53px;width:100px" ng-click="activeButton('UV')" id='UV' ng-data-model="ultraviolet"> Ultraviolet </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:63px;width:100px" ng-data-model="xRay"> X-Ray </button>
+                                                    <button class="button" style="height:63px;width:100px" ng-click="activeButton('X-ray')" id='X-ray' ng-data-model="xRay"> X-Ray </button>
                                                 </div>
                                                 <div class="row">
-                                                    <button type="button" style="height:53px;width:100px" ng-data-model="gamma"> Gamma </button>
+                                                    <button class="button" style="height:53px;width:100px" ng-click="activeButton('Gamma')" id='Gamma' ng-data-model="gamma"> Gamma </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -274,104 +291,104 @@
                                         <div class="col-lg-10">
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="pyroxene">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="pyroxene">
                                                             pyroxene
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="olivine">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="olivine">
                                                             olivine
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="hematite">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="hematite">
                                                             hematite
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="feldspar">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="feldspar">
                                                             feldspar
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="tiBearing">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="tiBearing">
                                                             Ti-bearing
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="sulfatesites">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="sulfatesites">
                                                             sulf/ates/ites
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="oxides">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="oxides">
                                                             oxides
                                                 </label>
                                             </div>
 
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="nitrates">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="nitrates">
                                                             nitrates
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="carbonates">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="carbonates">
                                                             carbonates
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="chChains">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="chChains">
                                                             c-h chains
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="clay">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="clay">
                                                             clay
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="phyllosilicate">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="phyllosilicate">
                                                             phyllosilicate
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="h2o">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="h2o">
                                                             h2o
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="co2">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="co2">
                                                             co2
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="ch4">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="ch4">
                                                             ch4
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="nh3">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="nh3">
                                                             nh3
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "compounds"  value="o3">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="o3">
                                                             o3
                                                 </label>
                                             </div>
@@ -394,25 +411,25 @@
                                         <div class="col-lg-10">
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "particles"  value="ions">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="ions">
                                                             ions
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "particles"  value="electrons">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="electrons">
                                                             electrons
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "particles"  value="neutrons">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="neutrons">
                                                             neutrons
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" name="optionsRadios" ng-model= "particles"  value="decayParticles">
+                                                    <input type="checkbox" name="optionsRadios" ng-data-model="decayParticles">
                                                             decay particles
                                                 </label>
                                             </div>
@@ -474,7 +491,7 @@
         <div class="col-lg-12">
             <div class="divider"></div>
             <div id="button">
-                <button type="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
+                <button class="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
                     <span ng-show="loading">Searching...</span>
                     <span ng-hide="loading">Search Database</span>
                 </button>
@@ -483,7 +500,9 @@
 
             <!-- <select multiple-class="form-control"> -->
             <select multiple class="form-control">
-                <option ng-click="savePlanet('Earth')">Earth</option>
+                <option ng-click="savePlanet('Earth_Low')">Earth-Low</option>
+                <option ng-click="savePlanet('Earth_Medium')">Earth-Medium</option>
+                 <option ng-click="savePlanet('Earth_High')">Earth-High</option>
                 <option ng-click="savePlanet('Mercury')">Mercury</option>
                 <option ng-click="savePlanet('Mars')">Mars</option>
                 <option ng-click="savePlanet('Venus')">Venus</option>
@@ -496,7 +515,9 @@
 
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control" data-ng-model="result">
-                    <option> </option>
+                    <option ng-repeat="instrument in instruments"> 
+                        {{instrument.Name}}
+                    </option>
                 </select>
             </div>
         </div>
@@ -506,8 +527,8 @@
                 <div class = "divider"></div>
                 <div id="button">
                     <div class="btn-group" role="group" aria-label="...">
-                        <a type="button" ng-click="prevPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="nextPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a ng-click="prevPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                        <a ng-click="nextPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
