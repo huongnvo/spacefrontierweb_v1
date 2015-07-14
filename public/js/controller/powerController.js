@@ -1,11 +1,34 @@
 spaceFrontierApp.controller("powerController", function($scope, $http) {
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
+    $scope.showPanels = true;
+    $scope.showBatteries = false;
+    $scope.showEPS = false;
 
     $scope.cubesat = [];
-    $http.get(cubesatPath).then(function(result) { 
-        $scope.cubesat = result.data; 
-    });
+    $scope.updateData = function() {
+        $http.get(cubesatPath).then(function(result) { 
+            $scope.cubesat = result.data;
+            var partextracted = {};
+            partextracted = $scope.cubesat[0];
+
+            $scope.target = partextracted['Target'];
+            $scope.attitudePart = partextracted['Attitude'];
+            $scope.antennaPart = partextracted['Antenna'];
+            $scope.receiverPart = partextracted['Receiver'];
+            $scope.cdhPart = partextracted['Cdh'];
+            $scope.instrumentPart = partextracted['Instrument'];
+            $scope.panelsPart = partextracted['Panels'];
+            $scope.batteriesPart = partextracted['Batteries'];
+            $scope.epsPart = partextracted['EPS'];
+            $scope.propulsionPart = partextracted['Propulsion'];
+            $scope.stationPart = partextracted['Station'];
+            $scope.busPart = partextracted['Bus'];
+            $scope.deployerPart = partextracted['Deployer'];
+            $scope.thermalPart = partextracted['Thermal'];
+        }); 
+    };
+    $scope.updateData();
 
     $scope.parts = [];
     $scope.init = function() { 
@@ -49,6 +72,43 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.saveEPS = function(part) {
         $scope.selectedEPS = part;
     };
+
+    $scope.addPanels = function() {
+        $http.put('/parts/cubesat-panels/' + idstring, $scope.selectedPanels)
+            .success(function(data) {
+                $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
+            });
+        $scope.updateData();
+    };
+
+    $scope.addBatteries = function() {
+         $http.put('/parts/cubesat-batteries/' + idstring, $scope.selectedBatteries)
+            .success(function(data) {
+                $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
+            });
+        $scope.updateData();
+    };
+
+    $scope.nextBat = function() {
+        $scope.showPanels = true;
+        $scope.showBatteries = true;
+        $scope.showEPS = false;
+    };
+
+    $scope.nextEPS = function() {
+        $scope.showPanels = true;
+        $scope.showBatteries = true;
+        $scope.showEPS = true;
+    };
+    
+    $scope.addEPS = function() {
+        $http.put('/parts/cubesat-eps/' + idstring, $scope.selectedEPS)
+            .success(function(data) {
+                $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
+            });
+        $scope.updateData();
+    };
+
 
     $scope.filterBattery = function(part) {
         return part.Type=='Battery';

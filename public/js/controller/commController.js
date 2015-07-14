@@ -1,17 +1,38 @@
 spaceFrontierApp.controller("commController", function($scope, $http) {
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
+    $scope.showStation = false;
+    $scope.showAntenna = false;
+    $scope.showReceiver = false;
+    $scope.showCalculation = false;
 
-    $scope.cubesat = [];
-    $http.get(cubesatPath).then(function(result) { 
-        $scope.cubesat = result.data; 
-        var partextracted = {};
-        partextracted = $scope.cubesat[0];
-        $scope.target = partextracted['Target'];
-    });
-    $scope.poop='poop';
     $scope.parts = [];
     $scope.stations = [];
+    $scope.cubesat = [];
+    $scope.updateData = function() {
+        $http.get(cubesatPath).then(function(result) { 
+            $scope.cubesat = result.data;
+            var partextracted = {};
+            partextracted = $scope.cubesat[0];
+
+            $scope.target = partextracted['Target'];
+            $scope.attitudePart = partextracted['Attitude'];
+            $scope.antennaPart = partextracted['Antenna'];
+            $scope.receiverPart = partextracted['Receiver'];
+            $scope.cdhPart = partextracted['Cdh'];
+            $scope.instrumentPart = partextracted['Instrument'];
+            $scope.panelsPart = partextracted['Panels'];
+            $scope.batteriesPart = partextracted['Batteries'];
+            $scope.epsPart = partextracted['EPS'];
+            $scope.propulsionPart = partextracted['Propulsion'];
+            $scope.stationPart = partextracted['Station'];
+            $scope.busPart = partextracted['Bus'];
+            $scope.deployerPart = partextracted['Deployer'];
+            $scope.thermalPart = partextracted['Thermal'];
+
+        }); 
+    };
+    $scope.updateData();
 
     $scope.init = function() { 
         $http.get('http://localhost:3000/parts/comm').then(function(result) { 
@@ -26,9 +47,34 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
     var dist=0;
     var frequency=0;
 
-    $scope.loading=false;
-    $scope.myClick=function(){
-        $scope.loading = true;
+    $scope.myClick = function() {
+        $scope.showStation = true;
+        $scope.showAntenna = false;
+        $scope.showReceiver = false;
+        $scope.showCalculation = false;
+    };
+
+    $scope.nextAnt = function() {
+        $scope.showStation = true;
+        $scope.showAntenna = true;
+        $scope.showReceiver = false;
+        $scope.showCalculation = false;
+    };
+
+    $scope.nextRec = function() {
+        $scope.showStation = true;
+        $scope.showAntenna = true;
+        $scope.showReceiver = true;
+        $scope.showCalculation = false;
+    };
+
+
+    $scope.calculate=function(){
+        $scope.showStation = true;
+        $scope.showAntenna = true;
+        $scope.showReceiver = true;
+        $scope.showCalculation = true;
+
         if($scope.target=="Earth_Low"){
             dist=2000000;
         }
@@ -59,13 +105,13 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         }
         $scope.spaceLoss=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
        
+
         if($scope.selectedStation.EIRP_ave!=='-'){
             $scope.receiver=""+parseInt($scope.selectedStation.EIRP_ave)-parseInt($scope.spaceLoss);
         }else{
-            scope.receiver=$scope.selectedStation.EIRP_ave;
+            $scope.receiver=$scope.selectedStation.EIRP_ave;
         }
-        
-        
+         
         var perGain=0;
         var perGainString=$scope.selectedStation.Per_gain;
         if(perGainString.indexOf(',')!==-1){
@@ -76,16 +122,18 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
 
         var sigNoise=$scope.selectedAntenna.Gain+$scope.selectedReceiver.Transmit_Power+perGain+228.6-parseInt($scope.spaceLoss)-30;
         $scope.sigNoise=""+sigNoise;
-        $scope.bitRate=""+Math.pow(10, ((sigNoise-10)/10))/1000;   
-      
-        $scope.loading=false;
-        
-    }
+        $scope.bitRate=""+Math.pow(10, ((sigNoise-10)/10))/1000;  
+
+        $scope.selectedStation = {};    
+        $scope.selectedAntenna = {}; 
+        $scope.selectedReceiver = {};    
+    };
+
     $scope.getParts = function() {
         $http.get('/parts/comm').then(function(result) { 
             $scope.parts = result.data; 
         });
-         $http.get('/parts/station').then(function(result) { 
+        $http.get('/parts/station').then(function(result) { 
             $scope.stations = result.data; 
         });
     }; 
@@ -119,19 +167,31 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.selectedReceiver = part;
     };  
 
-    $scope.nextPage = function() {
+    $scope.addStation = function() {
         $http.put('/parts/cubesat-station/' + idstring, $scope.selectedStation)
             .success(function(data) {
-                $scope.selectedStation = {}; // clear the form so our user is ready to enter another
+                 // clear the form so our user is ready to enter another
             });
+        $scope.updateData();
+    };
+
+    $scope.addAntenna = function() {
         $http.put('/parts/cubesat-antenna/' + idstring, $scope.selectedAntenna)
             .success(function(data) {
-                $scope.selectedAntenna = {}; // clear the form so our user is ready to enter another
+                 // clear the form so our user is ready to enter another
             });
+        $scope.updateData();
+    };
+
+    $scope.addReceiver = function() {
         $http.put('/parts/cubesat-receiver/' + idstring, $scope.selectedReceiver)
             .success(function(data) {
-                $scope.selectedReceiver = {}; // clear the form so our user is ready to enter another
+                 // clear the form so our user is ready to enter another
             });
+        $scope.updateData();
+    };
+
+    $scope.nextPage = function() {
         var path = '/tool5?' + idstring;
         window.location = path;    
     };

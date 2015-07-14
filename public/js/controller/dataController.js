@@ -1,24 +1,42 @@
 spaceFrontierApp.controller("dataController", function($scope, $http) {
-
+    $scope.showDatabase = false;
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
 
     $scope.cubesat = [];
-    $http.get(cubesatPath).then(function(result) { 
-        $scope.cubesat = result.data; 
-    });
+    $scope.updateData = function() {
+        $http.get(cubesatPath).then(function(result) { 
+            $scope.cubesat = result.data;
+            var partextracted = {};
+            partextracted = $scope.cubesat[0];
+
+            $scope.target = partextracted['Target'];
+            $scope.attitudePart = partextracted['Attitude'];
+            $scope.antennaPart = partextracted['Antenna'];
+            $scope.receiverPart = partextracted['Receiver'];
+            $scope.cdhPart = partextracted['Cdh'];
+            $scope.instrumentPart = partextracted['Instrument'];
+            $scope.panelsPart = partextracted['Panels'];
+            $scope.batteriesPart = partextracted['Batteries'];
+            $scope.epsPart = partextracted['EPS'];
+            $scope.propulsionPart = partextracted['Propulsion'];
+            $scope.stationPart = partextracted['Station'];
+            $scope.busPart = partextracted['Bus'];
+            $scope.deployerPart = partextracted['Deployer'];
+            $scope.thermalPart = partextracted['Thermal'];
+
+        }); 
+    };
+    $scope.updateData();
 
     $scope.parts = [];
     $scope.stations = [];
-
-    $scope.loading = false;
 
     var bits=0;
     var downlink=0;
     var memory=0;
     var mips=0;
     $scope.myClick = function() {
-        $scope.loading = true;
         if($scope.calc== "bps"){
             bits=$scope.bitssecond;
         }else if($scope.calc=="arrayx"){
@@ -33,7 +51,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
         if($scope.length==0){
             mips=$scope.mips;
         }
-        $scope.loading = false;
+        $scope.showDatabase = true;
     }
 
   	$scope.cdhparts = [];
@@ -80,11 +98,14 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
         return part.Mass;
     };    
 
-    $scope.nextPage = function() {
+    $scope.addPart = function() {
         $http.put('/parts/cubesat-cdh/' + idstring, $scope.selectedPart)
             .success(function(data) {
                 $scope.selectedPart = {}; // clear the form so our user is ready to enter another
             });
+        $scope.updateData();
+    };
+    $scope.nextPage = function() {
         var path = '/tool6?' + idstring;
         window.location = path;    
     };

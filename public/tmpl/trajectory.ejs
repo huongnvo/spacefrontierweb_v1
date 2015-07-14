@@ -12,186 +12,115 @@
     <div class="row">
         <div class="col-lg-6">
             <h3>User Input</h3>
-            <div class = "checkbox">
-                <input type="checkbox" id="inputoption1" value="option1" data-ng-model="inputoptionOne"/>
-                    <div class="accordion" id="accordion1">
-                        <div class="accordion-group">
-                            <div class = "accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
-                                    <b>Target</b>
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-body collapse in" collapse=true>
-                                <div class="accordion-inner">
-                                        <select class="form-control">
-                                            <option>Earth</option>
-                                            <option>Mercury</option>
-                                            <option>Mars</option>
-                                            <option>Venus</option>
-                                            <option>Moon</option>
-                                        </select>
-                                </div>
+            <div class="btn-group">
+                <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton1" aria-expanded="false" aria-controls="collapsebutton1">
+                        Input Specfics
+                </button>
+                <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton2" aria-expanded="false" aria-controls="collapsebutton2">
+                        Input Own DeltaV
+                </button>
+            </div>
+            <div class="collapse" id="collapsebutton1">
+                    <div id="carousel1" class = "carousel slide" data-ride="carousel" interval="false">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel1" data-slide-to="1"></li>
+                            <li data-target="#carousel1" data-slide-to="2"></li>
+                            <li data-target="#carousel1" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner" style="height: 210px">
+                            <div class="item active">
+                                    <label>Target</label>
+                                            <select class="form-control" data-ng-model="optionslist1">
+                                                <option value="earth">Earth</option>
+                                                <option value="mercury">Mercury</option>
+                                                <option value="mars">Mars</option>
+                                                <option value="venus">Venus</option>
+                                                <option value="moon">Moon</option>
+                                            </select>
+                                    <a class="btn btn-primary" href="#carousel1" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                             </div>    
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
-                                    <b>Trajectory Type</b>
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="accordion-body collapse in" collapse=true>
-                                <div class="accordion-inner">
+                            <div class="item">
+                                    <label>Trajectory Type </label>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="picktrajectoryRadio" id="trajectoryRadio" value="trajectoryoption1" data-ng-model="picktrajectoryRadio"/>
+                                                <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio"/>
                                                 Pick Trajectory:
                                             </label>
                                             <div class="row">
                                                 <select class="form-control" data-ng-model="picktrajectory">
-                                                    <option>Direct</option>
-                                                    <option>Indirect</option>
+                                                    <option value="direct">Direct</option>
+                                                    <option value="indirect">Indirect</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="picktrajectoryRadio" id="trajectoryradio" value="trajectoryoption2" data-ng-model="inputtrajectorydVRadio"/>
+                                                <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption2" data-ng-model="picktrajectoryRadio"/>
                                                 Input Trajectory deltaV:
                                             </label>
-                                            <div class="row">
+                                        <div class="row">
                                                 <div class="input-group" >
                                                     <input type="number" class="form-control" data-ng-model="inputtrajectorydV"/> <span class="input-group-addon" id="dvaddon">km/s</span>
                                                 </div>
-                                            </div>
                                         </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="picktrajectoryRadio" id="trajectoryRadio" value="trajectoryoption3" data-ng-model="deliverytotargetRadio"/>
-                                                Delivery to Target
-                                            </label>
-                                        </div>
-                                </div>    
+                                        </div>   
+                                    <div class="divider"></div>
+                                    <a class = "btn btn-primary" href="#carousel1" role="button" data-slide = "prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="btn btn-primary" href="#carousel1" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                             </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
-                                    <b>Orbit Type</b>
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="accordion body collapse in" collapse=true>
-                                <div class="accordion-inner">
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="pickorbitRadio" id="pickorbitRadio1"value="orbitoption1"/>
-                                                Polar Orbit (70-90 deg)
-                                            </label>
-                                            <div class="row">
-                                                <label>Apoapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
+                            <div class="item">
+                                    <label>Orbit Specifications</label>
+                                            <div class="input">
+                                                Apoapsis
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" data-ng-model="apoapsis">
                                                     <span class="input-group-addon" id="orbitaddon1">km</span>
                                                 </div>
-                                                <label>Periapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon2">km</span>
-                                                    </div>
                                             </div>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="pickorbitRadio" id="pickorbitRadio1"value="orbitoption1"/>
-                                                High Inclination Orbit (45-70 deg)
-                                            </label>
-                                            <div class="row">
-                                                <label>Apoapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon5">km</span>
-                                                </div>
-                                                <label>Periapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon6">km</span>
-                                                    </div>
+                                            <div class = "input">
+                                                Periapsis
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" data-ng-model="periapsis"/>
+                                            <span class="input-group-addon" id="orbitaddon2">km</span>
                                             </div>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="pickorbitRadio" id="pickorbitRadio1"value="orbitoption1"/>
-                                                Low Inclination Orbit (20-45 deg)
-                                            </label>
-                                            <div class="row">
-                                                <label>Apoapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon7">km</span>
-                                                </div>
-                                                <label>Periapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon8">km</span>
-                                                    </div>
                                             </div>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="pickorbitRadio" id="pickorbitRadio1" value="orbitoption2"/>
-                                                Equatorial Orbit (0-20 deg)
-                                            </label>
-                                            <div class="row">
-                                                <label>Apoapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon3">km</span>
-                                                    </div>
-                                                <label>Periapsis</label>
-                                                    <div class="input-group">
-                                                    <input type="number" class="form-control"/>
-                                                    <span class="input-group-addon" id="orbitaddon4">km</span>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class = "accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour"> 
-                                    <b>Required Inclination Change</b>
-                                </a>
-                            </div>
-                            <div id="collapseFour" class="accordion-body collapse in" collapse=true>
-                                <div class="accordion-inner">
-                                    <div class="input-group">
-                                    <input type="number" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"/>
-                                    <span class="input-group-addon" id="basic-addon2">deg</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <h5>Or</h5>
-            <div class = "checkbox">
-                <input type="checkbox" id="inputoption1" value="option2" data-ng-model="inputoptionTwo"/>
-                    <div class="accordion" id="accordion2">
-                        <div class="accordion-group"> 
-                                <div class = "accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive"> 
-                                        <b>Input deltaV</b>
+                                    <a class = "btn btn-primary" href="#carousel1" role="button" data-slide = "prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
                                     </a>
-                                </div>
-                                <div id="collapseFive" class="accordion-body collapse in" collapse=true>
-                                    <div class="accordion-inner">
+                                    <a class="btn btn-primary" href="#carousel1" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                            </div>
+                            <div class = "item">
+                                    <label>Required Inclination Change</label>
                                         <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2"/>
-                                        <span class="input-group-addon" id="basic-addon2">km/s</span>
+                                            <input type="number" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"/>
+                                            <span class="input-group-addon" id="basic-addon2">deg</span>
                                         </div>
-                                    </div>
-                                </div>
+                                    <a class = "btn btn-primary" href="#carousel1" role="button" data-slide = "prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                            </div>
                         </div>
+                    </div>    
+            </div>
+            <div class="collapse" id="collapsebutton2">
+                    <div class="input-group">
+                    <input type="number" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2"/>
+                    <span class="input-group-addon" id="basic-addon2">km/s</span>
                     </div>
             </div>
         </div>
@@ -210,92 +139,111 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-2" id="trajectorysearch">
-            <h3>List Showing...</h3>
-            <div class = "checkbox">
-                <label>
-                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios1" value = "type1" data-ng-model = "Thruster"/>
-                        Thruster
-                </label>
-            </div>
-            <div class = "checkbox">
-                <label>
-                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios2" value = "type2" data-ng-model = "Sail"/>
-                        Sail
-                </label>
-            </div>
-        </div>
-        <div class="col-lg-8">
-            <h3>Search Results</h3>
-            <h6>Click on the link of each subsystem to learn more.</h6>
-
-            <div class = "dividersmall"></div>
-            <select multiple class="form-control" data-ng-model="result">
-                <!-- <option ng-repeat="part in trajectoryparts|filter:okType|filter:okdV"> -->
-                <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts">
-                   {{part.Name}}, Manufacturer: {{part.Manufacturer}}, Mass: {{part.Mass}}, Power: {{part.Power}}, Volume: {{part.Volume}}, DeltaV: {{part.DeltaV}}
-                </option>
-            </select>
-        </div>
-        <div class="col-lg-2">
-                <h3>Sort by:</h3>
-                <div class = "dividersmall"></div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model= "Mass"/>
-                            Mass
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Power"/>
-                            Power
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="Volume"/>
-                            Volume
-                    </label>
-                </div>
-            </div>
-        </div>
-        <!--<div class="col-lg-4">
-            <h3>Search Filters</h3>
-            <div class = "dividersmall"></div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Attitude Control System
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Sensor and/or Actuator
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        No Filter
-                </label>
-            </div>
-        </div>-->
-    </div>
-        <div class="col-lg-12">
-            <div class = "divider"></div>
-            <div id="button">
-                <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" ng-click="prevPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
-                    <a type="button" ng-click="nextPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class = "divider"></div>
     <hr>
+
+    <div ng-show="showDatabase">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Search Results 
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Show 
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class = "checkbox">
+                                <label>
+                                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios1" value = "type1" data-ng-model = "Thruster"/>
+                                        Thruster
+                                </label>
+                            </div>
+                            <div class = "checkbox">
+                                <label>
+                                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios2" value = "type2" data-ng-model = "Sail"/>
+                                        Sail
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort By: 
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
+                                        Mass
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
+                                        Power
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
+                                        Volume
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </h3>
+                <h6>Click on the link of each subsystem to learn more.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="14">
+                            <!-- <option ng-repeat="part in trajectoryparts|filter:okType|filter:okdV"> -->
+                            <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts">
+                               {{part.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Page 3/8</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="14">
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation:{{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
+                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+                </nav>  
+            </div>
+        </div>
+        <hr>
+    </div>
     <% include footer %>
     <div class = "divider"></div>
 </body>

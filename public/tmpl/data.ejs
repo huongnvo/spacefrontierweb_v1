@@ -8,66 +8,43 @@
     <h1>Data Selection</h1>
     <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
     <hr>
-    <div class="row">
-        <div class="col=lg-6">
-            <div class="col-lg-2">
+        <div class="row">
+        <div class="col-lg-6">
+            <div class="row">
                 <h3>User Input</h3>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" ng-model= "calc" value="channels">
-                            Channels 
-                    </label>
-                    <input type="number" class="form-control" placeholder="100" data-ng-model="channel"/>
-                    <div class = "divider"></div>
+                Data In...
+                <div class="btn-group">
+                    <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton1" aria-expanded="false" aria-controls="collapsebutton1"> Channels
+                    </button>
+                    <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton2" aria-expanded="false" aria-controls="collapsebutton2"> Arrays
+                    </button>
+                    <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton3" aria-expanded="false" aria-controls="collapsebutton3"> Bits/Second
+                    </button>
+                </div>
+                <div class="collapse" id="collapsebutton1">
+                    Channels <input type="number" class="form-control" placeholder="100" data-ng-model="channel"/>
                     Bits/Channel: <input type="number" class="form-control" placeholder="100" data-ng-model="bitschannel"/>
-                    <div class = "divider"></div>
                     Integrations/Second:<input type="number" class="form-control" placeholder="100" data-ng-model="integrations1"/>
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <div class = "dividerlarger"></div>
-                <div class="radio">
-                    <label>
-                       <input type="radio" name="optionsRadios" ng-model= "calc" value="arrayx">
-                            Array Size - x:
-                    </label>
-                    <input type="number" class="form-control" placeholder="100" data-ng-model="sizex"/>
-                    <div class = "divider"></div>
+                <div class="collapse" id="collapsebutton2">
+                    Array Size - x: <input type="number" class="form-control" placeholder="100" data-ng-model="sizex"/>
                     Array Size - y: <input type="number"class="form-control" placeholder="100" data-ng-model="sizey"/>
-                    <div class = "divider"></div>
                     Integrations/Second:<input type="number" class="form-control" placeholder="100" data-ng-model="integrations2"/>
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <div class = "dividerlarger"></div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" ng-model= "calc" value="bps">
-                            Bits/Second 
-                    </label>
-                    <input type="number" class="form-control" placeholder="100" data-ng-model="bitssecond"/>
+                <div class="collapse" id="collapsebutton3">
+                    Bits/Second <input type="number" class="form-control" placeholder="100" data-ng-model="bitssecond"/>
                 </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class = "divider"></div>
-                Percent of Time Generating Data (x/100):<input class="form-control" type="number" placeholder="10" data-ng-model="percent"/>
-            </div>
-
-            <div class="col-lg-6">
-                <div class = "divider"></div>
-                Required MIPS:<input class="form-control" type="text" placeholder="0" data-ng-model="mips"/>
-            </div>
+                </div>
+                <div class="divider"></div>
+                Percent of Time Generating Data (x/100):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
         </div>
         <div class="col-lg-6">
             <h3>Calculation Results</h3>
             Bits/Second:<input type="number" class="form-control" data-ng-model="totalbits" readonly="readonly"/>
             <div class = "divider"></div>
-            Required Downlink:<input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+            Required Downlink:<input type="number" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
         </div>
-    </div>
-    <div class="row">
-       
+        <div class="divider"></div>
         <div class="col-lg-12">
             <div class = "dividerlarge"></div>
             <div id="button">
@@ -78,78 +55,129 @@
             </div>
         </div>
     </div>
-    <hr>
     <div class="row">
-        <div class="col-lg-2" id="search">
-            <h3>List Showing...</h3>
-            <div class = "dividersmall"></div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="OBC">
-                        On-Board Computer
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="bus">
-                        Bus
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="imageprocessor">
-                        Image Processor
-                </label>
-            </div>
+        <div class="col-lg-10">
         </div>
-        <div class="col-lg-8">
-            <h3>Search Results</h3>
-            <h6>Click on the link of each subsystem to learn more.</h6>
-
-            <div class = "dividersmall"></div> 
-            <select multiple class="form-control" data-ng-model="result">
-                <option ng-click="savePart(part)" ng-repeat="part in cdhparts|filter:okType|filter:okData|orderBy:order">
-                       Part Name: {{part.Name}} Type: {{part.Type}}
-                </option>
-            </select>    
-        </div>
-        <div class="col-lg-2" id="search">
-            <h3>Sort by:</h3>
-            <div class = "dividersmall"></div>
-                <div class="form-group">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
-                                Mass
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
-                                Power
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
-                                Volume
-                        </label>
-                    </div>
-                </div>
-        </div>
-        <div class="col-lg-12">
-            <div class = "divider"></div>
-            <div id="button">
-                <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" ng-click="prevPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
-                    <a type="button" ng-click="nextPage()" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+        <div class="col-lg-2">
+            <div class = "dividerlarge"></div>
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                        Search Database
+                    </button>
                 </div>
             </div>
         </div>
-
     </div>
-    <div class = "divider"></div>
     <hr>
+
+    <div ng-show="showDatabase">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Search Results 
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Show 
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="OBC">
+                                        Onboard Comp.
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="bus">
+                                        Bus
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1" data-ng-model="imageprocessor">
+                                        Image Processor
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort By: 
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
+                                        Mass
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
+                                        Power
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
+                                        Volume
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </h3>
+                <h6>Click on the link of each subsystem to learn more.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="14">
+                            <option ng-click="savePart(part)" ng-repeat="part in cdhparts|filter:okType|filter:okData|orderBy:order">
+                                {{part.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Page 5/8</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="14">
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation:{{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
+                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+                </nav>  
+            </div>
+        </div>
+        <hr>
+    </div>
     <% include footer %>
     <div class = "divider"></div>
 </body>

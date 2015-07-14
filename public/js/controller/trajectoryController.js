@@ -1,14 +1,33 @@
 spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
+    $scope.showDatabase = false;
 
     $scope.cubesat = [];
-    $http.get(cubesatPath).then(function(result) { 
-        $scope.cubesat = result.data; 
-        var partextracted = {};
-        partextracted = $scope.cubesat[0];
-        $scope.target = partextracted['Target'];
-    });
+    $scope.updateData = function() {
+        $http.get(cubesatPath).then(function(result) { 
+            $scope.cubesat = result.data;
+            var partextracted = {};
+            partextracted = $scope.cubesat[0];
+
+            $scope.target = partextracted['Target'];
+            $scope.attitudePart = partextracted['Attitude'];
+            $scope.antennaPart = partextracted['Antenna'];
+            $scope.receiverPart = partextracted['Receiver'];
+            $scope.cdhPart = partextracted['Cdh'];
+            $scope.instrumentPart = partextracted['Instrument'];
+            $scope.panelsPart = partextracted['Panels'];
+            $scope.batteriesPart = partextracted['Batteries'];
+            $scope.epsPart = partextracted['EPS'];
+            $scope.propulsionPart = partextracted['Propulsion'];
+            $scope.stationPart = partextracted['Station'];
+            $scope.busPart = partextracted['Bus'];
+            $scope.deployerPart = partextracted['Deployer'];
+            $scope.thermalPart = partextracted['Thermal'];
+
+        }); 
+    };
+    $scope.updateData();
 
     $scope.trajectoryparts = [];
     $scope.init = function() { 
@@ -20,7 +39,6 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
 
     $scope.loading = false;
     $scope.myClick = function() {
-        $scope.loading = true;
         var inputspecifics, inputown = 0
         if($scope.inputoptionOne){
             var inputspecifics = $scope.inputtrajectorydV;
@@ -30,7 +48,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         }
         var dV = inputown + inputspecifics;
         $scope.totaldV = dV;
-        $scope.loading = false;
+        $scope.showDatabase = true;
     }
 
     $(function () {
@@ -56,13 +74,18 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
 
     $scope.savePart = function(part) {
         $scope.selectedPart = part;
-    }
+    };
 
-    $scope.nextPage = function() {
+    $scope.addPart = function() {
         $http.put('/parts/cubesat-propulsion/' + idstring, $scope.selectedPart)
             .success(function(data) {
                 $scope.selectedPart = {}; // clear the form so our user is ready to enter another
             })
+        $scope.updateData();
+    };
+
+    $scope.nextPage = function() {
+       
         var path = '/tool4?' + idstring;
         window.location = path;    
     };

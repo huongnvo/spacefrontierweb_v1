@@ -4,49 +4,206 @@
 
 <body class="container" data-ng-controller="resultsController">
     <% include navbar %>
-    <h1>Final CubeSat Configuration</h1>
-    <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
-    <hr>
-    <div class="row">
-        <div class="col-lg-6">
-            <h3>Specs</h3>
-            Mass:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
-            <div class = "divider"></div>
-            Power:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
-            <div class = "divider"></div>
-            Volume:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
-        </div>
-        <div class="col-lg-6">
+
+    <div class="jumbotron">
+        <h1>Mission: THIS IS A TEST NAME</h1>
+        <p>Final CubeSat Configuration</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="list-group">
+                    <div class="list-group-item">Target: {{target}}</div>
+                    <div class="list-group-item">Objectives:</div>
+                    <div class="list-group-item">Instrumentation:</div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="list-group">
+                    <div class="list-group-item">Mass:</div>
+                    <div class="list-group-item">Power:</div>
+                    <div class="list-group-item">Volume:</div>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
+    <h2>Subsystems</h2>
     <div class="row">
-        <div class="col-lg-12">
-            <h3>Subsystems</h3>
-            <h6>Click on the link of each subsystem to learn more.</h6>
-            <div class = "dividersmall"></div>
-            <select multiple class="form-control">
-                <option>{{target}}</option>
-                <option>{{attitude.Name}}</option>
-                <option>{{antenna.Name}}</option>
-                <option>{{receiver.Name}}</option>
-                <option>{{cdh.Name}}</option>
-                <option>{{instrument.Name}}</option>
-                <option>{{panels.Name}}</option>
-                <option>{{batteries.Name}}</option>
-                <option>{{eps.Name}}</option>
-                <option>{{propulsion.Name}}</option>
-                <option>{{station.Name}}</option>
-                <option>{{bus.Name}}</option>
-                <option>{{deployer.Name}}</option>
-                <option>{{thermal.Name}}</option>
-            </select>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>ATTITUDE CONTROL</strong></div> 
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{attitude.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{attitude.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{attitude.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
         </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>ANTENNA</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{antenna.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{antenna.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{antenna.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>RECEIVER</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{receiver.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{receiver.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{receiver.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>COMMAND & DATA HANDLING</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{cdh.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{cdh.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{cdh.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>SOLAR PANELS</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{panels.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{panels.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{panels.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>BATTERIES</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{batteries.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{batteries.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{batteries.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>EPS</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{eps.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{eps.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{eps.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>THERMAL</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{thermal.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{thermal.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{thermal.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>PROPULSION</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{propulsion.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{propulsion.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{propulsion.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>GROUND STATION</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{station.Name}}</li>
+                    <li class="list-group-item">Band: {{station.Band}}</li>
+                    <li class="list-group-item">Location: {{station.Loc}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>BUS</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{bus.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{bus.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{bus.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>DEPLOYER</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{deployer.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{deployer.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{deployer.Type}}</li>
+                </ul>
+                <div class="panel-footer">
+                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div class = "divider"></div>
             <div id="button">
-                <a type="button" href="/tool6" class="btn btn-primary">Save Results as a .PDF</a>
-                <a type="button" href="/tool" class="btn btn-primary">Return to Main Page</a>
+                <a type="button" href="/tool6" class="btn btn-default">Return to Main Page</a>
+                <a type="button" href="/tool" class="btn btn-success">Save Results as a .PDF</a>
             </div>
         </div>
     </div>

@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html data-ng-app="spaceFrontierApp">
 <% include header %>
- 
-<body class="container" data-ng-controller="homeController">
-    <% include navbar %>
 
-    <h1>SPACE Tool</h1>
-    <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
-    <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
+<body data-ng-controller="homeController">    
+    <div class="jumbotron" style="background-image: url(http://truereality.org/wp-content/uploads/2014/02/hubble-space-wallpapers.jpg); background-size: 100%;">
+        <div class="container" id="nav">
+            <% include navbar %>
+        </div>
+        <div class="container" id="indexjumbo">
+            <h1>SPACE Tool</h1>
+            <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
+            <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
 
-    <div class="row">
-        <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4">
-            <div id="button">
-                <a type="button" id="roundedbutton" href="/tool"  class="btn btn-success btn-block btn-lg btn-round">Try it Now</a>
-            </div>
-        </div>
-        <div class="col-lg-4">
+            <a id="rcorners" type="button" id="roundedbutton" href="/tool" class="btn btn-lg" style="color: #FFFFFF">Try it Now</a>
         </div>
     </div>
-    <hr>
-    <% include footer %>
+    <div class="container">
+        <% include footer %>
+    </div>
     <div class = "divider"></div>
 </body>
 </html>
