@@ -1,3 +1,5 @@
+//version poop
+
 spaceFrontierApp.controller("instrumentsController", function($scope, $http, $location) {
     $scope.loading = false;
     $scope.myClick = function() {
@@ -6,141 +8,127 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         //$scope.loading = false;
     };
 
-    $scope.showTarget = false;
-    $scope.showInstrumentation = false;
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
 
     $scope.cubesat = [];
-    $scope.updateData = function() {
-        $http.get(cubesatPath).then(function(result) { 
-            $scope.cubesat = result.data;
-            var partextracted = {};
-            partextracted = $scope.cubesat[0];
-
-            $scope.target = partextracted['Target'];
-            $scope.attitudePart = partextracted['Attitude'];
-            $scope.antennaPart = partextracted['Antenna'];
-            $scope.receiverPart = partextracted['Receiver'];
-            $scope.cdhPart = partextracted['Cdh'];
-            $scope.instrumentPart = partextracted['Instrument'];
-            $scope.panelsPart = partextracted['Panels'];
-            $scope.batteriesPart = partextracted['Batteries'];
-            $scope.epsPart = partextracted['EPS'];
-            $scope.propulsionPart = partextracted['Propulsion'];
-            $scope.stationPart = partextracted['Station'];
-            $scope.busPart = partextracted['Bus'];
-            $scope.deployerPart = partextracted['Deployer'];
-            $scope.thermalPart = partextracted['Thermal'];
-
-        }); 
-    };
-    $scope.updateData();
+    $http.get(cubesatPath).then(function(result) { 
+        $scope.cubesat = result.data; 
+    });
 
     $scope.instruments = [];
     $scope.init = function() { 
-		$http.get('/parts/instruments').then(function(result) { 
-			$scope.instruments = result.data; 
-		});
+        $http.get('/parts/instruments').then(function(result) { 
+            $scope.instruments = result.data; 
+        });
     };
     $scope.init();
 
     $scope.targetJson = [{
-        Target: ""
+        Target: "Moon"
     }];
 
+    
     $scope.wavelengths=[];
   
     $scope.activeButton = function(id) {
         if (document.getElementById(id).style.backgroundColor != "blue") {
              document.getElementById(id).style.backgroundColor = "blue";
 
-        if($scope.wavelengths.indexOf("long-IR")==-1&&id=='Long-IR'){
-            $scope.wavelengths.push("long-IR");
-        } if($scope.wavelengths.indexOf("far-IR")==-1&&id=='Far-IR'){
-            $scope.wavelengths.push("far-IR");
-        } 
+            if(id=='Long-IR'){
+                $scope.wavelengths.push("long-IR");
+            } if(id=='Far-IR'){
+                $scope.wavelengths.push("far-IR");
+            }  if(id=='Radiowave'){
+                $scope.wavelengths.push("radio");
+            } if(id=='Microwave'){
+                $scope.wavelengths.push("microwave");
+            } if(id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
+                $scope.wavelengths.push("gamma");
+            } if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
+                    $scope.wavelengths.push("x-ray");
+            } if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
+                    $scope.wavelengths.push("UV");
+                    $scope.wavelengths.push("ultraviolet");
+            } if(id=='Visible'||id=='K'||id=='Li'){
+                    $scope.wavelengths.push("visible");
+            } if(id=='Near-IR'){
+                $scope.wavelengths.push("near-IR");
+            } if(id=='Short-IR'){
+                $scope.wavelengths.push("short-IR");
+            } if(id=='Mid-IR'){
+                $scope.wavelengths.push("mid-IR");
+            } 
 
         } else {
-            document.getElementById(id).style.backgroundColor = "lightskyblue";
-            if(!$scope.isSelected('Gamma')&&!$scope.isSelected('O')&&!$scope.isSelected('Mg')&&!$scope.isSelected('Si')&&!$scope.isSelected('K')&&!$scope.isSelected('Ti')&&!$scope.isSelected('Fe')&&!$scope.isSelected('Th')&&!$scope.isSelected('U')){
-                if($scope.wavelengths.indexOf("gamma")!=-1){
+            
+            if( id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
+               // document.getElementById(id).style.backgroundColor = "red";
+                 if($scope.wavelengths.indexOf("gamma")!=-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("gamma"),1);
                 }
-            } if(!$scope.isSelected('X-ray')&&!$scope.isSelected('Na')&&!$scope.isSelected('Mg')&&!$scope.isSelected('Al')&&!$scope.isSelected('Si')&&!$scope.isSelected('S')&&!$scope.isSelected('Ca')&&!$scope.isSelected('K')&&!$scope.isSelected('Ti')&&!$scope.isSelected('Fe')){
+            }
+
+            if(id=='Microwave'){
+                if($scope.wavelengths.indexOf("microwave")!=-1){
+                    document.getElementById(id).style.backgroundColor = "red";
+                 $scope.wavelengths.splice($scope.wavelengths.indexOf("microwave"),1);
+                }
+            }
+
+            if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
                 if($scope.wavelengths.indexOf("x-ray")!=-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("x-ray"),1);
                 }
-            }if(!$scope.isSelected('UV')&&!$scope.isSelected('H')&&!$scope.isSelected('He')&&!$scope.isSelected('O')&&!$scope.isSelected('Na')&&!$scope.isSelected('Ar')&&!$scope.isSelected('Ne')&&!$scope.isSelected('Mg')&&!$scope.isSelected('Fe')&&!$scope.isSelected('Si')&&!$scope.isSelected('S')&&!$scope.isSelected('Al')){
+            }
+            if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
                 if($scope.wavelengths.indexOf("UV")!=-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("UV"),1);
                 }
                 if($scope.wavelengths.indexOf("ultraviolet")!=-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("ultraviolet"),1);
                 }
-            } if(!$scope.isSelected('Visible')&&!$scope.isSelected('K')&&!$scope.isSelected('Li')){
+            }
+            if(id=='Visible'||id=='K'||id=='Li'){
                 if($scope.wavelengths.indexOf("visible")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("visible"),1);
                 }
-            } if(!$scope.isSelected('Near-IR')){
+            }if(id=='Near-IR'){
                 if($scope.wavelengths.indexOf("near-IR")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("near-IR"),1);
                 }
-            } if(!$scope.isSelected('Short-IR')){
+            }if(id=='Short-IR'){
                 if($scope.wavelengths.indexOf("short-IR")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("short-IR"),1);
                 }
-            } if(!$scope.isSelected('Mid-IR')){
+            }if(id=='Mid-IR'){
                 if($scope.wavelengths.indexOf("mid-IR")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("mid-IR"),1);
                 }
-            } if(!$scope.isSelected('Long-IR')){
+            }if(id=='Long-IR'){
                 if($scope.wavelengths.indexOf("long-IR")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("long-IR"),1);
                 }
-            } if(!$scope.isSelected('Far-IR')){
+            }if(id=='Far-IR'){
                 if($scope.wavelengths.indexOf("far-IR")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("far-IR"),1);
                 }
-            } if(!$scope.isSelected('Microwave')){
-                if($scope.wavelengths.indexOf("microwave")!=-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("microwave"),1);
-                }
-            } if(!$scope.isSelected('Radiowave')){
+            }if(id=='Radiowave'){
                 if($scope.wavelengths.indexOf("radio")!=-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("radio"),1);
                 }
             }
+
+            document.getElementById(id).style.backgroundColor = "lightskyblue";
         }
 
 
 
-        if($scope.wavelengths.indexOf("radio")==-1&&$scope.isSelected('Radiowave')){
-            $scope.wavelengths.push("radio");
-        }
-        if($scope.wavelengths.indexOf("microwave")==-1&&$scope.isSelected('Microwave')){
-            $scope.wavelengths.push("microwave");
-        }
-
-        if($scope.wavelengths.indexOf("gamma")==-1&&$scope.isSelected('Gamma')||$scope.isSelected('O')||$scope.isSelected('Mg')||$scope.isSelected('Si')||$scope.isSelected('K')||$scope.isSelected('Ti')||$scope.isSelected('Fe')||$scope.isSelected('Th')||$scope.isSelected('U')){
-            $scope.wavelengths.push("gamma");
-        } if($scope.wavelengths.indexOf("x-ray")==-1&&$scope.isSelected('X-ray')||$scope.isSelected('Na')||$scope.isSelected('Mg')||$scope.isSelected('Al')||$scope.isSelected('Si')||$scope.isSelected('S')||$scope.isSelected('Ca')||$scope.isSelected('K')||$scope.isSelected('Ti')||$scope.isSelected('Fe')){
-            $scope.wavelengths.push("x-ray");
-        } if($scope.wavelengths.indexOf("UV")==-1&&$scope.isSelected('UV')||$scope.isSelected('H')||$scope.isSelected('He')||$scope.isSelected('O')||$scope.isSelected('Na')||$scope.isSelected('Ar')||$scope.isSelected('Ne')||$scope.isSelected('Mg')||$scope.isSelected('Fe')||$scope.isSelected('Si')||$scope.isSelected('S')||$scope.isSelected('Al')){
-            $scope.wavelengths.push("UV");
-            $scope.wavelengths.push("ultraviolet");
-        } if($scope.wavelengths.indexOf("visible")==-1&&$scope.isSelected('Visible')||$scope.isSelected('K')||$scope.isSelected('Li')){
-            $scope.wavelengths.push("visible");
-        } if($scope.wavelengths.indexOf("near-IR")==-1&&$scope.isSelected('Near-IR')){
-            $scope.wavelengths.push("near-IR");
-        } if($scope.wavelengths.indexOf("short-IR")==-1&&$scope.isSelected('Short-IR')){
-            $scope.wavelengths.push("short-IR");
-        } if($scope.wavelengths.indexOf("mid-IR")==-1&&$scope.isSelected('Mid-IR')){
-            $scope.wavelengths.push("mid-IR");
-        } 
+       
     }
 
-    $scope.isSelected = function(id){
+   $scope.isSelected = function(id){
+
         return document.getElementById(id).style.backgroundColor =="blue";
     }
 
@@ -200,37 +188,11 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         }];
     };
 
-    $scope.nextTarget = function() {
-        $scope.showTarget = true;
-        $scope.showInstrumentation = false;
-    };
-
-    $scope.nextInstrumentation = function() {
-        $scope.showTarget = true;
-        $scope.showInstrumentation = true;
-    };
-
-    $scope.addTarget = function() {
+    $scope.nextPage = function() {
         $http.put('/parts/cubesat-target/' + idstring, $scope.targetJson[0])
             .success(function(data) {
                 // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
-            });
-        $scope.updateData();
-    };
-
-    $scope.saveInstrument = function(instrument) {
-        $scope.selectedInstrument = instrument;
-    };
-
-    $scope.addInstrument = function() {
-        $http.put('/parts/cubesat-instrument/' + idstring, $scope.selectedInstrument)
-            .success(function(data) {
-                $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-            });
-        $scope.updateData();
-    };
-
-    $scope.nextPage = function() {
+            })
         var path = '/tool2?' + idstring;
         window.location = path;    
     };
