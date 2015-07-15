@@ -1,3 +1,5 @@
+//version poop
+
 spaceFrontierApp.controller("instrumentsController", function($scope, $http, $location) {
     $scope.loading = false;
     $scope.myClick = function() {
