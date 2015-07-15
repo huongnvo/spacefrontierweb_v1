@@ -749,7 +749,6 @@ var AttitudeFactory = function(Schema,mongoose) {
 			Datarate: req.body.Datarate,
 			Cost: req.body.Cost
     	}, 
-    	{}, 
     	function(error, output) {
       		res.json(output);
     	});

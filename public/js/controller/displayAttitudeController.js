@@ -49,7 +49,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
     }
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/attitude/' + id)
+        $http.delete('/parts/attitude/' + id);
     }
 
     $('#exampleModal').on('show.bs.modal', function (event) {

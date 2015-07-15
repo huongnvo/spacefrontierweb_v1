@@ -7,109 +7,238 @@
     <h1>Power Selection</h1>
     <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
     <hr>
-    <div class="row">
-        <div class="col-lg-12">
-            <h4>User Input</h4>
-            CubeSat Volume: <input type="number" class="form-control" placeholder="0 (default value)" data-ng-model="volume" />
-            <div class = "divider"></div>
-            Solar Panel Configurations (DO NOT CHECK IF YOU WANT NON DEPLOYABLE PANELS):
-            <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="optionsRadios" ng-model= "dep"  value="Deployable">
-                            Deployable
-                    </label>
+
+    <div ng-show="showPanels">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Search Results
+                <div class="btn-group">
+                    <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Show (Wing Design):
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <div class="checkbox">
+                            <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="dep"  value="Deployable">
+                                    Deployable
+                            </label>
+                        </div>
+                        <div class="ng-hide" ng-show="dep">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "ppw" value="onePPW">
+                                        1 Panel/Wing
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "ppw" value="twoPPW">
+                                        2 Panels/Wing
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "ppw" value="threePPW">
+                                        3 Panels/Wing
+                                </label>
+                            </div>
+                        </div>
+                        <div class = "dividersmall"></div>
+                        <div class="ng-hide" ng-show="dep">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios2" ng-model= "wing" value="oneW">
+                                        One Wing
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios2" ng-model= "wing" value="twoW">
+                                        Two Wings
+                                </label>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Show (Volume):
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><input type="number" style="width:144px; margin-left:8px" class="form-control" placeholder="0 (default)" data-ng-model="volume" /></li>
+                    </ul>
+                </div>
+
+                </h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="14">
+                            <option ng-click="savePanels(part)" ng-repeat="part in parts|filter: filterSolar">
+                                {{part.Name}}
+                            </option>
+                        </select>       
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPanels()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="ng-hide" ng-show="dep">
-                    
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" ng-model= "ppw" value="onePPW">
-                                    One Panel per Wing
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" ng-model= "ppw" value="twoPPW">
-                                    Two Panels per Wing
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" ng-model= "ppw" value="threePPW">
-                                    Three Panels per Wing
-                            </label>
-                        </div>
-                </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Solar Panels Selection<br>Page 6/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="14">
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation:{{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
             </div>
-            <div class = "dividersmall"></div>
-            <div class="col-lg-12">
-                <div class="ng-hide" ng-show="dep" >
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios2" ng-model= "wing" value="oneW">
-                                    One Wing
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios2" ng-model= "wing" value="twoW">
-                                    Two Wings
-                            </label>
-                        </div>
+        </div>
+        <div class = "dividersmall"></div>
+        <div class = "row">
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextBat()">
+                        Search Batteries (2/3)
+                    </button>
                 </div>
             </div>
         </div>
-<!--        <div class="col-lg-12">
-            <div class = "dividerlarge"></div>
-            <div id="button">
-                <button type="button" class="btn btn-primary" ng-click="myClick()" ng-disabled="loading">
-                    <span ng-show="loading">Searching...</span>
-                    <span ng-hide="loading">Search Database</span>
-                </button>
-            </div>
-        </div> -->
+        <hr>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-lg-12">
-            <h3>Search Results</h3>
-            <h6>Click on the link of each subsystem to learn more.</h6>
-            <div class = "divider"></div>
-            Solar Panels:
-            <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter: filterSolar">
-                       {{part.Name}}
-                </option>
-            </select>
-            <div class = "divider"></div>
-            Batteries:
-            <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter: filterBattery">
-                       {{part.Name}}
-                </option>
-            </select>
-            <div class = "divider"></div>
-            EPS:
-            <select multiple class="form-control">
-                <option ng-repeat="part in parts|filter: filterEPS">
-                       {{part.Name}}
-                </option>
-            </select>
+
+    <div ng-show="showBatteries">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Search Results</h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="14">
+                            <option ng-click="saveBatteries(part)" ng-repeat="part in parts|filter: filterBattery">
+                                {{part.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addBatteries()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Battery Selection<br>Page 6/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="14">
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation:{{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
         </div>
-        <div class="col-lg-12">
-            <div class = "divider"></div>
-            <div id="button">
-                <div class="btn-group" role="group" aria-label="...">
-                    <a type="button" href="/tool5" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
-                    <a type="button" href="/tool7" class="btn btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+        <div class = "dividersmall"></div>
+        <div class = "row">
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextEPS()">
+                        Search EPS (3/3)
+                    </button>
                 </div>
             </div>
         </div>
+        <hr>
     </div>
-    <div class = "divider"></div>
-    <hr>
+
+    <div ng-show="showEPS">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Search Results</h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="14">
+                            <option ng-click="saveEPS(part)" ng-repeat="part in parts|filter: filterEPS">
+                                   {{part.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addEPS()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>EPS Selection<br>Page 6/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="14">
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation:{{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class = "dividersmall"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
+                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+                </nav>  
+            </div>
+        </div>
+        <hr>
+    </div>
+    
     <% include footer %>
     <div class = "divider"></div>
 </body>

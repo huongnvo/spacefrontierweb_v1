@@ -26,15 +26,12 @@
 
 
         <h1>Instrumentation</h1>
+        <h4>Click on each line to learn more about the part</h4>
         <hr>
 
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>
-                        <a href="" ng-click="order('_id')">_id</a>
-                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
-                    </th>
                     <th> 
                         <a href="" ng-click="order('Type')">Type</a>
                         <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
@@ -47,18 +44,40 @@
                         <a href="" ng-click="order('Manufacturer')">Manufacturer</a>
                         <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
                     </th>
+                    <th>
+                        <a href="" ng-click="order('Mass')">Mass</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        <a href="" ng-click="order('Power')">Power</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        <a href="" ng-click="order('Volume')">Volume</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat ="part in parts | orderBy:predicate:reverse">
-                    <td>{{part._id}}</td>
-                    <td>{{part.Type}}</td>
-                    <td data-toggle="modal" data-target="#myModal">{{part.Name}}</td>
-                    <td>{{part.Manufacturer}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Type}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Name}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Manufacturer}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Mass}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Power}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Volume}}</td>
+                    <td> <a type="button" type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-warning">Edit</a> </td>
+                    <td> <a type="button" class="btn btn-danger" ng-click="deletePart(part._id)">Delete</a> </td>
                 </tr>
             </tbody>
         </table>
-
+        <hr>
+        <div id="button">
+            <a type="button" href="/list" class="btn btn-default">Return to Main</a>
+            <a type="button" data-toggle="modal" data-target="#addNewPartModal" class="btn btn-success">Add New Part</a>
+        </div>
         <hr>
         <% include footer %>
         <div class = "divider"></div>
