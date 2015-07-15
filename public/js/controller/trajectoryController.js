@@ -2,6 +2,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
     $scope.showDatabase = false;
+    $scope.calculation = false;
 
     $(document).ready(function() {
         $('.nav-tabs > li > a').click(function(event){
@@ -64,15 +65,15 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
 
     $scope.loading = false;
     $scope.myClick = function() {
-        var inputspecifics, inputown = 0
-        if($scope.inputoptionOne){
-            var inputspecifics = $scope.inputtrajectorydV;
-        }
-        if($scope.inputoptionTwo) {
-            var inputown = $scope.inputown;
-        }
-        var dV = inputown + inputspecifics;
-        $scope.totaldV = dV;
+        // var inputspecifics, inputown = 0
+        // if($scope.inputoptionOne){
+        //     var inputspecifics = $scope.inputtrajectorydV;
+        // }
+        // if($scope.inputoptionTwo) {
+        //     var inputown = $scope.inputown;
+        // }
+        // var dV = inputown + inputspecifics;
+        // $scope.totaldV = dV;
         $scope.showDatabase = true;
     };
 
@@ -81,19 +82,19 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     var MarsMass=639000000000000000000000;
     var VenusMass=4867000000000000000000000;
     var MoonMass=73467209000000000000000;
-    var G=.0000000000667384;
-    var M;
-    var EarthDirect=0.5;
-    var EarthIndirect=0.02;
-    var dV;
-    var trajectorydV;
-    var RA;
-    var RP;
-    var E;
-    var A;
-    var orbitdV;
-    var incdV;
-    var deg;
+    var G=0.0000000000667384;
+    var M=0;
+    var MoonDirect=0.5;
+    var trajectorydV=0;
+    var RA=0;
+    var RP=0;
+    var P=0;
+    var A=0;
+    var orbitdV=0;
+    var incdV=0;
+    var deg=0;
+    var avgV=0;
+    var partsin=0;
 
     $(function () {
         $(".carousel").carousel({ interval: false });
@@ -116,20 +117,186 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         return okType;
     };
 
-    $scope.okdV = function(part) {
-        if($scope.picktrajectoryRadio2){
-          trajectorydV = $scope.inputtrajectorydV;
+    $scope.tabSPECIFICS = function(part) {
+        if ($scope.target=='Moon'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0.5;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0.02;
+                    }
+                }  
+            M = MoonMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+515.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
         }
-        RA=$scope.apoapsis;
-        RP=$scope.periapsis;
-        E= (2*RA/(RA+RP)) + 1;
-        if($scope.target == "Moon") {
-          M = MoonMass;
-          orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
+        else if($scope.target=='Earth_Low'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0;
+                    }
+                }  
+            M = EarthMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+1760.3)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
         }
-
-        dV = trajectorydV;
+        else if ($scope.target=='Earth_Medium'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0;
+                    }
+                }  
+            M = EarthMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+1760.3)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
+        }
+        else if ($scope.target=='Earth_High'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0;
+                    }
+                }  
+            M = EarthMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+1760.3)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
+        }
+        else if ($scope.target=='Mercury'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0;
+                    }
+                }  
+            M = MercuryMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+795.15)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
+        }
+        else if ($scope.target=='Mars'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0;
+                    }
+                }  
+            M = MarsMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+1074.4)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
+        }
+        else if ($scope.target=='Venus'){
+            RA=$scope.apoapsis;
+            RP=$scope.periapsis;
+            P=(((2*RA)/(RA+RP)) - 1);
+                if($scope.picktrajectoryRadio2){
+                trajectorydV = $scope.inputtrajectorydV;
+                }
+                else{
+                    if($scope.picktrajectory=="direct"){
+                        trajectorydV=0;
+                     }
+                    else if($scope.picktrajectory == "indirect"){
+                        trajectorydV=0;
+                    }
+                }  
+            M = VenusMass;
+            deg = $scope.angle;
+            orbitdV= Math.sqrt((2*M*G)/(RP+1902.8)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            partsin=Math.sin((deg)/2);
+            incdV = 2*avgV*partsin;
+        }
+        dV = incdV + trajectorydV + orbitdV;
         $scope.totaldV=dV;
+        $scope.calculation = true;
+        // return part.DeltaV >= dV;
+    };
+    
+    $scope.tabOWN = function(part){
+        dV = $scope.inputown;
+        $scope.totaldV=dV;
+        $scope.calculation = true;
+        // return part.DeltaV >= dV;
+    };
+
+    $scope.okdV = function(part) {
+        // if($scope.picktrajectoryRadio2){
+        //   trajectorydV = $scope.inputtrajectorydV;
+        // }
+        // RA=$scope.apoapsis;
+        // RP=$scope.periapsis;
+        // E= (2*RA/(RA+RP)) + 1;
+        // if($scope.target == "Moon") {
+        //   M = MoonMass;
+        //   orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
+        // }
+        dV = $scope.totaldV;
         return part.DeltaV >= dV;
     };
 

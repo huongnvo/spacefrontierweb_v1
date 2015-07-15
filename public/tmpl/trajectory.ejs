@@ -39,8 +39,8 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
-                        Select Propulsion
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()">
+                        Calculate Results
                     </button>
                 </div>
             </div>
@@ -143,8 +143,8 @@
                         <div class="col-lg-2">
                             <div class = "dividerlarge"></div>
                             <div id="button">
-                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
-                                    Select Propulsion
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()">
+                                    Calculate Results
                                 </button>
                             </div>
                         </div>
@@ -154,22 +154,25 @@
         </div>   
     </section> 
     <hr>
-    <!-- <div class="row">
-        <div class="col-lg-6">
-            <h3>Calculation Results</h3>
-            &#916V:<input class="form-control" type="number" data-ng-model="totaldV" readonly="readonly"/>
-        </div>   
-        <div class="col-lg-10"></div>
-        <div class="col-lg-2">
-            <div class = "dividerlarge"></div>
-            <div id="button">
-                <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
-                    Select Propulsion
-                </button>
+
+    <div ng-show="calculation">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Calculation Results</h3>
+                &#916V:<input class="form-control" type="number" data-ng-model="totaldV" readonly="readonly"/>
+            </div>   
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                        Select Propulsion
+                    </button>
+                </div>
             </div>
         </div>
+        <hr>
     </div>
-    <hr> -->
 
     <div ng-show="showDatabase">
         <div class="row">
