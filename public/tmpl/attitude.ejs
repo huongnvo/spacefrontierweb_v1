@@ -5,22 +5,36 @@
     <body class="container" data-ng-controller="attitudeController">
         <% include navbar %>
         <h1>Attitude Selection</h1>
-        <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
+        <p>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</p>
         <hr>
         <div class="row">
             <div class="col-lg-6">
                 <h3>User Input</h3>
-              
-                    Altitude:<input class="form-control" placeholder="100" data-ng-model="attitude"/>
-                    <div class = "divider"></div>
-                    Maximum Spatial Resolution:<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+                Altitude:
+                <div class="input-group">
+                    <input class="form-control" placeholder="100" data-ng-model="attitude"/>
+                    <div class="input-group-addon">km</div>
+                </div>
+                <div class = "divider"></div>
+                Maximum Spatial Resolution:
+                <div class="input-group">
+                    <input class="form-control" placeholder="10" data-ng-model="resolution"/>
+                    <div class="input-group-addon">m</div>
+                </div>
             </div>
             <div class="col-lg-6">
                 <h3>Calculation Results</h3>
-                
-                    Angle of Knowledge:<input  class="form-control" data-ng-model="knowledge" readonly="readonly"/>
+                    Angle of Knowledge:
+                    <div class="input-group">
+                        <input  class="form-control" data-ng-model="knowledge" readonly="readonly"/>
+                        <div class="input-group-addon">deg</div>
+                    </div>
                     <div class = "divider"></div>
-                    Angle of Control:<input class="form-control" data-ng-model="control" readonly="readonly"/>
+                    Angle of Control:
+                    <div class="input-group">
+                        <input class="form-control" data-ng-model="control" readonly="readonly"/>
+                        <div class="input-group-addon">deg</div>
+                    </div>
             </div>
             <div class="col-lg-10">
             </div>
