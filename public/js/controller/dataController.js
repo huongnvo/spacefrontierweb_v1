@@ -32,6 +32,11 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
             $(target_tab_selector).addClass('active');
         });
     });
+
+    $scope.nextCDH = function() {
+        $scope.showCalculate = true;
+        $scope.showDatabase = true;
+    };
     
     $scope.cubesat = [];
     $scope.updateData = function() {
@@ -66,29 +71,52 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     var downlink=0;
     var memory=0;
     var mips=0;
-    $scope.myClick = function() {
-        if($scope.calc== "bps"){
+
+
+    $scope.tabBPS = function() {
             bits=$scope.bitssecond;
-        }else if($scope.calc=="arrayx"){
-            bits=$scope.sizex*$scope.sizey*$scope.integrations2;
-        }else if($scope.calc=="channels"){
-            bits=$scope.channel*$scope.bitschannel*$scope.integrations1;
-        }
-        $scope.totalbits=bits;
-         memory=($scope.percent/100)*86400;
-        downlink=bits*memory;
-        $scope.totaldownlink=downlink+" MIPS";
-        if($scope.length==0){
-            mips=$scope.mips;
-        }
-        $scope.showDatabase = true;
+            $scope.totalbits=bits;
+             memory=(parseInt($scope.resolution)/100)*86400;
+            downlink=bits*memory;
+            $scope.totaldownlink=downlink;
+            if($scope.length==0){
+                mips=$scope.mips;
+            }
+            $scope.showDatabase = false;
+            $scope.showCalculate = true;
     }
 
-  	$scope.cdhparts = [];
+    $scope.tabARRAY=function(){
+            bits=$scope.sizex*$scope.sizey*$scope.integrations2;
+            $scope.totalbits=bits;
+             memory=(parseInt($scope.resolution)/100)*86400;
+            downlink=bits*memory;
+            $scope.totaldownlink=downlink;
+            if($scope.length==0){
+                mips=$scope.mips;
+            }
+            $scope.showDatabase = false;
+            $scope.showCalculate = true;
+    }
+
+    $scope.tabCHANNELS=function(){
+            bits=$scope.channel*$scope.bitschannel*$scope.integrations1;
+            $scope.totalbits=bits;
+             memory=(parseInt($scope.resolution)/100)*86400;
+            downlink=bits*memory;
+            $scope.totaldownlink=downlink;
+            if($scope.length==0){
+                mips=$scope.mips;
+            }
+            $scope.showDatabase = false;
+            $scope.showCalculate = true;
+    }
+
+    $scope.cdhparts = [];
     $scope.init = function() { 
-		$http.get('/parts/cdh').then(function(result) { 
-			$scope.cdhparts = result.data; 
-		});
+        $http.get('/parts/cdh').then(function(result) { 
+            $scope.cdhparts = result.data; 
+        });
     } 
     $scope.init(); 
 
@@ -112,7 +140,6 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
     $scope.okData=function(part){
         return part.MHz>=bits&&part.MIPS>=mips;
-
     }
 
     $scope.order = function(part) {
