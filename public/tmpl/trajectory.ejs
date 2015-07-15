@@ -10,210 +10,151 @@
     <hr>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <h3>User Input</h3>
             <!-- <p>Input Specifications:<br>
             Please estimate the Periapsis and Apoapsis of your science orbit. Periapsis will be close the distance at which you want to take measurement. Apoapsis will adjust your orbit period."(this explanation must be expanded/it may make sense to include orbit period in the input boxes)<br>
             Please select whether you would like to take a longer, "indirect" route with a very low deltaV budget, or a faster, "direct" route with a high deltaV budget. If you have an independent trajectory deltaV calculation, input that instead.<br>
             If your orbit requires a change in inclination at any point, please input that specification here -->
-
-            <!-- <div class="btn-group">
-                <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton1" aria-expanded="false" aria-controls="collapsebutton1">
-                        Input Specfics
-                </button>
-                <button class = "btn btn-primary" type="radio" data-toggle="collapse" data-target="#collapsebutton2" aria-expanded="false" aria-controls="collapsebutton2">
-                        Input Own &#916V
-                </button>
-            </div>
-            <div class="collapse" id="collapsebutton1">
-                <div id="carousel1" class = "carousel slide" data-ride="carousel" interval="false">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel1" data-slide-to="1"></li>
-                        <li data-target="#carousel1" data-slide-to="2"></li>
-                        <li data-target="#carousel1" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner" style="height: 240px">
-                        <div class="item active">
-                                <div class="divider"></div>
-                                <label>Trajectory Type </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio1"/>
-                                            Pick Trajectory:
-                                        </label>
-                                            <select class="form-control" data-ng-model="picktrajectory">
-                                                <option value="direct">Direct</option>
-                                                <option value="indirect">Indirect</option>
-                                            </select>
-                                        <div class="dividersmall"></div>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio2"/>
-                                            Input Trajectory deltaV:
-                                        </label>
-                                            <div class="input-group" >
-                                                <input type="number" class="form-control" data-ng-model="inputtrajectorydV"/> <span class="input-group-addon" id="dvaddon">km/s</span>
-                                            </div>
-                                    </div>   
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only"></span>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <div class="divider"></div>
-                                <label>Orbit Specifications</label>
-                                        <div class="input">
-                                            Apoapsis
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" data-ng-model="apoapsis">
-                                                <span class="input-group-addon" id="orbitaddon1">km</span>
-                                            </div>
-                                        </div>
-                                        <div class="dividersmall"></div>
-                                        <div class = "input">
-                                            Periapsis
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" data-ng-model="periapsis"/>
-                                        <span class="input-group-addon" id="orbitaddon2">km</span>
-                                        </div>
-                                        </div>
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide = "prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                        </div>
-                        <div class = "item">
-                                <div class="divider"></div>
-                                <label>Required Inclination Change</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"/>
-                                        <span class="input-group-addon" id="basic-addon2">deg</span>
-                                    </div>
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide = "prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="collapse" id="collapsebutton2">
-                <div class="input-group">
-                <input type="number" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2"/>
-                <span class="input-group-addon" id="basic-addon2">km/s</span>
-                </div>
-            </div>
- -->
             <div>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1">Input Specfics</a></li>
                     <li>               <a href="#tab2">Input Own &#916V</a></li>
                 </ul>
             </div>
-
-            <section id="tab1" class="tab-content active">
+        </div>
+    </div>
+    
+    <section id="tab1" class="tab-content active">
+        <div class="row">
+            <div class="col-lg-6">
                 <div class="divider"></div>
                 <label>Specific &#916V</label>
                 <div class="input-group">
                     <input type="number" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2"/>
                     <span class="input-group-addon" id="basic-addon2">km/s</span>
                 </div>
-            </section>
+            </div>
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                        Select Propulsion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <section id="tab2" class="tab-content hide">
-                <div id="carousel1" class = "carousel slide" data-ride="carousel" interval="false">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel1" data-slide-to="1"></li>
-                        <li data-target="#carousel1" data-slide-to="2"></li>
-                        <li data-target="#carousel1" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner" style="height: 240px">
-                        <div class="item active">
-                                <div class="divider"></div>
-                                <label>Trajectory Type </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio1"/>
-                                            Pick Trajectory:
-                                        </label>
-                                            <select class="form-control" data-ng-model="picktrajectory">
-                                                <option value="direct">Direct</option>
-                                                <option value="indirect">Indirect</option>
-                                            </select>
-                                        <div class="dividersmall"></div>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio2"/>
-                                            Input Trajectory deltaV:
-                                        </label>
-                                            <div class="input-group" >
-                                                <input type="number" class="form-control" data-ng-model="inputtrajectorydV"/> <span class="input-group-addon" id="dvaddon">km/s</span>
-                                            </div>
-                                    </div>   
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only"></span>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <div class="divider"></div>
-                                <label>Orbit Specifications</label>
-                                        <div class="input">
-                                            Apoapsis
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" data-ng-model="apoapsis">
-                                                <span class="input-group-addon" id="orbitaddon1">km</span>
-                                            </div>
-                                        </div>
-                                        <div class="dividersmall"></div>
-                                        <div class = "input">
-                                            Periapsis
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" data-ng-model="periapsis"/>
-                                        <span class="input-group-addon" id="orbitaddon2">km</span>
-                                        </div>
-                                        </div>
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide = "prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                        </div>
-                        <div class = "item">
-                                <div class="divider"></div>
-                                <label>Required Inclination Change</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"/>
-                                        <span class="input-group-addon" id="basic-addon2">deg</span>
-                                    </div>
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide = "prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
+    <section id="tab2" class="tab-content hide">
+        <div id="carousel1" class = "carousel slide" data-ride="carousel" interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+                <li data-target="#carousel1" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" style="height: 240px">
+                <div class="item active">
+                    <div class="dividersmall"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label>Trajectory Type </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio1"/>
+                                    Pick Trajectory:
+                                </label>
+                                <select class="form-control" data-ng-model="picktrajectory">
+                                    <option value="direct">Direct</option>
+                                    <option value="indirect">Indirect</option>
+                                </select>
+                                <div class="dividersmall"></div>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio2"/>
+                                    Input Trajectory deltaV:
+                                </label>
+                                <div class="input-group" >
+                                    <input type="number" class="form-control" data-ng-model="inputtrajectorydV"/> <span class="input-group-addon" id="dvaddon">km/s</span>
+                                </div>
+                            </div>   
+                            <div class="divider"></div>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
                         </div>
                     </div>
-                </div>   
-            </section> 
-
-        </div>
+                </div>
+                <div class="item">
+                    <div class="dividersmall"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label>Orbit Specifications</label>
+                            <div class="input">
+                                Apoapsis
+                                <div class="input-group">
+                                    <input type="number" class="form-control" data-ng-model="apoapsis">
+                                    <span class="input-group-addon" id="orbitaddon1">km</span>
+                                </div>
+                            </div>
+                            <div class="dividersmall"></div>
+                            <div class = "input">
+                                Periapsis
+                                <div class="input-group">
+                                    <input type="number" class="form-control" data-ng-model="periapsis"/>
+                                    <span class="input-group-addon" id="orbitaddon2">km</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide = "prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "item">
+                    <div class="dividersmall"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label>Required Inclination Change</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"/>
+                                    <span class="input-group-addon" id="basic-addon2">deg</span>
+                                </div>
+                            <div class="divider"></div>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" data-slide = "prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-10">
+                        </div>
+                        <div class="col-lg-2">
+                            <div class = "dividerlarge"></div>
+                            <div id="button">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                                    Select Propulsion
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section> 
+    <hr>
+    <!-- <div class="row">
         <div class="col-lg-6">
             <h3>Calculation Results</h3>
             &#916V:<input class="form-control" type="number" data-ng-model="totaldV" readonly="readonly"/>
@@ -221,14 +162,14 @@
         <div class="col-lg-10"></div>
         <div class="col-lg-2">
             <div class = "dividerlarge"></div>
-                <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
-                        Search Database
-                    </button>
-                </div>
+            <div id="button">
+                <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                    Select Propulsion
+                </button>
+            </div>
         </div>
     </div>
-    <hr>
+    <hr> -->
 
     <div ng-show="showDatabase">
         <div class="row">

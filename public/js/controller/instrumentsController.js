@@ -6,13 +6,36 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         //$scope.loading = false;
     };
 
+    $scope.showTarget = false;
+    $scope.showInstrumentation = false;
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
 
     $scope.cubesat = [];
-    $http.get(cubesatPath).then(function(result) { 
-        $scope.cubesat = result.data; 
-    });
+    $scope.updateData = function() {
+        $http.get(cubesatPath).then(function(result) { 
+            $scope.cubesat = result.data;
+            var partextracted = {};
+            partextracted = $scope.cubesat[0];
+
+            $scope.target = partextracted['Target'];
+            $scope.attitudePart = partextracted['Attitude'];
+            $scope.antennaPart = partextracted['Antenna'];
+            $scope.receiverPart = partextracted['Receiver'];
+            $scope.cdhPart = partextracted['Cdh'];
+            $scope.instrumentPart = partextracted['Instrument'];
+            $scope.panelsPart = partextracted['Panels'];
+            $scope.batteriesPart = partextracted['Batteries'];
+            $scope.epsPart = partextracted['EPS'];
+            $scope.propulsionPart = partextracted['Propulsion'];
+            $scope.stationPart = partextracted['Station'];
+            $scope.busPart = partextracted['Bus'];
+            $scope.deployerPart = partextracted['Deployer'];
+            $scope.thermalPart = partextracted['Thermal'];
+
+        }); 
+    };
+    $scope.updateData();
 
     $scope.instruments = [];
     $scope.init = function() { 
@@ -23,10 +46,9 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.init();
 
     $scope.targetJson = [{
-        Target: "Moon"
+        Target: ""
     }];
 
-    
     $scope.wavelengths=[];
   
     $scope.activeButton = function(id) {
@@ -118,8 +140,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         } 
     }
 
-   $scope.isSelected = function(id){
-
+    $scope.isSelected = function(id){
         return document.getElementById(id).style.backgroundColor =="blue";
     }
 
@@ -179,11 +200,37 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         }];
     };
 
-    $scope.nextPage = function() {
+    $scope.nextTarget = function() {
+        $scope.showTarget = true;
+        $scope.showInstrumentation = false;
+    };
+
+    $scope.nextInstrumentation = function() {
+        $scope.showTarget = true;
+        $scope.showInstrumentation = true;
+    };
+
+    $scope.addTarget = function() {
         $http.put('/parts/cubesat-target/' + idstring, $scope.targetJson[0])
             .success(function(data) {
                 // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
-            })
+            });
+        $scope.updateData();
+    };
+
+    $scope.saveInstrument = function(instrument) {
+        $scope.selectedInstrument = instrument;
+    };
+
+    $scope.addInstrument = function() {
+        $http.put('/parts/cubesat-instrument/' + idstring, $scope.selectedInstrument)
+            .success(function(data) {
+                $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
+            });
+        $scope.updateData();
+    };
+
+    $scope.nextPage = function() {
         var path = '/tool2?' + idstring;
         window.location = path;    
     };

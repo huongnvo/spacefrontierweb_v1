@@ -2,6 +2,11 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     $scope.showDatabase = false;
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
+    $scope.showCalculate = false;
+
+    $scope.nextCalculate = function() {
+        $scope.showCalculate = true;
+    }
 
     $(document).ready(function() {
         $('.nav-tabs > li > a').click(function(event){

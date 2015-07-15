@@ -10,7 +10,7 @@
     <hr>
     <h3>User Input</h3>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1">Channels</a></li>
@@ -18,55 +18,118 @@
                     <li>               <a href="#tab3">Bits/Second</a></li>
                 </ul>
             </div>
+        </div>
+    </div>
 
-            <section id="tab1" class="tab-content active">
-                <div class="divider"></div>
+    <section id="tab1" class="tab-content active">
+        <div class="dividersmall"></div>
+        <div class="row">
+            <div class="col-lg-6">
                 Channels <input type="number" class="form-control" placeholder="100" data-ng-model="channel"/>
                 <div class="divider"></div>
                 Bits/Channel: <input type="number" class="form-control" placeholder="100" data-ng-model="bitschannel"/>
                 <div class="divider"></div>
                 Integrations/Second:<input type="number" class="form-control" placeholder="100" data-ng-model="integrations1"/>
-            </section>
-
-            <section id="tab2" class="tab-content hide">
                 <div class="divider"></div>
+                Percent of Time Generating Data (x/100):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+            </div>
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                    <div id="button">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextCalculate()">
+                            Calculate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+
+    <section id="tab2" class="tab-content hide">
+        <div class="dividersmall"></div>
+        <div class="row">
+            <div class="col-lg-6">
                 Array Size - x: <input type="number" class="form-control" placeholder="100" data-ng-model="sizex"/>
                 <div class="divider"></div>
                 Array Size - y: <input type="number"class="form-control" placeholder="100" data-ng-model="sizey"/>
                 <div class="divider"></div>
                 Integrations/Second:<input type="number" class="form-control" placeholder="100" data-ng-model="integrations2"/>
-            </section>
-
-            <section id="tab3" class="tab-content hide">
-                <div class="divider"></div>
-                Bits/Second <input type="number" class="form-control" placeholder="100" data-ng-model="bitssecond"/>
-            </section>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <h3>Calculation Results</h3>
-            Bits/Second:<input type="number" class="form-control" data-ng-model="totalbits" readonly="readonly"/>
-            <div class = "divider"></div>
-            Required Downlink:<input type="number" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-10">
-        </div>
-        <div class="col-lg-2">
-            <div class = "dividerlarge"></div>
-                <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
-                        Search Database
-                    </button>
+                <div class="divider"></div>                 
+                Percent of Time Generating Data (x/100):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+            </div>
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                    <div id="button">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextCalculate()">
+                            Calculate
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+        <hr>
+    </section>
+
+    <section id="tab3" class="tab-content hide">
+        <div class="dividersmall"></div>
+        <div class="row">
+            <div class="col-lg-6">
+                Bits/Second <input type="number" class="form-control" placeholder="100" data-ng-model="bitssecond"/>
+                <div class="divider"></div>
+                Percent of Time Generating Data (x/100):<input class="form-control" placeholder="10" data-ng-model="resolution"/>
+            </div>
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                    <div id="button">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextCalculate()">
+                            Calculate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <div ng-show="showCalculate">
+        <h3>Calculation Results</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class = "divider"></div>
+                Bits/Second:<input type="number" class="form-control" data-ng-model="totalbits" readonly="readonly"/>
+            </div>
+            <div class="col-lg-6">
+                <div class = "divider"></div>
+                Required Downlink:<input type="number" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                    <div id="button">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                            Search Database
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
     </div>
-    <hr>
 
     <div ng-show="showDatabase">
         <div class="row">
