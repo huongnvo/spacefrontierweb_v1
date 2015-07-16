@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="spaceFrontierApp">
+<html ng-app="spaceFrontierApp">
 <% include header %>
 
     <body class="container" data-ng-controller="attitudeController">
@@ -10,16 +10,15 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>User Input</h3>
-                Altitude:
-                <div class="input-group">
-                    <input class="form-control" placeholder="100" data-ng-model="attitude"/>
-                    <div class="input-group-addon">km</div>
-                </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="100" data-ng-model="attitude" valid-number/>
+                        <div class="input-group-addon">km</div>
+                    </div>
                 <div class = "divider"></div>
                 Maximum Spatial Resolution:
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution"/>
-                    <div class="input-group-addon">m</div>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution"valid-number/>
+                    <div class="input-group-addon" />m</div>
                 </div>
             </div>
             <div class="col-lg-6">

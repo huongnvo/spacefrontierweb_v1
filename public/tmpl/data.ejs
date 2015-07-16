@@ -25,16 +25,16 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Channels <input type="number" class="form-control" placeholder="100" data-ng-model="channel"/>
+                Channels <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number/>
                 <div class="divider"></div>
-                Bits/Channel: <input type="number" class="form-control" placeholder="100" data-ng-model="bitschannel"/>
+                Bits/Channel: <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
                 <div class="divider"></div>
-                Integrations/Second:<input type="number" class="form-control" placeholder="100" data-ng-model="integrations1"/>
+                Integrations/Second:<input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution"/>
-                    <div class="input-group-addon">/100</div>
+                    <input class="form-control" placeholder="10" data-ng-model="resolution" valid-number/>
+                    <div class="input-group-addon" >/100</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -59,15 +59,15 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Array Size - x: <input type="number" class="form-control" placeholder="100" data-ng-model="sizex"/>
+                Array Size - x: <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
                 <div class="divider"></div>
-                Array Size - y: <input type="number"class="form-control" placeholder="100" data-ng-model="sizey"/>
+                Array Size - y: <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
                 <div class="divider"></div>
-                Integrations/Second:<input type="number" class="form-control" placeholder="100" data-ng-model="integrations2"/>
+                Integrations/Second:<input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
                 <div class="divider"></div>                 
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution"/>
+                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution"/>
                     <div class="input-group-addon">/100</div>
                 </div>
             </div>
@@ -92,11 +92,11 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Bits/Second <input type="number" class="form-control" placeholder="100" data-ng-model="bitssecond"/>
+                Bits/Second <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution"/>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution" valid-number/>
                     <div class="input-group-addon">/100</div>
                 </div>
             </div>
@@ -122,11 +122,11 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Bits/Second:<input type="number" class="form-control" data-ng-model="totalbits" readonly="readonly"/>
+                Bits/Second:<input type="text" class="form-control" data-ng-model="totalbits" readonly="readonly" valid-number/>
             </div>
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Required Downlink:<input type="number" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+                Required Downlink:<input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
             </div>
             <div class="col-lg-10">
             </div>

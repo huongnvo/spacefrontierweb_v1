@@ -129,7 +129,7 @@ app.put('/parts/cubesat-deployer/:_id', function(req, res) {
 var AttitudeFactory = require('./public/js/models/AttitudeFactory.js');
 var attitudefactory = new AttitudeFactory(Schema,mongoose);
 attitudefactory.createSchemas();
-// attitudefactory.insertPart();
+//attitudefactory.insertPart();
 
 app.get('/parts/attitude', function(req, res) {
     var resp = attitudefactory.getPart({},res);
