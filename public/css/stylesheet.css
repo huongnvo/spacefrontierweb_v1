@@ -92,12 +92,11 @@ a {
 
 .button {
   border: none;
-  color: #fff;
-  background: #87CEFA;
+  color: primary;
+  background: #faf2cc;
   font-weight: 700;
   text-align:right;
   border-radius: 4px;
-  outline-style: dotted;
   outline-color: #fff
 }
 

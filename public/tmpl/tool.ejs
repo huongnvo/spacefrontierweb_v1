@@ -2,29 +2,315 @@
 <html data-ng-app="spaceFrontierApp">
 <% include header %>
  
-<body class="container" data-ng-controller="toolController">
-    <% include navbar %>
-    <div style="height: 340px">
-        <carousel interval="myInterval">
-            <slide ng-repeat="slide in slides" active="slide.active">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
-            </slide>
-        </carousel>
+<body data-ng-controller="toolController">
+    <div style="background-image: url(http://paws4life.org/blog/wp-content/uploads/2013/05/A_DSC4992.jpg); background-size: 100%; height: 650px" class = "jumbotron">
+        <div class="container" id="nav">
+            <% include navbar %>
+        </div>
+        <div id="carousel1" class = "carousel slide" data-ride="carousel" style="height: 650px">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+                <li data-target="#carousel1" data-slide-to="3"></li>
+                <li data-target="#carousel1" data-slide-to="4"></li>
+                <li data-target="#carousel1" data-slide-to="5"></li>
+                <li data-target="#carousel1" data-slide-to="6"></li>
+                <li data-target="#carousel1" data-slide-to="7"></li>
+                <li data-target="#carousel1" data-slide-to="8"></li>
+                <li data-target="#carousel1" data-slide-to="9"></li>
+            </ol>
+            <div class="carousel-inner" style="height: 650px">
+                <div class="item active">
+                    <div class="col-lg-2">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row" style="height: 100px"></div>
+                        <div class="container" id="indexjumbo">
+                            <h1>Instructions</h1>
+                            <h4>Flip through these slides to learn how to use the SPACE Tool</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right">
+                            <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Instruments Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>This page uses your selections from lists of elements, wavelengths of light, and particles to look through a list of currently manufactured instruments suitable for CubeSats. It returns those that can acquire information on the selected fields. </h4>
+                            <h3>What to Do:</h3>
+                            <h4> Select all fields you would like your instrument to detect. Then, select a target for your mission; this will come into play for the propulsion and communications systems. Finally, look at the instruments returned by your search and find one appropriate for your goals.</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right">
+                            <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Attitude Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>HELLO I AM THE ALGORITHM</h4>
+                            <h3>What to Do:</h3>
+                            <h4>USE THE SPACE</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Propulsion Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>Propulsion mechanisms are filtered by their deltaV budget. DeltaV budget is calculated by adding the required dV to reach the target to the required dV to reach science orbit and adjust inclination. There are some generalizations used to generate the deltaV for trajectories, these are explained on the page.</h4>
+                            <h3>What to Do:</h3>
+                            <h4>Select one of the tabs; "Input Specifics" or "Input Own dV". These tabs allow you to use the tool to generate a dV estimate or simply add your own if you have one. Fill out all required fields and then press "Caculate Results". Then, select an appropriate subsystem.</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Communication Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>HELLO I AM THE ALGORITHM</h4>
+                            <h3>What to Do:</h3>
+                            <h4>USE THE SPACE</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Command and Data Handling Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>HELLO I AM THE ALGORITHM</h4>
+                            <h3>What to Do:</h3>
+                            <h4>USE THE SPACE</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Power Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>HELLO I AM THE ALGORITHM</h4>
+                            <h3>What to Do:</h3>
+                            <h4>USE THE SPACE</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row" style="height: 50px"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Frame Selection</h2>
+                            <div class="divider"></div>
+                            <h3>Algorithm: </h3>
+                            <h4>HELLO I AM THE ALGORITHM</h4>
+                            <h3>What to Do:</h3>
+                            <h4>USE THE SPACE</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Finished CubeSat Display</h2>
+                            <div class="divider"></div>
+                            <h3>What to Do:</h3>
+                            <h4>USE THE SPACE</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 310px">
+                        </div>
+                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row" style="height: 100px"></div>
+                        <div class="container" id="indexjumbo">
+                            <h2>Let's Begin!</h2>
+                            <div class="btn" id="rcorners" type="button" id="roundedbutton" href="/tool" class="btn btn-lg" style="color: #FFFFFF" ng-click="buildCubesat()">SPACE Tool</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-lg-4">
         </div>
         <div class="col-lg-4">
             <div id="button">
                 <a type="button" ng-click="buildCubesat()" class="btn btn-lg btn-success btn-circle">Get Started!</a>
             </div>
+
         </div>
         <div class="col-lg-4">
         </div>
+    </div>-->
+    <div class="container">
+        <% include footer %>
     </div>
-    <hr>
-    <% include footer %>
     <div class = "divider"></div>
 </body>
- 
 </html>
