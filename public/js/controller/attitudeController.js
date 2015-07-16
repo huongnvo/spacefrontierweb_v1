@@ -52,10 +52,6 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     }; 
     $scope.init(); 
 
-    $scope.numeric = function(){
-
-    }
-
     var aControl;
     $scope.myClick = function() {
         var aKnow = Math.atan(parseInt($scope.resolution) / (parseInt($scope.attitude) * 10000)) * 180 / Math.PI;
