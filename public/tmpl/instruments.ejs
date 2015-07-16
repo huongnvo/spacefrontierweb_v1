@@ -9,13 +9,372 @@
         <p>On this page please enter any specifications you have for your science instrument. Several fields, such as the periodic table and wavelength chart, ask for the type of data you would like to collect.</p>
         <hr>
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">More Information: {{selectedInstrument.Name}}</h4>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Reference">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Heritage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Heritage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Mass">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass (further):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Mass_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Power">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power (further):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Power_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Volume">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Proportions">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume (further):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Volume_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Measurement:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Measurement">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Sensitivity:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Sensitivity">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Resolution:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Resolution">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Pixels:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Pixels">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Venue:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Venue">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Field of View:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.FOV">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (low):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.T_lo">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (high):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.T_hi">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Thermal:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Thermal_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Datarate:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Datarate">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h3>Choose Data</h3>
         <div class="row">
             <div class="col-lg-12">
                 <div>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1">Elements</a></li>
-                        <li>               <a href="#tab2">Wavelenths</a></li>
+                        <li>               <a href="#tab2">Wavelengths</a></li>
                         <li>               <a href="#tab3">Compounds</a></li>
                         <li>               <a href="#tab4">Particles</a></li>
                         <li>               <a href="#tab5">Fields</a></li>
@@ -527,13 +886,13 @@
                         <div class="col-lg-11">
                             <div class = "dividersmall"></div>
                             <select multiple class="form-control" size = "14">
-                                <option ng-click="saveInstrument(instrument)" ng-repeat="instrument in instruments|filter:searchInstruments"> 
+                                <option ng-click="saveInstrument(instrument)" data-ng-model="chosenPart" ng-repeat="instrument in instruments|filter:searchInstruments"> 
                                     {{instrument.Name}}
                                 </option>
                             </select>
                         </div>
                         <div class="col-lg-1">
-                            <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                            <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                             <a type="button" ng-click="addInstrument()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                         </div>
                     </div>

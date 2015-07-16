@@ -30,7 +30,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             $(target_tab_selector).addClass('active');
         });
     });
-    
+
     $scope.cubesat = [];
     $scope.updateData = function() {
         $http.get(cubesatPath).then(function(result) { 
@@ -52,7 +52,6 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             $scope.busPart = partextracted['Bus'];
             $scope.deployerPart = partextracted['Deployer'];
             $scope.thermalPart = partextracted['Thermal'];
-
         }); 
     };
     $scope.updateData();
@@ -66,7 +65,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.init();
 
     $scope.targetJson = [{
-        Target: "Moon"
+        Target: ""
     }];
 
     
@@ -161,15 +160,10 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             }
 
             document.getElementById(id).style.backgroundColor = "lightskyblue";
-        }
-
-
-
-       
+        }       
     }
 
    $scope.isSelected = function(id){
-
         return document.getElementById(id).style.backgroundColor =="blue";
     }
 
@@ -254,16 +248,12 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.addInstrument = function() {
         $http.put('/parts/cubesat-instrument/' + idstring, $scope.selectedInstrument)
             .success(function(data) {
-                $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
 
     $scope.nextPage = function() {
-        $http.put('/parts/cubesat-target/' + idstring, $scope.targetJson[0])
-            .success(function(data) {
-                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
-            })
         var path = '/tool2?' + idstring;
         window.location = path;    
     };

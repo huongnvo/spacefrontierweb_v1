@@ -6,6 +6,14 @@ var express = require("express"),
  
 var app = express();
 
+var config = {
+      "USER"    : "",           
+      "PASS"    : "",
+      "HOST"    : "ec2-52-2-119-158.compute-1.amazonaws.com",  
+      "PORT"    : "47782", 
+      // "DATABASE" : "cubesat_v1"
+    };
+
 app.use(express.logger());
 app.use(express.json());
 app.use(express.urlencoded());
@@ -23,7 +31,7 @@ app.use(bodyParser.json());
 /* Setting up the database connection ------------------------------------------------*/
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/cubesat_v1', function(err) {
+mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
