@@ -30,7 +30,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             $(target_tab_selector).addClass('active');
         });
     });
-    
+
     $scope.cubesat = [];
     $scope.updateData = function() {
         $http.get(cubesatPath).then(function(result) { 
@@ -159,8 +159,17 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                 }
             }
 
+<<<<<<< HEAD
             document.getElementById(id).style.backgroundColor = "#faf2cc";
+        }
+
+
+
+       
+=======
+            document.getElementById(id).style.backgroundColor = "lightskyblue";
         }       
+>>>>>>> develop
     }
 
    $scope.isSelected = function(id){
