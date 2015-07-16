@@ -112,7 +112,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
 
             if(id=='Microwave'){
                 if($scope.wavelengths.indexOf("microwave")!=-1){
-                    document.getElementById(id).style.backgroundColor = "red";
+                    //document.getElementById(id).style.backgroundColor = "red";
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("microwave"),1);
                 }
             }
@@ -160,7 +160,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                 }
             }
 
-            document.getElementById(id).style.backgroundColor = "lightskyblue";
+            document.getElementById(id).style.backgroundColor = "#faf2cc";
         }
 
 
