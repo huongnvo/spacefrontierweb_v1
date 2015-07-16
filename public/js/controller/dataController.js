@@ -74,39 +74,39 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
 
     $scope.tabBPS = function() {
-            bits=$scope.bitssecond;
-            $scope.totalbits=bits;
+            bits=parseInt($scope.bitssecond);
+            $scope.totalbits=bits+"";
              memory=(parseInt($scope.resolution)/100)*86400;
             downlink=bits*memory;
-            $scope.totaldownlink=downlink;
+            $scope.totaldownlink=downlink+"";
             if($scope.length==0){
-                mips=$scope.mips;
+                mips=parseInt($scope.mips)+"";
             }
             $scope.showDatabase = false;
             $scope.showCalculate = true;
     }
 
     $scope.tabARRAY=function(){
-            bits=$scope.sizex*$scope.sizey*$scope.integrations2;
-            $scope.totalbits=bits;
+            bits=parseInt($scope.sizex)*parseInt($scope.sizey)*parseInt($scope.integrations2);
+            $scope.totalbits=bits+"";
              memory=(parseInt($scope.resolution)/100)*86400;
             downlink=bits*memory;
-            $scope.totaldownlink=downlink;
+            $scope.totaldownlink=downlink+"";
             if($scope.length==0){
-                mips=$scope.mips;
+                mips=parseInt($scope.mips)+"";
             }
             $scope.showDatabase = false;
             $scope.showCalculate = true;
     }
 
     $scope.tabCHANNELS=function(){
-            bits=$scope.channel*$scope.bitschannel*$scope.integrations1;
-            $scope.totalbits=bits;
+            bits=parseInt($scope.channel)*parseInt($scope.bitschannel)*parseInt($scope.integrations1);
+            $scope.totalbits=bits+"";
              memory=(parseInt($scope.resolution)/100)*86400;
             downlink=bits*memory;
-            $scope.totaldownlink=downlink;
+            $scope.totaldownlink=downlink+"";
             if($scope.length==0){
-                mips=$scope.mips;
+                mips=parseInt($scope.mips)+"";
             }
             $scope.showDatabase = false;
             $scope.showCalculate = true;
@@ -172,5 +172,30 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
         window.location = path; 
     };
 });
-    
+
+spaceFrontierApp.directive('validNumber', function() {
+  return {
+    require: '?ngModel',
+    link: function(scope, element, attrs, ngModelCtrl) {
+      if(!ngModelCtrl) {
+        return; 
+      }
+      
+      ngModelCtrl.$parsers.push(function(val) {
+        var clean = val.replace( /[^0-9.]+/g, '');
+        if (val !== clean) {
+          ngModelCtrl.$setViewValue(clean);
+          ngModelCtrl.$render();
+        }
+        return clean;
+      });
+      
+      element.bind('keypress', function(event) {
+        if(event.keyCode === 32) {
+          event.preventDefault();
+        }
+      });
+    }
+  };
+});
 
