@@ -35,10 +35,10 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
     $scope.updateData();
 
     $scope.init = function() { 
-        $http.get('http://localhost:3000/parts/comm').then(function(result) { 
+        $http.get('/parts/comm').then(function(result) { 
             $scope.parts = result.data; 
         });
-         $http.get('http://localhost:3000/parts/station').then(function(result) { 
+         $http.get('/parts/station').then(function(result) { 
             $scope.stations = result.data; 
         });
     } 
