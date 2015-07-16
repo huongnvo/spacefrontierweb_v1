@@ -31,7 +31,7 @@
                 <div class="divider"></div>
                 <label>Specific &#916V</label>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2"/>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
                     <span class="input-group-addon" id="basic-addon2">km/s</span>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                                     Input Trajectory deltaV:
                                 </label>
                                 <div class="input-group" >
-                                    <input type="number" class="form-control" data-ng-model="inputtrajectorydV"/> <span class="input-group-addon" id="dvaddon">km/s</span>
+                                    <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number/> <span class="input-group-addon" id="dvaddon">km/s</span>
                                 </div>
                             </div>   
                             <div class="divider"></div>
@@ -97,7 +97,7 @@
                             <div class="input">
                                 Apoapsis
                                 <div class="input-group">
-                                    <input type="number" class="form-control" data-ng-model="apoapsis">
+                                    <input type="text" class="form-control" data-ng-model="apoapsis" valid-number>
                                     <span class="input-group-addon" id="orbitaddon1">km</span>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                             <div class = "input">
                                 Periapsis
                                 <div class="input-group">
-                                    <input type="number" class="form-control" data-ng-model="periapsis"/>
+                                    <input type="text" class="form-control" data-ng-model="periapsis" valid-number/>
                                     <span class="input-group-addon" id="orbitaddon2">km</span>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                         <div class="col-lg-6">
                             <label>Required Inclination Change</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2"/>
+                                    <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
                                     <span class="input-group-addon" id="basic-addon2">deg</span>
                                 </div>
                             <div class="divider"></div>
@@ -159,7 +159,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Calculation Results</h3>
-                &#916V:<input class="form-control" type="number" data-ng-model="totaldV" readonly="readonly"/>
+                &#916V:<input class="form-control" type="text" data-ng-model="totaldV" readonly="readonly" valid-number/>
             </div>   
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
