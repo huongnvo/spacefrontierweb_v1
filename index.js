@@ -392,6 +392,6 @@ app.get('/thermal', function (req, res) {
 });
 
 app.listen(port);
-console.log('Express server running at http://localhost:' + port);
+console.log('Express server running at port:' + port);
 
 
