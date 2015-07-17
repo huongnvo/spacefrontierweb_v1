@@ -61,25 +61,27 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <label>Trajectory Type </label>
-                            <div class="radio">
-                                <label>
+                            <div class="input-group">
+                                <span="input-group-addon">
                                     <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio1"/>
+                                </span>
+                                <span="input-group-addon">
                                     Pick Trajectory:
-                                </label>
+                                </span>
                                 <select class="form-control" data-ng-model="picktrajectory">
                                     <option value="direct">Direct</option>
                                     <option value="indirect">Indirect</option>
                                 </select>
                                 <div class="dividersmall"></div>
                             </div>
-                            <div class="radio">
-                                <label>
+                            <div class="input-group">
+                                <span="input-group-addon">
                                     <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio2"/>
+                                </span>
+                                <span="input-group-addon">
                                     Input Trajectory deltaV:
-                                </label>
-                                <div class="input-group" >
-                                    <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number/> <span class="input-group-addon" id="dvaddon">km/s</span>
-                                </div>
+                                </span>
+                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number/> <span class="input-group-addon" id="dvaddon">km/s</span>
                             </div>   
                             <div class="divider"></div>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
@@ -142,8 +144,13 @@
                         </div>
                         <div class="col-lg-2">
                             <div class = "dividerlarge"></div>
-                            <div id="button">
-                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()">
+                            <div id="button" ng-show=picktrajectoryRadio1>
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="picktrajectory==null||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0">
+                                    Calculate Results
+                                </button>
+                            </div>
+                            <div id="button" ng-show=picktrajectoryRadio2>
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="inputtrajectorydV==null||inputtrajectorydV.length==0||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0">
                                     Calculate Results
                                 </button>
                             </div>
