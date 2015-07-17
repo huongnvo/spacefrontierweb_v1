@@ -42,6 +42,7 @@
         <div class="col-lg-2">
             <div id="button">
                 <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="frequency==null">
+                    Select Station (1/3)
                 </button>
             </div>
         </div>
@@ -226,15 +227,36 @@
             </div>
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Space Loss:<input type="text" class="form-control" placeholder="100" data-ng-model="spaceLoss" readonly="readonly"/>
+                Space Loss:
+                
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="spaceLoss" readonly="readonly"/>
+                    <span class="input-group-addon" id="totdV">dbW</span>
+                </div>
+
                 <div class = "divider"></div>
-                Signal to Noise Ratio:<input class="form-control" placeholder="10" data-ng-model="sigNoise" readonly="readonly"/>
+                Signal to Noise Ratio:
+
+                <div class="input-group">
+                    <input class="form-control" placeholder="10" data-ng-model="sigNoise" readonly="readonly"/>
+                    <span class="input-group-addon" id="totdV">dbW</span>
+                </div>
+
+                
             </div>
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Receiver:<input class="form-control" placeholder="10" data-ng-model="receiver" readonly="readonly"/>
+                Receiver:
+                <div class="input-group">
+                    <input class="form-control" placeholder="10" data-ng-model="receiver" readonly="readonly"/>
+                    <span class="input-group-addon" id="totdV">dbW</span>
+                </div>               
                 <div class = "divider"></div>
-                Bit Rate:<input class="form-control" placeholder="10" data-ng-model="bitRate" readonly="readonly"/>
+                Bit Rate:
+                <div class="input-group">
+                    <input class="form-control" placeholder="10" data-ng-model="bitRate" readonly="readonly"/>
+                    <span class="input-group-addon" id="totdV">kBits</span>
+                </div> 
             </div>
         </div>
         <div class="row">

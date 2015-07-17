@@ -25,16 +25,36 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Channels <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number/>
+                Channels 
+               
+                <div class="input-group">
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number/>
+                    <span class="input-group-addon" id="Channels">Channels</span>
+                </div>
+
                 <div class="divider"></div>
-                Bits/Channel: <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
+                Bits/Channel: 
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
+                    <span class="input-group-addon" id="Bits/Channel">Bits/Channel</span>
+                </div>
+
+
                 <div class="divider"></div>
-                Integrations/Second:<input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
+                Integrations/Second:
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
+                    <span class="input-group-addon" id="Integrations/Second">Integrations/Second</span>
+                </div>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
+                <div class="input-group">
                     <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number/>
-                    <div class="input-group-addon" >/100</div>
+                    <span class="input-group-addon" id="percent">% of time</span>
+                </div>
+
                 </div>
             </div>
             <div class="col-lg-6">
@@ -59,16 +79,35 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Array Size - x: <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
+                Array Size - x: 
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
+                    <span class="input-group-addon" id="pixelsX"> pixels</span>
+                </div>
+
                 <div class="divider"></div>
-                Array Size - y: <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
+                Array Size - y: 
+
+
+                <div class="input-group">
+                    <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
+                    <span class="input-group-addon" id="pixelsY"> pixels</span>
+                </div>
+
                 <div class="divider"></div>
-                Integrations/Second:<input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
+                Integrations/Second:
+
+                <div class="input-group">
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
+                    <span class="input-group-addon" id="pixelsY"> Integrations/Second</span>
+                </div>
+
                 <div class="divider"></div>                 
                 Percent of Time Generating Data:
                 <div class="input-group">
                     <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2"/>
-                    <div class="input-group-addon">/100</div>
+                    <div class="input-group-addon">% of time</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -92,12 +131,18 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Bits/Second <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
+                Bits/Second 
+
+                <div class="input-group">
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
+                    <div class="input-group-addon">Bits/Second</div>
+                </div>
+
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number/>
-                    <div class="input-group-addon">/100</div>
+                    <div class="input-group-addon">% of time</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -122,11 +167,21 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Bits/Second:<input type="text" class="form-control" data-ng-model="totalbits" readonly="readonly" valid-number/>
+                Bits/Second:
+
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totalbits" readonly="readonly" valid-number/>
+                    <div class="input-group-addon">Bits/Second</div>
+                </div>
             </div>
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Required Downlink:<input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+                Required Downlink:
+
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+                    <div class="input-group-addon">MIPS</div>
+                </div>
             </div>
             <div class="col-lg-10">
             </div>

@@ -159,7 +159,11 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Calculation Results</h3>
-                &#916V:<input class="form-control" type="text" data-ng-model="totaldV" readonly="readonly" valid-number/>
+                &#916V:
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totaldV" valid-number ng-disabled="true"/>
+                    <span class="input-group-addon" id="totdV">km/s</span>
+                </div>
             </div>   
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
