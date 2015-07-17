@@ -760,10 +760,8 @@ var AttitudeFactory = function(Schema,mongoose) {
         }, function(err, output) {
             if (err)
                 res.send(output);
-
             res.json({ message: 'Successfully deleted' });
         });
-
 	};
 }
 

@@ -161,12 +161,12 @@ app.post('/parts/cdh', function(req, res) {
     var resp = cdhfactory.putPart(req, res);
 });
 
-app.put('/parts/cdh/:id', function(req, res) {
+app.put('/parts/cdh/:_id', function(req, res) {
     var resp = cdhfactory.updatePart(req, res);
 });
 
-app.delete('/parts/cdh/:id', function(req, res) {
-    var resp = cdhfactory.deletePart(req, res);
+app.delete('/parts/cdh/:_id', function(req, res) {
+    var resp = cdhfactory.removePart(req, res);
 });
 
 /* Setting up the database for communication subsystem ------------------------------------*/
@@ -183,12 +183,12 @@ app.post('/parts/comm', function(req, res) {
     var resp = commfactory.putPart(req, res);
 });
 
-app.put('/parts/comm/:id', function(req, res) {
+app.put('/parts/comm/:_id', function(req, res) {
     var resp = commfactory.updatePart(req, res);
 });
 
-app.delete('/parts/comm/:id', function(req, res) {
-    var resp = commfactory.deletePart(req, res);
+app.delete('/parts/comm/:_id', function(req, res) {
+    var resp = commfactory.removePart(req, res);
 });
 
 /* Setting up the database for instrumentation ----------------------------------------------*/
@@ -205,12 +205,12 @@ app.post('/parts/instruments', function(req, res) {
     var resp = instrumentsfactory.putPart(req, res);
 });
 
-app.put('/parts/instruments/:id', function(req, res) {
+app.put('/parts/instruments/:_id', function(req, res) {
     var resp = instrumentsfactory.updatePart(req, res);
 });
 
-app.delete('/parts/instruments/:id', function(req, res) {
-    var resp = instrumentsfactory.deletePart(req, res);
+app.delete('/parts/instruments/:_id', function(req, res) {
+    var resp = instrumentsfactory.removePart(req, res);
 });
 
 /* Setting up the database for power parts ----------------------------------------------*/
@@ -227,12 +227,12 @@ app.post('/parts/power', function(req, res) {
     var resp = powerfactory.putPart(req, res);
 });
 
-app.put('/parts/power/:id', function(req, res) {
+app.put('/parts/power/:_id', function(req, res) {
     var resp = powerfactory.updatePart(req, res);
 });
 
-app.delete('/parts/power/:id', function(req, res) {
-    var resp = powerfactory.deletePart(req, res);
+app.delete('/parts/power/:_id', function(req, res) {
+    var resp = powerfactory.removePart(req, res);
 });
 
 /* Setting up the database for propulsion parts ------------------------------------------*/
@@ -249,12 +249,12 @@ app.post('/parts/propulsion', function(req, res) {
     var resp = propulsionfactory.putPart(req, res);
 });
 
-app.put('/parts/propulsion/:id', function(req, res) {
+app.put('/parts/propulsion/:_id', function(req, res) {
     var resp = propulsionfactory.updatePart(req, res);
 });
 
-app.delete('/parts/propulsion/:id', function(req, res) {
-    var resp = propulsionfactory.deletePart(req, res);
+app.delete('/parts/propulsion/:_id', function(req, res) {
+    var resp = propulsionfactory.removePart(req, res);
 });
 
 /* Setting up the database for station subsystem----------- ------------------------------*/
@@ -271,12 +271,12 @@ app.post('/parts/station', function(req, res) {
     var resp = stationfactory.putPart(req, res);
 });
 
-app.put('/parts/station/:id', function(req, res) {
+app.put('/parts/station/:_id', function(req, res) {
     var resp = stationfactory.updatePart(req, res);
 });
 
-app.delete('/parts/station/:id', function(req, res) {
-    var resp = stationfactory.deletePart(req, res);
+app.delete('/parts/station/:_id', function(req, res) {
+    var resp = stationfactory.removePart(req, res);
 });
 
 /* Setting up the database for thermal and mechanical parts ----------------------------*/
@@ -293,12 +293,12 @@ app.post('/parts/thermal', function(req, res) {
     var resp = thermalfactory.putPart(req, res);
 });
 
-app.put('/parts/thermal/:id', function(req, res) {
+app.put('/parts/thermal/:_id', function(req, res) {
     var resp = thermalfactory.updatePart(req, res);
 });
 
-app.delete('/parts/thermal/:id', function(req, res) {
-    var resp = thermalfactory.deletePart(req, res);
+app.delete('/parts/thermal/:_id', function(req, res) {
+    var resp = thermalfactory.removePart(req, res);
 });
 
 /* Setting the routes and html file paths -----------------------------------------------*/
@@ -392,6 +392,6 @@ app.get('/thermal', function (req, res) {
 });
 
 app.listen(port);
-console.log('Express server running at port:' + port);
+console.log('Express server running at port: ' + port);
 
 

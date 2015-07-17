@@ -29,7 +29,6 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             $scope.busPart = partextracted['Bus'];
             $scope.deployerPart = partextracted['Deployer'];
             $scope.thermalPart = partextracted['Thermal'];
-
         }); 
     };
     $scope.updateData();

@@ -1,8 +1,7 @@
 spaceFrontierApp.controller("displayAttitudeController", function($scope, $http) {
     $scope.parts = {};
     $scope.newPart = {};
-    $scope.editNewPart = {};
-
+    
     $scope.init = function() { 
         $http.get('/parts/attitude').then(function(result) { 
             $scope.parts = result.data; 
@@ -44,13 +43,41 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
         };
         $http.post('/parts/attitude', $scope.newPart)
             .success(function(data) {
-                $scope.newPart = {}; // clear the form so our user is ready to enter another
-            })
-    }
+                $scope.type = '';
+                $scope.typecont = '';
+                $scope.name = '';
+                $scope.manu = '';
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.masscont = '';
+                $scope.power = '';
+                $scope.powercont = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.volcont = '';
+                $scope.angle = '';
+                $scope.att = '';
+                $scope.ac = '';
+                $scope.sci = '';
+                $scope.ven = '';
+                $scope.low = '';
+                $scope.high = '';
+                $scope.datarate = '';              
+                $http.get('/parts/attitude').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+            });
+    };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/attitude/' + id);
-    }
+        $http.delete('/parts/attitude/' + id)
+            .success(function(data) {
+                $http.get('/parts/attitude').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+            });
+    };
 
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal

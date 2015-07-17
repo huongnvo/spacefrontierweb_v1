@@ -844,7 +844,7 @@ var CommFactory = function(Schema, mongoose) {
 			Gain_further: req.body.Gain_further,
 			Life_and_Use: req.body.Life_and_Use,
 			Temp_Low: req.body.Temp_Low,
-			Temp_High: Req.body.Temp_High
+			Temp_High: req.body.Temp_High
     	});
 		newpart.save(function (error, output) {
 			res.json(output);
@@ -854,7 +854,7 @@ var CommFactory = function(Schema, mongoose) {
 	this.updatePart = function(req, res) {
 		this.comm_parts.update(
  		{
-      		_id: mongoose.ObjectId(req.params._id)
+      		_id: req.params._id
     	}, 
     	{
 			Type: req.body.Type,
@@ -887,15 +887,14 @@ var CommFactory = function(Schema, mongoose) {
     	});
 	};
 
-	this.deletePart = function(req, res) {
-		this.comm_parts.remove(
-		{
-      		_id: mongoose.ObjectId(req.params._id)
-    	}, 
-    	'', 
-    	function(error, output) {
-      		res.json(output);
-    	});
+	this.removePart = function(req, res) {
+    	this.comm_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+            res.json({ message: 'Successfully deleted' });
+        });
 	};
 }
 
