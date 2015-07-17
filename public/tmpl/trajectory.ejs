@@ -159,7 +159,11 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Calculation Results</h3>
-                &#916V:<input class="form-control" type="text" data-ng-model="totaldV" readonly="readonly" valid-number/>
+                &#916V:
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totaldV" valid-number ng-disabled="true"/>
+                    <span class="input-group-addon" id="totdV">km/s</span>
+                </div>
             </div>   
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
@@ -269,8 +273,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span> Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>

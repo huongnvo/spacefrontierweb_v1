@@ -74,9 +74,10 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
 
     $scope.tabBPS = function() {
+
             bits=parseInt($scope.bitssecond);
             $scope.totalbits=bits+"";
-             memory=(parseInt($scope.resolution)/100)*86400;
+             memory=(parseInt($scope.resolution3)/100)*86400;
             downlink=bits*memory;
             $scope.totaldownlink=downlink+"";
             if($scope.length==0){
@@ -89,7 +90,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     $scope.tabARRAY=function(){
             bits=parseInt($scope.sizex)*parseInt($scope.sizey)*parseInt($scope.integrations2);
             $scope.totalbits=bits+"";
-             memory=(parseInt($scope.resolution)/100)*86400;
+             memory=(parseInt($scope.resolution2)/100)*86400;
             downlink=bits*memory;
             $scope.totaldownlink=downlink+"";
             if($scope.length==0){
@@ -102,7 +103,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     $scope.tabCHANNELS=function(){
             bits=parseInt($scope.channel)*parseInt($scope.bitschannel)*parseInt($scope.integrations1);
             $scope.totalbits=bits+"";
-             memory=(parseInt($scope.resolution)/100)*86400;
+             memory=(parseInt($scope.resolution1)/100)*86400;
             downlink=bits*memory;
             $scope.totaldownlink=downlink+"";
             if($scope.length==0){

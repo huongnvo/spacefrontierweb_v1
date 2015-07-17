@@ -14,11 +14,11 @@
                 <h3>Available Bus
                 <div class="btn-group">
                     <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Show (Volume):
+                    CubeSat Vol (U):
                     <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><input type="number" style="width:144px; margin-left:8px" class="form-control" placeholder="0 (default)" data-ng-model="volume" /></li>
+                        <li><input type="number" style="width:144px; margin-left:8px" class="form-control" placeholder="0 U" data-ng-model="volume" /></li>
                     </ul>
                 </div>
 
@@ -67,7 +67,7 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()" ng-disabled="busPart==null">
                         Search Deployer (2/3)
                     </button>
                 </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()" ng-disabled="deployerPart==null">
                         Search Thermal (3/3)
                     </button>
                 </div>
@@ -181,8 +181,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span>Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="thermalPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>

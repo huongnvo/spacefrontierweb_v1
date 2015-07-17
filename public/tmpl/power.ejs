@@ -116,7 +116,7 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextBat()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextBat()" ng-disabled="panelsPart==null">
                         Select Batteries (2/3)
                     </button>
                 </div>
@@ -173,7 +173,7 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextEPS()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextEPS()" ng-disabled="batteriesPart==null">
                         Select EPS (3/3)
                     </button>
                 </div>
@@ -230,8 +230,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span> Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="epsPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>

@@ -25,16 +25,36 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Channels <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number/>
+                Channels 
+               
+                <div class="input-group">
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number/>
+                    <span class="input-group-addon" id="Channels">Channels</span>
+                </div>
+
                 <div class="divider"></div>
-                Bits/Channel: <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
+                Bits/Channel: 
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
+                    <span class="input-group-addon" id="Bits/Channel">Bits/Channel</span>
+                </div>
+
+
                 <div class="divider"></div>
-                Integrations/Second:<input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
+                Integrations/Second:
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
+                    <span class="input-group-addon" id="Integrations/Second">Integrations/Second</span>
+                </div>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution" valid-number/>
-                    <div class="input-group-addon" >/100</div>
+                <div class="input-group">
+                    <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number/>
+                    <span class="input-group-addon" id="percent">% of time</span>
+                </div>
+
                 </div>
             </div>
             <div class="col-lg-6">
@@ -44,7 +64,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabCHANNELS()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabCHANNELS()" ng-disabled="channel==null||bitschannel==null||integrations1==null ||resolution1==null||channel.length==0||bitschannel==0||resolution1==0||integrations1.length==0">
                             Calculate
                         </button>
                     </div>
@@ -59,16 +79,35 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Array Size - x: <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
+                Array Size - x: 
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
+                    <span class="input-group-addon" id="pixelsX"> pixels</span>
+                </div>
+
                 <div class="divider"></div>
-                Array Size - y: <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
+                Array Size - y: 
+
+
+                <div class="input-group">
+                    <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
+                    <span class="input-group-addon" id="pixelsY"> pixels</span>
+                </div>
+
                 <div class="divider"></div>
-                Integrations/Second:<input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
+                Integrations/Second:
+
+                <div class="input-group">
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
+                    <span class="input-group-addon" id="pixelsY"> Integrations/Second</span>
+                </div>
+
                 <div class="divider"></div>                 
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution"/>
-                    <div class="input-group-addon">/100</div>
+                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2"/>
+                    <div class="input-group-addon">% of time</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -78,7 +117,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabARRAY()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabARRAY()" ng-disabled="sizex==null||sizey==null||integrations2==null||resolution2==null||sizex.length==0||sizey.length==0||integrations2.length==0||resolution2.length==0">
                             Calculate
                         </button>
                     </div>
@@ -92,12 +131,18 @@
         <div class="dividersmall"></div>
         <div class="row">
             <div class="col-lg-6">
-                Bits/Second <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
+                Bits/Second 
+
+                <div class="input-group">
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
+                    <div class="input-group-addon">Bits/Second</div>
+                </div>
+
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution" valid-number/>
-                    <div class="input-group-addon">/100</div>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number/>
+                    <div class="input-group-addon">% of time</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -107,7 +152,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabBPS()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabBPS()" ng-disabled="bitssecond==null||resolution3==null||bitssecond.length==0||resolution3.length==0">
                             Calculate
                         </button>
                     </div>
@@ -122,11 +167,21 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Bits/Second:<input type="text" class="form-control" data-ng-model="totalbits" readonly="readonly" valid-number/>
+                Bits/Second:
+
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totalbits" readonly="readonly" valid-number/>
+                    <div class="input-group-addon">Bits/Second</div>
+                </div>
             </div>
             <div class="col-lg-6">
                 <div class = "divider"></div>
-                Required Downlink:<input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+                Required Downlink:
+
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
+                    <div class="input-group-addon">MIPS</div>
+                </div>
             </div>
             <div class="col-lg-10">
             </div>
@@ -243,8 +298,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span>Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="cdhPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>
