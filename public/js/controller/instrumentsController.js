@@ -1,6 +1,6 @@
 //version poop
 
-spaceFrontierApp.controller("instrumentsController", function($scope, $http, $location) {
+spaceFrontierApp.controller("instrumentsController", function($scope, $http, $location, $window) {
     $scope.showTarget = false;
     $scope.showInstrumentation = false;
     var idstring = window.location.search.slice(1);
@@ -70,11 +70,12 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
 
     
     $scope.wavelengths=[];
+    $scope.numClicked=0;
   
     $scope.activeButton = function(id) {
         if (document.getElementById(id).style.backgroundColor != "blue") {
              document.getElementById(id).style.backgroundColor = "blue";
-
+             $scope.numClicked+=1;
             if(id=='Long-IR'){
                 $scope.wavelengths.push("long-IR");
             } if(id=='Far-IR'){
@@ -101,7 +102,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             } 
 
         } else {
-            
+            $scope.numClicked-=1;
             if( id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
                // document.getElementById(id).style.backgroundColor = "red";
                  if($scope.wavelengths.indexOf("gamma")!=-1){
@@ -217,6 +218,11 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         return false;
     }
 
+    $scope.click=function(){
+
+        return $scope.numClicked!==0||$scope.co2||$scope.hematite||$scope.feldspar||$scope.tiBearing||$scope.oxides||$scope.nitrates||$scope.carbonates||$scope.h2o||$scope.pyroxene||$scope.hematite||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.ch4||$scope.nh3||$scope.pyroxene||$scope.olivine||$scope.hematite||$scope.clay||$scope.phyllosilicate||$scope.nitrates||$scope.ch4||$scope.o3||$scope.pyroxene||$scope.feldspar||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.oxide||$scope.altimetry||$scope.magnetic||$scope.decayParticles||$scope.magnetic||$scope.electrons||$scope.ions||$scope.neutrons||$scope.chChains||$scope.sulfatesites;
+    }
+
     $scope.savePlanet = function(planet) {
         $scope.targetJson = [{
             Target: planet
@@ -254,8 +260,8 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     };
 
     $scope.nextPage = function() {
-        var path = '/tool2?' + idstring;
-        window.location = path;    
+            var path = '/tool2?' + idstring;
+            window.location = path;   
     };
 
     $scope.prevPage = function() {

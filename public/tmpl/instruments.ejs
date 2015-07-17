@@ -810,7 +810,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTarget()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTarget()" ng-disabled="!click()">
                         Select Target
                     </button>
                 </div>
@@ -868,8 +868,8 @@
                 <div class="col-lg-2">
                     <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()">
-                            Select Instrumentation
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="target.length==null">
+                            Select Instrumentation {{target.length==null}}
                         </button>
                     </div>
                 </div>
@@ -924,8 +924,9 @@
                     <div class = "divider"></div>
                     <nav>
                     <ul class="pager">
-                        <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                        <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                        <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false">Previous Page <span aria-hidden="true">&rarr;</span></button>
+
+                        <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="instrumentPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                     </ul>
                     </nav>  
                 </div>
