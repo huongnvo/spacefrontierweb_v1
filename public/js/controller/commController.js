@@ -69,7 +69,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
 
     $scope.frequencySelected=function(){
         return $scope.frequency!=null;
-    }
+    };
 
     $scope.calculate=function(){
         $scope.showStation = true;
@@ -130,15 +130,6 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.selectedAntenna = {}; 
         $scope.selectedReceiver = {};    
     };
-
-    $scope.getParts = function() {
-        $http.get('/parts/comm').then(function(result) { 
-            $scope.parts = result.data; 
-        });
-        $http.get('/parts/station').then(function(result) { 
-            $scope.stations = result.data; 
-        });
-    }; 
 
     $scope.frequencyFilter = function(part) {
         return part.Frequency.indexOf($scope.frequency) !== -1;
