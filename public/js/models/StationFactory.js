@@ -980,7 +980,7 @@ var StationFactory = function(Schema,mongoose) {
     this.updatePart = function(req, res) {
         this.station_parts.update(
         {
-            _id: mongoose.ObjectId(req.params._id)
+            _id: req.params._id
         }, 
         {
 			Name: req.body.Name,
@@ -994,23 +994,21 @@ var StationFactory = function(Schema,mongoose) {
 		    Loc: req.body.Loc, 
 		    Band: req.body.Band,
 		    Coordinates: req.body.Coordinates
-        }, 
-        {}, 
+        },
         function(error, output) {
             res.json(output);
         });
     };
 
-    this.deletePart = function(req, res) {
-        this.station_parts.remove(
-        {
-            _id: mongoose.ObjectId(req.params._id)
-        }, 
-        '', 
-        function(error, output) {
-            res.json(output);
+	this.removePart = function(req, res) {
+    	this.station_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+            res.json({ message: 'Successfully deleted' });
         });
-    };
+	};
 }
 
 module.exports = StationFactory;

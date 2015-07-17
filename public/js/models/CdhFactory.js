@@ -550,21 +550,19 @@ var CdhFactory = function(Schema,mongoose) {
 		    Scientific_obj: req.body.Scientific_obj, 
 		    Cost: req.body.Cost
     	}, 
-    	{}, 
     	function(error, output) {
       		res.json(output);
     	});
 	};
 
-	this.deletePart = function(req, res) {
-		this.cdh_parts.remove(
-		{
-      		_id: mongoose.ObjectId(req.params._id)
-    	}, 
-    	'', 
-    	function(error, output) {
-      		res.json(output);
-    	});
+	this.removePart = function(req, res) {
+    	this.cdh_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+            res.json({ message: 'Successfully deleted' });
+        });
 	};
 }
 

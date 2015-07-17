@@ -1115,10 +1115,9 @@ var PowerFactory = function(Schema,mongoose) {
 	};
 
 	this.updatePart = function(req, res) {
-		this.power_parts.update(
- 		{
-      		_id: mongoose.ObjectId(req.params._id)
-    	}, 
+		this.power_parts.remove({
+            _id: req.params._id
+        }, 
     	{
 		    Type: req.body.Type,
 		    Name: req.body.Name,
@@ -1141,22 +1140,20 @@ var PowerFactory = function(Schema,mongoose) {
 		    PperWing: req.body.PperWing,
 		    Wings: req.body.Wings,
 		    Cost: req.body.Cost
-    	}, 
-    	{}, 
+    	},  
     	function(error, output) {
       		res.json(output);
     	});
 	};
 
-	this.deletePart = function(req, res) {
-		this.power_parts.remove(
-		{
-      		_id: mongoose.ObjectId(req.params._id)
-    	}, 
-    	'', 
-    	function(error, output) {
-      		res.json(output);
-    	});
+	this.removePart = function(req, res) {
+    	this.power_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+            res.json({ message: 'Successfully deleted' });
+        });
 	};
 }
 

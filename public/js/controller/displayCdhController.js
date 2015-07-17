@@ -19,36 +19,62 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
 
     $scope.addPart = function() {
         $scope.newPart = {
-            Type: $scope.type,
-            Type_further: $scope.typecont,
-            Name: $scope.name,
-            Manufacturer: $scope.manu,
-            Reference: $scope.ref,
-            Heritage: $scope.her,
-            Mass: $scope.mass,
-            Mass_further: $scope.masscont,
-            Power: $scope.power,
-            Power_further: $scope.powercont,
-            Volume: $scope.vol,
-            Proportions: $scope.prop,
-            Volume_further: $scope.volcont,
-            Angle_prec: $scope.angle,
-            Attitude_control_further: $scope.att,
-            Ac_sensors: $scope.ac,
-            Temp_low: $scope.low,
-            Temp_high: $scope.high,
-            Scientific_obj: $scope.sci,
+            Type: $scope.type, 
+            Name: $scope.name, 
+            Manufacturer: $scope.manu, 
+            Reference: $scope.ref, 
+            Heritage: $scope.her, 
+            Mass: $scope.mass, 
+            Mass_further: $scope.masscont, 
+            Power: $scope.power, 
+            Power_further: $scope.powercont, 
+            Volume: $scope.vol, 
+            Proportions: $scope.prop, 
+            Volume_further: $scope.volcont, 
+            MIPS: $scope.mips, 
+            MHz: $scope.mhz, 
+            Processing_further: $scope.proc, 
+            Memory: $scope.mem, 
+            Temp_low: $scope.low, 
+            Temp_high: $scope.high, 
+            Scientific_obj: $scope.sci, 
             Cost: 0
         };
         $http.post('/parts/cdh', $scope.newPart)
             .success(function(data) {
-                $scope.newPart = {}; // clear the form so our user is ready to enter another
-            })
-    }
+                $scope.type = ''; 
+                $scope.name = ''; 
+                $scope.manu = ''; 
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.masscont = '';
+                $scope.power = '';
+                $scope.powercont = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.volcont = '';
+                $scope.mips = '';
+                $scope.mhz = '';
+                $scope.proc = '';
+                $scope.mem = '';
+                $scope.low = '';
+                $scope.high = '';
+                $scope.sci = '';
+                $http.get('/parts/cdh').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });
+    };
 
     $scope.deletePart = function(id) {
         $http.delete('/parts/cdh/' + id)
-    }
+            .success(function(data) {
+                $http.get('/parts/cdh').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+            });
+    };
 
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal

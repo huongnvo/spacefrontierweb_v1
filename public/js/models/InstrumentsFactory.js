@@ -1801,7 +1801,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 	this.updatePart = function(req, res) {
 		this.instrument_parts.update(
  		{
-      		_id: mongoose.ObjectId(req.params._id)
+      		_id: req.params._id
     	}, 
     	{
 			Type: req.body.Type,
@@ -1828,22 +1828,19 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			Thermal_further: req.body.Thermal_further,
 			Datarate: req.body.Datarate, 
 			Cost: req.body.Cost
-    	}, 
-    	{}, 
-    	function(error, output) {
+    	}, function(error, output) {
       		res.json(output);
     	});
 	};
 
-	this.deletePart = function(req, res) {
-		this.instrument_parts.remove(
-		{
-      		_id: mongoose.ObjectId(req.params._id)
-    	}, 
-    	'', 
-    	function(error, output) {
-      		res.json(output);
-    	});
+	this.removePart = function(req, res) {
+    	this.instrument_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+            res.json({ message: 'Successfully deleted' });
+        });
 	};
 }
 

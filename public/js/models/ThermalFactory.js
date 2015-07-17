@@ -651,7 +651,7 @@ var ThermalFactory = function(Schema,mongoose) {
     this.updatePart = function(req, res) {
         this.thermal_parts.update(
         {
-            _id: mongoose.ObjectId(req.params._id)
+            _id: req.params._id
         }, 
         {
 		    Type: req.body.Type,
@@ -668,22 +668,20 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Volume_further: req.body.Volume_further,
 		    Objectives: req.body.Objectives
         }, 
-        {}, 
         function(error, output) {
             res.json(output);
         });
     };
 
-    this.deletePart = function(req, res) {
-        this.thermal_parts.remove(
-        {
-            _id: mongoose.ObjectId(req.params._id)
-        }, 
-        '', 
-        function(error, output) {
-            res.json(output);
+    this.removePart = function(req, res) {
+    	this.thermal_parts.remove({
+            _id: req.params._id
+        }, function(err, output) {
+            if (err)
+                res.send(output);
+            res.json({ message: 'Successfully deleted' });
         });
-    };
+	};
 }
 
 module.exports = ThermalFactory;
