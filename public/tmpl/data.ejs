@@ -33,7 +33,7 @@
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution" valid-number/>
+                    <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number/>
                     <div class="input-group-addon" >/100</div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabCHANNELS()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabCHANNELS()" ng-disabled="channel==null||bitschannel==null||integrations1==null ||resolution1==null||channel.length==0||bitschannel==0||resolution1==0||integrations1.length==0">
                             Calculate
                         </button>
                     </div>
@@ -67,7 +67,7 @@
                 <div class="divider"></div>                 
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution"/>
+                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2"/>
                     <div class="input-group-addon">/100</div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabARRAY()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabARRAY()" ng-disabled="sizex==null||sizey==null||integrations2==null||resolution2==null||sizex.length==0||sizey.length==0||integrations2.length==0||resolution2.length==0">
                             Calculate
                         </button>
                     </div>
@@ -96,7 +96,7 @@
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution" valid-number/>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number/>
                     <div class="input-group-addon">/100</div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabBPS()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabBPS()" ng-disabled="bitssecond==null||resolution3==null||bitssecond.length==0||resolution3.length==0">
                             Calculate
                         </button>
                     </div>
@@ -243,8 +243,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false">Previous Page <span aria-hidden="true">&rarr;</span></button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="cdhPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>

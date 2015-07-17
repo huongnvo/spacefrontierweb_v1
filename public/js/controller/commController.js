@@ -68,6 +68,9 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.showCalculation = false;
     };
 
+    $scope.frequencySelected=function(){
+        return $scope.frequency!=null;
+    }
 
     $scope.calculate=function(){
         $scope.showStation = true;
