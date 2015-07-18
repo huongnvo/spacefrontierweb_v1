@@ -391,6 +391,10 @@ app.get('/thermal', function (req, res) {
     res.render('../public/tmpl/displayThermal.ejs', { title: 'Thermal Subsystem' });
 });
 
+app.get('/gallery', function (req, res) {
+    res.render('../public/tmpl/gallery.ejs', { title: 'Gallery' });
+});
+
 app.listen(port);
 console.log('Express server running at port: ' + port);
 
