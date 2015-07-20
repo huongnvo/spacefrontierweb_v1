@@ -805,7 +805,7 @@
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
                         <select multiple class="form-control" size="14">
-                            <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: filterBattery">
+                            <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: deployerType">
                                 {{part.Name}}
                             </option>
                         </select>
@@ -862,7 +862,7 @@
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
                         <select multiple class="form-control" size="14">
-                            <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter: filterEPS">
+                            <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter: thermalType">
                                    {{part.Name}}
                             </option>
                         </select>

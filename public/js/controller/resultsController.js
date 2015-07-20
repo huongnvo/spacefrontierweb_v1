@@ -34,4 +34,13 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
         //
         //$scope.loading = false;
     }
+
+    var content = $scope.Name +"\n"+$scope.Objectives+"\n"+$scope.Objectives+"\n"+$scope.target +"\n"+$scope.attitude +"\n"+$scope.antenna+"\n"+$scope.receiver+"\n"+$scope.cdh+"\n"+$scope.instrument+"\n"+$scope.panels+"\n"+$scope.batteries+"\n"+$scope.eps+"\n"+$scope.propulsion+"\n"+$scope.station+"\n"+$scope.bus+"\n"+$scope.deployer+"\n"+$scope.thermal;
+    var blob = new Blob([ content ], { type : 'text/plain' });
+    $scope.url = (window.URL || window.webkitURL).createObjectURL( blob );
+    app = angular.module(...);
+    app.config(['$compileProvider',
+    function ($compileProvider) {
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob):/);
+    }]);
 });
