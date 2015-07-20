@@ -6,7 +6,7 @@
 <body class="container" data-ng-controller="trajectoryController">
     <% include navbar %>
     <h1>Propulsion Selection</h1>
-    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own DeltaV", if not please fill out "Input Specifications" and we will make an estimate for you.</p>
+    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own &#916V", if not please fill out "Input Specifications" and we will make an estimate for you.</p>
     <hr>
 
     <div class="row">
@@ -31,7 +31,7 @@
                 <div class="divider"></div>
                 <label>Specific &#916V</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
+                    <input type="text" class="form-control" placeholder="3.0" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
                     <span class="input-group-addon" id="basic-addon2">km/s</span>
                 </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()" ng-disabled="inputown.length==0||inputown==null">
                         Calculate Results
                     </button>
                 </div>
@@ -80,7 +80,7 @@
                                 <span class="input-group-addon">
                                     Input Trajectory deltaV:
                                 </span>
-                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number/> <span class="input-group-addon" id="dvaddon">km/s</span>
+                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number placeholder="1.0"/> <span class="input-group-addon" id="dvaddon">km/s</span>
                             </div>   
                             <div class="divider"></div>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
@@ -96,17 +96,17 @@
                         <div class="col-lg-6">
                             <label>Orbit Specifications</label>
                             <div class="input">
-                                Apoapsis
+                                Apoapsis Altitude
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="apoapsis" valid-number>
+                                    <input type="text" class="form-control" data-ng-model="apoapsis" valid-number placeholder="5000">
                                     <span class="input-group-addon" id="orbitaddon1">km</span>
                                 </div>
                             </div>
                             <div class="dividersmall"></div>
                             <div class = "input">
-                                Periapsis
+                                Periapsis Altitude
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="periapsis" valid-number/>
+                                    <input type="text" class="form-control" data-ng-model="periapsis" valid-number placeholder="100"/>
                                     <span class="input-group-addon" id="orbitaddon2">km</span>
                                 </div>
                             </div>
@@ -128,8 +128,8 @@
                         <div class="col-lg-6">
                             <label>Required Inclination Change</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
-                                    <span class="input-group-addon" id="basic-addon2">deg</span>
+                                    <input type="text" class="form-control" placeholder="0.00001" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
+                                    <span class="input-group-addon" id="basic-addon2">Rad</span>
                                 </div>
                             <div class="divider"></div>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id="round" data-slide = "prev">
