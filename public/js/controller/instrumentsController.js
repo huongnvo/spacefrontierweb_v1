@@ -38,6 +38,8 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             var partextracted = {};
             partextracted = $scope.cubesat[0];
 
+            $scope.Name = partextracted['Mission_Name'];
+            $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
             $scope.attitudePart = partextracted['Attitude'];
             $scope.antennaPart = partextracted['Antenna'];
@@ -266,6 +268,6 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
 
     $scope.prevPage = function() {
         $http.delete(cubesatPath);
-        window.location = '/tool';
+        window.location = '/tool0?'+ idstring;
     };
 });

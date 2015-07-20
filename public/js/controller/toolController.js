@@ -9,7 +9,7 @@ spaceFrontierApp.controller("toolController", function($scope, $http) {
     });
 
     $scope.buildCubesat = function() {
-        var path = '/tool1?' + idstring;
+        var path = '/tool0?' + idstring;
         window.location = path;    
     };
 
