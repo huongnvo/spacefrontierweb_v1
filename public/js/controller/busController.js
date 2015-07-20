@@ -73,7 +73,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.addBus = function() {
         $http.put('/parts/cubesat-bus/' + idstring, $scope.selectedBus)
             .success(function(data) {
-                $scope.selectedBus = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedBus = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -81,7 +81,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.addDeployer = function() {
         $http.put('/parts/cubesat-deployer/' + idstring, $scope.selectedDeployer)
             .success(function(data) {
-                $scope.selectedDeployer = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedDeployer = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -89,7 +89,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.addThermal = function() {
         $http.put('/parts/cubesat-thermal/' + idstring, $scope.selectedThermal)
             .success(function(data) {
-                $scope.selectedThermal = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedThermal = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };

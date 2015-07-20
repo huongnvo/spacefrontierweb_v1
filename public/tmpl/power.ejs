@@ -8,6 +8,1424 @@
     <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
     <hr>
 
+    <div class="modal fade" id="panelsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Website">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-def">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Description:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Description">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Mass">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Mass_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Power">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Power_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Volume">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Volume_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Proportions">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-eff">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Efficiency:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Efficiency">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-therm">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Thermal:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Thermal_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-low">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (low):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Temp_low">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-high">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (high):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Temp_high">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ener">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Energy Storage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Energy_Storage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-pper">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Panels/Wing:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.PperWing">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-wing">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Wings:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Wings">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="batteriesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Website">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-def">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Description:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Description">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Mass">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Mass_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Power">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Power_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Volume">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Volume_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Proportions">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-eff">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Efficiency:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Efficiency">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-therm">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Thermal:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Thermal_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-low">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (low):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Temp_low">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-high">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (high):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Temp_high">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ener">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Energy Storage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Energy_Storage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-pper">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Panels/Wing:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.PperWing">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-wing">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Wings:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Wings">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="EPSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Website">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-def">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Description:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Description">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Mass">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Mass_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Power">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Power_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Volume">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Volume_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Proportions">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-eff">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Efficiency:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Efficiency">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-therm">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Thermal:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Thermal_further">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-low">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (low):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Temp_low">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-high">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (high):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Temp_high">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ener">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Energy Storage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Energy_Storage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-pper">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Panels/Wing:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.PperWing">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-wing">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Wings:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedEPS.Wings">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="EPSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="manu">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="ref">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-def">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Description:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="def">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="mass">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="masscont">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="power">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="powercont">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="vol">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol-further">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume (cont.):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="volcont">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="prop">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-eff">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Efficiency:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="eff">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="obj">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-therm">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Thermal:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="therm">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-low">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (low):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="low">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-high">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Temp (high):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="high">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ener">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Energy Storage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="ener">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-pper">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Panels/Wing:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="pper">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-wing">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Wings:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="wings">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div ng-show="showPanels">
         <div class="row">
             <div class="col-lg-6">
@@ -83,7 +1501,7 @@
                         </select>       
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#panelsModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addPanels()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -140,7 +1558,7 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#batteriesModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addBatteries()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -197,7 +1615,7 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#EPSModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addEPS()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>

@@ -307,7 +307,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     $scope.addPart = function() {
         $http.put('/parts/cubesat-propulsion/' + idstring, $scope.selectedPart)
             .success(function(data) {
-                $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
             })
         $scope.updateData();
     };
