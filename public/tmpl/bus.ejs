@@ -747,7 +747,7 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="14">
+                        <select multiple class="form-control" size="16">
                             <option ng-click="saveBus(part)" ng-repeat="part in parts|filter:busType">
                                 {{part.Name}}
                             </option>
@@ -804,8 +804,13 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
+<<<<<<< HEAD
                         <select multiple class="form-control" size="14">
                             <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: deployerType">
+=======
+                        <select multiple class="form-control" size="16">
+                            <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: filterBattery">
+>>>>>>> develop
                                 {{part.Name}}
                             </option>
                         </select>
