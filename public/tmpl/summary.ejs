@@ -5,25 +5,25 @@
     <body class="container" data-ng-controller="summaryController">
         <% include navbar %>
         <h1>Mission Summary</h1>
-        <p>On this page please input the name of your cubesat mission and the objectives of your mission.</p>
+        <p>On this page please input the name of your cubesat mission and a brief summary of the objectives of your mission.</p>
         <hr>
             <div class="row">
                 <div class="col-lg-12">
                     <h4>Name: </h4>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="10" ng-model="inputName"></input>
+                        <input type="text" class="form-control" placeholder="e.g., Lunar ICE Cube" ng-model="inputName"></input>
                     </div>
+                    <div class = "divider"></div>
                     <h4>Objectives: </h4>
                     <div class="input-group2">
                           <textarea id="text" cols="100" rows="5" ng-model="inputObjective"></textarea>
                     </div>
                 </div> 
-
-
             </div> 
+            <div class = "divider"></div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class = "divider"></div>
+                    
                     <nav>
                     <ul class="pager">
                         <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span>Previous Page </button>
@@ -33,7 +33,7 @@
                     </nav>  
                 </div>
             </div>
-        </hr>
+        <hr>
         <% include footer %>
         <div class = "divider"></div>
     </body>
