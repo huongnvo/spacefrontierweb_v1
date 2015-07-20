@@ -12,7 +12,9 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-
+            
+            $scope.Name = partextracted['Mission_Name'];
+            $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
             $scope.attitudePart = partextracted['Attitude'];
             $scope.antennaPart = partextracted['Antenna'];
