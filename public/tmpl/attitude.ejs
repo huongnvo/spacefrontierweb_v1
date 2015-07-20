@@ -9,7 +9,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                        <h4 class="modal-title" id="exampleModalLabel">Information</h4>
                     </div>
                     <div class="dividersmall"></div>
                     <div class="modal-name">
@@ -123,7 +123,10 @@
                                     <label for="message-text" class="control-label">Mass:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                         <div class="input-group-addon">g</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -157,7 +160,10 @@
                                     <label for="message-text" class="control-label">Power:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                         <div class="input-group-addon">W</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -191,7 +197,10 @@
                                     <label for="message-text" class="control-label">Volume:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                         <div class="input-group-addon">U</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -225,7 +234,10 @@
                                     <label for="message-text" class="control-label">Proportions:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                         <div class="input-group-addon">(mm^3)</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -242,7 +254,11 @@
                                     <label for="message-text" class="control-label">Angle of Precision:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Angle_prec">
+                                    
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Angle_prec">
+                                         <div class="input-group-addon">deg</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -327,7 +343,11 @@
                                     <label for="message-text" class="control-label">Temp (low):</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Temp_low">
+                                    
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Temp_low">
+                                        <div class="input-group-addon">degrees Celcius</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -344,7 +364,10 @@
                                     <label for="message-text" class="control-label">Temp (high):</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Temp_high">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Temp_high">
+                                        <div class="input-group-addon">degrees Celcius</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -361,7 +384,10 @@
                                     <label for="message-text" class="control-label">Datarate:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Datarate">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Datarate">
+                                        <div class="input-group-addon">bits/second</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
