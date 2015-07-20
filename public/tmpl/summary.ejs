@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="spaceFrontierApp">
+<% include header %>
+
+    <body class="container" data-ng-controller="summaryController">
+        <% include navbar %>
+        <h1>Mission Summary</h1>
+        <p>On this page please input the name of your cubesat mission and the objectives of your mission.</p>
+        <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Name: </h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="10" ng-model="inputName"></input>
+                    </div>
+                    <h4>Objectives: </h4>
+                    <div class="input-group2">
+                          <textarea id="text" cols="100" rows="5" ng-model="inputObjective"></textarea>
+                    </div>
+                </div> 
+
+
+            </div> 
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class = "divider"></div>
+                    <nav>
+                    <ul class="pager">
+                        <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span>Previous Page </button>
+
+                        <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false">Next Page <span aria-hidden="true">&rarr;</span></button>
+                    </ul>
+                    </nav>  
+                </div>
+            </div>
+        </hr>
+        <% include footer %>
+        <div class = "divider"></div>
+    </body>
+ 
+</html>
