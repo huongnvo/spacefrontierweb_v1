@@ -64,7 +64,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
 
     $scope.okAngle = function(part) {
-        return part.Angle_prec <= aControl;
+        return part.Angle_prec >= aControl;
     };
 
     $scope.okType = function(part) {
