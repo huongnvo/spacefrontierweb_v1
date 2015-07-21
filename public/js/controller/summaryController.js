@@ -39,33 +39,65 @@ spaceFrontierApp.controller("summaryController", function($scope, $http) {
         Mission_Objectives: ""    
     }];
 
+    $scope.targetJson = [{
+        Target: ""
+    }];
 
-    $scope.nextPage = function() {
-        var path = '/tool1?' + idstring;
+    $scope.savePlanet = function(planet) {
+        $scope.targetJson = [{
+            Target: planet
+        }];
+    };
 
+    $scope.nextTarget = function() {
+        $scope.showTarget = true;
+        $scope.showInstrumentation = false;
+    };
+
+    $scope.nextInstrumentation = function() {
+        $scope.showTarget = true;
+        $scope.showInstrumentation = true;
+    };
+
+    $scope.addTarget = function() {
+        $http.put('/parts/cubesat-target/' + idstring, $scope.targetJson[0])
+            .success(function(data) {
+                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+            });
+        $scope.updateData();
+    };
+
+    $scope.addName = function(){
         $scope.nameJson = [{
             Mission_Name: $scope.inputName
         }];
-
-        $scope.objectiveJson = [{
-            Mission_Objectives: $scope.inputObjective
-        }];
-       
         $http.put('/parts/cubesat-name/' + idstring, $scope.nameJson[0])
             .success(function(data) {
                 // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
+    }
+
+    $scope.addObjectives = function(){
+        
+        $scope.objectiveJson = [{
+            Mission_Objectives: $scope.inputObjective
+        }];
         $http.put('/parts/cubesat-objectives/' + idstring, $scope.objectiveJson[0])
             .success(function(data) {
                 // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
+    }
+
+    $scope.nextPage = function() {
+        var path = '/tool1?' + idstring;
         window.location = path;    
     };
 
     $scope.prevPage = function() {
-        var path = '/tool?' + idstring;
+        $http.delete(cubesatPath);
+        var path = '/tool';
         window.location = path; 
     };
 });

@@ -66,10 +66,6 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     };
     $scope.init();
 
-    $scope.targetJson = [{
-        Target: ""
-    }];
-
     
     $scope.wavelengths=[];
     $scope.numClicked=0;
@@ -187,30 +183,6 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
         return $scope.numClicked!==0||$scope.co2||$scope.hematite||$scope.feldspar||$scope.tiBearing||$scope.oxides||$scope.nitrates||$scope.carbonates||$scope.h2o||$scope.pyroxene||$scope.hematite||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.ch4||$scope.nh3||$scope.pyroxene||$scope.olivine||$scope.hematite||$scope.clay||$scope.phyllosilicate||$scope.nitrates||$scope.ch4||$scope.o3||$scope.pyroxene||$scope.feldspar||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.oxide||$scope.altimetry||$scope.magnetic||$scope.decayParticles||$scope.magnetic||$scope.electrons||$scope.ions||$scope.neutrons||$scope.chChains||$scope.sulfatesites;
     }
 
-    $scope.savePlanet = function(planet) {
-        $scope.targetJson = [{
-            Target: planet
-        }];
-    };
-
-    $scope.nextTarget = function() {
-        $scope.showTarget = true;
-        $scope.showInstrumentation = false;
-    };
-
-    $scope.nextInstrumentation = function() {
-        $scope.showTarget = true;
-        $scope.showInstrumentation = true;
-    };
-
-    $scope.addTarget = function() {
-        $http.put('/parts/cubesat-target/' + idstring, $scope.targetJson[0])
-            .success(function(data) {
-                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
-            });
-        $scope.updateData();
-    };
-
     $scope.saveInstrument = function(instrument) {
         $scope.selectedInstrument = instrument;
     };
@@ -229,7 +201,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     };
 
     $scope.prevPage = function() {
-        $http.delete(cubesatPath);
+        
         window.location = '/tool0?'+ idstring;
     };
 });
