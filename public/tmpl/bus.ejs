@@ -807,6 +807,7 @@
 
                         <select multiple class="form-control" size="14">
                             <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: deployerType">
+                                {{part.Name}}
 
                         <select multiple class="form-control" size="16">
                             <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: filterBattery">
