@@ -12,25 +12,25 @@
             <h3>Frequency:</h3>
              <div class="form-group">
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="UHF">
                             UHF
                     </label>
                 </div>
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="VHF">
                             VHF
                     </label>
                 </div>
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="S-Band">
                             S-Band
                     </label>
                 </div>
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="X-Band">
                             X-Band
                     </label>
@@ -41,8 +41,8 @@
         </div>
         <div class="col-lg-2">
             <div id="button">
-                <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="frequency==null">
-                    Select Station (1/3)
+                <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="frequency==null" title="Show Groundstations">
+                    Select Station
                 </button>
             </div>
         </div>
@@ -64,8 +64,8 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addStation()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addStation()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -97,8 +97,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextAnt()" ng-disabled="stationPart==null">
-                        Select Antenna (2/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextAnt()" ng-disabled="stationPart==null" title="Show Antennas">
+                        Select Antenna
                     </button>
                 </div>
             </div>
@@ -121,8 +121,8 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addAntenna()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addAntenna()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -154,8 +154,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextRec()" ng-disabled="antennaPart==null">
-                        Select Receiver (3/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextRec()" ng-disabled="antennaPart==null" title="Show Receivers">
+                        Select Receiver
                     </button>
                 </div>
             </div>
@@ -178,8 +178,8 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addReceiver()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addReceiver()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -211,7 +211,7 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="calculate()" ng-disabled="receiverPart==null">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="calculate()" ng-disabled="receiverPart==null" title="Show Space Loss, Signal:Noise Ratio, Receiver dbW, and Bit Rate">
                         Calculate Results
                     </button>
                 </div>
@@ -264,8 +264,8 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                    <li class="previous"><a type="button" ng-click="prevPage()" title="Propulsion"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
+                    <li class="next"><a type="button" ng-click="nextPage()" title="Data">Next Page<span aria-hidden="true">&rarr;</span></a></li>
                 </ul>
                 </nav>  
             </div>

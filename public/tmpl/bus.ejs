@@ -34,8 +34,8 @@
                         </select>       
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addBus()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addBus()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -67,8 +67,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()" ng-disabled="busPart==null">
-                        Search Deployer (2/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()" ng-disabled="busPart==null" title="Show Parts">
+                        Search Deployer
                     </button>
                 </div>
             </div>
@@ -91,8 +91,8 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addDeployer()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addDeployer()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -124,8 +124,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()" ng-disabled="deployerPart==null">
-                        Search Thermal (3/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()" ng-disabled="deployerPart==null" title="Show Parts">
+                        Search Thermal
                     </button>
                 </div>
             </div>
@@ -148,8 +148,8 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addThermal()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addThermal()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -181,9 +181,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span>Previous Page </button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Power"><span aria-hidden="true">&larr;</span>Previous Page </button>
 
-                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="thermalPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="thermalPart==null" title="Results">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>

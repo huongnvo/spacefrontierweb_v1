@@ -39,7 +39,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()" ng-disabled="inputown.length==0||inputown==null">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()" ng-disabled="inputown.length==0||inputown==null" title="Show Total &#916V">
                         Calculate Results
                     </button>
                 </div>
@@ -144,12 +144,12 @@
                         <div class="col-lg-2">
                             <div class = "dividerlarge"></div>
                             <div id="button" ng-show="picktrajectoryRadio1">
-                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="picktrajectory==null||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="picktrajectory==null||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0" title="Show Total &#916V">
                                     Calculate Results
                                 </button>
                             </div>
                             <div id="button" ng-show="picktrajectoryRadio2">
-                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="inputtrajectorydV==null||inputtrajectorydV.length==0||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="inputtrajectorydV==null||inputtrajectorydV.length==0||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0" title="Show Total &#916V">
                                     Calculate Results
                                 </button>
                             </div>
@@ -175,7 +175,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" title="Show Parts">
                         Select Propulsion
                     </button>
                 </div>
@@ -247,8 +247,8 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
@@ -279,9 +279,9 @@
                 <div class = "divider"></div>
                 <nav>
                 <ul class="pager">
-                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span> Previous Page </button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Previous Page </button>
 
-                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null" title="Communication">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>
