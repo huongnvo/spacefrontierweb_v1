@@ -842,9 +842,6 @@
                 <div id="button">
 
                     <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="!click()">
-
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTarget()" ng-disabled="!click()" title="Show Options">
-
                         Select Target
                     </button>
                 </div>
@@ -855,7 +852,7 @@
         <div ng-show="showInstrumentation">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3>Available Instruments {{measurement}}</h3>
+                    <h3>Available Instruments {{wavelengths}}</h3>
                     <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
                     <div class="row">
                         <div class="col-lg-11">
