@@ -178,6 +178,10 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
 
     }
 
+    $scope.nextInstrumentation = function (){
+        $scope.showTarget=true;
+        $scope.showInstrumentation=true;
+    }
     $scope.click=function(){
 
         return $scope.numClicked!==0||$scope.co2||$scope.hematite||$scope.feldspar||$scope.tiBearing||$scope.oxides||$scope.nitrates||$scope.carbonates||$scope.h2o||$scope.pyroxene||$scope.hematite||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.ch4||$scope.nh3||$scope.pyroxene||$scope.olivine||$scope.hematite||$scope.clay||$scope.phyllosilicate||$scope.nitrates||$scope.ch4||$scope.o3||$scope.pyroxene||$scope.feldspar||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.oxide||$scope.altimetry||$scope.magnetic||$scope.decayParticles||$scope.magnetic||$scope.electrons||$scope.ions||$scope.neutrons||$scope.chChains||$scope.sulfatesites;
