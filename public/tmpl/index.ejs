@@ -3,30 +3,34 @@
 <% include header %>
 
 <body data-ng-controller="homeController">    
-    <div class="jumbotron" id="nobottom" style="background-image: url(http://truereality.org/wp-content/uploads/2014/02/hubble-space-wallpapers.jpg); background-size: 100%; height: 670px">
-        <div class="container" id="nav">
-            <% include navbar %>
-        </div>
-        <div class="container" id="indexjumbo">
-            <h1>SPACE Tool</h1>
-            <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
-            <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
 
-            <a id="rcorners" type="button" id="roundedbutton" href="\tool" class="btn btn-lg" style="color: #FFFFFF">Try it Now</a>
-            <br>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a style="font-size:4em; float:right" type="glyph" href="#second"><span id="pushdown3" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+    <a id="first">
+        <div class="jumbotron" id="nobottom" style="background-image: url(http://truereality.org/wp-content/uploads/2014/02/hubble-space-wallpapers.jpg); background-size: 100%; height: 780px; padding-top:90px">
+            <div class="container" id="nav">
+                <% include navbar %>
+            </div>
+            <div class="container" id="indexjumbo">
+                <h1>SPACE Tool</h1>
+                <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
+                <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
+
+                <a id="rcorners" type="button" id="roundedbutton" href="\tool" class="btn btn-lg" style="color: #FFFFFF">Try it Now</a>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a style="font-size:4em; float:right" type="glyph" href="#second"><span id="pushdown3" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </a>
+
     <a id="second">
         <div class="container-fluid" id="paper1">
             <div class="container" id="space">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Why CubeSats?</h1>
+                        <h1 style="color:white">Why CubeSats?</h1>
                     </div>
                 </div>
                 <div class="dividerlarger"></div>
@@ -105,22 +109,32 @@
                         </div>
                     </div>
                     <div class="col-lg-1">
-                        <a style="font-size:4em;" type="glyph" href="#second"><span id="pushdown4" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                        <a style="font-size:4em; color:white" type="glyph" href="#third"><span id="pushdown4" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                     </div>
                 </div>
             </div>
         </div>
     </a>
                            
-    <div class="container-fluid" id="paper2">
-        <div class="container" id="space">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Challenges Facing Deep Space CubeSats</h1>
+    <a id="third">
+        <div class="container-fluid" id="paper2">
+            <div class="container" id="space">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 style="color:white">Challenges Facing Deep Space CubeSats</h1>
+                    </div>
+                </div>
+                <div class="dividerlarger"></div>
+                <div class="row">
+                    <div class="col-lg-11">
+                    </div>
+                    <div class="col-lg-1">
+                        <a style="font-size:4em; color:white" type="glyph" href="#first"><span id="pushdown4" class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </a>
     <div class="divider"></div>
     <div class="container">
         <% include footer %>
