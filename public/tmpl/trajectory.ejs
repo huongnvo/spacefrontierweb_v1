@@ -361,7 +361,13 @@
                 <div class="divider"></div>
                 <label>Specific &#916V</label>
                 <div class="input-group">
+                    <span class="input-group-addon">
+                        <a popover="Suggested: 0.2-5.0 km/s">
+                            ?
+                        </a>
+                    </span>
                     <input type="text" class="form-control" placeholder="3.0" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
+                    
                     <span class="input-group-addon" id="basic-addon2">km/s</span>
                 </div>
             </div>
@@ -379,12 +385,6 @@
 
     <section id="tab1" class="tab-content active">
         <div id="carousel1" class = "carousel slide" data-ride="carousel" interval="false">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel1" data-slide-to="1"></li>
-                <li data-target="#carousel1" data-slide-to="2"></li>
-                <li data-target="#carousel1" data-slide-to="3"></li>
-            </ol>
             <div class="carousel-inner" style="height: 240px">
                 <div class="item active">
                     <div class="dividersmall"></div>
@@ -410,7 +410,14 @@
                                 <span class="input-group-addon">
                                     Input Trajectory deltaV:
                                 </span>
-                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number placeholder="1.0"/> <span class="input-group-addon" id="dvaddon">km/s</span>
+                                <span class="input-group-addon">
+                                    <a popover="Suggested: 0.01 - 1.0 km/s">
+                                        ?
+                                    </a>
+                                </span>
+                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number placeholder="1.0"/>
+                                
+                                <span class="input-group-addon" id="dvaddon">km/s</span>
                             </div>   
                             <div class="divider"></div>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
@@ -428,7 +435,13 @@
                             <div class="input">
                                 Apoapsis Altitude
                                 <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <a popover="Alters orbit period">
+                                            ?
+                                        </a>
+                                    </span>
                                     <input type="text" class="form-control" data-ng-model="apoapsis" valid-number placeholder="5000">
+                                    
                                     <span class="input-group-addon" id="orbitaddon1">km</span>
                                 </div>
                             </div>
@@ -436,7 +449,13 @@
                             <div class = "input">
                                 Periapsis Altitude
                                 <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <a popover="Suggested: 50-500 km">
+                                            ?
+                                        </a>
+                                    </span>
                                     <input type="text" class="form-control" data-ng-model="periapsis" valid-number placeholder="100"/>
+                                    
                                     <span class="input-group-addon" id="orbitaddon2">km</span>
                                 </div>
                             </div>
@@ -458,7 +477,13 @@
                         <div class="col-lg-6">
                             <label>Required Inclination Change</label>
                                 <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <a popover="Suggested: 0.0001-0.001 rad">
+                                            ?
+                                        </a>
+                                    </span>
                                     <input type="text" class="form-control" placeholder="0.00001" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
+                                    
                                     <span class="input-group-addon" id="basic-addon2">Rad</span>
                                 </div>
                             <div class="divider"></div>
