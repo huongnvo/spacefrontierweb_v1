@@ -142,9 +142,11 @@
                             <div class="col-md-2"
                                 <label for="message-text" class="control-label">Power:</label>
                             </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Power">
-                                <div class="input-group-addon">W</div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -198,7 +200,7 @@
                                 <label for="message-text" class="control-label">Volume (cont.):</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Volume_further">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -215,12 +217,10 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
                                     <div class="input-group-addon">(mm^3)</div>
                                 </div>
-                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -237,12 +237,10 @@
                                 <label for="message-text" class="control-label">Specific Impulse:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedPart.Specific_Impulse">
                                     <div class="input-group-addon">s</div>
                                 </div>
-                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -259,12 +257,10 @@
                                 <label for="message-text" class="control-label">DeltaV:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedPart.DeltaV">
                                     <div class="input-group-addon">km/s</div>
                                 </div>
-                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -315,12 +311,10 @@
                                 <label for="message-text" class="control-label">Total Impulse:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedPart.Total_Impulse">
                                     <div class="input-group-addon">N-s</div>
                                 </div>
-                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -577,7 +571,7 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -606,17 +600,18 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class = "divider"></div>
-                <nav>
-                <ul class="pager">
-                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Previous Page </button>
+        <div class="dividersmall"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class = "dividersmaller"></div>
+            <nav>
+            <ul class="pager">
+                <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Previous Page </button>
 
-                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null" title="Communication">Next Page <span aria-hidden="true">&rarr;</span></button>
-                </ul>
-                </nav>  
-            </div>
+                <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null" title="Communication">Next Page <span aria-hidden="true">&rarr;</span></button>
+            </ul>
+            </nav>  
         </div>
     </div>
     <hr>

@@ -348,10 +348,12 @@
                             <div class="col-md-2"
                                 <label for="message-text" class="control-label">Gain:</label>
                             </div>
-                            <div class="input-group">
+                            <div class="col-md-8">
+                                <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedAntenna.Gain">
                                     <div class="input-group-addon">dBi</div>
                                 </div>
+                            </div>
                             <div class="col-md-1">
                             </div>
                         </div>
@@ -421,12 +423,10 @@
                                 <label for="message-text" class="control-label">Temp (high):</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedAntenna.Temp_High">
                                     <div class="input-group-addon">degrees Celcius</div>
                                 </div> 
-                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -1103,7 +1103,7 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#stationModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addStation()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -1112,7 +1112,9 @@
                 <h3>Current Design</h3>
                 <h6>Ground Station Selection<br>Page 4/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="14">
+                <select multiple class="form-control" size="16">
+                    <option>Name: {{Name}}</option>
+                    <option>Objectives: {{Objectives}}</option>
                     <option>Target: {{target}}</option>
                     <option>Instrumentation: {{instrumentPart.Name}}</option>
                     <option>Attitude: {{attitudePart.Name}}</option>
@@ -1160,7 +1162,7 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#antennaModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addAntenna()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -1169,7 +1171,9 @@
                 <h3>Current Design</h3>
                 <h6>Antenna Selection<br>Page 4/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="14">
+                <select multiple class="form-control" size="16">
+                    <option>Name: {{Name}}</option>
+                    <option>Objectives: {{Objectives}}</option>
                     <option>Target: {{target}}</option>
                     <option>Instrumentation: {{instrumentPart.Name}}</option>
                     <option>Attitude: {{attitudePart.Name}}</option>
@@ -1210,14 +1214,14 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="14">
+                        <select multiple class="form-control" size="16">
                             <option ng-click="saveReceiver(part)" ng-repeat="part in parts|filter:radioFilter|filter:frequencyFilter">
                                {{part.Name}}
                             </option>
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#receiverModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addReceiver()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -1226,7 +1230,7 @@
                 <h3>Current Design</h3>
                 <h6>Receiver<br>Page 4/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="14">
+                <select multiple class="form-control" size="16">
                         <option>Name: {{Name}}</option>
                         <option>Objectives: {{Objectives}}</option>
                         <option>Target: {{target}}</option>
@@ -1300,16 +1304,17 @@
                 </div> 
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class = "divider"></div>
-                <nav>
-                <ul class="pager">
-                    <li class="previous"><a type="button" ng-click="prevPage()" title="Propulsion"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
-                    <li class="next"><a type="button" ng-click="nextPage()" title="Data">Next Page<span aria-hidden="true">&rarr;</span></a></li>
-                </ul>
-                </nav>  
-            </div>
+        <div class="dividersmall"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class = "dividersmaller"></div>
+            <nav>
+            <ul class="pager">
+                <li class="previous"><a type="button" ng-click="prevPage()" title="Propulsion"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
+                <li class="next"><a type="button" ng-click="nextPage()" title="Data">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+            </nav>  
         </div>
     </div>
     <hr>

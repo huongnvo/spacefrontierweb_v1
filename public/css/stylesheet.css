@@ -59,7 +59,7 @@
     line-height: 20px;
 }
 
-/*.card.effect__hover:hover .card__front {
+.card.effect__hover:hover .card__front {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
 }
@@ -94,7 +94,7 @@
     outline: none;
     border: 0;
     background: transparent;
-}*/
+}
 
 .tab-content.hide{
     display: none;
