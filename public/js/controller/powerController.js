@@ -11,7 +11,9 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-
+            
+            $scope.Name = partextracted['Mission_Name'];
+            $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
             $scope.attitudePart = partextracted['Attitude'];
             $scope.antennaPart = partextracted['Antenna'];
@@ -121,15 +123,15 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.nextPage = function() {
         $http.put('/parts/cubesat-panels/' + idstring, $scope.selectedPanels)
             .success(function(data) {
-                $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
             });
         $http.put('/parts/cubesat-batteries/' + idstring, $scope.selectedBatteries)
             .success(function(data) {
-                $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
             });
         $http.put('/parts/cubesat-eps/' + idstring, $scope.selectedEPS)
             .success(function(data) {
-                $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
             });
         var path = '/tool7?' + idstring;
         window.location = path;    

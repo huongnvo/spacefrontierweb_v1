@@ -12,7 +12,9 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-
+            
+            $scope.Name = partextracted['Mission_Name'];
+            $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
             $scope.attitudePart = partextracted['Attitude'];
             $scope.antennaPart = partextracted['Antenna'];
@@ -51,11 +53,11 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     };
 
     $scope.deployerType = function(part){
-        return part.Type == 'Deployer';
+        return part.Volume == $scope.volume&&part.Type == 'Deployer';
     };
 
     $scope.thermalType = function(part){
-        return part.Type == 'Active Thermal Control' || part.Type == 'Passive Thermal Control';
+        return (part.Type == 'Active Thermal Control' || part.Type == 'Passive Thermal Control');
     };
 
     $scope.saveBus = function(part) {
@@ -73,7 +75,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.addBus = function() {
         $http.put('/parts/cubesat-bus/' + idstring, $scope.selectedBus)
             .success(function(data) {
-                $scope.selectedBus = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedBus = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -81,7 +83,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.addDeployer = function() {
         $http.put('/parts/cubesat-deployer/' + idstring, $scope.selectedDeployer)
             .success(function(data) {
-                $scope.selectedDeployer = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedDeployer = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -89,7 +91,7 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     $scope.addThermal = function() {
         $http.put('/parts/cubesat-thermal/' + idstring, $scope.selectedThermal)
             .success(function(data) {
-                $scope.selectedThermal = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedThermal = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };

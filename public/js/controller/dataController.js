@@ -45,6 +45,8 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
             var partextracted = {};
             partextracted = $scope.cubesat[0];
 
+            $scope.Name = partextracted['Mission_Name'];
+            $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
             $scope.attitudePart = partextracted['Attitude'];
             $scope.antennaPart = partextracted['Antenna'];
@@ -159,7 +161,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     $scope.addPart = function() {
         $http.put('/parts/cubesat-cdh/' + idstring, $scope.selectedPart)
             .success(function(data) {
-                $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };

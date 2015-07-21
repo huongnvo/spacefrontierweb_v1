@@ -7,8 +7,27 @@
         <div class="container" id="nav">
             <% include navbar %>
         </div>
+<<<<<<< HEAD
         <div id="carousel1" class = "carousel slide" data-ride="carousel" style="height: 450px">
             <div class="carousel-inner" style="height: 450px">
+=======
+
+
+        <div id="carousel1" class = "carousel slide" data-ride="carousel" style="height: 650px">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+                <li data-target="#carousel1" data-slide-to="3"></li>
+                <li data-target="#carousel1" data-slide-to="4"></li>
+                <li data-target="#carousel1" data-slide-to="5"></li>
+                <li data-target="#carousel1" data-slide-to="6"></li>
+                <li data-target="#carousel1" data-slide-to="7"></li>
+                <li data-target="#carousel1" data-slide-to="8"></li>
+                <li data-target="#carousel1" data-slide-to="9"></li>
+            </ol>
+            <div class="carousel-inner" style="height: 650px">
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                 <div class="item active">
                     <div class="col-lg-2">
                     </div>
@@ -39,7 +58,7 @@
                         </a>
                     </div>
                     <div class="col-lg-8">
-                        <div class="row"></div>
+                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
                             <h2>Instruments Selection</h2>
                             <div class="divider"></div>
@@ -48,6 +67,8 @@
                             <h3>What to Do:</h3>
                             <h4> Select all fields you would like your instrument to detect. Then, select a target for your mission; this will come into play for the propulsion and communications systems. Finally, look at the instruments returned by your search and find one appropriate for your goals.</h4>
                         </div>
+                                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+                            <!-- <input id="ex13" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels="['$0', '$100', '$200', '$300', '$400']"/> -->
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
@@ -75,9 +96,15 @@
                             <h2>Attitude Selection</h2>
                             <div class="divider"></div>
                             <h3>Algorithm: </h3>
+<<<<<<< HEAD
                             <h4>Coming Soon</h4>
                             <h3>What to Do:</h3>
                             <h4>Coming Soon</h4>
+=======
+                            <h4>Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge.</h4>
+                            <h3>What to Do: </h3>
+                            <h4>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</h4>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -133,9 +160,15 @@
                             <h2>Communication Selection</h2>
                             <div class="divider"></div>
                             <h3>Algorithm: </h3>
+<<<<<<< HEAD
                             <h4>Coming Soon</h4>
                             <h3>What to Do:</h3>
                             <h4>Coming Soon</h4>
+=======
+                            <h4>This page will display Antennas, Receivers, and ground stations available to read from your selected Band. </h4>
+                            <h3>What to Do:</h3>
+                            <h4>Just select your prefered band!</h4>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -162,9 +195,18 @@
                             <h2>Command and Data Handling Selection</h2>
                             <div class="divider"></div>
                             <h3>Algorithm: </h3>
+<<<<<<< HEAD
                             <h4>Coming Soon</h4>
                             <h3>What to Do:</h3>
                             <h4>Coming Soon</h4>
+=======
+                            <h4>Displayed Parts only have a processing capability greater than the # of bits per second of information you need to transmit and can handle more millions of instructions per second than your mission needs. Bits per Second can be calculated by our program in the 3 ways shown below:</h4>
+                            <h5>Bits per Second = # Channels x Bits/Channel x Integrations per second</h4>
+                            <h5>Bits per Second = (pixel array in x direction) * (pixel array in y direction) *  (Integrations per second)</h4>
+                            <h5>Bits per Second = inputted Bits/Second</h4>
+                            <h3>What to Do:</h3>
+                            <h4>Select which way you would like to calculate bits per second based on your current knowledge of specifications and input how many millions of instructions per second your part must handle.</h4>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -191,9 +233,15 @@
                             <h2>Power Selection</h2>
                             <div class="divider"></div>
                             <h3>Algorithm: </h3>
+<<<<<<< HEAD
                             <h4>Coming Soon</h4>
                             <h3>What to Do:</h3>
                             <h4>Coming Soon</h4>
+=======
+                            <h4>Filters out solar panels by volume and whether they are Non Deployable/Deployable. If they are deployable panels are filtered by how many wings you specify and hoy many panels per wing you specify. All On Board Computers and Batteries are displayed.</h4>
+                            <h3>What to Do:</h3>
+                            <h4>Select the Volume of your cubesat and whether your solar panels will be deployable. If you chose Deployable panels, you must specify how many wings and how many panels per wing you want.</h4>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -220,9 +268,15 @@
                             <h2>Frame Selection</h2>
                             <div class="divider"></div>
                             <h3>Algorithm: </h3>
+<<<<<<< HEAD
                             <h4>Coming Soon</h4>
                             <h3>What to Do:</h3>
                             <h4>Coming Soon</h4>
+=======
+                            <h4>Filters out potential buses and deployers based on your specified cubesat volume. All available thermal equipment is displayed.</h4>
+                            <h3>What to Do:</h3>
+                            <h4>Just select your cubesat volume!</h4>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                         </div>
                     </div>
                     <div class="col-lg-2">
