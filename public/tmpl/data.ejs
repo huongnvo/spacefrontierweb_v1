@@ -106,7 +106,11 @@
                                     <label for="message-text" class="control-label">Mass:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                    
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                         <div class="input-group-addon">g</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -140,7 +144,10 @@
                                     <label for="message-text" class="control-label">Power:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                         <div class="input-group-addon">W</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -174,7 +181,10 @@
                                     <label for="message-text" class="control-label">Volume:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                         <div class="input-group-addon">U</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -208,7 +218,10 @@
                                     <label for="message-text" class="control-label">Proportions:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                         <div class="input-group-addon">(mm^3)</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -225,7 +238,10 @@
                                     <label for="message-text" class="control-label">MIPS:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.MIPS">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.MIPS">
+                                         <div class="input-group-addon">MIPS</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -242,7 +258,10 @@
                                     <label for="message-text" class="control-label">Mhz:</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.MHz">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.MHz">
+                                         <div class="input-group-addon">MHz</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -293,7 +312,10 @@
                                     <label for="message-text" class="control-label">Temp (low):</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Temp_low">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Temp_low">
+                                         <div class="input-group-addon">degrees Celcius</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -310,7 +332,10 @@
                                     <label for="message-text" class="control-label">Temp (high):</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Temp_high">
+                                     <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Temp_high">
+                                         <div class="input-group-addon">degrees Celcius</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -342,7 +367,7 @@
         </div>
 
     <% include navbar %>
-    <h1>Data Selection</h1>
+    <h1>Command and Data Handling Selection</h1>
     <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
     <hr>
     <h3>User Input</h3>
@@ -364,27 +389,27 @@
             <div class="col-lg-6">
                 Channels 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number/>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number title="Suggested: ???-??? channels"/>
                     <span class="input-group-addon" id="Channels">Channels</span>
                 </div>
                 <div class="divider"></div>
                 Bits/Channel: 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number title="Suggested: ??-?? bits/channel"/>
                     <span class="input-group-addon" id="Bits/Channel">Bits/Channel</span>
                 </div>
                 <div class="divider"></div>
                 Integrations/Second:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number title="Suggested: ??-?? integrations/second"/>
                     <span class="input-group-addon" id="Integrations/Second">Integrations/Second</span>
                 </div>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number/>
-                    <span class="input-group-addon" id="percent">/100</span>
+                    <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number title="Suggested: ??-?? %"/>
+                    <span class="input-group-addon" id="percent">%</span>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -394,7 +419,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabCHANNELS()" ng-disabled="channel==null||bitschannel==null||integrations1==null ||resolution1==null||channel.length==0||bitschannel==0||resolution1==0||integrations1.length==0">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabCHANNELS()" ng-disabled="channel==null||bitschannel==null||integrations1==null ||resolution1==null||channel.length==0||bitschannel==0||resolution1==0||integrations1.length==0" title="Show Bits/Second and Required Downlink">
                             Calculate
                         </button>
                     </div>
@@ -412,7 +437,7 @@
                 Array Size - x: 
 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number title="Suggested: ??-?? px"/>
                     <span class="input-group-addon" id="pixelsX"> pixels</span>
                 </div>
 
@@ -421,7 +446,7 @@
 
 
                 <div class="input-group">
-                    <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
+                    <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number title="Suggested: ??-?? px"/>
                     <span class="input-group-addon" id="pixelsY"> pixels</span>
                 </div>
 
@@ -429,15 +454,15 @@
                 Integrations/Second:
 
                 <div class="input-group">
-                     <input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number title="Suggested: ??-?? integrations/second"/>
                     <span class="input-group-addon" id="pixelsY"> Integrations/Second</span>
                 </div>
 
                 <div class="divider"></div>                 
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2"/>
-                    <div class="input-group-addon">/100</div>
+                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2" title="Suggested: ??-?? %"/>
+                    <div class="input-group-addon">%</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -447,7 +472,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabARRAY()" ng-disabled="sizex==null||sizey==null||integrations2==null||resolution2==null||sizex.length==0||sizey.length==0||integrations2.length==0||resolution2.length==0">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabARRAY()" ng-disabled="sizex==null||sizey==null||integrations2==null||resolution2==null||sizex.length==0||sizey.length==0||integrations2.length==0||resolution2.length==0" title="Show Bits/Second and Required Downlink">
                             Calculate
                         </button>
                     </div>
@@ -464,15 +489,15 @@
                 Bits/Second 
 
                 <div class="input-group">
-                     <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number title="Suggested: ??-?? bits/second"/>
                     <div class="input-group-addon">Bits/Second</div>
                 </div>
 
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number/>
-                    <div class="input-group-addon">/100</div>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number title="Suggested: ??-?? %"/>
+                    <div class="input-group-addon">%</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -482,7 +507,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabBPS()" ng-disabled="bitssecond==null||resolution3==null||bitssecond.length==0||resolution3.length==0">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabBPS()" ng-disabled="bitssecond==null||resolution3==null||bitssecond.length==0||resolution3.length==0" title="Show Bits/Second and Required Downlink">
                             Calculate
                         </button>
                     </div>
@@ -518,7 +543,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextCDH()">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextCDH()" title="Show Parts">
                             Select CDH
                         </button>
                     </div>
@@ -596,8 +621,13 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -625,6 +655,19 @@
                 </select>
             </div>
         </div>
+<<<<<<< HEAD
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true" title="Communication">&larr;</span>Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="cdhPart==null" title="Power">Next Page <span aria-hidden="true">&rarr;</span></button>
+                </ul>
+                </nav>  
+            </div>
+=======
         <div class = "dividersmall"></div>
     </div>
     <div class="row">
@@ -636,6 +679,7 @@
                 <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="cdhPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
             </ul>
             </nav>  
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
         </div>
     </div>
     <hr>

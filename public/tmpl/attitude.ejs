@@ -410,13 +410,13 @@
                 <h3>User Input</h3>
                 Altitude:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="attitude" valid-number/>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="attitude" valid-number title="Suggested: 50-500 km"/>
                     <div class="input-group-addon">km</div>
                 </div>
                 <div class = "divider"></div>
                 Maximum Spatial Resolution:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution"valid-number/>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution"valid-number title="Suggested: ????"/>
                     <div class="input-group-addon" />m</div>
                 </div>
             </div>
@@ -439,7 +439,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="attitude==null||resolution==null||attitude.length==0||resolution.length==0">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="attitude==null||resolution==null||attitude.length==0||resolution.length==0" title="Show Parts">
                         Select Attitude
                     </button>
                 </div>
@@ -544,6 +544,19 @@
                     </select>
                 </div>
             </div>
+<<<<<<< HEAD
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class = "divider"></div>
+                    <nav>
+                    <ul class="pager">
+                        <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Instruments"><span aria-hidden="true">&larr;</span> Previous Page </button>
+
+                        <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="attitudePart==null" title="Propulsion">Next Page <span aria-hidden="true">&rarr;</span></button>
+                    </ul>
+                    </nav>  
+                </div>
+=======
             <div class="dividersmall"></div>
         </div>
         <div class="row">
@@ -555,6 +568,7 @@
                     <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="attitudePart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
             </div>
         </div>
         <hr>
