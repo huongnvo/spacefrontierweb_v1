@@ -69,6 +69,14 @@ app.delete('/parts/cubesat/:_id', function(req, res) {
     var resp = cubesatfactory.removePart(req, res);
 });
 
+app.put('/parts/cubesat-name/:_id', function(req, res) {
+    var resp = cubesatfactory.updateName(req, res);
+});
+
+app.put('/parts/cubesat-objectives/:_id', function(req, res) {
+    var resp = cubesatfactory.updateObjectives(req, res);
+});
+
 app.put('/parts/cubesat-target/:_id', function(req, res) {
     var resp = cubesatfactory.updateTarget(req, res);
 });
@@ -323,6 +331,10 @@ app.get('/about', function (req, res) {
     res.render('../public/tmpl/about.ejs', { title: 'About' });
 });
 
+app.get('/tool0', function (req, res) {
+    res.render('../public/tmpl/summary.ejs', { title: 'Mission Description' });
+});
+
 app.get('/tool1', function (req, res) {
     res.render('../public/tmpl/instruments.ejs', { title: 'Instruments Selection' });
 });
@@ -389,6 +401,10 @@ app.get('/station', function (req, res) {
 
 app.get('/thermal', function (req, res) {
     res.render('../public/tmpl/displayThermal.ejs', { title: 'Thermal Subsystem' });
+});
+
+app.get('/gallery', function (req, res) {
+    res.render('../public/tmpl/gallery.ejs', { title: 'Gallery' });
 });
 
 app.listen(port);

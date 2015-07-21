@@ -13,7 +13,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Information</h4>
                 </div>
                 <div class="dividersmall"></div>
                 <div class="modal-name">
@@ -110,7 +110,13 @@
                                 <label for="message-text" class="control-label">Mass:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Mass">
+                                <div class="input-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedBus.Mass">
+                                         <div class="input-group-addon">g</div>
+                                    </div>
+
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -144,7 +150,10 @@
                                 <label for="message-text" class="control-label">Power:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Power">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedBus.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -178,7 +187,10 @@
                                 <label for="message-text" class="control-label">Volume:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Volume">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedBus.Volume">
+                                        <div class="input-group-addon">U</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -212,7 +224,10 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Proportions">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedBus.Proportions">
+                                        <div class="input-group-addon">(mm^3)</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -732,15 +747,20 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="14">
+                        <select multiple class="form-control" size="16">
                             <option ng-click="saveBus(part)" ng-repeat="part in parts|filter:busType">
                                 {{part.Name}}
                             </option>
                         </select>       
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addBus()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#busModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addBus()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -772,8 +792,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()" ng-disabled="busPart==null">
-                        Search Deployer (2/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()" ng-disabled="busPart==null" title="Show Parts">
+                        Search Deployer
                     </button>
                 </div>
             </div>
@@ -789,15 +809,26 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
+
                         <select multiple class="form-control" size="14">
+                            <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: deployerType">
+                                {{part.Name}}
+
+                        <select multiple class="form-control" size="16">
                             <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: filterBattery">
+
                                 {{part.Name}}
                             </option>
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addDeployer()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#deployerModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addDeployer()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -829,8 +860,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()" ng-disabled="deployerPart==null">
-                        Search Thermal (3/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()" ng-disabled="deployerPart==null" title="Show Parts">
+                        Search Thermal
                     </button>
                 </div>
             </div>
@@ -847,14 +878,19 @@
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
                         <select multiple class="form-control" size="14">
-                            <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter: filterEPS">
+                            <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter: thermalType">
                                    {{part.Name}}
                             </option>
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addThermal()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#thermalModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addThermal()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -863,24 +899,39 @@
                 <h6>Thermal Selection<br>Page 7/7</h6>
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control" size="14">
-                    <option>Target: {{target}}</option>
-                    <option>Instrumentation: {{instrumentPart.Name}}</option>
-                    <option>Attitude: {{attitudePart.Name}}</option>
-                    <option>Propulsion: {{propulsionPart.Name}}</option>
-                    <option>Ground Station: {{stationPart.Name}}</option>
-                    <option>Antenna: {{antennaPart.Name}}</option>
-                    <option>Receiver: {{receiverPart.Name}}</option>
-                    <option>CDH: {{cdhPart.Name}}</option>
-                    <option>Solar Panels: {{panelsPart.Name}}</option>
-                    <option>Batteries: {{batteriesPart.Name}}</option>
-                    <option>EPS: {{epsPart.Name}}</option>
-                    <option>Bus: {{busPart.Name}}</option>
-                    <option>Deployer: {{deployerPart.Name}}</option>
-                    <option>Thermal: {{thermalPart.Name}}</option>
+                        <option>Name: {{Name}}</option>
+                        <option>Objectives: {{Objectives}}</option>
+                        <option>Target: {{target}}</option>
+                        <option>Instrumentation: {{instrumentPart.Name}}</option>
+                        <option>Attitude: {{attitudePart.Name}}</option>
+                        <option>Propulsion: {{propulsionPart.Name}}</option>
+                        <option>Ground Station: {{stationPart.Name}}</option>
+                        <option>Antenna: {{antennaPart.Name}}</option>
+                        <option>Receiver: {{receiverPart.Name}}</option>
+                        <option>CDH: {{cdhPart.Name}}</option>
+                        <option>Solar Panels: {{panelsPart.Name}}</option>
+                        <option>Batteries: {{batteriesPart.Name}}</option>
+                        <option>EPS: {{epsPart.Name}}</option>
+                        <option>Bus: {{busPart.Name}}</option>
+                        <option>Deployer: {{deployerPart.Name}}</option>
+                        <option>Thermal: {{thermalPart.Name}}</option>
                 </select>
             </div>
         </div>
         <div class = "dividersmall"></div>
+<<<<<<< HEAD
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Power"><span aria-hidden="true">&larr;</span>Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="thermalPart==null" title="Results">Next Page <span aria-hidden="true">&rarr;</span></button>
+                </ul>
+                </nav>  
+            </div>
+=======
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -891,6 +942,7 @@
                 <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="thermalPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
             </ul>
             </nav>  
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
         </div>
     </div>
     <hr>

@@ -106,7 +106,10 @@
                                 <label for="message-text" class="control-label">Mass:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                        <div class="input-group-addon">g</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -139,8 +142,9 @@
                             <div class="col-md-2"
                                 <label for="message-text" class="control-label">Power:</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="input-group">
                                 <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                <div class="input-group-addon">W</div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -174,7 +178,10 @@
                                 <label for="message-text" class="control-label">Volume:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                    <div class="input-group-addon">U</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -208,7 +215,12 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                                    <div class="input-group-addon">(mm^3)</div>
+                                </div>
+                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -225,7 +237,12 @@
                                 <label for="message-text" class="control-label">Specific Impulse:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Specific_Impulse">
+                                <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Specific_Impulse">
+                                    <div class="input-group-addon">s</div>
+                                </div>
+                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -242,7 +259,12 @@
                                 <label for="message-text" class="control-label">DeltaV:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.DeltaV">
+                                <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.DeltaV">
+                                    <div class="input-group-addon">km/s</div>
+                                </div>
+                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -293,7 +315,12 @@
                                 <label for="message-text" class="control-label">Total Impulse:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedPart.Total_Impulse">
+                                <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Total_Impulse">
+                                    <div class="input-group-addon">N-s</div>
+                                </div>
+                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -309,7 +336,7 @@
 
     <% include navbar %>
     <h1>Propulsion Selection</h1>
-    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own DeltaV", if not please fill out "Input Specifications" and we will make an estimate for you.</p>
+    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own &#916V", if not please fill out "Input Specifications" and we will make an estimate for you.</p>
     <hr>
 
     <div class="row">
@@ -334,7 +361,7 @@
                 <div class="divider"></div>
                 <label>Specific &#916V</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
+                    <input type="text" class="form-control" placeholder="3.0" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
                     <span class="input-group-addon" id="basic-addon2">km/s</span>
                 </div>
             </div>
@@ -342,7 +369,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()" ng-disabled="inputown.length==0||inputown==null" title="Show Total &#916V">
                         Calculate Results
                     </button>
                 </div>
@@ -383,7 +410,7 @@
                                 <span class="input-group-addon">
                                     Input Trajectory deltaV:
                                 </span>
-                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number/> <span class="input-group-addon" id="dvaddon">km/s</span>
+                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number placeholder="1.0"/> <span class="input-group-addon" id="dvaddon">km/s</span>
                             </div>   
                             <div class="divider"></div>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
@@ -399,17 +426,17 @@
                         <div class="col-lg-6">
                             <label>Orbit Specifications</label>
                             <div class="input">
-                                Apoapsis
+                                Apoapsis Altitude
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="apoapsis" valid-number>
+                                    <input type="text" class="form-control" data-ng-model="apoapsis" valid-number placeholder="5000">
                                     <span class="input-group-addon" id="orbitaddon1">km</span>
                                 </div>
                             </div>
                             <div class="dividersmall"></div>
                             <div class = "input">
-                                Periapsis
+                                Periapsis Altitude
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="periapsis" valid-number/>
+                                    <input type="text" class="form-control" data-ng-model="periapsis" valid-number placeholder="100"/>
                                     <span class="input-group-addon" id="orbitaddon2">km</span>
                                 </div>
                             </div>
@@ -431,8 +458,8 @@
                         <div class="col-lg-6">
                             <label>Required Inclination Change</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="100" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
-                                    <span class="input-group-addon" id="basic-addon2">deg</span>
+                                    <input type="text" class="form-control" placeholder="0.00001" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
+                                    <span class="input-group-addon" id="basic-addon2">Rad</span>
                                 </div>
                             <div class="divider"></div>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id="round" data-slide = "prev">
@@ -447,12 +474,12 @@
                         <div class="col-lg-2">
                             <div class = "dividerlarge"></div>
                             <div id="button" ng-show="picktrajectoryRadio1">
-                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="picktrajectory==null||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="picktrajectory==null||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0" title="Show Total &#916V">
                                     Calculate Results
                                 </button>
                             </div>
                             <div id="button" ng-show="picktrajectoryRadio2">
-                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="inputtrajectorydV==null||inputtrajectorydV.length==0||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="inputtrajectorydV==null||inputtrajectorydV.length==0||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0" title="Show Total &#916V">
                                     Calculate Results
                                 </button>
                             </div>
@@ -478,7 +505,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" title="Show Parts">
                         Select Propulsion
                     </button>
                 </div>
@@ -542,7 +569,7 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="14">
+                        <select multiple class="form-control" size="16">
                             <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts|filter:okType|filter:okdV">
                             <!-- <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts"> -->
                                {{part.Name}}
@@ -550,8 +577,13 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -559,24 +591,39 @@
                 <h3>Current Design</h3>
                 <h6>Propulsion Selection<br>Page 3/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="14">
-                    <option>Target: {{target}}</option>
-                    <option>Instrumentation: {{instrumentPart.Name}}</option>
-                    <option>Attitude: {{attitudePart.Name}}</option>
-                    <option>Propulsion: {{propulsionPart.Name}}</option>
-                    <option>Ground Station: {{stationPart.Name}}</option>
-                    <option>Antenna: {{antennaPart.Name}}</option>
-                    <option>Receiver: {{receiverPart.Name}}</option>
-                    <option>CDH: {{cdhPart.Name}}</option>
-                    <option>Solar Panels: {{panelsPart.Name}}</option>
-                    <option>Batteries: {{batteriesPart.Name}}</option>
-                    <option>EPS: {{epsPart.Name}}</option>
-                    <option>Bus: {{busPart.Name}}</option>
-                    <option>Deployer: {{deployerPart.Name}}</option>
-                    <option>Thermal: {{thermalPart.Name}}</option>
+                <select multiple class="form-control" size="16">
+                        <option>Name: {{Name}}</option>
+                        <option>Objectives: {{Objectives}}</option>
+                        <option>Target: {{target}}</option>
+                        <option>Instrumentation: {{instrumentPart.Name}}</option>
+                        <option>Attitude: {{attitudePart.Name}}</option>
+                        <option>Propulsion: {{propulsionPart.Name}}</option>
+                        <option>Ground Station: {{stationPart.Name}}</option>
+                        <option>Antenna: {{antennaPart.Name}}</option>
+                        <option>Receiver: {{receiverPart.Name}}</option>
+                        <option>CDH: {{cdhPart.Name}}</option>
+                        <option>Solar Panels: {{panelsPart.Name}}</option>
+                        <option>Batteries: {{batteriesPart.Name}}</option>
+                        <option>EPS: {{epsPart.Name}}</option>
+                        <option>Bus: {{busPart.Name}}</option>
+                        <option>Deployer: {{deployerPart.Name}}</option>
+                        <option>Thermal: {{thermalPart.Name}}</option>
                 </select>
             </div>
         </div>
+<<<<<<< HEAD
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Previous Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null" title="Communication">Next Page <span aria-hidden="true">&rarr;</span></button>
+                </ul>
+                </nav>  
+            </div>
+=======
         <div class="dividersmall"></div>
     </div>
     <div class="row">
@@ -588,6 +635,7 @@
                 <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
             </ul>
             </nav>  
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
         </div>
     </div>
     <hr>

@@ -13,7 +13,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Information</h4>
                 </div>
                 <div class="dividersmall"></div>
                 <div class="modal-name">
@@ -110,7 +110,10 @@
                                 <label for="message-text" class="control-label">Mass:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Mass">
+                               <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Mass">
+                                    <div class="input-group-addon">g</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -144,7 +147,10 @@
                                 <label for="message-text" class="control-label">Power:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Power">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -178,7 +184,10 @@
                                 <label for="message-text" class="control-label">Volume:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Volume">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Volume">
+                                    <div class="input-group-addon">U</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -212,7 +221,10 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Proportions">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Proportions">
+                                    <div class="input-group-addon">(mm^3)</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -263,7 +275,10 @@
                                 <label for="message-text" class="control-label">Receiver Sensitivity:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Receiver_Sensitivity">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Receiver_Sensitivity">
+                                    <div class="input-group-addon">dBm</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -314,7 +329,10 @@
                                 <label for="message-text" class="control-label">Beamwidth:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Beamwidth">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Beamwidth">
+                                    <div class="input-group-addon">deg</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -330,9 +348,10 @@
                             <div class="col-md-2"
                                 <label for="message-text" class="control-label">Gain:</label>
                             </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Gain">
-                            </div>
+                            <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Gain">
+                                    <div class="input-group-addon">dBi</div>
+                                </div>
                             <div class="col-md-1">
                             </div>
                         </div>
@@ -382,7 +401,10 @@
                                 <label for="message-text" class="control-label">Temp (low):</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Temp_Low">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Temp_Low">
+                                    <div class="input-group-addon">degrees Celcius</div>
+                                </div> 
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -399,7 +421,12 @@
                                 <label for="message-text" class="control-label">Temp (high):</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedAntenna.Temp_High">
+                                <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedAntenna.Temp_High">
+                                    <div class="input-group-addon">degrees Celcius</div>
+                                </div> 
+                            </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -1024,25 +1051,25 @@
             <h3>Frequency:</h3>
              <div class="form-group">
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="UHF">
                             UHF
                     </label>
                 </div>
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="VHF">
                             VHF
                     </label>
                 </div>
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="S-Band">
                             S-Band
                     </label>
                 </div>
                 <div class="radio">
-                    <label>
+                    <label title="Suggested: ??Use">
                         <input type="radio" name="optionsRadios" ng-model= "frequency" value="X-Band">
                             X-Band
                     </label>
@@ -1053,8 +1080,8 @@
         </div>
         <div class="col-lg-2">
             <div id="button">
-                <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="frequency==null">
-                    Select Station (1/3)
+                <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" ng-disabled="frequency==null" title="Show Groundstations">
+                    Select Station
                 </button>
             </div>
         </div>
@@ -1069,15 +1096,20 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="14">
+                        <select multiple class="form-control" size="16">
                             <option ng-click="saveStation(station)" ng-repeat="station in stations|filter: stationFilter">
                                {{station.Name}}
                             </option>
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addStation()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#stationModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addStation()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -1109,8 +1141,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextAnt()" ng-disabled="stationPart==null">
-                        Select Antenna (2/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextAnt()" ng-disabled="stationPart==null" title="Show Antennas">
+                        Select Antenna
                     </button>
                 </div>
             </div>
@@ -1126,15 +1158,20 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="14">
+                        <select multiple class="form-control" size="16">
                             <option ng-click="saveAntenna(part)" ng-repeat="part in parts|filter:antennaFilter|filter:frequencyFilter">
                                 {{part.Name}}
                             </option>
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addAntenna()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#antennaModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addAntenna()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -1166,8 +1203,8 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextRec()" ng-disabled="antennaPart==null">
-                        Select Receiver (3/3)
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextRec()" ng-disabled="antennaPart==null" title="Show Receivers">
+                        Select Receiver
                     </button>
                 </div>
             </div>
@@ -1190,8 +1227,13 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
+<<<<<<< HEAD
+                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addReceiver()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+=======
                         <a type="button" data-toggle="modal" data-target="#receiverModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addReceiver()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
                     </div>
                 </div>
             </div>
@@ -1200,20 +1242,22 @@
                 <h6>Receiver<br>Page 4/7</h6>
                 <div class = "dividersmall"></div>
                 <select multiple class="form-control" size="14">
-                    <option>Target: {{target}}</option>
-                    <option>Instrumentation: {{instrumentPart.Name}}</option>
-                    <option>Attitude: {{attitudePart.Name}}</option>
-                    <option>Propulsion: {{propulsionPart.Name}}</option>
-                    <option>Ground Station: {{stationPart.Name}}</option>
-                    <option>Antenna: {{antennaPart.Name}}</option>
-                    <option>Receiver: {{receiverPart.Name}}</option>
-                    <option>CDH: {{cdhPart.Name}}</option>
-                    <option>Solar Panels: {{panelsPart.Name}}</option>
-                    <option>Batteries: {{batteriesPart.Name}}</option>
-                    <option>EPS: {{epsPart.Name}}</option>
-                    <option>Bus: {{busPart.Name}}</option>
-                    <option>Deployer: {{deployerPart.Name}}</option>
-                    <option>Thermal: {{thermalPart.Name}}</option>
+                        <option>Name: {{Name}}</option>
+                        <option>Objectives: {{Objectives}}</option>
+                        <option>Target: {{target}}</option>
+                        <option>Instrumentation: {{instrumentPart.Name}}</option>
+                        <option>Attitude: {{attitudePart.Name}}</option>
+                        <option>Propulsion: {{propulsionPart.Name}}</option>
+                        <option>Ground Station: {{stationPart.Name}}</option>
+                        <option>Antenna: {{antennaPart.Name}}</option>
+                        <option>Receiver: {{receiverPart.Name}}</option>
+                        <option>CDH: {{cdhPart.Name}}</option>
+                        <option>Solar Panels: {{panelsPart.Name}}</option>
+                        <option>Batteries: {{batteriesPart.Name}}</option>
+                        <option>EPS: {{epsPart.Name}}</option>
+                        <option>Bus: {{busPart.Name}}</option>
+                        <option>Deployer: {{deployerPart.Name}}</option>
+                        <option>Thermal: {{thermalPart.Name}}</option>
                 </select>
             </div>
         </div>
@@ -1223,7 +1267,7 @@
             </div>
             <div class="col-lg-2">
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="calculate()" ng-disabled="receiverPart==null">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="calculate()" ng-disabled="receiverPart==null" title="Show Space Loss, Signal:Noise Ratio, Receiver dbW, and Bit Rate">
                         Calculate Results
                     </button>
                 </div>
@@ -1271,6 +1315,18 @@
                 </div> 
             </div>
         </div>
+<<<<<<< HEAD
+        <div class="row">
+            <div class="col-lg-12">
+                <div class = "divider"></div>
+                <nav>
+                <ul class="pager">
+                    <li class="previous"><a type="button" ng-click="prevPage()" title="Propulsion"><span aria-hidden="true">&larr;</span>Prev Page</a></li>
+                    <li class="next"><a type="button" ng-click="nextPage()" title="Data">Next Page<span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+                </nav>  
+            </div>
+=======
         <div class="dividersmall"></div>
     </div>
     <div class="row">
@@ -1281,6 +1337,7 @@
                 <li class="next"><a type="button" ng-click="nextPage()">Next Page<span aria-hidden="true">&rarr;</span></a></li>
             </ul>
             </nav>  
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
         </div>
     </div>
     <hr>
