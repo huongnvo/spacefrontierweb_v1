@@ -5,7 +5,7 @@
     <body class="container" data-ng-controller="instrumentsController">
 
         <% include navbar %>
-        <h1>Instrument Selection</h1>
+        <h1>Instrument Selection</h1> 
         <p>On this page please enter any specifications you have for your science instrument. Several fields, such as the periodic table and wavelength chart, ask for the type of data you would like to collect.</p>
         <hr>
 
@@ -840,7 +840,7 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
-                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTarget()" ng-disabled="!click()">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTarget()" ng-disabled="!click()" title="Show Options">
                         Select Target
                     </button>
                 </div>
@@ -867,8 +867,8 @@
                             </select>
                         </div>
                         <div class="col-lg-1">
-                            <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                            <a type="button" ng-click="addTarget()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                            <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                            <a type="button" ng-click="addTarget()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                         </div>
                     </div>
                 </div>
@@ -900,7 +900,7 @@
                 <div class="col-lg-2">
                     <div class = "dividerlarge"></div>
                     <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="target.length==null">
+                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="target.length==null" title="Show Parts">
                             Select Instrumentation
                         </button>
                     </div>
@@ -961,9 +961,16 @@
                 <ul class="pager">
                     <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span> Prev Page </button>
 
+<<<<<<< HEAD
+                        <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="instrumentPart==null" title="Attitude">Next Page <span aria-hidden="true">&rarr;</span></button>
+                    </ul>
+                    </nav>  
+                </div>
+=======
                     <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="instrumentPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
+>>>>>>> 6c4affc27f627517ea7865552082ebcacf1512d1
             </div>
         </div>
         <hr>
