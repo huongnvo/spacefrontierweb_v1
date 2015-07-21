@@ -99,9 +99,10 @@
                             <div class="col-md-2"
                                 <label for="message-text" class="control-label">Mass:</label>
                             </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Mass">
-                            </div>
+                             <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Mass">
+                                    <div class="input-group-addon">g</div>
+                             </div>
                             <div class="col-md-1">
                             </div>
                         </div>
@@ -130,7 +131,10 @@
                                 <label for="message-text" class="control-label">Power:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Power">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -160,7 +164,10 @@
                                 <label for="message-text" class="control-label">Volume:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Volume">
+                               <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Volume">
+                                    <div class="input-group-addon">U</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -175,7 +182,10 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Proportions">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Proportions">
+                                    <div class="input-group-addon">(mm^3)</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -220,7 +230,10 @@
                                 <label for="message-text" class="control-label">Sensitivity:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Sensitivity">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.Sensitivity">
+                                    <div class="input-group-addon">nm, nT, or keV (depending on measurement)</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -235,7 +248,12 @@
                                 <label for="message-text" class="control-label">Resolution:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Resolution">
+                                
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.Resolution">
+                                    <div class="input-group-addon">(Spectral, Amplitude)</div>
+                                </div>
+
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -250,7 +268,10 @@
                                 <label for="message-text" class="control-label">Pixels:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.Pixels">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.Pixels">
+                                    <div class="input-group-addon">(Spectral, Amplitude)</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -295,7 +316,10 @@
                                 <label for="message-text" class="control-label">Field of View:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.FOV">
+                               <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.FOV">
+                                    <div class="input-group-addon">deg</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -310,7 +334,10 @@
                                 <label for="message-text" class="control-label">Temp (low):</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.T_lo">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.T_lo">
+                                    <div class="input-group-addon">degrees Celcius</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -325,7 +352,10 @@
                                 <label for="message-text" class="control-label">Temp (high):</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" ng-model="selectedInstrument.T_hi">
+                                 <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.T_hi">
+                                    <div class="input-group-addon">degrees Celcius</div>
+                                </div>
                             </div>
                             <div class="col-md-1">
                             </div>
