@@ -5,7 +5,7 @@
     <body class="container" data-ng-controller="instrumentsController">
 
         <% include navbar %>
-        <h1>Instrument Selection</h1>
+        <h1>Instrument Selection</h1> 
         <p>On this page please enter any specifications you have for your science instrument. Several fields, such as the periodic table and wavelength chart, ask for the type of data you would like to collect.</p>
         <hr>
 
@@ -840,74 +840,17 @@
             <div class="col-lg-2">
                 <div class = "dividerlarge"></div>
                 <div id="button">
+
                     <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="!click()">
+
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTarget()" ng-disabled="!click()" title="Show Options">
+
                         Select Target
                     </button>
                 </div>
             </div>
         </div>
         <hr>
-
-<!--        <div ng-show="showTarget">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3>Available Targets</h3>
-                    <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
-                    <div class="row">
-                        <div class="col-lg-11">
-                            <div class = "dividersmall"></div>
-                            <select multiple class="form-control" size="14">
-                                <option ng-click="savePlanet('Earth_Low')">Earth-Low</option>
-                                <option ng-click="savePlanet('Earth_Medium')">Earth-Medium</option>
-                                <option ng-click="savePlanet('Earth_High')">Earth-High</option>
-                                <option ng-click="savePlanet('Mercury')">Mercury</option>
-                                <option ng-click="savePlanet('Mars')">Mars</option>
-                                <option ng-click="savePlanet('Venus')">Venus</option>
-                                <option ng-click="savePlanet('Moon')">Moon</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-1">
-                            <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-                            <a type="button" ng-click="addTarget()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3>Current Design</h3>
-                    <h6>Target Selection<br>Page 1/7</h6>
-                    <div class = "dividersmall"></div>
-                    <select multiple class="form-control" size="14">
-                        <option>Name: {{Name}}</option>
-                        <option>Objectives: {{Objectives}}</option>
-                        <option>Target: {{target}}</option>
-                        <option>Instrumentation: {{instrumentPart.Name}}</option>
-                        <option>Attitude: {{attitudePart.Name}}</option>
-                        <option>Propulsion: {{propulsionPart.Name}}</option>
-                        <option>Ground Station: {{stationPart.Name}}</option>
-                        <option>Antenna: {{antennaPart.Name}}</option>
-                        <option>Receiver: {{receiverPart.Name}}</option>
-                        <option>CDH: {{cdhPart.Name}}</option>
-                        <option>Solar Panels: {{panelsPart.Name}}</option>
-                        <option>Batteries: {{batteriesPart.Name}}</option>
-                        <option>EPS: {{epsPart.Name}}</option>
-                        <option>Bus: {{busPart.Name}}</option>
-                        <option>Deployer: {{deployerPart.Name}}</option>
-                        <option>Thermal: {{thermalPart.Name}}</option>
-                    </select>
-                </div>
-                <div class="col-lg-10">
-                </div>
-                <div class="col-lg-2">
-                    <div class = "dividerlarge"></div>
-                    <div id="button">
-                        <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="target.length==null">
-                            Select Instrumentation
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>  -->
 
         <div ng-show="showInstrumentation">
             <div class="row">
@@ -961,7 +904,7 @@
                 <ul class="pager">
                     <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span> Prev Page </button>
 
-                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="instrumentPart==null">Next Page <span aria-hidden="true">&rarr;</span></button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="instrumentPart==null" title="Attitude">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
                 </nav>  
             </div>
