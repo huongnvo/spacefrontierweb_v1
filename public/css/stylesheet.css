@@ -89,6 +89,101 @@
           transform: rotateY(0);
 }
 
+
+.rcard {
+    position: relative;
+    float: left;
+    padding-bottom: 120%;
+    width: 117%;
+    text-align: center;
+}
+
+.rcard:nth-child(1) {
+    margin-left: -3px;
+    margin-right: 1px;
+}
+
+.rcard:nth-child(2),
+.rcard:nth-child(3) {
+    margin-right: 1px;
+}
+
+.rcard__front,
+.rcard__back {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.rcard__front,
+.rcard__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.rcard__front {
+    width:100%;
+    height:120%;
+    /*border-radius:50%;*/
+    background-color: #ff5078;
+}
+
+.rcard__back {
+    /*border-radius:50%;*/
+    width:100%;
+    height:120%;
+    background-color: #1e1e1e;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.rcard__text {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 20px;
+    color: #fff;
+    line-height: 20px;
+}
+
+.rcard.effect__hover:hover .rcard__front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.rcard.effect__hover:hover .rcard__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.rcard.effect__click.flipped .rcard__front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.rcard.effect__click.flipped .rcard__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.rcard.effect__random.flipped .rcard__front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.rcard.effect__random.flipped .rcard__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+
 .glyph {
     -webkit-appearance: none;
     outline: none;
@@ -160,12 +255,16 @@ a:active {
 
 #pushdown3 {
     top:115px;
-    a
 }
 
 #pushdown4 {
-    top:190px;
+    top:160px;
 }
+
+#pushdown5 {
+    top:130px;
+}
+
 
 #pushdown2 {
     margin-left:-7px;
@@ -200,8 +299,9 @@ a:active {
 }
 
 #paper2 { 
+    color: white;
     margin:0x;
-    height:750px;
+    height:800px;
     padding-top:50x;
     padding-bottom:50px;
     background: #CCCCFF;
