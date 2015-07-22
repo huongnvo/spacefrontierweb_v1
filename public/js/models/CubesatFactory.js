@@ -120,7 +120,7 @@ var CubesatFactory = function(Schema,mongoose) {
 				Mass_further:String,
 				Power:Number, 
 				Power_further:String,
-				Volume:String,
+				Volume:Number,
 				Proportions:String,
 				Volume_further:String,
 				Measurement:String,
