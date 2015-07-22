@@ -181,7 +181,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }  
             M = EarthMass;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1760.3)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            orbitdV= Math.sqrt((2*M*G)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
             avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
@@ -203,7 +203,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }  
             M = EarthMass;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1760.3)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            orbitdV= Math.sqrt((2*M*G)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
             avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
@@ -225,7 +225,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }  
             M = MercuryMass;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+795.15)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            orbitdV= Math.sqrt((2*M*G)/(RP+595)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
             avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
@@ -247,7 +247,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }  
             M = MarsMass;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1074.4)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            orbitdV= Math.sqrt((2*M*G)/(RP+817.8)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
             avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
@@ -269,7 +269,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }  
             M = VenusMass;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1902.8)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            orbitdV= Math.sqrt((2*M*G)/(RP+1259.2)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
             avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
