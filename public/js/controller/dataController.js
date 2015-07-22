@@ -77,39 +77,39 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
     $scope.tabBPS = function() {
 
-            bits=parseInt($scope.bitssecond);
+            bits=parseFloat($scope.bitssecond);
             $scope.totalbits=bits+"";
-             memory=(parseInt($scope.resolution3)/100)*86400;
+             memory=(parseFloat($scope.resolution3)/100)*86400;
             downlink=bits*memory;
             $scope.totaldownlink=downlink+"";
             if($scope.length==0){
-                mips=parseInt($scope.mips)+"";
+                mips=parseFloat($scope.mips)+"";
             }
             $scope.showDatabase = false;
             $scope.showCalculate = true;
     }
 
     $scope.tabARRAY=function(){
-            bits=parseInt($scope.sizex)*parseInt($scope.sizey)*parseInt($scope.integrations2);
+            bits=parseFloat($scope.sizex)*parseFloat($scope.sizey)*parseFloat($scope.integrations2);
             $scope.totalbits=bits+"";
-             memory=(parseInt($scope.resolution2)/100)*86400;
+             memory=(parseFloat($scope.resolution2)/100)*86400;
             downlink=bits*memory;
             $scope.totaldownlink=downlink+"";
             if($scope.length==0){
-                mips=parseInt($scope.mips)+"";
+                mips=parseFloat($scope.mips)+"";
             }
             $scope.showDatabase = false;
             $scope.showCalculate = true;
     }
 
     $scope.tabCHANNELS=function(){
-            bits=parseInt($scope.channel)*parseInt($scope.bitschannel)*parseInt($scope.integrations1);
+            bits=parseFloat($scope.channel)*parseFloat($scope.bitschannel)*parseFloat($scope.integrations1);
             $scope.totalbits=bits+"";
-             memory=(parseInt($scope.resolution1)/100)*86400;
+             memory=(parseFloat($scope.resolution1)/100)*86400;
             downlink=bits*memory;
             $scope.totaldownlink=downlink+"";
             if($scope.length==0){
-                mips=parseInt($scope.mips)+"";
+                mips=parseFloat($scope.mips)+"";
             }
             $scope.showDatabase = false;
             $scope.showCalculate = true;

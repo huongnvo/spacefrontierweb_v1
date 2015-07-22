@@ -56,7 +56,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
     var aControl;
     $scope.myClick = function() {
-        var aKnow = Math.atan(parseInt($scope.resolution) / (parseInt($scope.attitude) * 10000)) * 180 / Math.PI;
+        var aKnow = Math.atan(parseFloat($scope.resolution) / (parseFloat($scope.attitude) * 10000)) * 180 / Math.PI;
         aControl = aKnow * 10;
         $scope.knowledge = "" + aKnow.toFixed(5);
         $scope.control = "" + (aControl).toFixed(5);
