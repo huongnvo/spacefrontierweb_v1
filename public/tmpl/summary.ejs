@@ -10,16 +10,11 @@
             <div class="row">
                 <div class="col-lg-5">
                     <h3>Name: </h3>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="mission name" ng-model="inputName" cols="70"></input>
-                    <div class = "divider"></div>
+                        <input type="text" class="form-control" placeholder="mission name" ng-model="inputName" cols="54" size="4"/>
                     <h3>Objectives: </h3>
-                    <div class="input-group2">
-                          <textarea id="text" cols="70" rows="5" placeholder="  mission objectives" ng-model="inputObjective"></textarea>
-                    </div>
-                    <h4>Available Targets:</h4>
-                    <div class = "divider"></div>
-                        <select multiple class="form-control" size="8" cols="70">
+                          <textarea id="text" cols="54" rows="6" placeholder="  mission objectives" ng-model="inputObjective"></textarea>
+                    <h3>Available Targets:</h3>
+                        <select multiple class="form-control" size="7" cols="54">
                             <option ng-click="savePlanet('Earth Low')">Earth-Low</option>
                             <option ng-click="savePlanet('Earth Medium')">Earth-Medium</option>
                             <option ng-click="savePlanet('Earth High')">Earth-High</option>
@@ -28,19 +23,18 @@
                             <option ng-click="savePlanet('Venus')">Venus</option>
                             <option ng-click="savePlanet('Moon')">Moon</option>
                         </select>
-                    </div>
                 </div> 
                 
                 <div class="col-lg-1">
                     <br>
                     <br>
-                    <a type="button" ng-click="addName()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    <a type="button" ng-click="addName()" id="pushdown2" class="btn btn-sm btn-default" title= "Add Info"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     <br>
                     <br>
                     <br>
                     <br>
                     <br>
-                    <a type="button" ng-click="addObjectives()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    <a type="button" ng-click="addObjectives()" id="pushdown2" class="btn btn-sm btn-default" title= "Add Info"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     <br>
                     <br>
                     <br>
@@ -48,12 +42,11 @@
                     <br>
                     <br>
                     <br>
-                    <a type="button" ng-click="addTarget()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    <a type="button" ng-click="addTarget()" id="pushdown2" class="btn btn-sm btn-default" title= "Add Info"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                 </div>
                 <div class="col-lg-6">
-                    
                     <h3>Current Design</h3>
-                    <select multiple class="form-control" size="22">
+                    <select multiple class="form-control" size="24">
                         <option>Name: {{Name}}</option>
                         <option>Objectives: {{Objectives}}</option>
                         <option>Target: {{target}}</option>
@@ -79,9 +72,9 @@
                     
                     <nav>
                     <ul class="pager">
-                        <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span>Previous Page </button>
+                        <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Instructions"><span aria-hidden="true">&larr;</span>Previous Page </button>
 
-                        <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="Name==null||Objectives==null||target==null">Next Page <span aria-hidden="true">&rarr;</span></button>
+                        <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="Name==null||Objectives==null||target==null" title="Instrument">Next Page <span aria-hidden="true">&rarr;</span></button>
                     </ul>
                     </nav>  
                 </div>
