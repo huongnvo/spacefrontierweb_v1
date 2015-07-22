@@ -117,6 +117,10 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
 });
 
+$(function () {
+      $('[data-toggle="popover"]').popover()
+})
+
 spaceFrontierApp.directive('validNumber', function() {
   return {
     require: '?ngModel',
