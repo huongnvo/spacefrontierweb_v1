@@ -13,14 +13,14 @@
                 <div class="list-group">
                     <div class="list-group-item">Target: {{target}}</div>
                     <div class="list-group-item">Objectives: {{Objectives}}</div>
-                    <div class="list-group-item">Instrumentation: {{instrument.Name}}</div>
+                    <div class="list-group-item">Instrumentation: {{instrument.Name}}<br>Mass: {{instrument.Mass}} Power: {{instrument.Power}} Volume: {{instrument.Volume}}</div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="list-group">
                     <div class="list-group-item">Mass: {{attitude.Mass + antenna.Mass + receiver.Mass + cdh.Mass + instrument.Mass + panels.Mass + batteries.Mass + eps.Mass + propulsion.Mass + bus.Mass + deployer.Mass + thermal.Mass}} g</div>
                     <div class="list-group-item">Power: {{attitude.Power + antenna.Power + receiver.Power + cdh.Power + instrument.Power + panels.Power + batteries.Power + eps.Power + propulsion.Power + bus.Power + deployer.Power + thermal.Power}} W</div>
-                    <div class="list-group-item">Volume: {{attitude.Volume + antenna.Volume + receiver.Volume + cdh.Volume + instrument.Volume + batteries.Volume + eps.Volume + propulsion.Volume + deployer.Volume + thermal.Volume-panels.Volume}} U</div>
+                    <div class="list-group-item">Volume: {{attitude.Volume + antenna.Volume + receiver.Volume + cdh.Volume + instrument.Volume+ batteries.Volume + eps.Volume + propulsion.Volume + deployer.Volume + thermal.Volume }} U</div>
                 </div>
             </div>
         </div>
