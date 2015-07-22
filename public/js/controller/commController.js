@@ -79,13 +79,13 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.showReceiver = true;
         $scope.showCalculation = true;
 
-        if($scope.target=="Earth_Low"){
+        if($scope.target=="Earth Low"){
             dist=2000000;
         }
-        else if($scope.target=='Earth_Medium'){
+        else if($scope.target=='Earth Medium'){
             dist=20200000;
         }
-        else if($scope.target=='High'){
+        else if($scope.target=='Earth High'){
             dist=40000000;
         }
         else if($scope.target=='Moon'){
@@ -110,7 +110,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.spaceLoss=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
        
 
-        if($scope.selectedStation.EIRP_ave!=='-'){
+        if(parseInt($scope.selectedStation.EIRP_ave)!==NaN){
             $scope.receiver=""+parseInt($scope.selectedStation.EIRP_ave)-parseInt($scope.spaceLoss);
         }else{
             $scope.receiver=$scope.selectedStation.EIRP_ave;
