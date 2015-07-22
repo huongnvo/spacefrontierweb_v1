@@ -142,7 +142,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
-        else if($scope.target=='Earth_Low'){
+        else if($scope.target=='Earth Low'){
             RA=parseFloat($scope.apoapsis) + 6371;
             RP=parseFloat($scope.periapsis) + 6371;
             P=(((2*RA)/(RA+RP)) - 1);
@@ -164,7 +164,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
-        else if ($scope.target=='Earth_Medium'){
+        else if ($scope.target=='Earth Medium'){
             RA=parseFloat($scope.apoapsis) + 6371;
             RP=parseFloat($scope.periapsis) + 6371;
             P=(((2*RA)/(RA+RP)) - 1);
@@ -186,7 +186,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
-        else if ($scope.target=='Earth_High'){
+        else if ($scope.target=='Earth High'){
             RA=parseFloat($scope.apoapsis) + 6371;
             RP=parseFloat($scope.periapsis) + 6371;
             P=(((2*RA)/(RA+RP)) - 1);
