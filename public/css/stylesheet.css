@@ -1,3 +1,7 @@
+#myDiv {
+    word-wrap: break-word;
+}
+
 .card {
     position: relative;
     float: right;
