@@ -11,15 +11,16 @@
                 <div class="col-lg-5">
                     <h3>Name: </h3>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="mission name" ng-model="inputName" cols="70"></input>
+                        <input type="text" class="form-control" placeholder="mission name" ng-model="inputName" cols="54"/>
+                    </div>
                     <div class = "divider"></div>
                     <h3>Objectives: </h3>
                     <div class="input-group2">
-                          <textarea id="text" cols="70" rows="5" placeholder="  mission objectives" ng-model="inputObjective"></textarea>
+                          <textarea id="text" cols="54" rows="5" placeholder="  mission objectives" ng-model="inputObjective"></textarea>
                     </div>
                     <h4>Available Targets:</h4>
                     <div class = "divider"></div>
-                        <select multiple class="form-control" size="8" cols="70">
+                        <select multiple class="form-control" size="8" cols="54">
                             <option ng-click="savePlanet('Earth Low')">Earth-Low</option>
                             <option ng-click="savePlanet('Earth Medium')">Earth-Medium</option>
                             <option ng-click="savePlanet('Earth High')">Earth-High</option>
@@ -28,7 +29,6 @@
                             <option ng-click="savePlanet('Venus')">Venus</option>
                             <option ng-click="savePlanet('Moon')">Moon</option>
                         </select>
-                    </div>
                 </div> 
                 
                 <div class="col-lg-1">
