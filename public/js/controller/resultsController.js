@@ -5,6 +5,9 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
     $scope.cubesat = [];
     $scope.id = '';
 
+    $scope.mass=attitude.Mass + antenna.Mass + receiver.Mass + cdh.Mass + instrument.Mass + panels.Mass + batteries.Mass + eps.Mass + propulsion.Mass + bus.Mass + deployer.Mass + thermal.Mass;
+    $scope.power=attitude.Power + antenna.Power + receiver.Power + cdh.Power + instrument.Power + panels.Power + batteries.Power + eps.Power + propulsion.Power + bus.Power + deployer.Power + thermal.Power;
+    $scope.volume=attitude.Volume + antenna.Volume + receiver.Volume + cdh.Volume + instrument.Volume + panels.Volume + batteries.Volume + eps.Volume + propulsion.Volume  +  deployer.Volume + thermal.Volume;
     $http.get(cubesatPath).then(function(result) { 
         $scope.cubesat = result.data;
         var partextracted = {};
