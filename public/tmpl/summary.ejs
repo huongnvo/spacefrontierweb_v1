@@ -10,11 +10,13 @@
             <div class="row">
                 <div class="col-lg-5">
                     <h3>Name: </h3>
-                        <input type="text" class="form-control" placeholder="mission name" ng-model="inputName" cols="54" size="4"/>
+                        <input type="text" class="form-control" placeholder="mission name" ng-model="inputName"/>
+                    <div class="divider"></div>
                     <h3>Objectives: </h3>
-                          <textarea id="text" cols="100" rows="6" placeholder="  mission objectives" ng-model="inputObjective"></textarea>
+                         <input type="text" class="form-control" placeholder="  mission objectives" ng-model="inputObjective"/>
+                    <div class="divider"></div>
                     <h3>Available Targets:</h3>
-                        <select multiple class="form-control" size="7" cols="54">
+                        <select multiple class="form-control" size="7">
                             <option ng-click="savePlanet('Earth Low')">Earth-Low</option>
                             <option ng-click="savePlanet('Earth Medium')">Earth-Medium</option>
                             <option ng-click="savePlanet('Earth High')">Earth-High</option>
@@ -26,14 +28,9 @@
                 </div> 
                 
                 <div class="col-lg-1">
-                    <br>
-                    <br>
+                    <div class="divider" style="width: 80px; height: 4px"></div>
                     <a type="button" ng-click="addName()" id="pushdown2" class="btn btn-sm btn-default" title= "Add Info"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    <div class="divider" style="height: 40px; width: 80px"></div>
                     <a type="button" ng-click="addObjectives()" id="pushdown2" class="btn btn-sm btn-default" title= "Add Info"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     <br>
                     <br>
@@ -46,7 +43,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h3>Current Design</h3>
-                    <select multiple class="form-control" size="24">
+                    <select multiple class="form-control" size="22">
                         <option>Name: {{Name}}</option>
                         <option>Objectives: {{Objectives}}</option>
                         <option>Target: {{target}}</option>
@@ -66,7 +63,7 @@
                     </select>
                 </div>
             </div> 
-            <div class = "dividersmall"></div>
+            <div class = "divider"></div>
             <div class="row">
                 <div class="col-lg-12">
                     
