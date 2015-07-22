@@ -5,6 +5,9 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
     $scope.cubesat = [];
     $scope.id = '';
 
+    $scope.mass=attitude.Mass + antenna.Mass + receiver.Mass + cdh.Mass + instrument.Mass + panels.Mass + batteries.Mass + eps.Mass + propulsion.Mass + bus.Mass + deployer.Mass + thermal.Mass;
+    $scope.power=attitude.Power + antenna.Power + receiver.Power + cdh.Power + instrument.Power + panels.Power + batteries.Power + eps.Power + propulsion.Power + bus.Power + deployer.Power + thermal.Power;
+    $scope.volume=attitude.Volume + antenna.Volume + receiver.Volume + cdh.Volume + instrument.Volume + panels.Volume + batteries.Volume + eps.Volume + propulsion.Volume  +  deployer.Volume + thermal.Volume;
     $http.get(cubesatPath).then(function(result) { 
         $scope.cubesat = result.data;
         var partextracted = {};
@@ -35,12 +38,12 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
         //$scope.loading = false;
     }
 
-    var content = $scope.Name +"\n"+$scope.Objectives+"\n"+$scope.Objectives+"\n"+$scope.target +"\n"+$scope.attitude +"\n"+$scope.antenna+"\n"+$scope.receiver+"\n"+$scope.cdh+"\n"+$scope.instrument+"\n"+$scope.panels+"\n"+$scope.batteries+"\n"+$scope.eps+"\n"+$scope.propulsion+"\n"+$scope.station+"\n"+$scope.bus+"\n"+$scope.deployer+"\n"+$scope.thermal;
-    var blob = new Blob([ content ], { type : 'text/plain' });
-    $scope.url = (window.URL || window.webkitURL).createObjectURL( blob );
-    app = angular.module(...);
-    app.config(['$compileProvider',
-    function ($compileProvider) {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob):/);
-    }]);
+    // var content = $scope.Name +"\n"+$scope.Objectives+"\n"+$scope.Objectives+"\n"+$scope.target +"\n"+$scope.attitude +"\n"+$scope.antenna+"\n"+$scope.receiver+"\n"+$scope.cdh+"\n"+$scope.instrument+"\n"+$scope.panels+"\n"+$scope.batteries+"\n"+$scope.eps+"\n"+$scope.propulsion+"\n"+$scope.station+"\n"+$scope.bus+"\n"+$scope.deployer+"\n"+$scope.thermal;
+    // var blob = new Blob([ content ], { type : 'text/plain' });
+    // $scope.url = (window.URL || window.webkitURL).createObjectURL( blob );
+    // app = angular.module(...);
+    // app.config(['$compileProvider',
+    // function ($compileProvider) {
+    //     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob):/);
+    // }]);
 });

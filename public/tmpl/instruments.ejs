@@ -99,10 +99,12 @@
                             <div class="col-md-2"
                                 <label for="message-text" class="control-label">Mass:</label>
                             </div>
-                             <div class="input-group">
+                            <div class="col-md-8">
+                                <div class="input-group">
                                     <input type="text" class="form-control" data-ng-model="selectedInstrument.Mass">
                                     <div class="input-group-addon">g</div>
-                             </div>
+                                </div>
+                            </div>
                             <div class="col-md-1">
                             </div>
                         </div>
@@ -842,7 +844,7 @@
                 <div id="button">
 
                     <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="!click()">
-                        Select Target
+                        Select Instruments
                     </button>
                 </div>
             </div>
@@ -852,7 +854,7 @@
         <div ng-show="showInstrumentation">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3>Available Instruments {{wavelengths}}</h3>
+                    <h3>Available Instruments</h3>
                     <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
                     <div class="row">
                         <div class="col-lg-11">

@@ -78,7 +78,7 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.addPanels = function() {
         $http.put('/parts/cubesat-panels/' + idstring, $scope.selectedPanels)
             .success(function(data) {
-                $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -86,7 +86,7 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.addBatteries = function() {
          $http.put('/parts/cubesat-batteries/' + idstring, $scope.selectedBatteries)
             .success(function(data) {
-                $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -106,7 +106,7 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.addEPS = function() {
         $http.put('/parts/cubesat-eps/' + idstring, $scope.selectedEPS)
             .success(function(data) {
-                $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
+                // $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
     };
@@ -121,18 +121,18 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     };
 
     $scope.nextPage = function() {
-        $http.put('/parts/cubesat-panels/' + idstring, $scope.selectedPanels)
-            .success(function(data) {
-                // $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
-            });
-        $http.put('/parts/cubesat-batteries/' + idstring, $scope.selectedBatteries)
-            .success(function(data) {
-                // $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
-            });
-        $http.put('/parts/cubesat-eps/' + idstring, $scope.selectedEPS)
-            .success(function(data) {
-                // $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
-            });
+        // $http.put('/parts/cubesat-panels/' + idstring, $scope.selectedPanels)
+        //     .success(function(data) {
+        //         // $scope.selectedPanels = {}; // clear the form so our user is ready to enter another
+        //     });
+        // $http.put('/parts/cubesat-batteries/' + idstring, $scope.selectedBatteries)
+        //     .success(function(data) {
+        //         // $scope.selectedBatteries = {}; // clear the form so our user is ready to enter another
+        //     });
+        // $http.put('/parts/cubesat-eps/' + idstring, $scope.selectedEPS)
+        //     .success(function(data) {
+        //         // $scope.selectedEPS = {}; // clear the form so our user is ready to enter another
+        //     });
         var path = '/tool7?' + idstring;
         window.location = path;    
     };

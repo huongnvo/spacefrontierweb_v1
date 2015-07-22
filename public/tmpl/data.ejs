@@ -368,7 +368,7 @@
 
     <% include navbar %>
     <h1>Command and Data Handling Selection</h1>
-    <p>Bacon ipsum dolor amet pariatur esse in, strip steak pork pastrami proident culpa in cillum fugiat ut turkey. Cow pork loin minim duis, labore ball tip ipsum swine in eiusmod dolore kevin ad. Pariatur filet mignon ham hock, sed eiusmod in pork chop fatback chuck. Tail ut cillum shank laboris meatball. Tenderloin enim ground round chuck incididunt officia. Ipsum tempor turkey andouille.</p>
+    <p>Select which way you would like to calculate bits per second based on your current knowledge of specifications. Then, input how many millions of instructions per second your part must handle.</p>
     <hr>
     <h3>User Input</h3>
     <div class="row">
@@ -389,26 +389,49 @@
             <div class="col-lg-6">
                 Channels 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number title="Suggested: ???-??? channels"/>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? channels">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="channel" valid-number />
+                    
                     <span class="input-group-addon" id="Channels">Channels</span>
                 </div>
                 <div class="divider"></div>
                 Bits/Channel: 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number title="Suggested: ??-?? bits/channel"/>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? bits/channels">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitschannel" valid-number/>
+                    
                     <span class="input-group-addon" id="Bits/Channel">Bits/Channel</span>
                 </div>
                 <div class="divider"></div>
                 Integrations/Second:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number title="Suggested: ??-?? integrations/second"/>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? integrations/second">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="integrations1" valid-number/>
                     <span class="input-group-addon" id="Integrations/Second">Integrations/Second</span>
                 </div>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 
                 <div class="input-group">
-                    <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number title="Suggested: ??-?? %"/>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? %">
+                            ?
+                        </a>
+                    </span>
+                    <input class="form-control" placeholder="10" data-ng-model="resolution1" valid-number/>
+                    
                     <span class="input-group-addon" id="percent">%</span>
                 </div>
             </div>
@@ -437,7 +460,13 @@
                 Array Size - x: 
 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number title="Suggested: ??-?? px"/>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? px">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="sizex" valid-number/>
+                    
                     <span class="input-group-addon" id="pixelsX"> pixels</span>
                 </div>
 
@@ -446,7 +475,12 @@
 
 
                 <div class="input-group">
-                    <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number title="Suggested: ??-?? px"/>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? px">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text"class="form-control" placeholder="100" data-ng-model="sizey" valid-number/>
                     <span class="input-group-addon" id="pixelsY"> pixels</span>
                 </div>
 
@@ -454,15 +488,27 @@
                 Integrations/Second:
 
                 <div class="input-group">
-                     <input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number title="Suggested: ??-?? integrations/second"/>
+                     <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? integrations/second">
+                            ?
+                        </a>
+                    </span>
+                     <input type="text" class="form-control" placeholder="100" data-ng-model="integrations2" valid-number/>
+                     
                     <span class="input-group-addon" id="pixelsY"> Integrations/Second</span>
                 </div>
 
                 <div class="divider"></div>                 
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2" title="Suggested: ??-?? %"/>
-                    <div class="input-group-addon">%</div>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? %">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" valid-number class="form-control" placeholder="10" data-ng-model="resolution2"/>
+                    
+                    <span class="input-group-addon">%</span>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -489,15 +535,27 @@
                 Bits/Second 
 
                 <div class="input-group">
-                     <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number title="Suggested: ??-?? bits/second"/>
-                    <div class="input-group-addon">Bits/Second</div>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? bits/second">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="100" data-ng-model="bitssecond" valid-number/>
+                    
+                    <span class="input-group-addon">Bits/Second</span>
                 </div>
 
                 <div class="divider"></div>
                 Percent of Time Generating Data:
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number title="Suggested: ??-?? %"/>
-                    <div class="input-group-addon">%</div>
+                    <span class="input-group-addon">
+                        <a popover="Suggested: ???-??? %">
+                            ?
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="10" data-ng-model="resolution3" valid-number/>
+                    
+                    <span class="input-group-addon">%</span>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -621,7 +679,7 @@
                         </select>
                     </div>
                     <div class="col-lg-1">
-                        <a type="button" ng-click="showInfo()" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                         <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                     </div>
                 </div>
@@ -650,17 +708,18 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class = "divider"></div>
-                <nav>
-                <ul class="pager">
-                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Communication"><span aria-hidden="true">&larr;</span>Previous Page </button>
+        <div class="dividersmall"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class = "dividersmaller"></div>
+            <nav>
+            <ul class="pager">
+                <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Communication"><span aria-hidden="true">&larr;</span>Previous Page </button>
 
-                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="cdhPart==null" title="Power">Next Page <span aria-hidden="true">&rarr;</span></button>
-                </ul>
-                </nav>  
-            </div>
+                <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="cdhPart==null" title="Power">Next Page <span aria-hidden="true">&rarr;</span></button>
+            </ul>
+            </nav>  
         </div>
     </div>
     <hr>
