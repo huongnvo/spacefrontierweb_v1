@@ -201,4 +201,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         var path = '/tool3?' + idstring;
         window.location = path; 
     };
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
 });

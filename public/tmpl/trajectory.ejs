@@ -18,7 +18,7 @@
                             <div class="col-md-1">
                             </div>
                             <div class="col-md-2"
-                                <label for="message-text" class="control-label">Name:</label>
+                                <label for="message-text" class="control-label">Name:
                             </div>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" data-ng-model="selectedPart.Name">
@@ -355,11 +355,9 @@
                 <div class="divider"></div>
                 <label>Specific &#916V</label>
                 <div class="input-group">
-                    <span class="input-group-addon">
-                        <a popover="Suggested: 0.2-5.0 km/s">
-                            ?
-                        </a>
-                    </span>
+                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the total &#916V for your trip. Suggested: 0.2-5.0 km/s">
+                            <a style="color:skyblue">?</a>
+                    </div>
                     <input type="text" class="form-control" placeholder="3.0" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
                     
                     <span class="input-group-addon" id="basic-addon2">km/s</span>
@@ -402,13 +400,11 @@
                                     <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio2"/>
                                 </span>
                                 <span class="input-group-addon">
-                                    Input Trajectory deltaV:
+                                    Input Trajectory &#916V:
                                 </span>
-                                <span class="input-group-addon">
-                                    <a popover="Suggested: 0.01 - 1.0 km/s">
-                                        ?
-                                    </a>
-                                </span>
+                                <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the &#916V required to reach the target. Suggested: 0.01 - 3.0 km/s">
+                                        <a style="color:skyblue">?</a>
+                                </div>
                                 <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number placeholder="1.0"/>
                                 
                                 <span class="input-group-addon" id="dvaddon">km/s</span>
@@ -429,11 +425,9 @@
                             <div class="input">
                                 Apoapsis Altitude
                                 <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <a popover="Alters orbit period">
-                                            ?
-                                        </a>
-                                    </span>
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="The apoapsis value will alter orbit period. See the table for suggested values.">
+                                            <a style="color:skyblue">?</a>
+                                    </div>
                                     <input type="text" class="form-control" data-ng-model="apoapsis" valid-number placeholder="5000">
                                     
                                     <span class="input-group-addon" id="orbitaddon1">km</span>
@@ -443,11 +437,9 @@
                             <div class = "input">
                                 Periapsis Altitude
                                 <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <a popover="Suggested: 50-500 km">
-                                            ?
-                                        </a>
-                                    </span>
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the distance from the surface where the CubeSat takes measurments. Suggested: 50-500 km">
+                                            <a style="color:skyblue">?</a>
+                                    </div>
                                     <input type="text" class="form-control" data-ng-model="periapsis" valid-number placeholder="100"/>
                                     
                                     <span class="input-group-addon" id="orbitaddon2">km</span>
@@ -471,11 +463,9 @@
                         <div class="col-lg-6">
                             <label>Required Inclination Change</label>
                                 <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <a popover="Suggested: 0.0001-0.001 rad">
-                                            ?
-                                        </a>
-                                    </span>
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This field represents any inclination change that will occur after the CubeSat reaches science orbit. Suggested: 0-0.001 rad">
+                                            <a style="color:skyblue">?</a>
+                                    </div>
                                     <input type="text" class="form-control" placeholder="0.00001" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
                                     
                                     <span class="input-group-addon" id="basic-addon2">Rad</span>
