@@ -18,9 +18,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="list-group">
-                    <div class="list-group-item">Mass: {{mass}}</div>
-                    <div class="list-group-item">Power: {{power}}</div>
-                    <div class="list-group-item">Volume: {{volume}}</div>
+                    <div class="list-group-item">Mass: {{attitude.Mass + antenna.Mass + receiver.Mass + cdh.Mass + instrument.Mass + panels.Mass + batteries.Mass + eps.Mass + propulsion.Mass + bus.Mass + deployer.Mass + thermal.Mass}}</div>
+                    <div class="list-group-item">Power: {{attitude.Power + antenna.Power + receiver.Power + cdh.Power + instrument.Power + panels.Power + batteries.Power + eps.Power + propulsion.Power + bus.Power + deployer.Power + thermal.Power}}</div>
+                    <div class="list-group-item">Volume: {{attitude.Volume + antenna.Volume + receiver.Volume + cdh.Volume + instrument.Volume + panels.Volume + batteries.Volume + eps.Volume + propulsion.Volume + deployer.Volume + thermal.Volume}}</div>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                     <li class="list-group-item">Name: {{attitude.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{attitude.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{attitude.Type}}</li>
-                    <li class="list-group-item">Reference: {{attitude.Website}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{attitude.Reference}}</li>
                     <li class="list-group-item">Mass: {{attitude.Mass}}</li>
                     <li class="list-group-item">Power: {{attitude.Power}}</li>
                     <li class="list-group-item">Volume: {{attitude.Volume}}</li>
@@ -49,13 +49,11 @@
                     <li class="list-group-item">Name: {{antenna.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{antenna.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{antenna.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{antenna.Website}}</li>
                     <li class="list-group-item">Mass: {{antenna.Mass}}</li>
                     <li class="list-group-item">Power: {{antenna.Power}}</li>
                     <li class="list-group-item">Volume: {{antenna.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
 
@@ -66,13 +64,11 @@
                     <li class="list-group-item">Name: {{receiver.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{receiver.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{receiver.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{receiver.Website}}</li>
                     <li class="list-group-item">Mass: {{receiver.Mass}}</li>
                     <li class="list-group-item">Power: {{receiver.Power}}</li>
                     <li class="list-group-item">Volume: {{receiver.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
     </div>
@@ -84,13 +80,11 @@
                     <li class="list-group-item">Name: {{cdh.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{cdh.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{cdh.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{cdh.Reference}}</li>
                     <li class="list-group-item">Mass: {{cdh.Mass}}</li>
                     <li class="list-group-item">Power: {{cdh.Power}}</li>
                     <li class="list-group-item">Volume: {{cdh.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
 
@@ -101,13 +95,11 @@
                     <li class="list-group-item">Name: {{panels.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{panels.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{panels.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{panels.Website}}</li>
                     <li class="list-group-item">Mass: {{panels.Mass}}</li>
                     <li class="list-group-item">Power: {{panels.Power}}</li>
                     <li class="list-group-item">Volume: {{panels.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
 
@@ -118,13 +110,11 @@
                     <li class="list-group-item">Name: {{batteries.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{batteries.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{batteries.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{batteries.Website}}</li>
                     <li class="list-group-item">Mass: {{batteries.Mass}}</li>
                     <li class="list-group-item">Power: {{batteries.Power}}</li>
                     <li class="list-group-item">Volume: {{batteries.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
     </div>
@@ -136,13 +126,11 @@
                     <li class="list-group-item">Name: {{eps.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{eps.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{eps.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{eps.Website}}</li>
                     <li class="list-group-item">Mass: {{eps.Mass}}</li>
                     <li class="list-group-item">Power: {{eps.Power}}</li>
                     <li class="list-group-item">Volume: {{eps.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
 
@@ -153,13 +141,11 @@
                     <li class="list-group-item">Name: {{thermal.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{thermal.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{thermal.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{thermal.Website}}</li>
                     <li class="list-group-item">Mass: {{thermal.Mass}}</li>
                     <li class="list-group-item">Power: {{thermal.Power}}</li>
                     <li class="list-group-item">Volume: {{thermal.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
 
@@ -170,13 +156,11 @@
                     <li class="list-group-item">Name: {{propulsion.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{propulsion.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{propulsion.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{propulsion.Reference}}</li>
                     <li class="list-group-item">Mass: {{propulsion.Mass}}</li>
                     <li class="list-group-item">Power: {{propulsion.Power}}</li>
                     <li class="list-group-item">Volume: {{propulsion.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
     </div>
@@ -189,9 +173,6 @@
                     <li class="list-group-item">Band: {{station.Band}}</li>
                     <li class="list-group-item">Location: {{station.Loc}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
 
@@ -202,13 +183,11 @@
                     <li class="list-group-item">Name: {{bus.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{bus.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{bus.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{bus.Website}}</li>
                     <li class="list-group-item">Mass: {{bus.Mass}}</li>
                     <li class="list-group-item">Power: {{bus.Power}}</li>
                     <li class="list-group-item">Volume: {{bus.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
         
@@ -219,13 +198,11 @@
                     <li class="list-group-item">Name: {{deployer.Name}}</li>
                     <li class="list-group-item">Manufacturer: {{deployer.Manufacturer}}</li>
                     <li class="list-group-item">Type: {{deployer.Type}}</li>
-                                       <li class="list-group-item">Mass: {{deployer.Mass}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{deployer.Website}}</li>
+                    <li class="list-group-item">Mass: {{deployer.Mass}}</li>
                     <li class="list-group-item">Power: {{deployer.Power}}</li>
                     <li class="list-group-item">Volume: {{deployer.Volume}}</li>
                 </ul>
-                <div class="panel-footer">
-                    <a type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-info">View More</a>
-                </div>
             </div>
         </div>
     </div>
