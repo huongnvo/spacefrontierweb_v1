@@ -127,7 +127,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         if(perGainString.indexOf(',')!==-1){
             perGain=parseFloat(perGainString.substring(0,perGainString.indexOf(',')));
         }else if(perGainString.indexOf("-")==-1){
-            perGain = parseFloat(perGainString);
+            perGain = 0;
         }
 
         var sigNoise=parseFloat($scope.selectedAntenna.Gain)+parseFloat($scope.selectedReceiver.Transmit_Power+perGain)+228.6-parseFloat($scope.spaceLoss)-30;
