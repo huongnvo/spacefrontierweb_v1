@@ -111,9 +111,15 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
        
 
         if(parseFloat($scope.selectedStation.EIRP_ave)!==NaN){
-            $scope.receiver=""+parseFloat($scope.selectedStation.EIRP_ave)-parseFloat($scope.spaceLoss);
+            var check=parseFloat($scope.selectedStation.EIRP_ave)-parseFloat($scope.spaceLoss);
+            if(check<0){
+                $scope.receiver="warning!! negative receiver power: "+check;
+            }else{
+                $scope.receiver=""+check;
+            }
+
         }else{
-            $scope.receiver=$scope.selectedStation.EIRP_ave;
+            $scope.receiver="not available for selected station";
         }
          
         var perGain=0;
@@ -124,7 +130,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             perGain = parseFloat(perGainString);
         }
 
-        var sigNoise=$scope.selectedAntenna.Gain+$scope.selectedReceiver.Transmit_Power+perGain+228.6-parseFloat($scope.spaceLoss)-30;
+        var sigNoise=parseFloat($scope.selectedAntenna.Gain)+parseFloat($scope.selectedReceiver.Transmit_Power+perGain)+228.6-parseFloat($scope.spaceLoss)-30;
         $scope.sigNoise=""+sigNoise;
         $scope.bitRate=""+Math.pow(10, ((sigNoise-10)/10))/1000;  
 
