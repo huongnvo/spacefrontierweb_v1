@@ -13,7 +13,7 @@
                 <div class="list-group">
                     <div class="list-group-item">Target: {{target}}</div>
                     <div class="list-group-item">Objectives: {{Objectives}}</div>
-                    <div class="list-group-item">Instrumentation: {{instrument.Name}}<br>Mass: {{instrument.Mass}} Power: {{instrument.Power}} Volume: {{instrument.Volume}}</div>
+                    <div class="list-group-item">Instrumentation: {{instrument.Name}}</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -28,6 +28,20 @@
     <hr>
     <h2>Subsystems</h2>
     <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>INSTRUMENTATION</strong></div> 
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{instrument.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{instrument.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{instrument.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{instrument.Reference}}</li>
+                    <li class="list-group-item">Mass: {{instrument.Mass}} g</li>
+                    <li class="list-group-item">Power: {{instrument.Power}} W</li>
+                    <li class="list-group-item">Volume: {{instrument.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>ATTITUDE CONTROL</strong></div> 
@@ -56,7 +70,8 @@
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>RECEIVER</strong></div>
@@ -71,8 +86,6 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>COMMAND & DATA HANDLING</strong></div>
@@ -87,7 +100,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>SOLAR PANELS</strong></div>
@@ -102,7 +114,8 @@
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>BATTERIES</strong></div>
@@ -117,8 +130,6 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>EPS</strong></div>
@@ -133,7 +144,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>THERMAL</strong></div>
@@ -148,7 +158,8 @@
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>PROPULSION</strong></div>
@@ -163,19 +174,20 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>GROUND STATION</strong></div>
+                <div class="panel-heading"><strong>DEPLOYER</strong></div>
                 <ul class="list-group">
-                    <li class="list-group-item">Name: {{station.Name}}</li>
-                    <li class="list-group-item">Band: {{station.Band}}</li>
-                    <li class="list-group-item">Location: {{station.Loc}}</li>
+                    <li class="list-group-item">Name: {{deployer.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{deployer.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{deployer.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{deployer.Website}}</li>
+                    <li class="list-group-item">Mass: {{deployer.Mass}} g</li>
+                    <li class="list-group-item">Power: {{deployer.Power}} W</li>
+                    <li class="list-group-item">Volume: {{deployer.Volume}} U</li>
                 </ul>
             </div>
         </div>
-
         <div class="col-lg-4 container">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>BUS</strong></div>
@@ -190,18 +202,15 @@
                 </ul>
             </div>
         </div>
-        
+    </div>
+    <div class="row">
         <div class="col-lg-4 container">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>DEPLOYER</strong></div>
+                <div class="panel-heading"><strong>GROUND STATION</strong></div>
                 <ul class="list-group">
-                    <li class="list-group-item">Name: {{deployer.Name}}</li>
-                    <li class="list-group-item">Manufacturer: {{deployer.Manufacturer}}</li>
-                    <li class="list-group-item">Type: {{deployer.Type}}</li>
-                    <li class="list-group-item" id="myDiv">Reference: {{deployer.Website}}</li>
-                    <li class="list-group-item">Mass: {{deployer.Mass}} g</li>
-                    <li class="list-group-item">Power: {{deployer.Power}} W</li>
-                    <li class="list-group-item">Volume: {{deployer.Volume}} U</li>
+                    <li class="list-group-item">Name: {{station.Name}}</li>
+                    <li class="list-group-item">Band: {{station.Band}}</li>
+                    <li class="list-group-item">Location: {{station.Loc}}</li>
                 </ul>
             </div>
         </div>
