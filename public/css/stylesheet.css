@@ -27,19 +27,22 @@ section.module p:last-child {
 section.module.content {
     padding: 40px 0;
 }
-section.module.parallax-large {
-    height: 700px;
+section.module.parallax {
+    /*height: 700px;*/
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
+section.module.parallax-large {
+    height:700px;
+}
 section.module.parallax-small {
-    height: 300;
-    background-position: 50% 50%;
+    height: 400px;
+/*    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover;*/
 }
 section.module.parallax h1 {
     color: white;
@@ -136,12 +139,18 @@ section.module.parallax-3 {
 }
 
 .card__front {
+    /*background-image: url("/img/space.jpg");*/
     margin-left:34px;
     margin-top:30px;
+    font-size:20px;
     width:110%;
     height:110%;
     border-radius:50%;
-    background-color: #ff5078;
+    background-color: #99CCFF;
+}
+
+.group {
+    background-image: url("/img/space.jpg");
 }
 
 .card__back {
@@ -149,7 +158,7 @@ section.module.parallax-3 {
     width:160%;
     height:160%;
     border-radius:50%;
-    background-color: #1e1e1e;
+    background-color: #003399;
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
@@ -201,8 +210,8 @@ section.module.parallax-3 {
 .rcard {
     position: relative;
     float: left;
-    padding-bottom: 120%;
-    width: 117%;
+    padding-bottom: 25%;
+    width: 25%;
     text-align: center;
 }
 
@@ -233,16 +242,19 @@ section.module.parallax-3 {
 }
 
 .rcard__front {
-    width:100%;
-    height:120%;
+    /*width:100%;*/
+    /*height:100%;*/
     /*border-radius:50%;*/
-    background-color: #ff5078;
+    /*background-position: 50% 50%;*/
+    /*background-repeat: no-repeat;*/
+    /*background-image: url("/img/huong.jpg");*/
+    background-color: #1e1e1e;
 }
 
 .rcard__back {
     /*border-radius:50%;*/
-    width:100%;
-    height:120%;
+    /*width:100%;*/
+    /*height:100%;*/
     background-color: #1e1e1e;
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
@@ -469,6 +481,12 @@ a:active {
 
 .dividerlargest{
     margin-bottom:90px;
+    height:auto;
+    display:inline-block;
+}
+
+.dividerbiggest{
+    margin-bottom:70px;
     height:auto;
     display:inline-block;
 }
