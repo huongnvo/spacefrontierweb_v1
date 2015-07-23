@@ -74,13 +74,16 @@ section.module.parallax p {
     /*text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
 }
 section.module.parallax-1 {
-    background-image: url("/img/space.jpg");
+    background-image: url("/img/cubesat2.jpg");
 }
 section.module.parallax-2 {
-    background-image: url("/img/cubesat.jpg");
+    background-image: url("/img/cubesat3.jpg");
 }
 section.module.parallax-3 {
-    background-image: url("../img/demo/_small/3.jpg");
+    background-image: url("/img/cubesat.jpg");
+}
+section.module.parallax-4 {
+    background-image: url("/img/gal4.png");
 }
 
 @media all and (min-width: 600px) {
@@ -158,7 +161,7 @@ section.module.parallax-3 {
     width:160%;
     height:160%;
     border-radius:50%;
-    background-color: #003399;
+    background-color: #003366;
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
