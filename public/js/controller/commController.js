@@ -133,7 +133,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         if($scope.receiverPart.Transmit_Power!==null){
             transmitPower=parseFloat($scope.receiverPart.Transmit_Power);
         }
-        $scope.sigNoise=gain+transmitPower+perGain;+228.6-parseFloat($scope.spaceLoss)-30;
+        $scope.sigNoise=gain+transmitPower+perGain+228.6-parseFloat($scope.spaceLoss)-30;
         
         $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
 
