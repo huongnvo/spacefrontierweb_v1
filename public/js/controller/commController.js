@@ -110,7 +110,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.spaceLoss=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
        
 
-        if(parseFloat($scope.selectedStation.EIRP_ave)!==NaN){
+        if(parseFloat($scope.selectedStation.EIRP_ave)!==null){
             var check=parseFloat($scope.selectedStation.EIRP_ave)+parseFloat(antennaPart.Gain)-2.15-parseFloat($scope.spaceLoss);
             if(check<0){
                 $scope.receiver=check;
@@ -128,7 +128,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             perGain=parseFloat(perGainString.substring(0,perGainString.indexOf(',')));
         }
         var sigNoise;
-        if($scope.selectedAntenna.Gain!==NaN&&$scope.selectedReceiver.Transmit_Power!==NaN){
+        if($scope.selectedAntenna.Gain!==null&&$scope.selectedReceiver.Transmit_Power!==null){
             sigNoise=parseFloat($scope.selectedAntenna.Gain)+parseFloat($scope.selectedReceiver.Transmit_Power+perGain)+228.6-parseFloat($scope.spaceLoss)-30;
         }else{
             sigNoise=NaN;
