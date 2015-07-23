@@ -108,33 +108,34 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             frequency=0.165*Math.pow(10,9);
         }
         $scope.spaceLoss=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
-       
+        
+        var eirp=81.16;
+        var gain=65.24;
 
-        if(parseFloat($scope.selectedStation.EIRP_ave)!==null){
-            var check=parseFloat($scope.selectedStation.EIRP_ave)+parseFloat(antennaPart.Gain)-2.15-parseFloat($scope.spaceLoss);
-            if(check<0){
-                $scope.receiver=check;
-            }else{
-                $scope.receiver=""+check;
-            }
-
-        }else{
-            $scope.receiver="not available for selected station";
-        }
-         
-        var perGain=NaN;
-        var perGainString=$scope.selectedStation.Per_gain;
-        if(perGainString!==null){
+        if($scope.stationPart.EIRP_ave!==null){
+            eirp=parseFloat($scope.stationPart.EIRP_ave);
+       }
+       if($scope.antennaPart.Gain!==0){
+            gain=parseFloat($scope.antennaPart.Gain);
+       }
+       $scope.receiver=eirp+gain-2.15-parseFloat($scope.spaceLoss);
+        
+        var perGain=35.94;
+        var perGainString=$scope.stationPart.Per_gain;
+        if(perGainString!==null&&perGainString.indexOf(',')!==-1){
             perGain=parseFloat(perGainString.substring(0,perGainString.indexOf(',')));
+        }else if(perGainString!=null){
+            perGain=(perGainString);
         }
-        var sigNoise;
-        if($scope.selectedAntenna.Gain!==null&&$scope.selectedReceiver.Transmit_Power!==null){
-            sigNoise=parseFloat($scope.selectedAntenna.Gain)+parseFloat($scope.selectedReceiver.Transmit_Power+perGain)+228.6-parseFloat($scope.spaceLoss)-30;
-        }else{
-            sigNoise=NaN;
+
+        
+        var transmitPower=28.67;
+        if($scope.receiverPart.Transmit_Power!==null){
+            transmitPower=parseFloat($scope.receiverPart.Transmit_Power);
         }
-        $scope.sigNoise=""+sigNoise;
-        $scope.bitRate=""+Math.pow(10, ((sigNoise-10)/10))/1000;  
+        $scope.sigNoise=gain+transmitPower+perGain;+228.6-parseFloat($scope.spaceLoss)-30;
+        
+        $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
 
         $scope.selectedStation = {};    
         $scope.selectedAntenna = {}; 
