@@ -122,15 +122,17 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             $scope.receiver="not available for selected station";
         }
          
-        var perGain=0;
+        var perGain=NaN;
         var perGainString=$scope.selectedStation.Per_gain;
-        if(perGainString.indexOf(',')!==-1){
+        if(perGainString!==null){
             perGain=parseFloat(perGainString.substring(0,perGainString.indexOf(',')));
-        }else if(perGainString.indexOf("-")==-1){
-            perGain = 0;
         }
-
-        var sigNoise=parseFloat($scope.selectedAntenna.Gain)+parseFloat($scope.selectedReceiver.Transmit_Power+perGain)+228.6-parseFloat($scope.spaceLoss)-30;
+        var sigNoise;
+        if($scope.selectedAntenna.Gain!==NaN&&$scope.selectedReceiver.Transmit_Power!==NaN){
+            sigNoise=parseFloat($scope.selectedAntenna.Gain)+parseFloat($scope.selectedReceiver.Transmit_Power+perGain)+228.6-parseFloat($scope.spaceLoss)-30;
+        }else{
+            sigNoise=NaN;
+        }
         $scope.sigNoise=""+sigNoise;
         $scope.bitRate=""+Math.pow(10, ((sigNoise-10)/10))/1000;  
 

@@ -49,11 +49,17 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     };
 
     $scope.busType = function(part){
-        return part.Volume == $scope.volume && part.Type == 'Cubesat Bus';
+        if(part.Volume!==NaN){
+            return part.Volume == $scope.volume && part.Type == 'Cubesat Bus';
+        }
+        return false;
     };
 
     $scope.deployerType = function(part){
-        return part.Volume == $scope.volume&&part.Type == 'Deployer';
+        if(part.Volume!==NaN){
+            return part.Volume == $scope.volume&&part.Type == 'Deployer';
+        }
+        return false;
     };
 
     $scope.thermalType = function(part){
