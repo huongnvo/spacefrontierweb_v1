@@ -111,9 +111,9 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
        
 
         if(parseFloat($scope.selectedStation.EIRP_ave)!==NaN){
-            var check=parseFloat($scope.selectedStation.EIRP_ave)-parseFloat($scope.spaceLoss);
+            var check=parseFloat($scope.selectedStation.EIRP_ave)+parseFloat(antennaPart.Gain)-2.15-parseFloat($scope.spaceLoss);
             if(check<0){
-                $scope.receiver="warning!! negative receiver power: "+check;
+                $scope.receiver=check;
             }else{
                 $scope.receiver=""+check;
             }
