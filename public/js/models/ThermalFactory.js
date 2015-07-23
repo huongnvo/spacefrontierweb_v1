@@ -289,7 +289,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Mass_further:'2250 after deployment',
 			Power:0,
 			Power_further:'',
-			Volume:0,
+			Volume:NaN,
 			Proportions:'',
 			Volume_further:'',
 			Objectives:''
@@ -305,7 +305,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Mass_further:'',
 			Power:0,
 			Power_further:'28 V, 1.4A',
-			Volume:0,
+			Volume:NaN,
 			Proportions:'200x200x400',
 			Volume_further:'',
 			Objectives:''
@@ -321,7 +321,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Mass_further:'',
 			Power:0,
 			Power_further:'28 V, 1.4A',
-			Volume:0,
+			Volume:NaN,
 			Proportions:'100x100x340',
 			Volume_further:'',
 			Objectives:''
@@ -401,7 +401,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Mass_further:'Varied',
 			Power:0,
 			Power_further:'',
-			Volume:0,
+			Volume:NaN,
 			Proportions:'Custom volume available',
 			Volume_further:'',
 			Objectives:''
