@@ -2,211 +2,122 @@
 <html data-ng-app="spaceFrontierApp">
 <% include header %>
 
-<body data-ng-controller="homeController">    
+<body data-ng-controller="homeController">  
+    <% include navbar %>  
 
-    <a id="first">
-        <div class="jumbotron" id="nobottom" style="background-image: url(http://truereality.org/wp-content/uploads/2014/02/hubble-space-wallpapers.jpg); background-size: 100%; height: 780px; padding-top:70px">
-            <div class="container" id="nav">
-                <% include navbar %>
-            </div>
-            <div class="container" id="indexjumbo">
-                <h1>SPACE Tool</h1>
-                <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
-                <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
+    <section class="module parallax parallax-large parallax-1">
+        <div class="container" id="parallax">
+            <h1>SPACE Tool</h1>
+            <h3>Science Payloads and Advanced Concepts for Exploration Interactive</h3>
+            <p>Provides a basic system for a deep space CubeSat based off of user specifications for a mission.</p>
+            <a style="margin-left:470px; color:white" id="rcorners" type="button" id="roundedbutton" href="\tool" class="btn btn-lg" style="color: #FFFFFF">Try it Now</a>
+        </div>
+    </section>
 
-                <a id="rcorners" type="button" id="roundedbutton" href="\tool" class="btn btn-lg" style="color: #FFFFFF">Try it Now</a>
-                <br>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a style="font-size:4em; float:right" type="glyph" href="#second"><span id="pushdown3" style="color:white" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+    <section class="module content">
+        <div class="container">
+            <h3>Why CubeSats?</h3>
+            <div class="row">
+                <div class="col-lg-3" style="margin-left:-100px">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Entry to Deep Space</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Form Factor</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Standardized Platform</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Standardized Platform</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="dividerlargest"></div>
+            <div class="row">
+                <div class="col-lg-3" style="margin-left:-100px">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Predictability</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Reduced Launch Costs</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Multiple Platform Missions</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card effect__hover">
+                        <div class="card__front">
+                            <span class="card__text">Disruptive Science!</span>
+                        </div>
+                        <div class="card__back">
+                            <span class="card__text">back</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dividerlargest"></div>
         </div>
-    </a>
+    </section>
 
-    <a id="second">
-        <div class="container-fluid" id="paper1">
-            <div class="container" id="space">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 style="color:white">Why CubeSats?</h1>
-                    </div>
-                </div>
-                <div class="dividerlarger"></div>
-                <div class="row">
-                    <div class="col-lg-1">
-                    </div>
-                    <div class="col-lg-11">
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Entry to Deep Space</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Form Factor</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Standardized Platform</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Predictability</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dividertinier"></div>
-                <div class="row">
-                    <div class="col-lg-11">
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Reduced Launch Costs</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Form Factor</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Multiple Platform Missions</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Disruptive Science!</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1">
-                        <a style="font-size:4em; color:white" type="glyph" href="#third"><span id="pushdown4" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
-                    </div>
-                </div>
-            </div>
+    <section class="module parallax parallax-small parallax-2">
+    <div class="container" id="parallax">
+        <h1>STUFF</h1>
+    </div>
+    </section>
+
+    <section class="module content">
+        <div class="container">
+            <h3>Challenges Facing Deep Space Cubesats</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </div>
-    </a>
-                           
-    <a id="third">
-        <div class="container-fluid" id="paper2">
-            <div class="container" id="space">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 style="color:white">Challenges Facing Deep Space CubeSats</h1>
-                    </div>
-                </div>
-                <div class="dividerlarger"></div>
-                <div class="dividerlarger"></div>
-                <div class="row">
-                    <div class="col-lg-1">
-                    </div>
-                    <div class="col-lg-11">
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Entry to Deep Space</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Form Factor</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Standardized Platform</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Predictability</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dividertinier"></div>
-                <div class="row">
-                    <div class="col-lg-11">
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Reduced Launch Costs</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Form Factor</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Multiple Platform Missions</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                        <div class="card effect__hover">
-                            <div class="card__front">
-                                <span class="card__text">Disruptive Science!</span>
-                            </div>
-                            <div class="card__back">
-                                <span class="card__text">back</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1">
-                        <a style="font-size:4em; color:white" type="glyph" href="#first"><span id="pushdown4" class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
+    </section>
 
     <div class="divider"></div>
     <div class="container">
