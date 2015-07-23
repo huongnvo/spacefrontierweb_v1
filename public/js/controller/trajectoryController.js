@@ -299,7 +299,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         //   orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
         // }
         dV = parseInt($scope.totaldV);
-        return part.DeltaV >= dV;
+        if(part.DeltaV!=null){
+            return part.DeltaV >= dV;
+        }
+        return false;
     };
 
     $scope.savePart = function(part) {
