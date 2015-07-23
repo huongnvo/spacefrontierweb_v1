@@ -107,7 +107,12 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         }else if($scope.frequency=="VHF"){
             frequency=0.165*Math.pow(10,9);
         }
+<<<<<<< HEAD
         $scope.spaceLoss=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
+=======
+        var sL=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
+        $scope.spaceLoss=sL;
+>>>>>>> 085859c00e2bbdc6b351d8c705303d7447f2c905
         
         var eirp=81.16;
         var gain=65.24;
@@ -133,7 +138,11 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         if($scope.receiverPart.Transmit_Power!==null){
             transmitPower=parseFloat($scope.receiverPart.Transmit_Power);
         }
+<<<<<<< HEAD
         $scope.sigNoise=gain+transmitPower+perGain;+228.6-parseFloat($scope.spaceLoss)-30;
+=======
+        $scope.sigNoise=gain+transmitPower+perGain+228.6-sL-30;
+>>>>>>> 085859c00e2bbdc6b351d8c705303d7447f2c905
         
         $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
 
