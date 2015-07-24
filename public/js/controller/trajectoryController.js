@@ -123,7 +123,14 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         if ($scope.target=='Moon'){
             RA=parseFloat($scope.apoapsis) + 1738;
             RP=parseFloat($scope.periapsis) + 1738;
+            var A = ((RA+RP)/2);
             P=(((2*RA)/(RA+RP)) - 1);
+            M = MoonMass;
+            deg = parseFloat($scope.angle);
+            var Mu = M*G;
+            var vinf = Math.sqrt(10*G*(3+Math.pow(P,2))/(A*(1-Math.pow(P,2))));
+            var vinc = Math.sqrt(Math.pow(vinf, 2) + ((2*10*G)/(RP)));
+            var vper = Math.sqrt(Math.abs((2*10*G)*(1+P)/(A*(1-P))));
                 if($scope.picktrajectoryRadio2){
                 trajectorydV = parseInt($scope.inputtrajectorydV);
                 }
@@ -135,10 +142,8 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                         trajectorydV=0.02;
                     }
                 }  
-            M = MoonMass;
-            deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+500.2)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            orbitdV= vinc-vper;
+            avgV= Math.sqrt((Mu)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
