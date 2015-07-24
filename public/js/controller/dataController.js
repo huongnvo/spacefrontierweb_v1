@@ -142,7 +142,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     };
 
     $scope.okData=function(part){
-        return part.MHz>=bits&&part.MIPS>=mips;
+        return part.MHz>=bits/1000000;
     }
 
     $scope.order = function(part) {
