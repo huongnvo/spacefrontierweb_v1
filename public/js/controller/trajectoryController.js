@@ -97,6 +97,13 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     var deg=0;
     var avgV=0;
     var partsin=0;
+    var E=0;
+    var ay=0;
+    var Mu=0;
+    var miu=0;
+    var vinf=0;
+    var vinc=0;
+    var vper=0;
 
     $(function () {
         $(".carousel").carousel({ interval: false });
@@ -123,14 +130,17 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         if ($scope.target=='Moon'){
             RA=parseFloat($scope.apoapsis) + 1738;
             RP=parseFloat($scope.periapsis) + 1738;
-            var A = ((RA+RP)/2);
+            A = ((RA+RP)/2);
             P=(((2*RA)/(RA+RP)) - 1);
+            E= 1 - ((400)/(384600+RP));
+            ay = (384600+RP)/2;
             M = MoonMass;
             deg = parseFloat($scope.angle);
-            var Mu = M*G;
-            var vinf = Math.sqrt(10*G*(3+Math.pow(P,2))/(A*(1-Math.pow(P,2))));
-            var vinc = Math.sqrt(Math.pow(vinf, 2) + ((2*10*G)/(RP)));
-            var vper = Math.sqrt(Math.abs((2*10*G)*(1+P)/(A*(1-P))));
+            Mu = M*G;
+            miu = EarthMass*G;
+            vinf = Math.sqrt(miu*(3+Math.pow(E,2))/(ay*(1-Math.pow(E,2))));
+            vinc = Math.sqrt(Math.pow(vinf, 2) + ((2*Mu)/(RP)));
+            vper = Math.sqrt(Math.abs((2*Mu)*(RA)/(RP*(RP+RA))));
                 if($scope.picktrajectoryRadio2){
                 trajectorydV = parseInt($scope.inputtrajectorydV);
                 }
@@ -331,6 +341,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         var path = '/tool2?' + idstring;
         window.location = path; 
     };
+});
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
 });
 
 spaceFrontierApp.directive('validNumber', function() {
