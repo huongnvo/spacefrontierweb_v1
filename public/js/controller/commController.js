@@ -111,14 +111,14 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.spaceLoss=sL;
         
         var eirp=81.16;
-        var gain=65.24;
-        var band=50;
+        var gain=95.24 + 30;
+        var band=4000;
 
         if($scope.stationPart.EIRP_ave!==null){
             eirp=parseFloat($scope.stationPart.EIRP_ave);
         }
         if($scope.antennaPart.Gain!==0){
-            gain=parseFloat($scope.antennaPart.Gain);
+            gain=parseFloat($scope.antennaPart.Gain + 30);
         }
         // $scope.receiver=eirp+gain-2.15-parseFloat($scope.spaceLoss);
 
@@ -147,7 +147,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         $scope.sigNoise = $scope.F + $scope.P - ($scope.B + $scope.K + $scope.L);
 
         // $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
-        $scope.bitRate = band * Math.log2(1 + (Math.pow(10, ($scope.sigNoise / 10))));
+        $scope.bitRate = 50 * Math.pow(10, 6) * Math.log2(1 + (Math.pow(10, ($scope.sigNoise / 10))));
 
         $scope.selectedStation = {};    
         $scope.selectedAntenna = {}; 
