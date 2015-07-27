@@ -107,19 +107,22 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         }else if($scope.frequency=="VHF"){
             frequency=0.165*Math.pow(10,9);
         }
-        var sL=10*Math.log10(Math.pow((4*Math.PI*dist*frequency/300000000),2));
+        var sL=20*Math.log10(4*Math.PI*dist*frequency/300000000);
         $scope.spaceLoss=sL;
         
         var eirp=81.16;
         var gain=65.24;
+        var band=50;
 
         if($scope.stationPart.EIRP_ave!==null){
             eirp=parseFloat($scope.stationPart.EIRP_ave);
-       }
-       if($scope.antennaPart.Gain!==0){
+        }
+        if($scope.antennaPart.Gain!==0){
             gain=parseFloat($scope.antennaPart.Gain);
-       }
-       $scope.receiver=eirp+gain-2.15-parseFloat($scope.spaceLoss);
+        }
+        // $scope.receiver=eirp+gain-2.15-parseFloat($scope.spaceLoss);
+
+        $scope.receiver=eirp+gain-parseFloat($scope.spaceLoss);
         
         var perGain=35.94;
         var perGainString=$scope.stationPart.Per_gain;
@@ -129,14 +132,22 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             perGain=(perGainString);
         }
 
-        
         var transmitPower=28.67;
         if($scope.receiverPart.Transmit_Power!==null){
             transmitPower=parseFloat($scope.receiverPart.Transmit_Power);
         }
-        $scope.sigNoise=gain+transmitPower+perGain+228.6-sL-30;
-        
-        $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
+
+        var f = gain / 290;
+        $scope.F = 10 * Math.log10(f);
+        $scope.P = eirp;
+        $scope.B = 10 * Math.log10(band) + 60;
+        $scope.K = -228.6;
+        $scope.L = $scope.spaceLoss;
+
+        $scope.sigNoise = $scope.F + $scope.P - ($scope.B + $scope.K + $scope.L);
+
+        // $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
+        $scope.bitRate = band * Math.log2(1 + (Math.pow(10, ($scope.sigNoise / 10))));
 
         $scope.selectedStation = {};    
         $scope.selectedAntenna = {}; 

@@ -2,27 +2,27 @@
 <html data-ng-app="spaceFrontierApp">
 <% include header %>
  
+
 <body data-ng-controller="toolController">
-    <div class="jumbotron" style="background-image: url(http://truereality.org/wp-content/uploads/2014/02/hubble-space-wallpapers.jpg);background-size: 100%; height: 780px; padding-top:70px">
-        <div class="container" id="nav">
-            <% include navbar %>
-        </div>
-        <div id="carousel1" class = "carousel slide" data-ride="carousel" style="height: 450px">
-            <div class="carousel-inner" style="height: 450px">
+    <% include navbar %>
+    <div class="jumbotron" style="background-image: url(/img/toolcube.jpg);background-size: 100%; height: 700px">
+        <div id="carousel1" class = "carousel slide">
+            <div class="carousel-inner" role="listbox" style="height: 450px">
                 <div class="item active">
-                    <div class="col-lg-2">
+                    <div class="col-lg-1">
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="container" id="indexjumbo">
-                            <h1>Instructions</h1>
-                            <h4>Flip through these slides to learn how to use the SPACE Tool</h4>
+                            <h1>Welcome to the SPACE Tool</h1>
+                            <br><br><br><br><br><br><br><br>
+                            <h4>Flip through these slides to learn more about our algorithms<br><br>or click the button below to get started.</h4>
                         </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1">
                         <div class="row" style="height: 200px">
                         </div>
                         <p align="right">
-                            <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                                 <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                                 <span class="sr-only"></span>
                             </a>
@@ -33,7 +33,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span  style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>
@@ -55,7 +55,7 @@
                         <div class="row" style="height: 200px">
                         </div>
                         <p align="right">
-                            <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                                 <span  style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                                 <span class="sr-only"></span>
                             </a>
@@ -66,7 +66,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>
@@ -76,16 +76,15 @@
                         <div class="container" id="indexjumbo">
                             <h2>Attitude Selection</h2>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
-                            <h4>Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge.</h4>
-                            <h3>What to Do: </h3>
-                            <h4>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</h4>
+                            <p>This section will let you find an appropriate attitude control subsystem for your CubeSat. The algorithm asks for an altitude that your instrument will be stationed at, along with a maximum spatial resolution for your instrument. From these two fields, we will calculate an angle of knowledge, which will act as a driver for the angle of control (generally, the angle of knowledge needs to be 10 times better than the angle of control). <!-- Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge. -->From there, we will display all subsystems that has an angle of precision lesser than or equal to the calculated angle of knowledge.</p>
+                            <!-- <h3>What to Do: </h3>
+                            <h4>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</h4> -->
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                        <p align="right"><a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a></p>
@@ -95,7 +94,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>
@@ -105,16 +104,15 @@
                         <div class="container" id="indexjumbo">
                             <h2>Propulsion Selection</h2>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
-                            <h4>Propulsion mechanisms are filtered by their deltaV budget. DeltaV budget is calculated by adding the required dV to reach the target to the required dV to reach science orbit and adjust inclination. There are some generalizations used to generate the deltaV for trajectories, these are explained on the page.</h4>
-                            <h3>What to Do:</h3>
-                            <h4>Select one of the tabs; "Input Specifics" or "Input Own dV". These tabs allow you to use the tool to generate a dV estimate or simply add your own if you have one. Fill out all required fields and then press "Caculate Results". Then, select an appropriate subsystem.</h4>
+                            <p>This section will let you calculate the total &#916V required to get to your desired science orbit. For a more complicated trajectory, the total &#916V can be calculated from a linear sum of individual &#916V, also taking into account a change in inclination (if required). We have used some generalizations to generate the &#916V for trajectories, which will be explained on the page. Once the final &#916V has been calculated (or given by the user), we can filter down and find the appropriate propulsion mechanisms according to the &#916V budget.</p> <!-- &#916V budget is calculated by adding the required &#916V to reach the target to the required &#916V to reach science orbit and adjust inclination. There are some generalizations used to generate the &#916V for trajectories, these are explained on the page.</h4> -->
+       <!--                      <h3>What to Do:</h3>
+                            <h4>Select one of the tabs; "Input Specifics" or "Input Own &#916V". These tabs allow you to use the tool to generate a dV estimate or simply add your own if you have one. Fill out all required fields and then press "Caculate Results". Then, select an appropriate subsystem.</h4> -->
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                        <p align="right"><a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a></p>
@@ -124,7 +122,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>
@@ -134,16 +132,15 @@
                         <div class="container" id="indexjumbo">
                             <h2>Communication Selection</h2>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
-                            <h4>This page will display Antennas, Receivers, and ground stations available to read from your selected Band. </h4>
-                            <h3>What to Do:</h3>
-                            <h4>Just select your prefered band!</h4>
+                            <p>This section will display antennas, receivers, and ground stations available to read from your selected Band. We currently have parts for the VHF, UVF, S, and X band, which ranges from .3 GHz to 12 GHz. Once the antenna, receiver, and ground station are chosen for an associated band, we will calculate a free-path space loss term, a receiver power term, a signal to noise ratio, and a maximum bit rate achievable by the chosen subsystem using known values of the chosen parts (such as EIRP, gain, frequency, bandwidth, and transmit power)</p>. <!-- The space loss (dB) is proportional to the square of the distance between transmitter and receiver, as well as the square of the frequency of the signal. The receiver power term (dBW) is calculated by summing up the EIRP of the station, the gain of the antenna, and the negative of the space loss. The signal to noise ratio (dB) is the sum of </h4> -->
+<!--                             <h3>What to Do:</h3>
+                            <h4>Just select your prefered band!</h4> -->
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                        <p align="right"><a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a></p>
@@ -153,7 +150,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>
@@ -163,19 +160,21 @@
                         <div class="container" id="indexjumbo">
                             <h2>Command and Data Handling Selection</h2>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
+                            <p>This section will let you find an appropriate command and data handling subsystem capable of processing and storing the data generated during the mission.</p>
+                            <!-- <h3>Algorithm: </h3>
+                            <h4>
                             <h5>Displayed Parts only have a processing capability greater than the # of bits per second of information you need to transmit and can handle more millions of instructions per second than your mission needs. Bits per Second can be calculated by our program in the 3 ways shown below:</h5>
                             <h5>Bits per Second = # Channels x Bits/Channel x Integrations per second</h4>
                             <h5>Bits per Second = (pixel array in x direction) * (pixel array in y direction) *  (Integrations per second)</h4>
                             <h5>Bits per Second = inputted Bits/Second</h4>
                             <h3>What to Do:</h3>
-                            <h5>Select which way you would like to calculate bits per second based on your current knowledge of specifications and input how many millions of instructions per second your part must handle.</h5>
+                            <h5>Select which way you would like to calculate bits per second based on your current knowledge of specifications and input how many millions of instructions per second your part must handle.</h5> -->
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                        <p align="right"><a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a></p>
@@ -185,7 +184,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>
@@ -204,7 +203,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                        <p align="right"><a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a></p>
@@ -214,7 +213,7 @@
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
                         </div>
-                        <a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
                             <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                             <span class="sr-only"></span>
                         </a>

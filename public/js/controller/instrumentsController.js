@@ -6,6 +6,8 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
 
+    $scope.showDetector = false;
+
     $(document).ready(function() {
         $('.nav-tabs > li > a').click(function(event){
             event.preventDefault();//stop browser to take action for clicked anchor
@@ -73,6 +75,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.activeButton = function(id) {
         if (document.getElementById(id).style.backgroundColor != "blue") {
              document.getElementById(id).style.backgroundColor = "blue";
+             document.getElementById(id).style.color = "white";
              $scope.numClicked+=1;
             if(id=='Long-IR'){
                 $scope.wavelengths.push("long-IR");
@@ -157,7 +160,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("radio"),1);
                 }
             }
-
+            document.getElementById(id).style.color = "black";
             document.getElementById(id).style.backgroundColor = "#faf2cc";
         }       
     }
@@ -200,6 +203,8 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             return true;
         } if(instrument.Measurement.indexOf("particle")!==-1&&$scope.electrons){
             return true;
+        } if(instrument.Measurement.indexOf("neutral atoms")!==-1&&$scope.neutralAtoms){
+            return true;
         }
         //ion
          if(instrument.Measurement.indexOf("ion")!==-1&&$scope.ions){
@@ -222,7 +227,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     }
     $scope.click=function(){
 
-        return $scope.numClicked!==0||$scope.co2||$scope.hematite||$scope.feldspar||$scope.tiBearing||$scope.oxides||$scope.nitrates||$scope.carbonates||$scope.h2o||$scope.pyroxene||$scope.hematite||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.ch4||$scope.nh3||$scope.pyroxene||$scope.olivine||$scope.hematite||$scope.clay||$scope.phyllosilicate||$scope.nitrates||$scope.ch4||$scope.o3||$scope.pyroxene||$scope.feldspar||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.oxide||$scope.altimetry||$scope.magnetic||$scope.decayParticles||$scope.magnetic||$scope.electrons||$scope.ions||$scope.neutrons||$scope.chChains||$scope.sulfatesites;
+        return $scope.numClicked!==0||$scope.neutralAtoms||$scope.co2||$scope.hematite||$scope.feldspar||$scope.tiBearing||$scope.oxides||$scope.nitrates||$scope.carbonates||$scope.h2o||$scope.pyroxene||$scope.hematite||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.ch4||$scope.nh3||$scope.pyroxene||$scope.olivine||$scope.hematite||$scope.clay||$scope.phyllosilicate||$scope.nitrates||$scope.ch4||$scope.o3||$scope.pyroxene||$scope.feldspar||$scope.clay||$scope.nitrates||$scope.carbonates||$scope.oxide||$scope.altimetry||$scope.magnetic||$scope.decayParticles||$scope.magnetic||$scope.electrons||$scope.ions||$scope.neutrons||$scope.chChains||$scope.sulfatesites;
     }
 
     $scope.saveInstrument = function(instrument) {

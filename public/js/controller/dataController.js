@@ -76,43 +76,43 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
 
     $scope.tabBPS = function() {
+        bits=parseFloat($scope.bitssecond);
+        $scope.totalbits=bits+"";
 
-            bits=parseFloat($scope.bitssecond);
-            $scope.totalbits=bits+"";
-             memory=(parseFloat($scope.resolution3)/100)*86400;
-            downlink=bits*memory;
-            $scope.totaldownlink=downlink+"";
-            if($scope.length==0){
-                mips=parseFloat($scope.mips)+"";
-            }
-            $scope.showDatabase = false;
-            $scope.showCalculate = true;
+        memory=(parseFloat($scope.resolution3)/100)*86400;
+        downlink=bits*memory;
+        $scope.totaldownlink=downlink+"";
+        if($scope.length==0){
+            mips=parseFloat($scope.mips)+"";
+        }
+        $scope.showDatabase = false;
+        $scope.showCalculate = true;
     }
 
     $scope.tabARRAY=function(){
-            bits=parseFloat($scope.sizex)*parseFloat($scope.sizey)*parseFloat($scope.integrations2);
-            $scope.totalbits=bits+"";
-             memory=(parseFloat($scope.resolution2)/100)*86400;
-            downlink=bits*memory;
-            $scope.totaldownlink=downlink+"";
-            if($scope.length==0){
-                mips=parseFloat($scope.mips)+"";
-            }
-            $scope.showDatabase = false;
-            $scope.showCalculate = true;
+        bits=parseFloat($scope.sizex)*parseFloat($scope.sizey)*parseFloat($scope.integrations2);
+        $scope.totalbits=bits+"";
+        memory=(parseFloat($scope.resolution2)/100)*86400;
+        downlink=bits*memory;
+        $scope.totaldownlink=downlink+"";
+        if($scope.length==0){
+            mips=parseFloat($scope.mips)+"";
+        }
+        $scope.showDatabase = false;
+        $scope.showCalculate = true;
     }
 
     $scope.tabCHANNELS=function(){
-            bits=parseFloat($scope.channel)*parseFloat($scope.bitschannel)*parseFloat($scope.integrations1);
-            $scope.totalbits=bits+"";
-             memory=(parseFloat($scope.resolution1)/100)*86400;
-            downlink=bits*memory;
-            $scope.totaldownlink=downlink+"";
-            if($scope.length==0){
-                mips=parseFloat($scope.mips)+"";
-            }
-            $scope.showDatabase = false;
-            $scope.showCalculate = true;
+        bits=parseFloat($scope.channel)*parseFloat($scope.bitschannel)*parseFloat($scope.integrations1);
+        $scope.totalbits=bits+"";
+        memory=(parseFloat($scope.resolution1)/100)*86400;
+        downlink=bits*memory;
+        $scope.totaldownlink=downlink+"";
+        if($scope.length==0){
+            mips=parseFloat($scope.mips)+"";
+        }
+        $scope.showDatabase = false;
+        $scope.showCalculate = true;
     }
 
     $scope.cdhparts = [];
@@ -142,7 +142,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     };
 
     $scope.okData=function(part){
-        return part.MHz>=bits&&part.MIPS>=mips;
+        return part.MHz>=bits/1000000;
     }
 
     $scope.order = function(part) {

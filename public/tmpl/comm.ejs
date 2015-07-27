@@ -1052,8 +1052,8 @@
              <div class="form-group">
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" ng-model= "frequency" value="UHF">
-                            UHF
+                        <input type="radio" name="optionsRadios" ng-model= "frequency" value="VHF">
+                            VHF
                         <button class="btn btn-xs" data-toggle="popover" data-placement="right" data-content="Suggested Use" style="background-color: white">
                             <a style="color:skyblue">?</a>
                         </button>
@@ -1061,8 +1061,8 @@
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" ng-model= "frequency" value="VHF">
-                            VHF
+                        <input type="radio" name="optionsRadios" ng-model= "frequency" value="UHF">
+                            UHF
                         <button class="btn btn-xs" data-toggle="popover" data-placement="right" data-content="Suggested Use" style="background-color: white">
                             <a style="color:skyblue">?</a>
                         </button>
@@ -1288,7 +1288,7 @@
                 
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="100" ng-model="spaceLoss" readonly="readonly"/>
-                    <span class="input-group-addon" id="totdV">dbW</span>
+                    <span class="input-group-addon" id="totdV">dB</span>
                 </div>
 
                 <div class = "divider"></div>
@@ -1296,7 +1296,7 @@
 
                 <div class="input-group">
                     <input class="form-control" placeholder="10" ng-model="sigNoise" readonly="readonly"/>
-                    <span class="input-group-addon" id="totdV">dbW</span>
+                    <span class="input-group-addon" id="totdV">dB</span>
                 </div>
 
                 
@@ -1306,13 +1306,13 @@
                 Receiver:
                 <div class="input-group">
                     <input class="form-control" placeholder="10" ng-model="receiver" readonly="readonly"/>
-                    <span class="input-group-addon" id="totdV">dbW</span>
+                    <span class="input-group-addon" id="totdV">dBW</span>
                 </div>               
                 <div class = "divider"></div>
                 Bit Rate:
                 <div class="input-group">
                     <input class="form-control" placeholder="10" ng-model="bitRate" readonly="readonly"/>
-                    <span class="input-group-addon" id="totdV">kBits</span>
+                    <span class="input-group-addon" id="totdV">Bps</span>
                 </div> 
             </div>
         </div>

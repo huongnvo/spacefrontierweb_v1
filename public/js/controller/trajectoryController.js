@@ -97,6 +97,13 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     var deg=0;
     var avgV=0;
     var partsin=0;
+    var E=0;
+    var ay=0;
+    var Mu=0;
+    var miu=0;
+    var vinf=0;
+    var vinc=0;
+    var vper=0;
 
     $(function () {
         $(".carousel").carousel({ interval: false });
@@ -123,7 +130,17 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         if ($scope.target=='Moon'){
             RA=parseFloat($scope.apoapsis) + 1738;
             RP=parseFloat($scope.periapsis) + 1738;
+            A = ((RA+RP)/2);
             P=(((2*RA)/(RA+RP)) - 1);
+            E= 1 - ((400)/(384600+RP));
+            ay = (384600+RP)/2;
+            M = MoonMass;
+            deg = parseFloat($scope.angle);
+            Mu = M*G;
+            miu = EarthMass*G;
+            vinf = Math.sqrt(miu*(3+Math.pow(E,2))/(ay*(1-Math.pow(E,2))));
+            vinc = Math.sqrt(Math.pow(vinf, 2) + ((2*Mu)/(RP)));
+            vper = Math.sqrt(Math.abs((2*Mu)*(RA)/(RP*(RP+RA))));
                 if($scope.picktrajectoryRadio2){
                 trajectorydV = parseInt($scope.inputtrajectorydV);
                 }
@@ -135,10 +152,8 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                         trajectorydV=0.02;
                     }
                 }  
-            M = MoonMass;
-            deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+500.2)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            orbitdV= vinc-vper;
+            avgV= Math.sqrt((Mu)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -326,6 +341,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         var path = '/tool2?' + idstring;
         window.location = path; 
     };
+});
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
 });
 
 spaceFrontierApp.directive('validNumber', function() {

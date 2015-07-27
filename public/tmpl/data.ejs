@@ -413,7 +413,7 @@
                             <a style="color:skyblue">?</a>
                     </div>
                     <input type="text" class="form-control" data-ng-model="integrations1" valid-number/>
-                    <span class="input-group-addon" id="Integrations/Second">Integrations/Second</span>
+                    <span class="input-group-addon" id="Integrations/Second">Integration Interval/Second</span>
                 </div>
                 <div class="divider"></div>
                 Percent of Time Generating Data:
@@ -481,7 +481,7 @@
                     </div>
                     <input type="text" class="form-control" data-ng-model="integrations2" valid-number/>
                      
-                    <span class="input-group-addon" id="pixelsY"> Integrations/Second</span>
+                    <span class="input-group-addon" id="pixelsY"> Integration Interval/Second</span>
                 </div>
 
                 <div class="divider"></div>                 
@@ -573,7 +573,7 @@
 
                 <div class="input-group">
                     <input type="text" class="form-control" data-ng-model="totaldownlink" readonly="readonly"/>
-                    <div class="input-group-addon">MIPS</div>
+                    <div class="input-group-addon">Total bits/day</div>
                 </div>
             </div>
             <div class="col-lg-10">
@@ -593,6 +593,9 @@
 
     <div ng-show="showDatabase">
         <div class="row">
+            <div class= "col-lg-12">
+                <div class="alert alert-info" role="alert">Please click the 'Show' dropdown and select the systems you would like to pick to see results. You may also use the 'Sort By' dropdown to select by mass. power, or volume.</div>
+            </div>
             <div class="col-lg-6">
                 <h3>Available CDH 
                     <div class="btn-group">
