@@ -293,16 +293,6 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     };
 
     $scope.okdV = function(part) {
-        // if($scope.picktrajectoryRadio2){
-        //   trajectorydV = $scope.inputtrajectorydV;
-        // }
-        // RA=$scope.apoapsis;
-        // RP=$scope.periapsis;
-        // E= (2*RA/(RA+RP)) + 1;
-        // if($scope.target == "Moon") {
-        //   M = MoonMass;
-        //   orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
-        // }
         dV = parseInt($scope.totaldV);
         if(part.DeltaV!=null){
             return part.DeltaV >= dV;

@@ -126,7 +126,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         if(perGainString!==null&&perGainString.indexOf(',')!==-1){
             perGain=parseFloat(perGainString.substring(0,perGainString.indexOf(',')));
         }else if(perGainString!=null){
-            perGain=(perGainString);
+            perGain=parseFloat(perGainString);
         }
 
         

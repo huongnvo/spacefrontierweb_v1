@@ -71,9 +71,11 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.numClicked=0;
   
     $scope.activeButton = function(id) {
-        if (document.getElementById(id).style.backgroundColor != "blue") {
-             document.getElementById(id).style.backgroundColor = "blue";
-             $scope.numClicked+=1;
+        if (document.getElementById(id).style.backgroundColor !== "blue") {
+            document.getElementById(id).style.backgroundColor = "blue";
+            document.getElementById(id).style.color = "white";
+
+            $scope.numClicked+=1;
             if(id=='Long-IR'){
                 $scope.wavelengths.push("long-IR");
             }else if(id=='Far-IR'){
@@ -100,6 +102,8 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             } 
 
         } else {
+            document.getElementById(id).style.backgroundColor = "#faf2cc";
+            document.getElementById(id).style.color = "black";
             $scope.numClicked-=1;
             if( id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
                // document.getElementById(id).style.backgroundColor = "red";
@@ -158,12 +162,13 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                 }
             }
 
-            document.getElementById(id).style.backgroundColor = "#faf2cc";
+           
         }       
+
     }
 
    $scope.isSelected = function(id){
-        return document.getElementById(id).style.backgroundColor =="blue";
+        return document.getElementById(id).style.backgroundColor =="lightblue";
     }
 
     $scope.searchInstruments=function(instrument){
