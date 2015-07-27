@@ -105,7 +105,7 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     $scope.tabCHANNELS=function(){
         bits=parseFloat($scope.channel)*parseFloat($scope.bitschannel)*parseFloat($scope.integrations1);
         $scope.totalbits=bits+"";
-         memory=(parseFloat($scope.resolution1)/100)*86400;
+        memory=(parseFloat($scope.resolution1)/100)*86400;
         downlink=bits*memory;
         $scope.totaldownlink=downlink+"";
         if($scope.length==0){
