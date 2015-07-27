@@ -75,6 +75,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     $scope.activeButton = function(id) {
         if (document.getElementById(id).style.backgroundColor != "blue") {
              document.getElementById(id).style.backgroundColor = "blue";
+             document.getElementById(id).style.color = "white";
              $scope.numClicked+=1;
             if(id=='Long-IR'){
                 $scope.wavelengths.push("long-IR");
@@ -159,7 +160,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("radio"),1);
                 }
             }
-
+            document.getElementById(id).style.color = "black";
             document.getElementById(id).style.backgroundColor = "#faf2cc";
         }       
     }
