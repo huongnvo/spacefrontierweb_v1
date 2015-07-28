@@ -5,7 +5,7 @@
 
 <body data-ng-controller="toolController">
     <% include navbar %>
-    <div class="jumbotron" style="background-image: url(/img/toolcube.jpg);background-size: 100%; height: 700px">
+    <div class="jumbotron" style="background-image: url(/img/toolcube2.jpg);background-size: 100%; height: 700px">
         <div id="carousel1" class = "carousel slide">
             <div class="carousel-inner" role="listbox" style="height: 450px">
                 <div class="item active">
@@ -14,8 +14,8 @@
                     <div class="col-lg-10">
                         <div class="container" id="indexjumbo">
                             <h1>Welcome to the SPACE Tool</h1>
-                            <br><br><br><br><br><br><br><br>
-                            <h4>Flip through these slides to learn more about our algorithms<br><br>or click the button below to get started.</h4>
+                            <br><br><br><br><br><br><br><br><br>
+                            <p>Flip through these slides to learn more about our algorithms<br>or click the button below to get started.</p>
                         </div>
                     </div>
                     <div class="col-lg-1">
@@ -39,17 +39,13 @@
                         </a>
                     </div>
                     <div class="col-lg-8">
-                         <div class="row"></div>
+                        <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Instruments Selection</h2>
+                            <h1>Instruments Selection</h1>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
-                            <h4>This page uses your selections from lists of elements, wavelengths of light, and particles to look through a list of currently manufactured instruments suitable for CubeSats. It returns those that can acquire information on the selected fields. </h4>
-                            <h3>What to Do:</h3>
-                            <h4> Select all fields you would like your instrument to detect. Then, select a target for your mission; this will come into play for the propulsion and communications systems. Finally, look at the instruments returned by your search and find one appropriate for your goals.</h4>
+                            <p>The instrumentation is the central unit of our CubeSat. .</p>
                         </div>
-                                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-                            <!-- <input id="ex13" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels="['$0', '$100', '$200', '$300', '$400']"/> -->
+                        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
@@ -74,7 +70,7 @@
                     <div class="col-lg-8">
                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Attitude Selection</h2>
+                            <h1>Attitude Selection</h1>
                             <div class="divider"></div>
                             <p>This section will let you find an appropriate attitude control subsystem for your CubeSat. The algorithm asks for an altitude that your instrument will be stationed at, along with a maximum spatial resolution for your instrument. From these two fields, we will calculate an angle of knowledge, which will act as a driver for the angle of control (generally, the angle of knowledge needs to be 10 times better than the angle of control). <!-- Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge. -->From there, we will display all subsystems that has an angle of precision lesser than or equal to the calculated angle of knowledge.</p>
                             <!-- <h3>What to Do: </h3>
@@ -102,9 +98,9 @@
                     <div class="col-lg-8">
                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Propulsion Selection</h2>
+                            <h1>Propulsion Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you calculate the total &#916V required to get to your desired science orbit. For a more complicated trajectory, the total &#916V can be calculated from a linear sum of individual &#916V, also taking into account a change in inclination (if required). We have used some generalizations to generate the &#916V for trajectories, which will be explained on the page. Once the final &#916V has been calculated (or given by the user), we can filter down and find the appropriate propulsion mechanisms according to the &#916V budget.</p> <!-- &#916V budget is calculated by adding the required &#916V to reach the target to the required &#916V to reach science orbit and adjust inclination. There are some generalizations used to generate the &#916V for trajectories, these are explained on the page.</h4> -->
+                            <p>This section will let you calculate the total &#916V required to get to your desired science orbit. For a more complicated trajectory, the total &#916V can be calculated from a linear sum of individual &#916V, also taking into account a change in inclination (if required). We have used some generalizations to generate the &#916V for trajectories, which will be explained on the page. Once the final value has been calculated (or given by the user), we can filter down and find the appropriate propulsion mechanisms according to the &#916V budget.</p> <!-- &#916V budget is calculated by adding the required &#916V to reach the target to the required &#916V to reach science orbit and adjust inclination. There are some generalizations used to generate the &#916V for trajectories, these are explained on the page.</h4> -->
        <!--                      <h3>What to Do:</h3>
                             <h4>Select one of the tabs; "Input Specifics" or "Input Own &#916V". These tabs allow you to use the tool to generate a dV estimate or simply add your own if you have one. Fill out all required fields and then press "Caculate Results". Then, select an appropriate subsystem.</h4> -->
                         </div>
@@ -130,9 +126,9 @@
                     <div class="col-lg-8">
                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Communication Selection</h2>
+                            <h1>Communication Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will display antennas, receivers, and ground stations available to read from your selected Band. We currently have parts for the VHF, UVF, S, and X band, which ranges from .3 GHz to 12 GHz. Once the antenna, receiver, and ground station are chosen for an associated band, we will calculate a free-path space loss term, a receiver power term, a signal to noise ratio, and a maximum bit rate achievable by the chosen subsystem using known values of the chosen parts (such as EIRP, gain, frequency, bandwidth, and transmit power)</p>. <!-- The space loss (dB) is proportional to the square of the distance between transmitter and receiver, as well as the square of the frequency of the signal. The receiver power term (dBW) is calculated by summing up the EIRP of the station, the gain of the antenna, and the negative of the space loss. The signal to noise ratio (dB) is the sum of </h4> -->
+                            <p>This section will let you choose an antenna, receiver, and ground station from a selected band. We currently have parts for the VHF, UVF, S, and X band, which ranges from .3 GHz to 12 GHz. Once the antenna, receiver, and ground station are chosen for an associated band, we will calculate a free-path space loss term, a receiver power term, a signal to noise ratio, and a maximum bit rate achievable by the chosen subsystem using known values of the chosen parts (such as EIRP, gain, frequency, bandwidth, and transmit power).</p> <!-- The space loss (dB) is proportional to the square of the distance between transmitter and receiver, as well as the square of the frequency of the signal. The receiver power term (dBW) is calculated by summing up the EIRP of the station, the gain of the antenna, and the negative of the space loss. The signal to noise ratio (dB) is the sum of </h4> -->
 <!--                             <h3>What to Do:</h3>
                             <h4>Just select your prefered band!</h4> -->
                         </div>
@@ -158,9 +154,9 @@
                     <div class="col-lg-8">
                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Command and Data Handling Selection</h2>
+                            <h1>CDH Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you find an appropriate command and data handling subsystem capable of processing and storing the data generated during the mission.</p>
+                            <p>This section will let you find an appropriate command and data handling subsystem capable of processing and storing the data generated during the mission. First, the algorithm will ask you to fill in some information about the collection system in order to find the minimum number of kilobits generated per second during the process of acquiring data. This value will then be used to calculate total data volume per day by looking at the amount of time the satellite is actively generating data. From there, we will display all parts with the appropriate datarate.</p>
                             <!-- <h3>Algorithm: </h3>
                             <h4>
                             <h5>Displayed Parts only have a processing capability greater than the # of bits per second of information you need to transmit and can handle more millions of instructions per second than your mission needs. Bits per Second can be calculated by our program in the 3 ways shown below:</h5>
@@ -192,13 +188,14 @@
                     <div class="col-lg-8">
                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Power Selection</h2>
+                            <h1>Power Selection</h1>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
+                            <p>This section will let you find an appropriate power system for your design, consisting of solar panels, batteries, and an electronic power system. The volume and a desirable configurable (deployable vs. nondeployable) will determine the applicable solar panels for your design. Following that selection, all batteries and electronic power systems will be displayed for your choosing.
+<!--                             <h3>Algorithm: </h3>
                             <h4>Filters out solar panels by volume and whether they are Non Deployable/Deployable. If they are deployable panels are filtered by how many wings you specify and hoy many panels per wing you specify. All On Board Computers and Batteries are displayed.</h4>
                             <h3>What to Do:</h3>
                             <h4>Select the Volume of your cubesat and whether your solar panels will be deployable. If you chose Deployable panels, you must specify how many wings and how many panels per wing you want.</h4>
-                        </div>
+ -->                        </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
@@ -221,12 +218,13 @@
                     <div class="col-lg-8">
                         <div class="row"></div>
                         <div class="container" id="indexjumbo">
-                            <h2>Frame Selection</h2>
+                            <h1>Frame Selection</h1>
                             <div class="divider"></div>
-                            <h3>Algorithm: </h3>
+<!--                             <h3>Algorithm: </h3>
                             <h4>Filters out potential buses and deployers based on your specified cubesat volume. All available thermal equipment is displayed.</h4>
                             <h3>What to Do:</h3>
-                            <h4>Just select your cubesat volume!</h4>
+                            <h4>Just select your cubesat volume!</h4> -->
+                            <p>For the final step of the CubeSat design, you will be guided to choose a frame, deployer, and thermal system for your design. Again, these choices are dependent on the desired volume of your CubeSat design. Once that volume is chosen, all available parts matching that description wil be shown.</p>
                         </div>
                     </div>
                     <!-- <div class="col-lg-2">
