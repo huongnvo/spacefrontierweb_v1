@@ -79,26 +79,26 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
              $scope.numClicked+=1;
             if(id=='Long-IR'){
                 $scope.wavelengths.push("long-IR");
-            }else if(id=='Far-IR'){
+            } if(id=='Far-IR'){
                 $scope.wavelengths.push("far-IR");
-            }else if(id=='Radiowave'){
+            } if(id=='Radiowave'){
                 $scope.wavelengths.push("radio");
-            }else if(id=='Microwave'){
+            } if(id=='Microwave'){
                 $scope.wavelengths.push("microwave");
-            }else if(id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
+            } if(id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
                 $scope.wavelengths.push("gamma");
-            }else if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
+            } if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
                     $scope.wavelengths.push("x-ray");
-            }else if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
+            } if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
                     $scope.wavelengths.push("UV");
                     $scope.wavelengths.push("ultraviolet");
-            }else if(id=='Visible'||id=='K'||id=='Li'){
+            } if(id=='Visible'||id=='K'||id=='Li'){
                     $scope.wavelengths.push("visible");
-            }else if(id=='Near-IR'){
+            } if(id=='Near-IR'){
                 $scope.wavelengths.push("near-IR");
-            }else if(id=='Short-IR'){
+            } if(id=='Short-IR'){
                 $scope.wavelengths.push("short-IR");
-            }else if(id=='Mid-IR'){
+            } if(id=='Mid-IR'){
                 $scope.wavelengths.push("mid-IR");
             } 
 
@@ -111,19 +111,19 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                 }
             }
 
-            else if(id=='Microwave'){
+             if(id=='Microwave'){
                 if($scope.wavelengths.indexOf("microwave")!==-1){
                     //document.getElementById(id).style.backgroundColor = "red";
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("microwave"),1);
                 }
             }
 
-            else if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
+             if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
                 if($scope.wavelengths.indexOf("x-ray")!==-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("x-ray"),1);
                 }
             }
-            else if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
+             if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
                 if($scope.wavelengths.indexOf("UV")!==-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("UV"),1);
                 }
@@ -131,31 +131,31 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("ultraviolet"),1);
                 }
             }
-            else if(id=='Visible'||id=='K'||id=='Li'){
+             if(id=='Visible'||id=='K'||id=='Li'){
                 if($scope.wavelengths.indexOf("visible")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("visible"),1);
                 }
-            }else if(id=='Near-IR'){
+            } if(id=='Near-IR'){
                 if($scope.wavelengths.indexOf("near-IR")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("near-IR"),1);
                 }
-            }else if(id=='Short-IR'){
+            } if(id=='Short-IR'){
                 if($scope.wavelengths.indexOf("short-IR")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("short-IR"),1);
                 }
-            }else if(id=='Mid-IR'){
+            } if(id=='Mid-IR'){
                 if($scope.wavelengths.indexOf("mid-IR")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("mid-IR"),1);
                 }
-            }else if(id=='Long-IR'){
+            } if(id=='Long-IR'){
                 if($scope.wavelengths.indexOf("long-IR")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("long-IR"),1);
                 }
-            }else if(id=='Far-IR'){
+            } if(id=='Far-IR'){
                 if($scope.wavelengths.indexOf("far-IR")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("far-IR"),1);
                 }
-            }else if(id=='Radiowave'){
+            } if(id=='Radiowave'){
                 if($scope.wavelengths.indexOf("radio")!==-1){
                  $scope.wavelengths.splice($scope.wavelengths.indexOf("radio"),1);
                 }
