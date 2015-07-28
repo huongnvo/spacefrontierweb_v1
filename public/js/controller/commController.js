@@ -74,6 +74,8 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
     };
 
     $scope.calculate=function(){
+        var c = 299458792;
+
         $scope.showStation = true;
         $scope.showAntenna = true;
         $scope.showReceiver = true;
@@ -103,16 +105,16 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         }else if($scope.frequency=="S-Band"){
             frequency=3*Math.pow(10,9);
         }else if($scope.frequency=="X-Band"){
-            frequency=10*Math.pow(10,9);
+            frequency=8.49*Math.pow(10,9);
         }else if($scope.frequency=="VHF"){
             frequency=0.165*Math.pow(10,9);
         }
-        var sL=20*Math.log10(4*Math.PI*dist*frequency/300000000);
+        var sL=20*Math.log10(4*Math.PI*dist*frequency/c);
         $scope.spaceLoss=sL;
         
         var eirp=81.16;
-        var gain=95.24 + 30;
-        var band=4000;
+        var gain=70;
+        var band=1;
 
         if($scope.stationPart.EIRP_ave!==null){
             eirp=parseFloat($scope.stationPart.EIRP_ave);
@@ -122,7 +124,12 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         }
         // $scope.receiver=eirp+gain-2.15-parseFloat($scope.spaceLoss);
 
-        $scope.receiver=eirp+gain-parseFloat($scope.spaceLoss);
+        var transmitterOutput = 19;
+        var lambda = (c / frequency);
+        var d = 0.5;
+        var antennaGain = 20*Math.log10(Math.PI*d/lambda);
+
+        $scope.receiver=transmitterOutput+antennaGain-parseFloat($scope.spaceLoss)+parseFloat($scope.stationPart.Gain);
         
         var perGain=35.94;
         var perGainString=$scope.stationPart.Per_gain;
@@ -137,17 +144,25 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             transmitPower=parseFloat($scope.receiverPart.Transmit_Power);
         }
 
-        var f = gain / 290;
-        $scope.F = 10 * Math.log10(f);
-        $scope.P = eirp;
-        $scope.B = 10 * Math.log10(band) + 60;
-        $scope.K = -228.6;
-        $scope.L = $scope.spaceLoss;
+        // var f = gain / 290;
+        // $scope.F = 10 * Math.log10(f);
+        var k = 1.3807 * Math.pow(10, -23);
+        var T = 290;
+        var noisePower = 10 * Math.log10(k * T * band * Math.pow(10, 6));
 
-        $scope.sigNoise = $scope.F + $scope.P - ($scope.B + $scope.K + $scope.L);
+        $scope.sigNoise = $scope.receiver - noisePower;
 
+        // $scope.P = eirp;
+        // $scope.B = 10 * Math.log10(band) + 60;
+        // $scope.K = -228.6;
+        // $scope.L = $scope.spaceLoss;
+
+        // $scope.sigNoise = $scope.F + $scope.P - ($scope.B + $scope.K + $scope.L);
+        // $scope.sigNoise = noisePower;
         // $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
-        $scope.bitRate = 50 * Math.pow(10, 6) * Math.log2(1 + (Math.pow(10, ($scope.sigNoise / 10))));
+        $scope.bitRate = (band * Math.pow(10, 6) * Math.log2(1 + (Math.pow(10, (3.3 / 10))))) / 1000;
+        // var EbN0 = $scope.sigNoise - 30;
+        // $scope.bitRate = Math.pow(($scope.sigNoise / 10), 10) / Math.pow((EbN0 / 10), 10) * band * Math.pow(10, 6);
 
         $scope.selectedStation = {};    
         $scope.selectedAntenna = {}; 
