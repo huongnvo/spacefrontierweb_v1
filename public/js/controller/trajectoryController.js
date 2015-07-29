@@ -124,7 +124,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             P=(((2*RA)/(RA+RP)) - 1);
             var MuMoon = MoonMass*G;
             var MuEarth = EarthMass*G;
-            var vapearth = Math.sqrt((MuEarth*((2/(384400-parseFloat($scope.apoapsis)))-(2/((390771-parseFloat($scope.apoapsis)))))));
+            var vapearth = Math.sqrt((MuEarth*((2/(386138+parseFloat($scope.apoapsis)))-(2/((392509+parseFloat($scope.apoapsis)))))));
             var vpermoon = Math.sqrt((MuMoon*(((2)/(RA))-((2)/(RA+RP)))));
             if($scope.picktrajectoryRadio2){
                 trajectorydV = parseFloat($scope.inputtrajectorydV);
@@ -274,7 +274,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
-        dV = orbitdV; //+ incdV + trajectorydV;
+        dV = orbitdV + incdV + trajectorydV;
         $scope.totaldV=dV;
         $scope.calculation = true;
         // return part.DeltaV >= dV;
