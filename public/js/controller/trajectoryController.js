@@ -97,17 +97,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     var deg=0;
     var avgV=0;
     var partsin=0;
-    var E=0;
-    var ay=0;
-    var Mu=0;
-    var miu=0;
-    var vinf=0;
-    var vinc=0;
-    var vper=0;
 
-    $(function () {
-        $(".carousel").carousel({ interval: false });
-    });
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -125,35 +115,30 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         }
         return okType;
     };
+    $('.carousel').carousel()
 
     $scope.tabSPECIFICS = function(part) {
         if ($scope.target=='Moon'){
             RA=parseFloat($scope.apoapsis) + 1738;
             RP=parseFloat($scope.periapsis) + 1738;
-            A = ((RA+RP)/2);
             P=(((2*RA)/(RA+RP)) - 1);
-            E= 1 - ((400)/(384600+RP));
-            ay = (384600+RP)/2;
-            M = MoonMass;
-            deg = parseFloat($scope.angle);
-            Mu = M*G;
-            miu = EarthMass*G;
-            vinf = Math.sqrt(miu*(3+Math.pow(E,2))/(ay*(1-Math.pow(E,2))));
-            vinc = Math.sqrt(Math.pow(vinf, 2) + ((2*Mu)/(RP)));
-            vper = Math.sqrt(Math.abs((2*Mu)*(RA)/(RP*(RP+RA))));
-                if($scope.picktrajectoryRadio2){
-                trajectorydV = parseInt($scope.inputtrajectorydV);
+            var MuMoon = MoonMass*G;
+            var MuEarth = EarthMass*G;
+            var vapearth = Math.sqrt(MuEarth*((2/(386138+parseFloat($scope.periapsis)))-(2/((392509+parseFloat($scope.periapsis))))));
+            var vpermoon = Math.sqrt(MuMoon*(((2)/(RP))-((2)/(RA+RP))));
+            if($scope.picktrajectoryRadio2){
+                trajectorydV = parseFloat($scope.inputtrajectorydV);
                 }
-                else{
-                    if($scope.picktrajectory=="direct"){
-                        trajectorydV=0.5;
-                     }
-                    else if($scope.picktrajectory == "indirect"){
-                        trajectorydV=0.02;
-                    }
-                }  
-            orbitdV= vinc-vper;
-            avgV= Math.sqrt((Mu)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            else{
+                if($scope.picktrajectory=="direct"){
+                    trajectorydV=0.5;
+                }
+                else if($scope.picktrajectory == "indirect"){
+                    trajectorydV=0.02;
+                }
+            }  
+            orbitdV= (vapearth)-(vpermoon);
+            avgV= Math.sqrt((MoonMass*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -289,7 +274,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
-        dV = incdV + trajectorydV + orbitdV;
+        dV = orbitdV; //+ incdV + trajectorydV;
         $scope.totaldV=dV;
         $scope.calculation = true;
         // return part.DeltaV >= dV;
