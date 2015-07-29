@@ -217,10 +217,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }
                 else{
                     if($scope.picktrajectory=="direct"){
-                        trajectorydV=0;
+                        trajectorydV=17.58;
                      }
                     else if($scope.picktrajectory == "indirect"){
-                        trajectorydV=0;
+                        trajectorydV=2.00;
                     }
                 }  
             M = MercuryMass;
@@ -239,10 +239,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }
                 else{
                     if($scope.picktrajectory=="direct"){
-                        trajectorydV=0;
+                        trajectorydV=5.71;
                      }
                     else if($scope.picktrajectory == "indirect"){
-                        trajectorydV=0;
+                        trajectorydV=2.00;
                     }
                 }  
             M = MarsMass;
@@ -261,10 +261,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }
                 else{
                     if($scope.picktrajectory=="direct"){
-                        trajectorydV=0;
+                        trajectorydV=5.24;
                      }
                     else if($scope.picktrajectory == "indirect"){
-                        trajectorydV=0;
+                        trajectorydV=2.00;
                     }
                 }  
             M = VenusMass;
