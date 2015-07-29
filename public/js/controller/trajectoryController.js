@@ -131,7 +131,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                 }
             else{
                 if($scope.picktrajectory=="direct"){
-                    trajectorydV=0.5;
+                    trajectorydV=1.022;
                 }
                 else if($scope.picktrajectory == "indirect"){
                     trajectorydV=0.02;
