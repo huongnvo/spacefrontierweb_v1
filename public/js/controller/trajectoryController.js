@@ -283,8 +283,8 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     $scope.tabOWN = function(part){
         dV = $scope.inputown;
         $scope.totaldV=dV+"";
-        $scope.calculation = true;
-        // return part.DeltaV >= dV;
+        $scope.showDatabase = true;
+        
     };
 
     $scope.okdV = function(part) {
