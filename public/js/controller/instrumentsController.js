@@ -7,6 +7,157 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
     var cubesatPath = '/parts/cubesat/' + idstring;
 
     $scope.showDetector = false;
+    $scope.ray = false;
+    $scope.visible = false;
+    $scope.infrared = false;
+    $scope.longwave = false;
+    $scope.acoustic = false;
+    $scope.moreRay = false;
+    $scope.moreVisible = false;
+    $scope.moreInfrared = false;
+    $scope.moreLongwave = false;
+    $scope.moreAcoustic = false;
+
+    // external js: isotope.pkgd.js, cells-by-column.js, cells-by-row.js, fit-columns.js, horizontal.js, masonry-horizontal.js
+
+    $(document).ready( function() {
+
+    // change is-checked class on buttons
+        $('.button-group').each( function( i, buttonGroup ) {
+            var $buttonGroup = $( buttonGroup );
+            $buttonGroup.on( 'click', 'button', function() {
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $( this ).addClass('is-checked');
+            });
+        });
+    });
+
+    $scope.showRay = function() {
+        $scope.ray = !$scope.ray;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    }
+    $scope.showVisible = function(){
+        $scope.ray = false;
+        $scope.visible = !$scope.visible;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    };
+
+    $scope.showInfrared = function() {
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = !$scope.infrared;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    };
+
+    $scope.showLongwave = function() {
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = !$scope.longwave;
+        $scope.acoustic = false;        
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    };
+    $scope.showAcoustic = function() {
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = !$scope.acoustic;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    };
+
+    $scope.showMoreRay = function() {
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = !$scope.moreRay;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    }
+    $scope.showMoreVisible = function(){
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = !$scope.moreVisible;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    };
+
+    $scope.showMoreInfrared = function() {        
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = !$scope.moreInfrared;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = false;
+    };
+
+    $scope.showMoreLongwave = function() {        
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = !$scope.moreLongwave;
+        $scope.moreAcoustic = false;
+    };
+    $scope.showMoreAcoustic = function() {        
+        $scope.ray = false;
+        $scope.visible = false;
+        $scope.infrared = false;
+        $scope.longwave = false;
+        $scope.acoustic = false;
+        $scope.moreRay = false;
+        $scope.moreVisible = false;
+        $scope.moreInfrared = false;
+        $scope.moreLongwave = false;
+        $scope.moreAcoustic = !$scope.moreAcoustic;
+    };
+
 
     $(document).ready(function() {
         $('.nav-tabs > li > a').click(function(event){
@@ -74,58 +225,76 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
   
     $scope.activeButton = function(id) {
         if (document.getElementById(id).style.backgroundColor != "blue") {
-             document.getElementById(id).style.backgroundColor = "blue";
-             document.getElementById(id).style.color = "white";
-             $scope.numClicked+=1;
+            document.getElementById(id).style.backgroundColor = "blue";
+            document.getElementById(id).style.color = "white";
+            $scope.numClicked+=1;
             if(id=='Long-IR'){
+                $scope.longir = true;
                 $scope.wavelengths.push("long-IR");
             }else if(id=='Far-IR'){
+                $scope.farir = true;
                 $scope.wavelengths.push("far-IR");
             }else if(id=='Radiowave'){
+                $scope.radio = true;
                 $scope.wavelengths.push("radio");
             }else if(id=='Microwave'){
+                $scope.micro = true;
                 $scope.wavelengths.push("microwave");
             }else if(id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
+                $scope.gamma = true;
                 $scope.wavelengths.push("gamma");
             }else if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
-                    $scope.wavelengths.push("x-ray");
+                $scope.xray = true;
+                $scope.wavelengths.push("x-ray");
             }else if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
-                    $scope.wavelengths.push("UV");
-                    $scope.wavelengths.push("ultraviolet");
+                $scope.uv = true;
+                $scope.wavelengths.push("UV");
+                $scope.wavelengths.push("ultraviolet");
             }else if(id=='Visible'||id=='K'||id=='Li'){
-                    $scope.wavelengths.push("visible");
+                $scope.visibleinfo = true;
+                $scope.wavelengths.push("visible");
             }else if(id=='Near-IR'){
+                $scope.nearirinfo = true;
                 $scope.wavelengths.push("near-IR");
             }else if(id=='Short-IR'){
+                $scope.shortirinfo = true;
                 $scope.wavelengths.push("short-IR");
             }else if(id=='Mid-IR'){
+                $scope.midir = true;
                 $scope.wavelengths.push("mid-IR");
-            } 
+            }else if(id=='Cosmic'){
+                $scope.cosmic = true;
+                $scope.wavelengths.push("cosmic");
+            }
 
         } else {
             $scope.numClicked-=1;
             if( id=='Gamma'||id=='O'||id=='Mg'||id=='Si'||id=='K'||id=='Ti'||id=='Fe'||id=='Th'||id=='U'){
-               // document.getElementById(id).style.backgroundColor = "red";
-                 if($scope.wavelengths.indexOf("gamma")!==-1){
-                  $scope.wavelengths.splice($scope.wavelengths.indexOf("gamma"),1);
+                // document.getElementById(id).style.backgroundColor = "red";
+                if($scope.wavelengths.indexOf("gamma")!==-1){
+                    $scope.gamma = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("gamma"),1);
                 }
             }
 
             else if(id=='Microwave'){
                 if($scope.wavelengths.indexOf("microwave")!==-1){
                     //document.getElementById(id).style.backgroundColor = "red";
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("microwave"),1);
+                    $scope.micro = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("microwave"),1);
                 }
             }
 
             else if(id=='X-ray'||id=='Na'||id=='Mg'||id=='Al'||id=='Si'||id=='S'||id=='Ca'||id=='K'||id=='Ti'||id=='Fe'){
                 if($scope.wavelengths.indexOf("x-ray")!==-1){
-                  $scope.wavelengths.splice($scope.wavelengths.indexOf("x-ray"),1);
+                    $scope.xray = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("x-ray"),1);
                 }
             }
             else if(id=='UV'||id=='H'||id=='He'||id=='O'||id=='Na'||id=='Ar'||id=='Ne'||id=='Mg'||id=='Fe'||id=='Si'||id=='S'||id=='Al'){
                 if($scope.wavelengths.indexOf("UV")!==-1){
-                  $scope.wavelengths.splice($scope.wavelengths.indexOf("UV"),1);
+                    $scope.uv = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("UV"),1);
                 }
                 if($scope.wavelengths.indexOf("ultraviolet")!==-1){
                   $scope.wavelengths.splice($scope.wavelengths.indexOf("ultraviolet"),1);
@@ -133,35 +302,54 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             }
             else if(id=='Visible'||id=='K'||id=='Li'){
                 if($scope.wavelengths.indexOf("visible")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("visible"),1);
+                    $scope.visibleinfo = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("visible"),1);
                 }
-            }else if(id=='Near-IR'){
+            }
+            else if(id=='Near-IR'){
                 if($scope.wavelengths.indexOf("near-IR")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("near-IR"),1);
+                    $scope.nearirinfo = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("near-IR"),1);
                 }
-            }else if(id=='Short-IR'){
+            }
+            else if(id=='Short-IR'){
                 if($scope.wavelengths.indexOf("short-IR")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("short-IR"),1);
+                    $scope.shortirinfo = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("short-IR"),1);
                 }
-            }else if(id=='Mid-IR'){
+            }
+            else if(id=='Mid-IR'){
                 if($scope.wavelengths.indexOf("mid-IR")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("mid-IR"),1);
+                    $scope.midir = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("mid-IR"),1);
                 }
-            }else if(id=='Long-IR'){
+            }
+            else if(id=='Long-IR'){
                 if($scope.wavelengths.indexOf("long-IR")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("long-IR"),1);
+                    $scope.longir = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("long-IR"),1);
                 }
-            }else if(id=='Far-IR'){
+            }
+            else if(id=='Far-IR'){
                 if($scope.wavelengths.indexOf("far-IR")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("far-IR"),1);
+                    $scope.farir = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("far-IR"),1);
                 }
-            }else if(id=='Radiowave'){
+            }
+            else if(id=='Radiowave'){
                 if($scope.wavelengths.indexOf("radio")!==-1){
-                 $scope.wavelengths.splice($scope.wavelengths.indexOf("radio"),1);
+                    $scope.radio = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("radio"),1);
+                }
+            }
+            else if(id=='Cosmic'){
+                if($scope.wavelengths.indexOf("cosmic")!==-1){
+                    $scope.cosmic = false;
+                    $scope.wavelengths.splice($scope.wavelengths.indexOf("cosmic"),1);
                 }
             }
             document.getElementById(id).style.color = "black";
-            document.getElementById(id).style.backgroundColor = "#faf2cc";
+            document.getElementById(id).style.backgroundColor = "white";
         }       
     }
 

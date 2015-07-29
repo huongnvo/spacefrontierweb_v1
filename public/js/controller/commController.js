@@ -109,11 +109,12 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         }else if($scope.frequency=="VHF"){
             frequency=0.165*Math.pow(10,9);
         }
+        
         var sL=20*Math.log10(4*Math.PI*dist*frequency/c);
         $scope.spaceLoss=sL;
         
         var eirp=81.16;
-        var gain=70;
+        var stationGain=70;
         var band=1;
 
         if($scope.stationPart.EIRP_ave!==null){
@@ -122,6 +123,9 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         if($scope.antennaPart.Gain!==0){
             gain=parseFloat($scope.antennaPart.Gain + 30);
         }
+        if($scope.stationPart.Gain!==0){
+            stationGain=parseFloat($scope.stationPart.Gain);
+        }
         // $scope.receiver=eirp+gain-2.15-parseFloat($scope.spaceLoss);
 
         var transmitterOutput = 19;
@@ -129,7 +133,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         var d = 0.5;
         var antennaGain = 20*Math.log10(Math.PI*d/lambda);
 
-        $scope.receiver=transmitterOutput+antennaGain-parseFloat($scope.spaceLoss)+parseFloat($scope.stationPart.Gain);
+        $scope.receiver=transmitterOutput+antennaGain-parseFloat($scope.spaceLoss)+parseFloat(stationGain);
         
         var perGain=35.94;
         var perGainString=$scope.stationPart.Per_gain;
@@ -160,9 +164,12 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         // $scope.sigNoise = $scope.F + $scope.P - ($scope.B + $scope.K + $scope.L);
         // $scope.sigNoise = noisePower;
         // $scope.bitRate=""+Math.pow(10, ((parseFloat($scope.sigNoise)-10)/10))/1000;  
-        $scope.bitRate = (band * Math.pow(10, 6) * Math.log2(1 + (Math.pow(10, (3.3 / 10))))) / 1000;
+        
         // var EbN0 = $scope.sigNoise - 30;
-        // $scope.bitRate = Math.pow(($scope.sigNoise / 10), 10) / Math.pow((EbN0 / 10), 10) * band * Math.pow(10, 6);
+        var EbN0 = 9.6;
+
+        $scope.bitRate = (10 * Math.pow(10, 3) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000;
+        // $scope.bitRate = (Math.pow(($scope.sigNoise / 10), 10) / Math.pow((EbN0 / 10), 10) * 200)/1000000;
 
         $scope.selectedStation = {};    
         $scope.selectedAntenna = {}; 

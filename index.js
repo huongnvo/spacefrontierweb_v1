@@ -7,12 +7,12 @@ var express = require("express"),
 var app = express();
 
 var config = {
-      "USER"    : "",           
-      "PASS"    : "",
-      "HOST"    : "ec2-52-2-119-158.compute-1.amazonaws.com",  
-      "PORT"    : "47782", 
-      // "DATABASE" : "cubesat_v1"
-    };
+    "USER"    : "",           
+    "PASS"    : "",
+    "HOST"    : "ec2-52-2-119-158.compute-1.amazonaws.com",  
+    "PORT"    : "47782", 
+    // "DATABASE" : "cubesat_v1"
+};
 
 app.use(express.logger());
 app.use(express.json());
