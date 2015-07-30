@@ -2,7 +2,7 @@
 
 var express = require("express"),
     fs = require('fs'),
-    port = process.env.PORT || 80;
+    port = process.env.PORT || 3000;
  
 var app = express();
 
