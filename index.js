@@ -2,7 +2,7 @@
 
 var express = require("express"),
     fs = require('fs'),
-    port = process.env.PORT || 80;
+    port = process.env.PORT || 3000;
  
 var app = express();
 
@@ -421,7 +421,7 @@ app.get('/signup', function(req, res) {
 });
 
 app.get('/google5d616e0e6bb5bc2a.html', function(req, res) {
-    res.send('../public/tmpl/google5d616e0e6bb5bc2a.html ', { title: 'Verification' });
+    res.sendfile('public/tmpl/google5d616e0e6bb5bc2a.html')
 });
 
 app.listen(port);
