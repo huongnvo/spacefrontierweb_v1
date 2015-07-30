@@ -2,7 +2,7 @@
 
 var express = require("express"),
     fs = require('fs'),
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 80;
  
 var app = express();
 
@@ -405,6 +405,18 @@ app.get('/thermal', function (req, res) {
 
 app.get('/gallery', function (req, res) {
     res.render('../public/tmpl/gallery.ejs', { title: 'Gallery' });
+});
+
+// app.get('/signin', function (req, res) {
+//     res.render('../public/tmpl/signin.ejs', { title: 'Sign In' });
+// });
+
+app.get('/login', function(req, res) {
+    res.render('../public/tmpl/login.ejs', { title: 'Log In' });
+});
+
+app.get('/signup', function(req, res) {
+    res.render('../public/tmpl/signup.ejs', { title: 'Sign Up' });
 });
 
 app.listen(port);

@@ -1,3 +1,21 @@
+.has-feedback .form-control-feedback {
+    top: 0;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    color: #555;
+}
+
+[class^='ion-'] {
+    font-size: 1.2em;
+}
+
+.has-feedback .form-control {
+    padding-left: 42px;
+}
+
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -222,7 +240,7 @@ section.module.parallax-4 {
     position: relative;
     float: right;
     padding-bottom: 55%;
-    width: 55%;
+    width: 60%;
     text-align: center;
 }
 
