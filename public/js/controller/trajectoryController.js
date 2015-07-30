@@ -126,9 +126,9 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             RA=parseFloat($scope.apoapsis) + 1738;
             RP=parseFloat($scope.periapsis) + 1738;
             P=(((2*RA)/(RA+RP)) - 1);
-            var MuMoon = 4903.7194575;
-            var MuEarth = 398561.7248;
-            var vapearth = Math.sqrt((MuEarth*((2/(386138+parseFloat($scope.periapsis)))-(2/((392509+parseFloat($scope.periapsis)))))));
+            var MuMoon=4903.7194575;
+            var MuEarth=398561.7248;
+            var vapearth = Math.sqrt(MuEarth*((2/(384400+RP))-(2/((390771+RP)))));
             var vpermoon = Math.sqrt((MuMoon*(((2)/(RP))-((2)/(RA+RP)))));
             if($scope.picktrajectoryRadio2){
                 trajectorydV = parseFloat($scope.inputtrajectorydV);
@@ -141,8 +141,8 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                     trajectorydV=0.02;
                 }
             }  
-            orbitdV= (vapearth) - (vpermoon);
-            avgV= Math.sqrt((MoonMass*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            orbitdV= Math.abs((vapearth) - (vpermoon));
+            avgV= Math.sqrt((MuMoon)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -160,11 +160,11 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                     else if($scope.picktrajectory == "indirect"){
                         trajectorydV=0;
                     }
-                }  
-            M = EarthMass;
+                }
+            var MuEarth=398561.7248;  
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            orbitdV= Math.sqrt((MuEarth)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((MuEarth)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -183,10 +183,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                         trajectorydV=0;
                     }
                 }  
-            M = EarthMass;
+            var MuEarth=398561.7248;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            orbitdV= Math.sqrt((MuEarth)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((MuEarth)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -205,10 +205,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
                         trajectorydV=0;
                     }
                 }  
-            M = EarthMass;
+            var MuEarth=398561.7248;
             deg = parseFloat($scope.angle);
-            orbitdV= Math.sqrt((2*M*G)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            orbitdV= Math.sqrt((MuEarth)/(RP+1543.5)) - Math.sqrt(((2*M*G)*(1+P))/((RA+RP)*(1-P)));
+            avgV= Math.sqrt((MuEarth)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -233,7 +233,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             vinc = Math.sqrt((Math.pow(vinf, 2))+(2*MuMercury/(RP)));
             deg = parseFloat($scope.angle);
             orbitdV= vinc - vper;
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            avgV= Math.sqrt((MuMercury)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -258,7 +258,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             vinc = Math.sqrt((Math.pow(vinf, 2))+(2*MuMars/(RP)));
             deg = parseFloat($scope.angle);
             orbitdV= vinc - vper;
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            avgV= Math.sqrt((MuMars)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
@@ -283,7 +283,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             vinc = Math.sqrt((Math.pow(vinf, 2))+(2*MuVenus/(RP)));
             deg = parseFloat($scope.angle);
             orbitdV= vinc - vper;
-            avgV= Math.sqrt((2*M*G)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
+            avgV= Math.sqrt((MuVenus)*(1+Math.pow(P,2))/((RA+RP)*(1-Math.pow(P,2))));
             partsin=Math.sin((deg)/2);
             incdV = 2*avgV*partsin;
         }
