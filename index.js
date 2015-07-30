@@ -407,6 +407,10 @@ app.get('/gallery', function (req, res) {
     res.render('../public/tmpl/gallery.ejs', { title: 'Gallery' });
 });
 
+app.get('/signin', function (req, res) {
+    res.render('../public/tmpl/signin.ejs', { title: 'Sign In' });
+});
+
 app.listen(port);
 console.log('Express server running at port: ' + port);
 
