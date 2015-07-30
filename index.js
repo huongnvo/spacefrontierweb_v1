@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
+// mongoose.connect('mongodb://localhost:27017/test', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -417,6 +418,10 @@ app.get('/login', function(req, res) {
 
 app.get('/signup', function(req, res) {
     res.render('../public/tmpl/signup.ejs', { title: 'Sign Up' });
+});
+
+app.get('/google5d616e0e6bb5bc2a.html', function(req, res) {
+    res.send('../public/tmpl/google5d616e0e6bb5bc2a.html ', { title: 'Verification' });
 });
 
 app.listen(port);
