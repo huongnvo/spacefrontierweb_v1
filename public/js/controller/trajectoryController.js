@@ -110,7 +110,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         }
         return okType;
     };
-    $('.carousel').carousel()
+    $(document).ready(function(){
+        // Activate Carousel
+        $("#carousel1").carousel({interval: false});
+    });
 
     $scope.tabSPECIFICS = function(part) {
         if ($scope.target=='Moon'){
@@ -332,8 +335,11 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     };
 });
 
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
+$(function () {
+      $('[data-toggle="popover"]').popover()
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
 });
 
 spaceFrontierApp.directive('validNumber', function() {

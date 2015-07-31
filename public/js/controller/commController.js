@@ -240,5 +240,8 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
     };
     $(function () {
       $('[data-toggle="popover"]').popover()
-    })
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
+    });
 });
