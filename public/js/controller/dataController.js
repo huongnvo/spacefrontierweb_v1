@@ -144,6 +144,12 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     $scope.okData=function(part){
         return part.MHz>=bits/1000000;
     }
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
+    });
 
     $scope.order = function(part) {
         if ($scope.sort == "Mass") {

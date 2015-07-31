@@ -122,7 +122,11 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
 $(function () {
       $('[data-toggle="popover"]').popover()
-})
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
+});
+
 
 spaceFrontierApp.directive('validNumber', function() {
   return {
