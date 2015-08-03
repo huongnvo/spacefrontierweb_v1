@@ -386,6 +386,9 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             return true;
         }
  
+        if ($scope.ignorefilters){
+            return true;
+        }
         return false;
     }
 
@@ -408,6 +411,19 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                 // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
+    };
+
+    $scope.order = function(part) {
+        if ($scope.sort == "Mass") {
+            return part.Mass;
+        }
+        else if ($scope.sort == "Power") {
+            return part.Power;
+        }
+        else if ($scope.sort == "Volume") {
+            return part.Volume;
+        }
+        return part.Mass;
     };
 
     $scope.nextPage = function() {
