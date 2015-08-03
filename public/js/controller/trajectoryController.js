@@ -98,6 +98,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
+
     $scope.okType = function(part) {
         var okType = false;
         if ($scope.Thruster && part.Type == 'Thruster')
@@ -305,10 +306,15 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         //   M = MoonMass;
         //   orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
         // }
+        if ($scope.ignorefilters){
+            return true;
+        }
+        
         dV = parseInt($scope.totaldV);
         if(part.DeltaV!=null){
             return part.DeltaV >= dV;
         }
+
         return false;
     };
 
