@@ -1079,13 +1079,45 @@
             <div class="divider"></div>
             <div class="row">
                 <div class="col-lg-6">
-                    <h3>Available Instruments</h3>
+                    <h3>Instruments
+                        <div class="btn-group">
+                          <label class="btn btn-default btn-xs">
+                                <input type="checkbox" autocomplete="off" data-ng-model="ignorefilters"> Show All
+                          </label>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort By: 
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
+                                            Mass
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
+                                            Power
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
+                                            Volume
+                                    </label>
+                                </div>
+                            </ul>
+                        </div>
+                    </h3>
                     <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
                     <div class="row">
                         <div class="col-lg-11">
                             <div class = "dividersmall"></div>
                             <select multiple class="form-control" size = "16">
-                                <option ng-click="saveInstrument(instrument)" data-ng-model="chosenPart" ng-repeat="instrument in instruments|filter:searchInstruments"> 
+                                <option ng-click="saveInstrument(instrument)" data-ng-model="chosenPart" ng-repeat="instrument in instruments|filter:searchInstruments|orderBy:order"> 
                                     {{instrument.Name}}
                                 </option>
                             </select>
