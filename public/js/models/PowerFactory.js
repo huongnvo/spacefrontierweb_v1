@@ -29,7 +29,7 @@ var PowerFactory = function(Schema,mongoose) {
 	this.insertPart = function() {
 		var sp1 = new this.power_parts({
 			Type:'Solar Panels',
-			Name:'NanoPower Solar Panels P110 Series',
+			Name:'NanoPower Solar Panels P110C Series',
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
 			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
@@ -45,6 +45,62 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:'0',
 			Additional_info: ''
 		});
+		var sp44 = new this.power_parts({
+			Type:'Solar Panels',
+			Name:'NanoPower Solar Panels P110A&B',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
+			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
+			Mass:'26',
+			Power:'2.4',
+			Volume:'1',
+			Proportions:'82.5x98x2.1',
+			Efficiency: '30%',
+			Objectives:'Power generation,attitude determination. Sun sensors 1.85 deg accurate,magnetorquer torque .043 Am^2',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings: '0' ,
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp45 = new this.power_parts({
+			Type:'Solar Panels',
+			Name:'NanoPower Solar Panels P110UA&B',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
+			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
+			Mass:'57',
+			Power:'2.4',
+			Volume:'1',
+			Proportions:'82.5x98x2.1',
+			Efficiency: '30%',
+			Objectives:'ADCS capabilities (integrated magnetorquer and gyroscope), Power generation,attitude determination. Sun sensors 1.85 deg accurate,magnetorquer torque .043 Am^2',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings: '0' ,
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp46 = new this.power_parts({
+			Type:'Solar Panels',
+			Name:'NanoPower Solar Panels P110UC',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
+			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
+			Mass:'65',
+			Power:'2.4',
+			Volume:'1',
+			Proportions:'82.5x98x2.1',
+			Efficiency: '30%',
+			Objectives:'ADCS capabilities (integrated magnetorquer and gyroscope), Power generation,attitude determination. Sun sensors 1.85 deg accurate,magnetorquer torque .043 Am^2',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings: '0' ,
+			Cost:'0',
+			Additional_info: ''
+		});
 
 		var sp2 = new this.power_parts({
 			Type:'Solar Panels',
@@ -52,8 +108,8 @@ var PowerFactory = function(Schema,mongoose) {
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
 			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
-			Mass:'0',
-			Power:'4.66',
+			Mass:'58',
+			Power:'4.8',
 			Volume:'2',
 			Proportions:'',
 			Efficiency: '28-30%',
@@ -71,8 +127,8 @@ var PowerFactory = function(Schema,mongoose) {
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
 			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
-			Mass:'0',
-			Power:'6.99',
+			Mass:'87',
+			Power:'7.2',
 			Volume:'3',
 			Proportions:'',
 			Efficiency: '28-30%',
@@ -90,9 +146,28 @@ var PowerFactory = function(Schema,mongoose) {
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
 			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
-			Mass:'0',
-			Power:'14',
+			Mass:'174',
+			Power:'14.4',
 			Volume:'6',
+			Proportions:'',
+			Efficiency: '28-30%',
+			Objectives:'Power generation,attitude determination. Sun sensors 1.85 deg accurate,magnetorquer torque .043 Am^2',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings: '0' ,
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp47 = new this.power_parts({
+			Type:'Solar Panels',
+			Name:'NanoPower Solar Panels P110 Series',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/GS-DS-P110-1.0.pdf',
+			Description:'Two solar cells on a panel for a side of a 1 U cubesat. Includes course sun sensor,temperature sensor.',
+			Mass:'348',
+			Power:'28.8',
+			Volume:'12',
 			Proportions:'',
 			Efficiency: '28-30%',
 			Objectives:'Power generation,attitude determination. Sun sensors 1.85 deg accurate,magnetorquer torque .043 Am^2',
@@ -557,6 +632,26 @@ var PowerFactory = function(Schema,mongoose) {
 			Cost:'0',
 			Additional_info: ''
 		});
+
+		var sp48 = new this.power_parts({
+			Type: 'Solar Panels',
+			Name:'ISIS CubeSat Solar Panels',
+			Manufacturer:'ISIS and Selex Galileo',
+			Reference:'http://www.isispace.nl/brochures/ISIS_Solar_Panels_v.12.4.pdf',
+			Description:'Compatible w/ all ISIS products',
+  			Mass:'600',
+  			Power:'27.6',
+  			Volume:'12',
+  			Proportions:'',
+  			Efficiency:'28%',
+  			Objectives:'Power generation,2 yrs min LEO',
+  			Energy_Storage:'0',
+  			PperWing:'0',
+  			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
 		var sp29 = new this.power_parts({
 			Type:'Battery',
 			Name:'NanoPower BP4',
@@ -577,17 +672,112 @@ var PowerFactory = function(Schema,mongoose) {
   		});
 	  	var sp30 = new this.power_parts({
 			Type:'Battery',
-			Name:'NanoPower BPx',
+			Name:'NanoPower BPx 1100mAh 6 Cell',
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/gs-ds-nanopower-bpx-1.0-1.pdf',
 			Description:'Lithium ion battery pack,6-8 batteries. Units. can be combined in series/parallel. Configurable for different batteries. Includes temperature sensors.',
-	  		Mass:'400',
+	  		Mass:'370',
 	  		Power:'0',
-	  		Volume:'0',
+	  		Volume:'Unknown',
 	  		Proportions:'',
 	  		Efficiency:'',
 			Objectives:'Power storage,power housekeeping and temperature sensing. (1 deg C resolution)',
-			Energy_Storage:'49.4',
+			Energy_Storage:'21.8',
+	  		PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: 'Mass Variable'
+		});
+
+		var sp49 = new this.power_parts({
+			Type:'Battery',
+			Name:'NanoPower BPx 1100mAh 8 Cell',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/gs-ds-nanopower-bpx-1.0-1.pdf',
+			Description:'Lithium ion battery pack,6-8 batteries. Units. can be combined in series/parallel. Configurable for different batteries. Includes temperature sensors.',
+	  		Mass:'470',
+	  		Power:'0',
+	  		Volume:'Unknown',
+	  		Proportions:'',
+	  		Efficiency:'',
+			Objectives:'Power storage,power housekeeping and temperature sensing. (1 deg C resolution)',
+			Energy_Storage:'29.0',
+	  		PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp50 = new this.power_parts({
+			Type:'Battery',
+			Name:'NanoPower BPx 2600mAh 8 Cell',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/gs-ds-nanopower-bpx-1.0-1.pdf',
+			Description:'Lithium ion battery pack,6-8 batteries. Units. can be combined in series/parallel. Configurable for different batteries. Includes temperature sensors.',
+	  		Mass:'470',
+	  		Power:'0',
+	  		Volume:'Unknown',
+	  		Proportions:'',
+	  		Efficiency:'',
+			Objectives:'Power storage,power housekeeping and temperature sensing. (1 deg C resolution)',
+			Energy_Storage:'77.0',
+	  		PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp51 = new this.power_parts({
+			Type:'Battery',
+			Name:'NanoPower BPx 1800mAh 6 Cell',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/gs-ds-nanopower-bpx-1.0-1.pdf',
+			Description:'Lithium ion battery pack,6-8 batteries. Units. can be combined in series/parallel. Configurable for different batteries. Includes temperature sensors.',
+	  		Mass:'370',
+	  		Power:'0',
+	  		Volume:'Unknown',
+	  		Proportions:'',
+	  		Efficiency:'',
+			Objectives:'Power storage,power housekeeping and temperature sensing. (1 deg C resolution)',
+			Energy_Storage:'40.00',
+	  		PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp52 = new this.power_parts({
+			Type:'Battery',
+			Name:'NanoPower BPx 1800mAh 8 Cell',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/gs-ds-nanopower-bpx-1.0-1.pdf',
+			Description:'Lithium ion battery pack,6-8 batteries. Units. can be combined in series/parallel. Configurable for different batteries. Includes temperature sensors.',
+	  		Mass:'470',
+	  		Power:'0',
+	  		Volume:'Unknown',
+	  		Proportions:'',
+	  		Efficiency:'',
+			Objectives:'Power storage,power housekeeping and temperature sensing. (1 deg C resolution)',
+			Energy_Storage:'53.3',
+	  		PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp53 = new this.power_parts({
+			Type:'Battery',
+			Name:'NanoPower BPx 2600mAh 6 Cell',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/gs-ds-nanopower-bpx-1.0-1.pdf',
+			Description:'Lithium ion battery pack,6-8 batteries. Units. can be combined in series/parallel. Configurable for different batteries. Includes temperature sensors.',
+	  		Mass:'370',
+	  		Power:'0',
+	  		Volume:'Unknown',
+	  		Proportions:'',
+	  		Efficiency:'',
+			Objectives:'Power storage,power housekeeping and temperature sensing. (1 deg C resolution)',
+			Energy_Storage:'57.7',
 	  		PperWing:'0',
 			Wings:'0',
 			Cost:'0',
@@ -597,7 +787,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Type:'Power Control Unit',
 			Name:'XB1 Modular Cubesat Bus',
 			Manufacturer:'Blue Canyon Technology',
-			Reference:'http://bluecanyontech.com/product/xb1/',
+			Reference:'http://bluecanyontech.com/wp-content/uploads/2015/05/XB1-Data-Sheet_1.0.pdf',
 			Description:'Module includes high precision atittude control,C&DH,EPS,and communication all in one package. Many options,configurableflight software,and many propulsion and payload interfaces included. Not yet flown,TRL 4-6',
 			Mass:'1500',
 			Power:'0',
