@@ -626,7 +626,7 @@ var CommFactory = function(Schema, mongoose) {
 			Receiver_Sensitivity: req.body.Receiver_Sensitivity,
 			Transmit_Power: req.body.Transmit_Power,
 			Beamwidth: req.body.Beamwidth,
-			Gain: req.body.Gain
+			Gain: req.body.Gain,
 			Cost: req.body.Cost
     	}, 
     	function(error, output) {
