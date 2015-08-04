@@ -39,8 +39,8 @@ var CubesatFactory = function(Schema,mongoose) {
 				Manufacturer: String,
 				Website: String,
 				Heritage: String,
-				Mass: Nur,
-				Power: Numb
+				Mass: String,
+				Power: String,
 				Volume: String,
 				Proportions: String,
 				Frequency: String,
@@ -59,8 +59,8 @@ var CubesatFactory = function(Schema,mongoose) {
 				Manufacturer: String,
 				Website: String,
 				Heritage: String,
-				Mass: Nur,
-				Power: Numb
+				Mass: String,
+				Power: String,
 				Volume: String,
 				Proportions: String,
 				Frequency: String,
@@ -173,8 +173,8 @@ var CubesatFactory = function(Schema,mongoose) {
 				Manufacturer: String,
 				Reference: String,
 				Heritage: String,
-				Mass: Nur,
-				Power: Numb
+				Mass: String,
+				Power: String,
 				Volume: String,
 				Proportions: String,
 				Specific_Impulse: String,
@@ -323,32 +323,54 @@ var CubesatFactory = function(Schema,mongoose) {
 					Datarate: req.body.Datarate,
 					Cost: req.body.Cost
 	    		}
-		    	Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
 	 	   }
 		}, function(error, output) {
 			res.json(output);
 		});
 	};
+
+	this.updateMass = function(req, res){
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set:
+			{
+				 Mass: req
+		    }
+		 }, function(error, output) {
+
+				res.json(output);
+		});
+	}
+	this.updatePower = function(req, res){
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set:
+			{
+				 Power:req
+		    }
+		 }, function(error, output) {
+
+				res.json(output);
+		});
+	}
+	this.updateVolume = function(req, res){
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set:
+			{
+				 Volume:req
+		    }
+		 }, function(error, output) {
+
+				res.json(output);
+		});
+	}
 
 	this.updateAntenna = function(req, res) {
 		this.cubesat.update(
@@ -382,27 +404,6 @@ var CubesatFactory = function(Schema,mongoose) {
 					Temp_Low: req.body.Temp_Low,
 					Temp_High: req.body.Temp_High
 	    		}
-		    	Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
 	    	}
 		}, function(error, output) {
 			res.json(output);
@@ -441,27 +442,6 @@ var CubesatFactory = function(Schema,mongoose) {
 					Temp_Low: req.body.Temp_Low,
 					Temp_High: req.body.Temp_High
 	    		}
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
 	    	}
 		}, function(error, output) {
 			res.json(output);
@@ -496,28 +476,6 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Scientific_obj: req.body.Scientific_obj, 
 				    Cost: req.body.Cost
 	    		} 
-
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -551,28 +509,6 @@ var CubesatFactory = function(Schema,mongoose) {
 					FOV: req.body.FOV, 
 					Cost: req.body.Cost
 	    		} 
-
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -606,27 +542,6 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Wings: req.body.Wings,
 				    Cost: req.body.Cost
 	    		} 
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -661,28 +576,7 @@ var CubesatFactory = function(Schema,mongoose) {
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
 				    Cost: req.body.Cost
-	    		} 
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
+	    		}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -718,27 +612,6 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Wings: req.body.Wings,
 				    Cost: req.body.Cost
 	    		}
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -771,27 +644,6 @@ var CubesatFactory = function(Schema,mongoose) {
 		            Total_Impulse: req.body.Total_Impulse,
 		            Cost: req.body.Cost
 	    		} 
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -847,27 +699,6 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Proportions: req.body.Proportions,
 				    Objectives: req.body.Objectives
 	    		} 
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -895,27 +726,6 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Proportions: req.body.Proportions,
 				    Objectives: req.body.Objectives
 	    		} 
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -943,27 +753,6 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Proportions: req.body.Proportions,
 				    Objectives: req.body.Objectives
 	    		} 
-	    		Mass:{
-		    		if(!req.body.Mass.equals("Unknown")){
-		    			Mass+parseInt(req.body.Mass)
-		    		}else{
-		    			Mass+1
-		    		}
-		    	}
-		    	Power:{
-		    		if(!req.body.Power.equals("Unknown")){
-		    			Power+parseInt(req.body.Power)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
-		    	Volume:{
-		    		if(!req.body.Volume.equals("Unknown")){
-		    			Mass+parseInt(req.body.Volume)
-		    		}else{
-		    			Power+1
-		    		}
-		    	}
     		}
 		}, function(error, output) {
 			res.json(output);

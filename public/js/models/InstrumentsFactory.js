@@ -389,7 +389,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Power:"Unknown", 
 			   Volume:"0.00004826",
 			   Proportions:'190x25.4',
-			   Measurement:'#ERROR!',
+			   Measurement:'magnetic',
 			   Sensitivity:'200000',
 			   Resolution:'40 uG',
 			   Pixels:"Unknown",
@@ -1180,7 +1180,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 		Inst4.save();
 		Inst5.save();
 		Inst6.save();
-		Inst7.save();
+	//	Inst7.save();
 		Inst8.save();
 		
 		Inst10.save();
