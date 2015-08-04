@@ -724,7 +724,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'1280x1024',
-			   Objectives:'Designed for infrared imaging and video',
+			   Objectives:'Designed for infrared imaging and video.',
 			   FOV:"Unknown",  
 			   Cost:"0"
 		});
@@ -784,7 +784,8 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Cost:"0"
 		});
 		var Inst43=new this.instrument_parts({
-			  Type: 'Radiometer', Name:'CTZ (Cadmium Zinc Telluride) Array',
+			  Type: 'Radiometer',
+			  Name:'CTZ (Cadmium Zinc Telluride) Array',
 			   Manufacturer:'Michigan state, Black Forest Engineering LLC.',
 			   Reference:'https://e-reports-ext.llnl.gov/pdf/625738.pdf',
 			   Heritage:'Developed by Michigan state, built by Black Forest Engineering LLC. Flown on CXBN',
@@ -792,11 +793,11 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Power:"Unknown", 
 			   Volume:"2",
 			   Proportions:"Unknown",
-			   Measurement:'30-50 keV optimal, X-ray background peak. Also detects gamma rays.',
+			   Measurement:'30-50 keV optimal, cosmic. Also detects gamma rays.',
 			   Sensitivity:'30-50',
 			   Resolution:'1 keV resolution at 60 keV.',
 			   Pixels:'600x600',
-			   Objectives:'Designed to measure cosmic x- ray backround with precision from Earth orbit',
+			   Objectives:'Designed to measure cosmic x-ray backround with precision from Earth orbit',
 			   FOV:'36', 
 			   Cost:"0"
 		});
@@ -814,7 +815,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'352x288',
-			   Objectives:" Designed for low-cost applications. Deliver images at very low power.",
+			   Objectives:"Designed for low-cost applications. Deliver images at very low power.",
 			   FOV:"Unknown",  
 			   Cost:"0"
 		});
@@ -1049,7 +1050,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'95 mk',
 			   Pixels:'640x480',
-			   Objectives:"Unknown",
+			   Objectives:"designed to make high quality still images in the thermal infrared spectrum. This makes it ideal for observing regional weather patterns, volcanic activity and changes in ocean temperatures. (from reference)",
 			   FOV:'5x3.74 deg', 
 			   Cost:"0"
 		});
