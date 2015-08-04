@@ -285,7 +285,7 @@ app.delete('/parts/power/:_id', function(req, res) {
 var PropulsionFactory = require('./public/js/models/PropulsionFactory.js');
 var propulsionfactory = new PropulsionFactory(Schema,mongoose);
 propulsionfactory.createSchemas();
-propulsionfactory.insertPart();
+//propulsionfactory.insertPart();
 
 app.get('/parts/propulsion', function(req, res) {
     var resp = propulsionfactory.getPart({},res);

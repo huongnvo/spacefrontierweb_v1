@@ -121,7 +121,7 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     };
 
     $scope.filterEPS = function(part) {
-        return part.Type=='Power Control Unit';
+        return part.Type=='Power Control Unit'&&part.Volume==$scope.volume;
     };
 
     $scope.nextPage = function() {
