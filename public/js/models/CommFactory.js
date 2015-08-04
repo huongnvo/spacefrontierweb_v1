@@ -20,7 +20,9 @@ var CommFactory = function(Schema, mongoose) {
 			Receiver_Sensitivity: String,
 			Transmit_Power: String,
 			Beamwidth: String,
-			Gain: String
+			Gain: String,
+			Cost: String,
+			Cost:String,
 		});
 		this.comm_parts = mongoose.model('comm_parts', Schema)
 	}
@@ -41,7 +43,8 @@ var CommFactory = function(Schema, mongoose) {
   			Receiver_Sensitivity:'-100', 
   			Transmit_Power:'27', 
   			Beamwidth:'Unknown', 
-  			Gain:'Unknown'
+  			Gain:'Unknown',
+  			Cost:"0"
         });
   
   		var transceiver2 = new this.comm_parts({
@@ -60,7 +63,8 @@ var CommFactory = function(Schema, mongoose) {
             Receiver_Sensitivity:'-125', 
             Transmit_Power:'33', 
             Beamwidth:'Unknown', 
-            Gain:'Unknown'
+            Gain:'Unknown',
+            Cost:"0"
         });
 
 		var transceiver3 = new this.comm_parts({
@@ -78,7 +82,8 @@ var CommFactory = function(Schema, mongoose) {
             Receiver_Sensitivity:'-120', 
             Transmit_Power:'33', 
             Beamwidth:'Unknown', 
-            Gain:'Unknown'
+            Gain:'Unknown',
+            Cost:"0"
         });
 
         var transceiver4 = new this.comm_parts({
@@ -96,7 +101,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown' 
+		  	Gain:'Unknown',
+		  	Cost:"0" 
 	  	});
 
 	  	var transceiver5 = new this.comm_parts({
@@ -115,7 +121,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'10'
+		  	Gain:'10',
+		  	Cost:"0"
 	  	});
 
 		var transceiver6 = new this.comm_parts({
@@ -133,7 +140,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var transceiver7 = new this.comm_parts({
@@ -151,7 +159,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'-110', 
 		  	Transmit_Power:'30', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var transceiver8 = new this.comm_parts({
@@ -169,7 +178,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'30', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var transceiver9 = new this.comm_parts({
@@ -187,7 +197,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'36.02', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var transceiver10 = new this.comm_parts({
@@ -205,7 +216,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'30', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown' 
+		  	Gain:'Unknown',
+		  	Cost:"0" 
 	  	});
 
 		var transceiver13 = new this.comm_parts({
@@ -223,7 +235,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'23.0103', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var transceiver14 = new this.comm_parts({
@@ -241,7 +254,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'-104', 
 		  	Transmit_Power:'22', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var transmitter1 = new this.comm_parts({
@@ -259,7 +273,8 @@ var CommFactory = function(Schema, mongoose) {
 			Receiver_Sensitivity:'Unknown', 
 			Transmit_Power:'30', 
 			Beamwidth:'Unknown', 
-			Gain:'Unknown'
+			Gain:'Unknown',
+			Cost:"0"
 		});
 
 		var transmitter2 = new this.comm_parts({
@@ -277,7 +292,8 @@ var CommFactory = function(Schema, mongoose) {
 			Receiver_Sensitivity:'Unknown', 
 			Transmit_Power:'33', 
 			Beamwidth:'Unknown', 
-			Gain:'Unknown'
+			Gain:'Unknown',
+			Cost:"0"
 		});
 
 		var transmitter3 = new this.comm_parts({
@@ -295,7 +311,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'28', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 	  	var transmitter4 = new this.comm_parts({
@@ -313,7 +330,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'21.5', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var lga1 = new this.comm_parts({
@@ -332,7 +350,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'360', 
-		  	Gain:'1.5 dBi to -1 dBi' 
+		  	Gain:'1.5 dBi to -1 dBi' ,
+		  	Cost:"0"
 	  	});
 
 		var lga2 = new this.comm_parts({
@@ -350,7 +369,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'60', 
-		  	Gain:'8' 
+		  	Gain:'8' ,
+		  	Cost:"0"
 	  	});
 
 		var lga3 = new this.comm_parts({
@@ -369,7 +389,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'85', 
-		  	Gain:'6'
+		  	Gain:'6',
+		  	Cost:"0"
 	  	});
 
 		var lga4 = new this.comm_parts({
@@ -387,7 +408,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'40', 
 		  	Beamwidth:'70', 
-		  	Gain:'6'
+		  	Gain:'6',
+		  	Cost:"0"
 	  	});
 
 		var lga5 = new this.comm_parts({
@@ -405,7 +427,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var lga6 = new this.comm_parts({
@@ -423,7 +446,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'100', 
-		  	Gain:'36'
+		  	Gain:'36',
+		  	Cost:"0"
 	  	});
 
 		var lga7 = new this.comm_parts({
@@ -441,7 +465,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'100', 
-		  	Gain:'35' 
+		  	Gain:'35',
+		  	Cost:"0" 
 	  	});
 
 	  	var lga8 = new this.comm_parts({
@@ -459,7 +484,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'80', 
-		  	Gain:'36'
+		  	Gain:'36',
+		  	Cost:"0"
 	  	});
 
 		var hga1 = new this.comm_parts({
@@ -477,7 +503,8 @@ var CommFactory = function(Schema, mongoose) {
 			Receiver_Sensitivity:'Unknown', 
 			Transmit_Power:'Unknown', 
 			Beamwidth:'Unknown', 
-			Gain:'18'
+			Gain:'18',
+			Cost:"0"
 		});
 
 		var hga2 = new this.comm_parts({
@@ -495,7 +522,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'Unknown', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 		var bus1 = new this.comm_parts({
@@ -514,7 +542,8 @@ var CommFactory = function(Schema, mongoose) {
 		  	Receiver_Sensitivity:'-112', 
 		  	Transmit_Power:'Unknown', 
 		  	Beamwidth:'Unknown', 
-		  	Gain:'Unknown'
+		  	Gain:'Unknown',
+		  	Cost:"0"
 	  	});
 
 	  	transceiver1.save();
@@ -569,7 +598,8 @@ var CommFactory = function(Schema, mongoose) {
 			Receiver_Sensitivity: req.body.Receiver_Sensitivity,
 			Transmit_Power: req.body.Transmit_Power,
 			Beamwidth: req.body.Beamwidth,
-			Gain: req.body.Gain
+			Gain: req.body.Gain,
+			Cost: req.body.Cost
     	});
 		newpart.save(function (error, output) {
 			res.json(output);
@@ -597,8 +627,8 @@ var CommFactory = function(Schema, mongoose) {
 			Transmit_Power: req.body.Transmit_Power,
 			Beamwidth: req.body.Beamwidth,
 			Gain: req.body.Gain
+			Cost: req.body.Cost
     	}, 
-    	{}, 
     	function(error, output) {
       		res.json(output);
     	});
