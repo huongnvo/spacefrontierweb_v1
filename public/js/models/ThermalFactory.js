@@ -32,7 +32,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Power:'0.1',
 			Volume:'0.2',
 			Proportions:'10cm x 10cm x 2cm',
-			Objectives:'Designed to integrate with a suitable EPS and solar arrays to form a complete power system for a CubeSat'
+			Additional_info:'Designed to integrate with a suitable EPS and solar arrays to form a complete power system for a CubeSat'
 		});
 
 		var th_m2 = new this.thermal_parts({
@@ -41,12 +41,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Manufacturer:'',
 			Reference:'http://www.dunmore.com/products/multi-layer-films.html',
 			Heritage:'Available from Aerospace Fabrication & Materials and Dunmore. Used on many large and small spacecraft',
-			Mass:'0',
-			Power:'0',
-			Volume:'0',
+			Mass:'Unknown',
+			Power:'Unknown',
+			Volume:'Unknown',
 			Proportions:'Dependent on the CubeSat design',
-			Objectives:'Passive thermal control/insulation, some protection from th_mace debris, Various blankets insulate up to 1000 C'
-			Additional_info: 'Available for many different types of CubeSats'
+			Additional_info: 'Available for many different types of CubeSats. Provides Passive thermal control/insulation, some protection from space debris, Various blankets insulate up to 1000 C'
 		});
 
 		var th_m3 = new this.thermal_parts({
@@ -55,11 +54,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Manufacturer:'Multiple',
 			Reference:'Multiple',
 			Heritage:'Available from MAP, Akzo Nobel Aerospace Coatings,  Lord Techmark, Inc. Successfully tested on larger spacecraft',
-			Mass:'0',
-			Power:'0',
-			Volume:'0',
+			Mass:'Unknown',
+			Power:'Unknown',
+			Volume:'Unknown',
 			Proportions:'Dependent on the CubeSat design',
-			Objectives:'Passive thermal insulation'
+			Additional_info:'Passive thermal insulation'
 		});
 
 		var th_m4 = new this.thermal_parts({
@@ -68,11 +67,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Manufacturer:'',
 			Website:'http://www.thermacore.com/thermal-basics/heat-pipe-technology.apx',
 			Heritage:'Developed/sold by Advanced Cooling Technology, Inc., and Thermacore. Successfully tested on microsatellites, but often too large for cubesats',
-			Mass:'0',
-			Power:'0',
-			Volume:'0',
+			Mass:'Unknown',
+			Power:'Unknown',
+			Volume:'Unknown',
 			Proportions:'Varies',
-			Objectives:'Heat pipes have effective thermal conductivities that range from 5,000 W/m•K to 200,000 W/m•K'
+			Additional_info:'Heat pipes have effective thermal conductivities that range from 5,000 W/m•K to 200,000 W/m•K'
 		});
 
 		var th_m5 = new this.thermal_parts({
@@ -81,11 +80,10 @@ var ThermalFactory = function(Schema,mongoose) {
 			Manufacturer:'',
 			Website:'',
 			Heritage:'Flown on OUFTI-1 and MASAT-1 attached to batteries',
-			Mass:'0',
-			Power:'0',
-			Volume:'0',
+			Mass:'Unknown',
+			Power:'Unknown',
+			Volume:'Unknown',
 			Proportions:'Varies',
-			Objectives:''
 		});
 
 		var th_m6 = new this.thermal_parts({
@@ -98,7 +96,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Power:'6.3',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 10cm',
-			Objectives:'Bus functionality for GN&C, EPS, Thermal, C&DH, RF Communication, SSR, and Flight Software. Supports configurations up to 27U'
+			Additional_info:'Bus functionality for GN&C, EPS, Thermal, C&DH, RF Communication, SSR, and Flight Software. Supports configurations up to 27U'
 		});
 
 		var th_m7a = new this.thermal_parts({
@@ -111,7 +109,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Power:'0 - Comes with a power subsystem',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 10cm',
-			Objectives:'Comes in 1/2/3/6U sizing'
+			Additional_info:'Comes in 1/2/3/6U sizing'
 		});
 
 		var th_m7b = new this.thermal_parts({
@@ -124,7 +122,7 @@ var ThermalFactory = function(Schema,mongoose) {
 			Power:'0 - Comes with a power subsystem',
 			Volume:'2',
 			Proportions:'10cm x 10cm x 20cm',
-			Objectives:'Comes in 1/2/3/6U sizing'
+			Additional_info:'Comes in 1/2/3/6U sizing'
 		});
 
 		var th_m7c = new this.thermal_parts({
@@ -137,7 +135,6 @@ var ThermalFactory = function(Schema,mongoose) {
 			Power:'0 - Comes with a power subsystem',
 			Volume:'3',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m7d = new this.thermal_parts({
@@ -150,7 +147,6 @@ var ThermalFactory = function(Schema,mongoose) {
 			Power:'0 - Comes with a power subsystem',
 			Volume:'6',
 			Proportions:'10cm x 10cm x 60cm',
-			Objectives:''
 		});
 
 		var th_m13 = new this.thermal_parts({
@@ -158,12 +154,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'Planetary Systems Corporation Bus',
 			Manufacturer:'Planetary Systems Corporation',
 			Website:'http://media.wix.com/ugd/1c8e8f_1a5837e450f1c191203dbf7b3a6a1b82.pdf?dn=2002337A%2BCSD%2BData%2BSheet.pdf',
-			Heritage:'',
+			Heritage:"Unknown",
 			Mass:'3510',
 			Power:'0 - Comes with a power subsystem',
 			Volume:'3',
 			Proportions:'15.74cm x 13.449 x 30cm',
-			Objectives:''
 		});
 
 		var th_m14 = new this.thermal_parts({
@@ -171,12 +166,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'Planetary Systems Corporation Bus',
 			Manufacturer:'Planetary Systems Corporation',
 			Website:'http://media.wix.com/ugd/1c8e8f_1a5837e450f1c191203dbf7b3a6a1b82.pdf?dn=2002337A%2BCSD%2BData%2BSheet.pdf',
-			Heritage:'',
+			Heritage:"Unknown",
 			Mass:'4890',
 			Power:'0 - Comes with a power subsystem',
 			Volume:'6',
 			Proportions:'15.74cm x 26.327cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m15 = new this.thermal_parts({
@@ -184,12 +178,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'Planetary Systems Corporation Bus',
 			Manufacturer:'Planetary Systems Corporation',
 			Website:'http://media.wix.com/ugd/1c8e8f_1a5837e450f1c191203dbf7b3a6a1b82.pdf?dn=2002337A%2BCSD%2BData%2BSheet.pdf',
-			Heritage:'',
+			Heritage:"Unknown",
 			Mass:'6020',
 			Power:'0 - Comes with a power subsystem',
 			Volume:'12',
 			Proportions:'27.051cm x 26.327 x 20cm',
-			Objectives:''
 		});
 
 		var th_m16a = new this.thermal_parts({
@@ -197,12 +190,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'Intrepid Platform Bus',
 			Manufacturer:'Tyvak',
 			Website:'http://tyvak.com/intrepid-suite-1-1/',
-			Heritage:'',
+			Heritage:"Unknown",
 			Mass:'600',
 			Power:'1',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 10cm',
-			Objectives:''
 		});
 
 		var th_m16b = new this.thermal_parts({
@@ -210,12 +202,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'Intrepid Platform Bus',
 			Manufacturer:'Tyvak',
 			Website:'http://tyvak.com/intrepid-suite-1-1/',
-			Heritage:'',
+			Heritage:"Unknown",
 			Mass:'900',
 			Power:'2',
 			Volume:'2',
 			Proportions:'10cm x 10cm x 20cm',
-			Objectives:''
 		});
 
 		var th_m16c = new this.thermal_parts({
@@ -223,12 +214,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'Intrepid Platform Bus',
 			Manufacturer:'Tyvak',
 			Website:'http://tyvak.com/intrepid-suite-1-1/',
-			Heritage:'',
+			Heritage:"Unknown",
 			Mass:'1200',
 			Power:'3',
 			Volume:'3',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m17a = new this.thermal_parts({
@@ -236,12 +226,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
 			Website:'http://www.oh1sa.net/data/satellite/cubesat/P-POD-mk3/P-POD%20Mk%20III%20ICD.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m17b = new this.thermal_parts({
@@ -249,12 +238,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
 			Website:'http://www.oh1sa.net/data/satellite/cubesat/P-POD-mk3/P-POD%20Mk%20III%20ICD.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'2',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m17c = new this.thermal_parts({
@@ -262,12 +250,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
 			Website:'http://www.oh1sa.net/data/satellite/cubesat/P-POD-mk3/P-POD%20Mk%20III%20ICD.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'3',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m17d = new this.thermal_parts({
@@ -275,12 +262,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
 			Website:'http://www.oh1sa.net/data/satellite/cubesat/P-POD-mk3/P-POD%20Mk%20III%20ICD.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'4',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m17e = new this.thermal_parts({
@@ -288,12 +274,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
 			Website:'http://www.oh1sa.net/data/satellite/cubesat/P-POD-mk3/P-POD%20Mk%20III%20ICD.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'5',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m17f = new this.thermal_parts({
@@ -301,12 +286,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'P-POD',
 			Manufacturer:'California Polytechnic State University',
 			Website:'http://www.oh1sa.net/data/satellite/cubesat/P-POD-mk3/P-POD%20Mk%20III%20ICD.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'6',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m18a = new this.thermal_parts({
@@ -314,12 +298,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'X-POD DUO',
 			Manufacturer:'University of Toronto Institute for Aerospace Studies',
 			Website:'http://utias-sfl.net/?page_id=241',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'1',
 			Proportions:'20cm x 20cm x 40cm',
-			Objectives:''
 		});
 
 		var th_m18b = new this.thermal_parts({
@@ -327,12 +310,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'X-POD DUO',
 			Manufacturer:'University of Toronto Institute for Aerospace Studies',
 			Website:'http://utias-sfl.net/?page_id=241',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'2',
 			Proportions:'20cm x 20cm x 40cm',
-			Objectives:''
 		});
 
 		var th_m19a = new this.thermal_parts({
@@ -340,12 +322,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'X-POD Triple',
 			Manufacturer:'University of Toronto Institute for Aerospace Studies',
 			Website:'http://utias-sfl.net/?page_id=241',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 34cm',
-			Objectives:''
 		});
 
 		var th_m19b = new this.thermal_parts({
@@ -353,12 +334,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'X-POD Triple',
 			Manufacturer:'University of Toronto Institute for Aerospace Studies',
 			Website:'http://utias-sfl.net/?page_id=241',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'2',
 			Proportions:'10cm x 10cm x 34cm',
-			Objectives:''
 		});
 
 		var th_m19c = new this.thermal_parts({
@@ -366,12 +346,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'X-POD Triple',
 			Manufacturer:'University of Toronto Institute for Aerospace Studies',
 			Website:'http://utias-sfl.net/?page_id=241',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'3',
 			Proportions:'10cm x 10cm x 34cm',
-			Objectives:''
 		});
 
 		var th_m20a = new this.thermal_parts({
@@ -379,12 +358,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'PicoSatellite Launcher (PSL)',
 			Manufacturer:'Astro und Feinwerktechnik Adlershof GmbH',
 			Website:'http://www.astrofein.com/2728/dwnld/admin/52B_Datenblatt_spL_Modification_Homepage.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'5.9',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 11.4cm',
-			Objectives:''
 		});
 
 		var th_m20b = new this.thermal_parts({
@@ -392,12 +370,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'PicoSatellite Launcher (PSL)',
 			Manufacturer:'Astro und Feinwerktechnik Adlershof GmbH',
 			Website:'http://www.astrofein.com/2728/dwnld/admin/52B_Datenblatt_spL_Modification_Homepage.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'5.9',
 			Volume:'2',
 			Proportions:'10cm x 10cm x 11.4cm',
-			Objectives:''
 		});
 
 		var th_m20c = new this.thermal_parts({
@@ -405,12 +382,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'PicoSatellite Launcher (PSL)',
 			Manufacturer:'Astro und Feinwerktechnik Adlershof GmbH',
 			Website:'http://www.astrofein.com/2728/dwnld/admin/52B_Datenblatt_spL_Modification_Homepage.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'5.9',
 			Volume:'3',
 			Proportions:'10cm x 10cm x 11.4cm',
-			Objectives:''
 		});
 
 		var th_m21a = new this.thermal_parts({
@@ -418,12 +394,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'ISIPOD Deployer',
 			Manufacturer:'ISIS',
 			Website:'http://www.isispace.nl/brochures/ISIS_ISIPOD_Brochure_v.7.11.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
-			Volume:'1',
+			Volume:'1, Custom sizes available',
 			Proportions:'10cm x 10cm x 20cm',
-			Objectives:'Custom sizes available'
 		});
 
 		var th_m21b = new this.thermal_parts({
@@ -431,12 +406,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'ISIPOD Deployer',
 			Manufacturer:'ISIS',
 			Website:'http://www.isispace.nl/brochures/ISIS_ISIPOD_Brochure_v.7.11.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
-			Volume:'2',
+			Volume:'2, Custom sizes available',
 			Proportions:'10cm x 10cm x 20cm',
-			Objectives:'Custom sizes available'
 		});
 
 		var th_m21c = new this.thermal_parts({
@@ -444,12 +418,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'ISIPOD Deployer',
 			Manufacturer:'ISIS',
 			Website:'http://www.isispace.nl/brochures/ISIS_ISIPOD_Brochure_v.7.11.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
-			Volume:'2',
+			Volume:'2, Custom sizes available',
 			Proportions:'10cm x 10cm x 20cm',
-			Objectives:'Custom sizes available'
 		});
 
 		var th_m25 = new this.thermal_parts({
@@ -457,12 +430,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NLAS Deployer',
 			Manufacturer:'Ames Research Center',
 			Website:'http://www.nasa.gov/centers/ames/engineering/projects/nlas.html#.U-EoX_mwIvl',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'1',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m26 = new this.thermal_parts({
@@ -470,12 +442,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NLAS Deployer',
 			Manufacturer:'Ames Research Center',
 			Website:'http://www.nasa.gov/centers/ames/engineering/projects/nlas.html#.U-EoX_mwIvl',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'1.5',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m27 = new this.thermal_parts({
@@ -483,12 +454,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NLAS Deployer',
 			Manufacturer:'Ames Research Center',
 			Website:'http://www.nasa.gov/centers/ames/engineering/projects/nlas.html#.U-EoX_mwIvl',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'2',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m28 = new this.thermal_parts({
@@ -496,12 +466,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NLAS Deployer',
 			Manufacturer:'Ames Research Center',
 			Website:'http://www.nasa.gov/centers/ames/engineering/projects/nlas.html#.U-EoX_mwIvl',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'3',
 			Proportions:'10cm x 10cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m29 = new this.thermal_parts({
@@ -509,12 +478,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NLAS Deployer',
 			Manufacturer:'Ames Research Center',
 			Website:'http://www.nasa.gov/centers/ames/engineering/projects/nlas.html#.U-EoX_mwIvl',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'6',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		}); 
 
 		var th_m30 = new this.thermal_parts({
@@ -522,12 +490,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NRCSD Deployer',
 			Manufacturer:'NanoRacks, LLC',
 			Website:'http://nanoracks.com/wp-content/uploads/Current_edition_of_Interface_Document_for_CubeSat_Customers.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'1',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m31 = new this.thermal_parts({
@@ -535,12 +502,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NRCSD Deployer',
 			Manufacturer:'NanoRacks, LLC',
 			Website:'http://nanoracks.com/wp-content/uploads/Current_edition_of_Interface_Document_for_CubeSat_Customers.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'2',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m32 = new this.thermal_parts({
@@ -548,12 +514,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NRCSD Deployer',
 			Manufacturer:'NanoRacks, LLC',
 			Website:'http://nanoracks.com/wp-content/uploads/Current_edition_of_Interface_Document_for_CubeSat_Customers.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'3',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m33 = new this.thermal_parts({
@@ -561,12 +526,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NRCSD Deployer',
 			Manufacturer:'NanoRacks, LLC',
 			Website:'http://nanoracks.com/wp-content/uploads/Current_edition_of_Interface_Document_for_CubeSat_Customers.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'4',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m34 = new this.thermal_parts({
@@ -574,12 +538,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NRCSD Deployer',
 			Manufacturer:'NanoRacks, LLC',
 			Website:'http://nanoracks.com/wp-content/uploads/Current_edition_of_Interface_Document_for_CubeSat_Customers.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'5',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		var th_m35 = new this.thermal_parts({
@@ -587,12 +550,11 @@ var ThermalFactory = function(Schema,mongoose) {
 			Name:'NRCSD Deployer',
 			Manufacturer:'NanoRacks, LLC',
 			Website:'http://nanoracks.com/wp-content/uploads/Current_edition_of_Interface_Document_for_CubeSat_Customers.pdf',
-			Heritage:'',
-			Mass:'0',
+			Heritage:"Unknown",
+			Mass:'Unknown',
 			Power:'Unknown',
 			Volume:'6',
 			Proportions:'10cm x 20cm x 30cm',
-			Objectives:''
 		});
 
 		th_m1.save();
