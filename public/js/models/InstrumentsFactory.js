@@ -497,7 +497,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			Type: 'Radiometer',
 			Name:'LUCID (Langton Ultimate Cosmic ray Intensity Detector)',
 			Manufacturer:'Langston Star Centre',
-			Published Reference:'http://www.sstl.co.uk/Blog/February-2013/TechDemoSat-1-s-LUCID--a-novel-cosmic-ray-detector',
+			Reference:'http://www.sstl.co.uk/Blog/February-2013/TechDemoSat-1-s-LUCID--a-novel-cosmic-ray-detector',
 			Heritage:'will fly on TechDemoSat-1. Uses COTS sensor from CERN.',
 			Mass:"Unknown", 
 			Power:"Unknown", 

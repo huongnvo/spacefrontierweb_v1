@@ -197,7 +197,7 @@ app.delete('/parts/attitude/:_id', function(req, res) {
 var CdhFactory = require('./public/js/models/CdhFactory.js');
 var cdhfactory = new CdhFactory(Schema,mongoose);
 cdhfactory.createSchemas();
-// cdhfactory.insertPart();
+cdhfactory.insertPart();
 
 app.get('/parts/cdh', function(req, res) {
     var resp = cdhfactory.getPart({},res);
@@ -219,7 +219,7 @@ app.delete('/parts/cdh/:_id', function(req, res) {
 var CommFactory = require('./public/js/models/CommFactory.js');
 var commfactory = new CommFactory(Schema,mongoose);
 commfactory.createSchemas();
- commfactory.insertPart();
+// commfactory.insertPart();
 
 app.get('/parts/comm', function(req, res) {
     var resp = commfactory.getPart({},res);
@@ -307,7 +307,7 @@ app.delete('/parts/propulsion/:_id', function(req, res) {
 var StationFactory = require('./public/js/models/StationFactory.js');
 var stationfactory = new StationFactory(Schema,mongoose);
 stationfactory.createSchemas();
- stationfactory.insertPart();
+// stationfactory.insertPart();
 
 app.get('/parts/station', function(req, res) {
     var resp = stationfactory.getPart({},res);
