@@ -10,7 +10,7 @@ var config = {
     "USER"    : "",           
     "PASS"    : "",
     "HOST"    : "ec2-52-2-119-158.compute-1.amazonaws.com",  
-    "PORT"    : "47782", 
+    "PORT"    : "61621", 
     // "DATABASE" : "cubesat_v1"
 };
 
@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 /* Setting up the database connection ------------------------------------------------*/
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
+mongoose.connect('mongodb://user:cubesats4ever@ds061621.mongolab.com:61621/cubesat_v2', function(err) {
 // mongoose.connect('mongodb://localhost:27017/test', function(err) {
     if(err) {
         console.log('connection error', err);

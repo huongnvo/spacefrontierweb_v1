@@ -1228,7 +1228,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Cost:0
 		});
 		var Inst46=new this.instrument_parts({
-			  Type: 'Spectrometer',  Name:'Broadband IR for CubeSats with High Resolution (BIRCH)',
+			  Type: 'Spectrometer',  Name:'Broadband IR for CubeSats with High Resolution (BIRCHES)',
 			   Manufacturer:'GSFC',
 			   Reference:'',
 			   Heritage:'In development. Planned flight on LWaDi. Prototyped. TRL 1-3. Includes cryocooler, H1RG (HgCdTe) detector, adjustable iris to maintain 10 km ground footprint',

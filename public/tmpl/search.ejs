@@ -3,7 +3,7 @@
 <% include header %>
 <% include navbar %>
 
-    <div class="container" ng-controller="searchController">
+<!--     <div class="container" ng-controller="searchController">
         <div class="divider"></div>
         <div ng-if="isAuthenticated() && currentUser.username">
             <h1>Subsystems List</h1>
@@ -71,5 +71,56 @@
         <% include footer %>
         <div class = "divider"></div>
 
+    </div> -->
+    <div class="container">
+        <h1>Subsystems List</h1>
+        <hr></hr>
+        <div class="row">
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/attitude"  class="btn btn-block btn-default btn-lg btn-round">Attitude</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/cdh"  class="btn btn-block btn-default btn-lg btn-round">Command, Data & Handling</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/comm"  class="btn btn-block btn-default btn-lg btn-round">Communication</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/instruments"  class="btn btn-block btn-default btn-lg btn-round">Instruments</a>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/power"  class="btn btn-block btn-default btn-lg btn-round">Power</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/propulsion"  class="btn btn-block btn-default btn-lg btn-round">Propulsion</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/station"  class="btn btn-block btn-default btn-lg btn-round">Ground Stations</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="button">
+                    <a type="button" href="/thermal"  class="btn btn-default btn-block btn-lg btn-round">Thermal, Mechanical</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <% include footer %>
     </div>
 </html>

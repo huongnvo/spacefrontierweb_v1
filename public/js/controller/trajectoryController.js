@@ -67,15 +67,6 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
 
     $scope.loading = false;
     $scope.myClick = function() {
-        // var inputspecifics, inputown = 0
-        // if($scope.inputoptionOne){
-        //     var inputspecifics = $scope.inputtrajectorydV;
-        // }
-        // if($scope.inputoptionTwo) {
-        //     var inputown = $scope.inputown;
-        // }
-        // var dV = inputown + inputspecifics;
-        // $scope.totaldV = dV;
         $scope.showDatabase = true;
     };
 
@@ -281,7 +272,6 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         dV = trajectorydV + orbitdV +incdV;
         $scope.totaldV=dV;
         $scope.calculation = true;
-        // return part.DeltaV >= dV;
     };
     
     $scope.tabOWN = function(part){
@@ -292,19 +282,9 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     };
 
     $scope.okdV = function(part) {
-        // if($scope.picktrajectoryRadio2){
-        //   trajectorydV = $scope.inputtrajectorydV;
-        // }
-        // RA=$scope.apoapsis;
-        // RP=$scope.periapsis;
-        // E= (2*RA/(RA+RP)) + 1;
-        // if($scope.target == "Moon") {
-        //   M = MoonMass;
-        //   orbitdV= Math.sqrt(2*M*G/RA) - Math.sqrt(2*M*G*(1+E)/((RA+RP)*(1-E)));
-        // }
         dV = parseInt($scope.totaldV);
-        if(part.DeltaV!=null){
-            return part.DeltaV >= dV;
+        if(part.DeltaV!='Unknown'){
+            return part.parseInt(DeltaV) >= dV;
         }
         return false;
     };
@@ -337,27 +317,27 @@ $(document).ready(function(){
 });
 
 spaceFrontierApp.directive('validNumber', function() {
-  return {
-    require: '?ngModel',
-    link: function(scope, element, attrs, ngModelCtrl) {
-      if(!ngModelCtrl) {
-        return; 
-      }
-      
-      ngModelCtrl.$parsers.push(function(val) {
-        var clean = val.replace( /[^0-9.]+/g, '');
-        if (val !== clean) {
-          ngModelCtrl.$setViewValue(clean);
-          ngModelCtrl.$render();
-        }
-        return clean;
-      });
-      
-      element.bind('keypress', function(event) {
-        if(event.keyCode === 32) {
-          event.preventDefault();
-        }
-      });
+    return {
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+            if(!ngModelCtrl) {
+                return; 
+            }
+
+            ngModelCtrl.$parsers.push(function(val) {
+            var clean = val.replace( /[^0-9.]+/g, '');
+            if (val !== clean) {
+                ngModelCtrl.$setViewValue(clean);
+                ngModelCtrl.$render();
+            }
+            return clean;
+        });
+
+        element.bind('keypress', function(event) {
+            if(event.keyCode === 32) {
+                event.preventDefault();
+            }
+        });
     }
-  };
+};
 });

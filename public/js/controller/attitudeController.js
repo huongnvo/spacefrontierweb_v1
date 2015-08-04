@@ -33,19 +33,6 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
     $scope.updateData();
 
-    var slides = $scope.slides = [];
-    $scope.addSlide = function() {
-        var newWidth = 600 + slides.length + 1;
-        slides.push({
-            image: 'http://placekitten.com/' + newWidth + '/300',
-            text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-                ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-        });
-    };
-    for (var i=0; i<4; i++) {
-        $scope.addSlide();
-    }
-
     $scope.parts = [];
     $scope.init = function() { 
         $http.get('/parts/attitude').then(function(result) { 
@@ -64,8 +51,8 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
 
     $scope.okAngle = function(part) {
-        if(part.Angle_prec!=null){
-            return part.Angle_prec <= aControl;
+        if(part.Angle_prec != 'Unknown'){
+            return parseFloat(part.Angle_prec) <= aControl;
         }
         return false;
     };
@@ -86,15 +73,15 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
     $scope.order = function(part) {
         if ($scope.sort == "Mass") {
-            return part.Mass;
+            return parseFloat(part.Mass);
         }
         else if ($scope.sort == "Power") {
-            return part.Power;
+            return parseFloat(part.Power);
         }
         else if ($scope.sort == "Volume") {
-            return part.Volume;
+            return parseFloat(part.Volume);
         }
-        return part.Mass;
+        return parseFloat(part.Mass);
     };
 
     $scope.savePart = function(part) {
@@ -125,27 +112,28 @@ $(function () {
 })
 
 spaceFrontierApp.directive('validNumber', function() {
-  return {
-    require: '?ngModel',
-    link: function(scope, element, attrs, ngModelCtrl) {
-      if(!ngModelCtrl) {
-        return; 
-      }
-      
-      ngModelCtrl.$parsers.push(function(val) {
-        var clean = val.replace( /[^0-9.]+/g, '');
-        if (val !== clean) {
-          ngModelCtrl.$setViewValue(clean);
-          ngModelCtrl.$render();
+    return {
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+        if(!ngModelCtrl) {
+            return; 
         }
-        return clean;
-      });
       
-      element.bind('keypress', function(event) {
-        if(event.keyCode === 32) {
-          event.preventDefault();
-        }
-      });
+        ngModelCtrl.$parsers.push(function(val) {
+            var clean = val.replace( /[^0-9.]+/g, '');
+            if (val !== clean) {
+                ngModelCtrl.$setViewValue(clean);
+                ngModelCtrl.$render();
+            }
+            return clean;
+        });
+      
+        element.bind('keypress', function(event) {
+            if(event.keyCode === 32) {
+                event.preventDefault();
+            }
+        });
     }
-  };
+};
+
 });
