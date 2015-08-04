@@ -742,7 +742,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'1280x1024',
-			   Objectives:'Designed for infrared imaging and video',
+			   Objectives:'Designed for infrared imaging and video.',
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -760,7 +760,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"Unknown",
+			   Objectives:"Designed for infrared imaging and video.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -779,7 +779,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:'Radar, pulse mode',
+			   Objectives:'Designed as an ocean sensing radar. Consumes low power by operating in pulsed mode.',
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -814,7 +814,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'352x288',
-			   Objectives:"Unknown",
+			   Objectives:" Designed for low-cost applications. Deliver images at very low power.",
 			   FOV:"Unknown",  
 			   Cost:"0"
 		});
@@ -832,7 +832,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'640x480',
-			   Objectives:"Unknown",
+			   Objectives:" Designed for low-cost applications. Deliver images at very low power.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -850,7 +850,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"Unknown",
+			   Objectives:"Designed to determine the systematics of lunar water and volatiles as a function of time of day, latitude, and terrain.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -868,16 +868,13 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'4096x4096',
-			   Objectives:"Unknown",
-			   FOV:"Unknown", 
-			   T_lo:"0", 
-			   T_hi:"0", 
-			   Datarate:"0", 
+			   Objectives:"Designed for visible and infrared instrumentation in ground-based and space telescope applications.",
+			   FOV:"Unknown",
 			   Cost:"0"
 		});
 		var Inst48=new this.instrument_parts({
 			  Type: 'Detector',
-			   Name:'H2RG Focal Plane Array',
+			   Name:'HAWAII-2RG Focal Plane Array',
 			   Manufacturer:'Teledyne',
 			   Reference:'http://www.teledyne-si.com/imaging/H2RG%20Brochure%20-%20rev6%20v2-2%20-%20OSR.pdf',
 			   Heritage:'FPA',
@@ -889,7 +886,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'2048x2048',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for visible and infrared instrumentation in ground-based and space telescope applications.",
 			   FOV:"Unknown",  
 			   Cost:"0"
 		});
@@ -907,7 +904,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'640x512',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for midwave IR measurments at low power and improved lifetime.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -915,7 +912,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			  Type: 'Detector',
 			   Name:'Silicon/Germanium Detector',
 			   Manufacturer:'Teledyne',
-			   Reference:"Unknown",
+			   Reference:"http://www.judsontechnologies.com/germanium.html",
 			   Heritage:"Unknown",
 			   Mass:"Unknown", 
 			   Power:"Unknown", 
@@ -925,7 +922,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"Unknown",
+			   Objectives:"Designed as high-quality Germanium photodiodes designed for the 800 to 1800nm wavelength range.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -943,28 +940,11 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'1024x1024',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for visible and infrared instrumentation in ground-based and space telescope applications.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst52=new this.instrument_parts({
-			  Type: 'Detector',
-			   Name:'HAWAII-2RG',
-			   Manufacturer:'Teledyne',
-			   Reference:'http://www.teledyne-si.com/imaging/H2RG%20Brochure%20-%20rev6%20v2-2%20-%20OSR.pdf',
-			   Heritage:'FPA',
-			   Mass:"Unknown", 
-			   Power:"0.3 worst case, ranges .004-.3", 
-			   Volume:"2",
-			   Proportions:"Unknown",
-			   Measurement:"near-IR, visible",
-			   Sensitivity:"Unknown",
-			   Resolution:"Unknown",
-			   Pixels:'2048x2048',
-			   Objectives:"Unknown",
-			   FOV:"Unknown", 
-			   Cost:"0"
-		});
+		
 		var Inst53=new this.instrument_parts({
 			  Type: 'Camera',
 			   Name:'Micro-Cam',
@@ -979,7 +959,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"Unknown",
+			   Objectives:"Designed for visible spectrum, near IR, and midwave IR imaging.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -987,7 +967,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			  Type: 'Camera',
 			   Name:'Tamarisk 320',
 			   Manufacturer:'DRS Technologies, Inc.',
-			   Reference:'http://www.drs.com/products/rsta/PDF/Tamarisk.pdf',
+			   Reference:'http://www.drsinfrared.com/Products/TamariskUncooledCameraModules.aspx',
 			   Heritage:'Detector type: uncooled Vox Microbolometer',
 			   Mass:"30", 
 			   Power:"as little as 0.75", 
@@ -997,7 +977,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'320x240',
-			   Objectives:'2 yr warranty',
+			   Objectives:'Designed to consume very low volume and power. Imaging in the Long-Wave IR spectrum.',
 			   FOV:'Variety of lense configurations available, 10-40 deg FOV', 
 			   Cost:"0"
 		});
@@ -1005,7 +985,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			  Type: 'Camera',
 			   Name:'Tamarisk 640',
 			   Manufacturer:'DRS Technologies, Inc.',
-			   Reference:'http://www.drsinfrared.com/portals/0/docs/datasheets/TamariskFamily_Datasheet_MR-2013-01-654_Rev07.pdf',
+			   Reference:'http://www.drsinfrared.com/Products/TamariskUncooledCameraModules.aspx',
 			   Heritage:'Detector type: uncooled Vox Microbolometer. Superior resolution to Tamarisk 320',
 			   Mass:"less than 60", 
 			   Power:"less than 1.5", 
@@ -1015,7 +995,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:'640x480',
-			   Objectives:'2 yr warranty',
+			   Objectives:'Designed to consume very low volume and power. Imaging in the Long-Wave IR spectrum.',
 			   FOV:'Variety of lense configurations available, 10-40 deg FOV', 
 			   Cost:"0"
 		});
@@ -1033,7 +1013,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"Unknown",
+			   Objectives:"Designed to capture high to medium spatial resolutions, i.e. 5 to 10 m, depending on the altitude. Intended for Earth Orbit.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -1051,7 +1031,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"Unknown",
+			   Objectives:"Designed to capture high to medium spatial resolutions, i.e. 5 to 10 m, depending on the altitude. Intended for Earth Orbit.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -1087,7 +1067,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'pixel pitch 40 um',
 			   Pixels:'128x128',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for IR scientific imaging.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -1105,7 +1085,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'pixel pitch 24 um',
 			   Pixels:'640x512',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for IR scientific imaging.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -1123,7 +1103,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'pixel pitch 30 um',
 			   Pixels:'320x256',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for IR scientific imaging.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -1141,7 +1121,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'pixel pitch 20 um',
 			   Pixels:'640x512',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for IR scientific imaging.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -1159,7 +1139,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'pixel pitch 25 um',
 			   Pixels:'640x512',
-			   Objectives:"Unknown",
+			   Objectives:"Designed for IR scientific imaging.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
