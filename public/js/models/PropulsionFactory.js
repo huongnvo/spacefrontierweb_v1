@@ -423,14 +423,18 @@ var PropulsionFactory = function(Schema,mongoose) {
         thruster9.save();
         thruster10.save();
         thruster11.save();
-        thruster12.save();
+        // thruster12.save();
         thruster13.save();
         thruster14.save();
-        thruster15.save();
-        thruster16.save();
-        thruster17.save();
-        thruster18.save();
-        thruster19.save();
+        // thruster15.save();
+        thruster16a.save();
+        thruster16b.save();
+        thruster17a.save();
+        thruster17b.save();
+        thruster18a.save();
+        thruster18b.save();
+        thruster19a.save();
+        thruster19b.save();
         thruster20.save();
         
     }

@@ -21,7 +21,7 @@ var PowerFactory = function(Schema,mongoose) {
 		    PperWing: String,
 		    Wings: String,
 		    Cost: String,
-		    Additional_info: String,
+		    Additional_info: String
 		});
 		this.power_parts = mongoose.model('power_parts',Schema);
 	}
