@@ -177,7 +177,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-            $scope.Mame = partextracted['Mass'];
+            $scope.Mass = partextracted['Mass'];
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];

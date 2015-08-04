@@ -241,7 +241,7 @@ app.delete('/parts/comm/:_id', function(req, res) {
 var InstrumentsFactory = require('./public/js/models/InstrumentsFactory.js');
 var instrumentsfactory = new InstrumentsFactory(Schema,mongoose);
 instrumentsfactory.createSchemas();
-instrumentsfactory.insertPart();
+//instrumentsfactory.insertPart();
 
 app.get('/parts/instruments', function(req, res) {
     var resp = instrumentsfactory.getPart({},res);
