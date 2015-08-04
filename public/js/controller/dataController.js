@@ -142,8 +142,21 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
     };
 
     $scope.okData=function(part){
-        return part.MHz>=bits/1000000;
+        if ($scope.ignorefilters){
+            return true;
+        }
+        if (part.MHz != null){
+            return part.MHz>=bits/1000000;
+        }
+        return false;
+
     }
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
+    });
 
     $scope.order = function(part) {
         if ($scope.sort == "Mass") {

@@ -54,6 +54,10 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
         if(part.Angle_prec != 'Unknown'){
             return parseFloat(part.Angle_prec) <= aControl;
         }
+
+        if($scope.ignorefilters){
+            return true;
+        }
         return false;
     };
 
@@ -109,7 +113,11 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
 $(function () {
       $('[data-toggle="popover"]').popover()
-})
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
+});
+
 
 spaceFrontierApp.directive('validNumber', function() {
     return {

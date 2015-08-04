@@ -177,7 +177,7 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-
+            $scope.Mass = partextracted['Mass'];
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
@@ -386,6 +386,9 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             return true;
         }
  
+        if ($scope.ignorefilters){
+            return true;
+        }
         return false;
     }
 
@@ -408,6 +411,31 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
                 // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
             });
         $scope.updateData();
+
+        var massAdd=620;
+        if(!$scope.selectedInstrument.Mass.equals("Unknown")){
+            massAdd=parseInt($scope.selectedInstrument.Mass);
+        }
+
+
+        $http.put('/parts/cubesat-instrument/' + idstring, massAdd)
+            .success(function(data) {
+                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
+            });
+        $scope.updateData();
+    };
+
+    $scope.order = function(part) {
+        if ($scope.sort == "Mass") {
+            return part.Mass;
+        }
+        else if ($scope.sort == "Power") {
+            return part.Power;
+        }
+        else if ($scope.sort == "Volume") {
+            return part.Volume;
+        }
+        return part.Mass;
     };
 
     $scope.nextPage = function() {

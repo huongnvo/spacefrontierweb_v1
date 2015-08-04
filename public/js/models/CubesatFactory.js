@@ -9,6 +9,9 @@ var CubesatFactory = function(Schema,mongoose) {
 			Mission_Name: Object,
 			Mission_Objectives: Object,
 			Target: String,
+			Mass:Number,
+			Power:Number,
+			Volume:Number,
 			Attitude: {
 				Type: String,
 				Type_further: String,
@@ -61,25 +64,20 @@ var CubesatFactory = function(Schema,mongoose) {
 			},
 			Cdh: {
 				Type: String, 
-			    Name: String, 
-			    Manufacturer: String, 
-			    Reference: String, 
-			    Heritage: String, 
-			    Mass: Number, 
-			    Mass_further: String, 
-			    Power: Number, 
-			    Power_further: String, 
-			    Volume: Number, 
-			    Proportions: String, 
-			    Volume_further: String, 
-			    MIPS: Number, 
-			    MHz: Number, 
-			    Processing_further: String, 
-			    Memory: String, 
-			    Temp_low: Number, 
-			    Temp_high: Number, 
-			    Scientific_obj: String, 
-			    Cost: Number
+			    	Name: String, 
+			    	Manufacturer: String, 
+			    	Reference: String, 
+			    	Heritage: String, 
+			    	Mass: String, 
+			    	Power: String,  
+			    	Volume: String, 
+			    	Proportions: String, 
+			    	MIPS: String, 
+			    	MHz: String, 
+			    	Processing_further: String, 
+			    	Memory: String, 
+			    	Scientific_obj: String, 
+			    	Cost: String
 			},
 			Instrument: {
 				Type:String,
@@ -87,25 +85,17 @@ var CubesatFactory = function(Schema,mongoose) {
 				Manufacturer:String,
 				Reference:String,
 				Heritage:String,
-				Mass:Number, 
-				Mass_further:String,
-				Power:Number, 
-				Power_further:String,
-				Volume:Number,
+				Mass:String, 
+				Power:String, 
+				Volume:String,
 				Proportions:String,
-				Volume_further:String,
 				Measurement:String,
 				Sensitivity:String,
 				Resolution:String,
 				Pixels:String,
 				Objectives:String,
-				Venue:String,
-				FOV:String, 
-				T_lo:Number, 
-				T_hi:Number, 
-				Thermal_further:String,
-				Datarate:Number, 
-				Cost:Number
+				FOV:String,  
+				Cost:String
 			},
 			Panels: {
 				Type: String,
@@ -113,22 +103,17 @@ var CubesatFactory = function(Schema,mongoose) {
 			    Manufacturer: String,
 			    Reference: String,
 			    Description: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
-			    Volume_further: String,
 			    Efficiency: String,
 			    Objectives: String,
 			    Thermal_further: String,
-			    Temp_low: Number,
-			    Temp_high: Number,
-			    Energy_Storage: Number,
-			    PperWing: Number,
-			    Wings: Number,
-			    Cost: Number
+			    Energy_Storage: String,
+			    PperWing: String,
+			    Wings: String,
+			    Cost: String
 			},
 			Batteries: {
 				Type:String,
@@ -136,22 +121,17 @@ var CubesatFactory = function(Schema,mongoose) {
 			    Manufacturer: String,
 			    Reference: String,
 			    Description: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
-			    Volume_further: String,
 			    Efficiency: String,
 			    Objectives: String,
 			    Thermal_further: String,
-			    Temp_low: Number,
-			    Temp_high: Number,
-			    Energy_Storage: Number,
-			    PperWing: Number,
-			    Wings: Number,
-			    Cost: Number
+			    Energy_Storage: String,
+			    PperWing: String,
+			    Wings: String,
+			    Cost: String
 			},
 			EPS: {
 				Type: String,
@@ -159,22 +139,17 @@ var CubesatFactory = function(Schema,mongoose) {
 			    Manufacturer: String,
 			    Reference: String,
 			    Description: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
-			    Volume_further: String,
 			    Efficiency: String,
 			    Objectives: String,
 			    Thermal_further: String,
-			    Temp_low: Number,
-			    Temp_high: Number,
-			    Energy_Storage: Number,
-			    PperWing: Number,
-			    Wings: Number,
-			    Cost: Number
+			    Energy_Storage: String,
+			    PperWing: String,
+			    Wings: String,
+			    Cost: String
 			},
 			Propulsion: {
 				Type: String,
@@ -208,9 +183,9 @@ var CubesatFactory = function(Schema,mongoose) {
 			    Manufacturer: String,
 			    Reference: String,
 			    Heritage: String,
-			    Mass: Number,
-			    Power: Number,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
 			    Objectives: String
 			},
@@ -220,9 +195,9 @@ var CubesatFactory = function(Schema,mongoose) {
 			    Manufacturer: String,
 			    Reference: String,
 			    Heritage: String,
-			    Mass: Number,
-			    Power: Number,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
 			    Objectives: String
 			},
@@ -310,9 +285,7 @@ var CubesatFactory = function(Schema,mongoose) {
 					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass,
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power,
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
 					Volume_further: req.body.Volume_further,
@@ -326,11 +299,54 @@ var CubesatFactory = function(Schema,mongoose) {
 					Datarate: req.body.Datarate,
 					Cost: req.body.Cost
 	    		}
-	    	}
+	 	   }
 		}, function(error, output) {
 			res.json(output);
 		});
 	};
+
+	this.updateMass = function(req, res){
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set:
+			{
+				 Mass: req
+		    }
+		 }, function(error, output) {
+
+				res.json(output);
+		});
+	}
+	this.updatePower = function(req, res){
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set:
+			{
+				 Power:req
+		    }
+		 }, function(error, output) {
+
+				res.json(output);
+		});
+	}
+	this.updateVolume = function(req, res){
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set:
+			{
+				 Volume:req
+		    }
+		 }, function(error, output) {
+
+				res.json(output);
+		});
+	}
 
 	this.updateAntenna = function(req, res) {
 		this.cubesat.update(
@@ -348,9 +364,7 @@ var CubesatFactory = function(Schema,mongoose) {
 					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass,
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power,
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
 					Volume_further: req.body.Volume_further,
@@ -388,9 +402,7 @@ var CubesatFactory = function(Schema,mongoose) {
 					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass,
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power,
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
 					Volume_further: req.body.Volume_further,
@@ -428,12 +440,9 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference, 
 				    Heritage: req.body.Heritage, 
 				    Mass: req.body.Mass, 
-				    Mass_further: req.body.Mass_further, 
 				    Power: req.body.Power, 
-				    Power_further: req.body.Power_further, 
 				    Volume: req.body.Volume, 
-				    Proportions: req.body.Proportions, 
-				    Volume_further: req.body.Volume_further, 
+				    Proportions: req.body.Proportions,  
 				    MIPS: req.body.MIPS, 
 				    MHz: req.body.MHz, 
 				    Processing_further: req.body.Processing_further, 
@@ -465,23 +474,15 @@ var CubesatFactory = function(Schema,mongoose) {
 					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass, 
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power, 
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
-					Volume_further: req.body.Volume_further,
 					Measurement: req.body.Measurement,
 					Sensitivity: req.body.Sensitivity,
 					Resolution: req.body.Resolution,
 					Pixels: req.body.Pixels,
 					Objectives: req.body.Objectives,
-					Venue: req.body.Venue,
 					FOV: req.body.FOV, 
-					T_lo: req.body.T_lo, 
-					T_hi: req.body.T_hi, 
-					Thermal_further: req.body.Thermal_further,
-					Datarate: req.body.Datarate, 
 					Cost: req.body.Cost
 	    		} 
     		}
@@ -506,17 +507,12 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference,
 				    Description: req.body.Description,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Efficiency: req.body.Efficiency,
 				    Objectives: req.body.Objectives,
 				    Thermal_further: req.body.Thermal_further,
-				    Temp_low: req.body.Temp_low,
-				    Temp_high: req.body.Temp_high,
 				    Energy_Storage: req.body.Energy_Storage,
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
@@ -544,12 +540,9 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference,
 				    Description: req.body.Description,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Efficiency: req.body.Efficiency,
 				    Objectives: req.body.Objectives,
 				    Thermal_further: req.body.Thermal_further,
@@ -559,7 +552,7 @@ var CubesatFactory = function(Schema,mongoose) {
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
 				    Cost: req.body.Cost
-	    		} 
+	    		}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -582,12 +575,9 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference,
 				    Description: req.body.Description,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Efficiency: req.body.Efficiency,
 				    Objectives: req.body.Objectives,
 				    Thermal_further: req.body.Thermal_further,
@@ -597,7 +587,7 @@ var CubesatFactory = function(Schema,mongoose) {
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
 				    Cost: req.body.Cost
-	    		} 
+	    		}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -620,12 +610,9 @@ var CubesatFactory = function(Schema,mongoose) {
 		            Reference: req.body.Reference,
 		            Heritage: req.body.Heritage,
 		            Mass: req.body.Mass,
-		            Mass_further: req.body.Mass_further,
 		            Power: req.body.Power,
-		            Power_further: req.body.Power_further,
 		            Volume: req.body.Volume,
 		            Proportions: req.body.Proportions,
-		            Volume_further: req.body.Volume_further,
 		            Specific_Impulse: req.body.Specific_Impulse,
 		            DeltaV: req.body.DeltaV,
 		            Objectives: req.body.Objectives,
@@ -683,12 +670,9 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference,
 				    Heritage: req.body.Heritage,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Objectives: req.body.Objectives
 	    		} 
     		}
@@ -713,12 +697,9 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference,
 				    Heritage: req.body.Heritage,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Objectives: req.body.Objectives
 	    		} 
     		}
@@ -743,12 +724,9 @@ var CubesatFactory = function(Schema,mongoose) {
 				    Reference: req.body.Reference,
 				    Heritage: req.body.Heritage,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Objectives: req.body.Objectives
 	    		} 
     		}

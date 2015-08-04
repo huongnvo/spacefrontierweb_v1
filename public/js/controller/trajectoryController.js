@@ -89,6 +89,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
+
     $scope.okType = function(part) {
         var okType = false;
         if ($scope.Thruster && part.Type == 'Thruster')
@@ -101,7 +102,10 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
         }
         return okType;
     };
-    $('.carousel').carousel()
+    $(document).ready(function(){
+        // Activate Carousel
+        $("#carousel1").carousel({interval: false});
+    });
 
     $scope.tabSPECIFICS = function(part) {
         if ($scope.target=='Moon'){
@@ -282,10 +286,15 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     };
 
     $scope.okdV = function(part) {
+        if ($scope.ignorefilters){
+            return true;
+        }
+        
         dV = parseInt($scope.totaldV);
         if(part.DeltaV!='Unknown'){
             return part.parseInt(DeltaV) >= dV;
         }
+
         return false;
     };
 
@@ -312,8 +321,11 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     };
 });
 
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
+$(function () {
+      $('[data-toggle="popover"]').popover()
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
 });
 
 spaceFrontierApp.directive('validNumber', function() {

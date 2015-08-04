@@ -31,6 +31,7 @@ app.use(bodyParser.json());
 /* Setting up the database connection ------------------------------------------------*/
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+// mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
 mongoose.connect('mongodb://user:cubesats4ever@ds061621.mongolab.com:61621/cubesat_v2', function(err) {
 // mongoose.connect('mongodb://localhost:27017/test', function(err) {
     if(err) {
@@ -84,38 +85,65 @@ app.put('/parts/cubesat-target/:_id', function(req, res) {
 
 app.put('/parts/cubesat-attitude/:_id', function(req, res) {
     var resp = cubesatfactory.updateAttitude(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-antenna/:_id', function(req, res) {
     var resp = cubesatfactory.updateAntenna(req, res);
+     var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-receiver/:_id', function(req, res) {
     var resp = cubesatfactory.updateReceiver(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-cdh/:_id', function(req, res) {
     var resp = cubesatfactory.updateCdh(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-instrument/:_id', function(req, res) {
     var resp = cubesatfactory.updateInstrument(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-panels/:_id', function(req, res) {
     var resp = cubesatfactory.updatePanel(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-batteries/:_id', function(req, res) {
     var resp = cubesatfactory.updateBatteries(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-eps/:_id', function(req, res) {
     var resp = cubesatfactory.updateEPS(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-propulsion/:_id', function(req, res) {
     var resp = cubesatfactory.updatePropulsion(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-station/:_id', function(req, res) {
@@ -124,14 +152,23 @@ app.put('/parts/cubesat-station/:_id', function(req, res) {
 
 app.put('/parts/cubesat-thermal/:_id', function(req, res) {
     var resp = cubesatfactory.updateThermal(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-bus/:_id', function(req, res) {
     var resp = cubesatfactory.updateBus(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-deployer/:_id', function(req, res) {
     var resp = cubesatfactory.updateDeployer(req, res);
+    var resp = cubesatfactory.updateMass(req, res);
+     var resp = cubesatfactory.updatePower(req, res);
+      var resp = cubesatfactory.updateVolume(req, res);
 });
 
 /* Setting up the database for attitude selection -------------------------------------*/
@@ -204,7 +241,7 @@ app.delete('/parts/comm/:_id', function(req, res) {
 var InstrumentsFactory = require('./public/js/models/InstrumentsFactory.js');
 var instrumentsfactory = new InstrumentsFactory(Schema,mongoose);
 instrumentsfactory.createSchemas();
-// instrumentsfactory.insertPart();
+//instrumentsfactory.insertPart();
 
 app.get('/parts/instruments', function(req, res) {
     var resp = instrumentsfactory.getPart({},res);

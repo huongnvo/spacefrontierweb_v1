@@ -330,7 +330,9 @@
 
     <% include navbar %>
     <h1>Propulsion Selection</h1>
-    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own &#916V", if not please fill out "Input Specifications" and we will make an estimate for you.</p>
+    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own &#916V", if not please fill out "Input Specifications" and we will make an estimate for you.
+    </p>
+    <p>Under "Input Specifications", pick a trajectory (Direct/Indirect/User Input). The direct trajectory is an estimate generated using the orbit speed about the Sun or Earth that the CubeSat would need to meet to reach the target. The indirect trajectory assumes that an expert could lower this requirement (2 km/s for Mars, Mercury, and Venus, .02 km/s for the Moon). The trajectories for Earth orbits assume the CubeSat will be delivered to the appropriate altitude. </p>
     <hr>
 
     <div class="row">
@@ -380,26 +382,6 @@
             <div class="carousel-inner" style="height: 240px">
                 <div class="item active">
                     <div class="dividersmall"></div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <label>Details</label>
-                                <div class="divider"></div>
-                                <div class="text">First, pick a trajectory (Direct/Indirect/User Input). The direct trajectory is an estimate generated using the orbit speed about the Sun or Earth that the CubeSat would need to meet to reach the target. The indirect trajectory assumes that an expert could lower this requirement (2 km/s for Mars, Mercury, and Venus, .02 km/s for the Moon). The trajectories for Earth orbits assume the CubeSat will be delivered to the appropriate altitude. 
-                                </div>
-                                <div class="text">Then, enter the orbit's apoapsis and periapsis altitudes (do not include the target's radius).
-                                </div>
-                                <div class="text">Finally, enter any amount of inclination change expected over the course of the orbit. If no change is necessary, enter 0.
-                                </div>
-                                <div class="divider"></div>
-                                <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only"></span>
-                                </a>
-                            </div>
-                        </div>
-                </div>
-                <div class="item">
-                    <div class="dividersmall"></div>
                     <div class="row">
                         <div class="col-lg-6">
                             <label>Trajectory Type </label>
@@ -430,10 +412,6 @@
                                 <span class="input-group-addon" id="dvaddon">km/s</span>
                             </div>   
                             <div class="divider"></div>
-                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id = "round" data-slide = "prev">
-                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
                             <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="sr-only"></span>
@@ -594,7 +572,12 @@
                 <div class="alert alert-info" role="alert">Please click the 'Show' dropdown and select the systems you would like to pick to see results. You may also use the 'Sort By' dropdown to select by mass. power, or volume.</div>
             </div>
             <div class="col-lg-6">
-                <h3>Available Propulsion 
+                <h3>Propulsion 
+                    <div class="btn-group">
+                      <label class="btn btn-default btn-xs">
+                            <input type="checkbox" autocomplete="off" data-ng-model="ignorefilters"> Show All
+                      </label>
+                    </div>
                     <div class="btn-group">
                         <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Show: 
@@ -648,7 +631,6 @@
                         <div class = "dividersmall"></div>
                         <select multiple class="form-control" size="16">
                             <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts|filter:okType|filter:okdV">
-                            <!-- <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts"> -->
                                {{part.Name}}
                             </option>
                         </select>
