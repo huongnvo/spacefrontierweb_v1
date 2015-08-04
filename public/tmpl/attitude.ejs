@@ -526,7 +526,7 @@
                     <div class="row">
                         <div class="col-lg-11">
                             <div class = "dividersmall"></div>
-                            <select multiple class="form-control" size="16">
+                            <select multiple class="form-control" size="19">
                                 <option ng-click="savePart(part)" ng-repeat="part in parts|filter:okAngle|filter:okType|orderBy:order">
                                    {{part.Name}}
                                 </option>
@@ -543,10 +543,10 @@
                     <h6>Attitude Selection<br>
                     Page 2/7</h6>
                     <div class = "dividersmall"></div>
-                    <select multiple class="form-control" size="16">
-                        <option>Current Mass: {{instrumentPart.Mass+attitudePart.Mass}}</option>
-                        <option>Current Power: {{instrumentPart.Mass+attitudePart.Power}}</option>
-                        <option>Current Volume: {{instrumentPart.Mass+attitudePart.Volume}}</option>
+                    <select multiple class="form-control" size="19">
+                        <option>Current Mass: {{Mass}}</option>
+                        <option>Current Power: {{Power}}</option>
+                        <option>Current Volume: {{Volume}}</option>
                         <option>Name: {{Name}}</option>
                         <option>Objectives: {{Objectives}}</option>
                         <option>Target: {{target}}</option>

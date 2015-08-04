@@ -9,6 +9,9 @@ var CubesatFactory = function(Schema,mongoose) {
 			Mission_Name: Object,
 			Mission_Objectives: Object,
 			Target: String,
+			Mass: Number,
+			Power: Number,
+			Volume: Number,
 			Attitude: {
 				Type: String,
 				Type_further: String,
@@ -253,6 +256,42 @@ var CubesatFactory = function(Schema,mongoose) {
 		}, 
 		{$set: 
 			{Mission_Name: req.body.Mission_Name}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
+
+	this.updateMass = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Mass: req.body.Mass}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
+
+	this.updatePower = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Power: req.body.Power}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
+
+	this.updateVolume = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Volume: req.body.Volume}
 		}, function(error, output) {
 			res.json(output);
 		});
@@ -671,7 +710,12 @@ var CubesatFactory = function(Schema,mongoose) {
 
 	this.insertEmptyPart = function(req, res) {
 		var Inst1 = new this.cubesat({
+			Mission_Name: undefined,
+			Mission_Objectives: undefined,
 			Target: undefined,
+			Mass: 0,
+			Power: 0,
+			Volume: 0,
 			Attitude: {
 				Type: undefined,
 				Type_further: undefined,

@@ -10,6 +10,9 @@ spaceFrontierApp.controller("summaryController", function($scope, $http) {
             var partextracted = {};
             partextracted = $scope.cubesat[0];
 
+            $scope.Mass = partextracted['Mass'];
+            $scope.Power = partextracted['Power'];
+            $scope.Volume = partextracted['Volume'];
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
