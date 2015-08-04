@@ -15,7 +15,6 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Power: String,
 		    Volume: String,
 		    Proportions: String,
-		    Objectives: String,
 		    Additional_info: String
 		});
 		this.thermal_parts = mongoose.model('thermal_parts',Schema);
@@ -621,7 +620,6 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Power: req.body.Power,
 		    Volume: req.body.Volume,
 		    Proportions: req.body.Proportions,
-		    Objectives: req.body.Objectives,
 		    Additional_info: req.body.Additional_info
         });
         newpart.save(function (error, output) {
@@ -644,7 +642,6 @@ var ThermalFactory = function(Schema,mongoose) {
 		    Power: req.body.Power,
 		    Volume: req.body.Volume,
 		    Proportions: req.body.Proportions,
-		    Objectives: req.body.Objectives,
 		    Additional_info: req.body.Additional_info
         }, 
         function(error, output) {
