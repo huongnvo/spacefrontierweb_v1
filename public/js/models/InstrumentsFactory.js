@@ -746,7 +746,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst41=new this.instrument_parts({
+		var Inst42=new this.instrument_parts({
 			  Type: 'Imaging Spectrometer',
 			   Name:'Sofradir Scorpio BB',
 			   Manufacturer:'Sofradir',
@@ -764,7 +764,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst42=new this.instrument_parts({
+		var Inst43=new this.instrument_parts({
 			  Type: 'Altimeter',
 			   Name:'SeaCube Radar Altimeter for CubeSats',
 			   Manufacturer:'Busek Co. Inc. and ImSAR LLC',
@@ -783,7 +783,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst43=new this.instrument_parts({
+		var Inst44=new this.instrument_parts({
 			  Type: 'Radiometer',
 			  Name:'CTZ (Cadmium Zinc Telluride) Array',
 			   Manufacturer:'Michigan state, Black Forest Engineering LLC.',
@@ -801,7 +801,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:'36', 
 			   Cost:"0"
 		});
-		var Inst44=new this.instrument_parts({
+		var Inst45=new this.instrument_parts({
 			  Type: 'Camera',
 			   Name:'CMOS HDCS-1020 (CIF)',
 			   Manufacturer:'Agilent Technologies',
@@ -819,7 +819,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown",  
 			   Cost:"0"
 		});
-		var Inst45=new this.instrument_parts({
+		var Inst46=new this.instrument_parts({
 			  Type: 'Camera',
 			   Name:'CMOS HDCS-2020 (VGA)',
 			   Manufacturer:'Agilent Technologies',
@@ -837,7 +837,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst46=new this.instrument_parts({
+		var Inst47=new this.instrument_parts({
 			   Type: 'Spectrometer',  
 			   Name:'Broadband IR for CubeSats with High Resolution (BIRCHES)',
 			   Manufacturer:'GSFC',
@@ -855,7 +855,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst47=new this.instrument_parts({
+		var Inst48=new this.instrument_parts({
 			  Type: 'Detector',
 			   Name:'HAWAII-4RG',
 			   Manufacturer:'Teledyne',
@@ -873,7 +873,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown",
 			   Cost:"0"
 		});
-		var Inst48=new this.instrument_parts({
+		var Inst49=new this.instrument_parts({
 			  Type: 'Detector',
 			   Name:'HAWAII-2RG Focal Plane Array',
 			   Manufacturer:'Teledyne',
@@ -891,7 +891,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown",  
 			   Cost:"0"
 		});
-		var Inst49=new this.instrument_parts({
+		var Inst50=new this.instrument_parts({
 			  Type: 'Camera',
 			   Name:'HMIR (High Temperature Midwave Infrared) Camera Engine',
 			   Manufacturer:'Teledyne',
@@ -909,7 +909,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst50=new this.instrument_parts({
+		var Inst51=new this.instrument_parts({
 			  Type: 'Detector',
 			   Name:'Silicon/Germanium Detector',
 			   Manufacturer:'Teledyne',
@@ -927,7 +927,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
-		var Inst51=new this.instrument_parts({
+		var Inst52=new this.instrument_parts({
 			  Type: 'Detector',
 			   Name:'HAWAII-1RG',
 			   Manufacturer:'Teledyne',
@@ -1050,7 +1050,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:'95 mk',
 			   Pixels:'640x480',
-			   Objectives:"designed to make high quality still images in the thermal infrared spectrum. This makes it ideal for observing regional weather patterns, volcanic activity and changes in ocean temperatures. (from reference)",
+			   Objectives:"Designed to make high quality still images in the thermal infrared spectrum. This makes it ideal for observing regional weather patterns, volcanic activity and changes in ocean temperatures. (from reference)",
 			   FOV:'5x3.74 deg', 
 			   Cost:"0"
 		});
