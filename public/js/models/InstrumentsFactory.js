@@ -348,7 +348,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:'200000',
 			   Resolution:'40 uG',
 			   Pixels:"Unknown",
-			   Objectives:"\"The Honeywell HMC2003 is a high sensitivity, three-axis magnetic sensor hybrid assembly used to measure low magnetic field strengths.\" (from reference)",
+			   Objectives:"The Honeywell HMC2003 is a high sensitivity, three-axis magnetic sensor hybrid assembly used to measure low magnetic field strengths. (from reference)",
 			   FOV:"Unknown",
 			   Cost:"0"
 		});
@@ -366,7 +366,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:'200000',
 			   Resolution:'40 uG',
 			   Pixels:"Unknown",
-			   Objectives:"\"The Honeywell HMC100x and HMC102x magnetic sensors are one and two-axis surface mount sensors designed for low field magnetic sensing.\" (from reference) HMC1001 and 1002 are consideren Honeywell’s most sensitive magneto-resistive sensors for precision.",
+			   Objectives:"The Honeywell HMC100x and HMC102x magnetic sensors are one and two-axis surface mount sensors designed for low field magnetic sensing. (from reference) HMC1001 and 1002 are consideren Honeywell’s most sensitive magneto-resistive sensors for precision.",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -402,7 +402,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:'2-100',
 			   Resolution:'resolution 1 keV',
 			   Pixels:"Unknown",
-			   Objectives:"\"...part of a new breed of highly capable, low mass, and low power consumption silicon semiconductor detectors (SSDs)...It will perform fundamental research on magnetic storms and the storm-time ring current, charged particle precipitation, and electron microbursts. STEIN separates electrons, ions, and neutral atoms with an electrostatic deflection system. \" (from reference)",
+			   Objectives:"...part of a new breed of highly capable, low mass, and low power consumption silicon semiconductor detectors (SSDs)...It will perform fundamental research on magnetic storms and the storm-time ring current, charged particle precipitation, and electron microbursts. STEIN separates electrons, ions, and neutral atoms with an electrostatic deflection system.  (from reference)",
 			   FOV:'15', 
 			   Cost:"0"
 		});
@@ -420,7 +420,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:'500-3000, 10000-40000',
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:'Designed to observe space weather, radiation belts; \"The Relativistic Electron and Proton Telescope integrated little experiment (REPTile) is a solid-state particle detector designed to measure solar energetic protons and relativistic electrons in Earth’s outer radiation belt. These particles pose a radiation threat to both spacecraft and astronauts in space, and developing a better understanding of these particles has been identified as a critical area of research by NASA’s Living With a Star program.\" (from reference)',
+			   Objectives:'Designed to observe space weather, radiation belts; The Relativistic Electron and Proton Telescope integrated little experiment (REPTile) is a solid-state particle detector designed to measure solar energetic protons and relativistic electrons in Earth’s outer radiation belt. These particles pose a radiation threat to both spacecraft and astronauts in space, and developing a better understanding of these particles has been identified as a critical area of research by NASA’s Living With a Star program. (from reference)',
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -438,7 +438,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:'Designed to detect space plasma in LEO; \"The objective of ChaPS is to demonstrate a novel payload design that combines the capabilities of multiple analyzers by using four miniaturized sensors to perform simultaneous electron-ion detection. Each of the sensors is optimized to carry out electrostatic analysis of the different space plasma populations expected in LEO (Low Earth Orbit).\" (from reference)',
+			   Objectives:'Designed to detect space plasma in LEO; The objective of ChaPS is to demonstrate a novel payload design that combines the capabilities of multiple analyzers by using four miniaturized sensors to perform simultaneous electron-ion detection. Each of the sensors is optimized to carry out electrostatic analysis of the different space plasma populations expected in LEO (Low Earth Orbit). (from reference)',
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -456,7 +456,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:'In-flight data on total ionizating dose of instrument and individual components. \"MuREM (or µREM) is designed to provide in-fight data on TID (Total Ionizing Dose), dose rate and the charge deposition spectra of SEE (Single Event Effect) initiating energetic protons and heavy ions, as well as providing radiation effects data on samples of advanced COTS (Commercial-off-the-Shelf) electronic devices. Its low mass (< 1 kg) and low power make it suitable in whole or part as a generic radiation environment monitor for routine fight on micro- or nanosatellites.\" (from reference)',
+			   Objectives:'In-flight data on total ionizating dose of instrument and individual components. MuREM (or µREM) is designed to provide in-fight data on TID (Total Ionizing Dose), dose rate and the charge deposition spectra of SEE (Single Event Effect) initiating energetic protons and heavy ions, as well as providing radiation effects data on samples of advanced COTS (Commercial-off-the-Shelf) electronic devices. Its low mass (< 1 kg) and low power make it suitable in whole or part as a generic radiation environment monitor for routine fight on micro- or nanosatellites. (from reference)',
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -510,7 +510,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:"Unknown",
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"\" a monitor developed to measure the subtler aspects of space radiation: the energy, type, intensity and directionality of high energy particles. \" (from reference)",
+			   Objectives:" a monitor developed to measure the subtler aspects of space radiation: the energy, type, intensity and directionality of high energy particles.  (from reference)",
 			   FOV:"Unknown", 
 			   Cost:"0"
 		});
@@ -600,7 +600,7 @@ var InstrumentsFactory = function(Schema,mongoose) {
 			   Sensitivity:'1000-5500',
 			   Resolution:"Unknown",
 			   Pixels:"Unknown",
-			   Objectives:"\"J10D Series detectors are high quality Indium Antimonide (InSb)photodiodes, providing excellent performance in the 1 to 5.5 µm wavelength region. Single crystal p–n junction technology yields high speed, low noise detectors with excellent uniformity, linearity and stability.\" (from reference)",
+			   Objectives:"J10D Series detectors are high quality Indium Antimonide (InSb)photodiodes, providing excellent performance in the 1 to 5.5 µm wavelength region. Single crystal p–n junction technology yields high speed, low noise detectors with excellent uniformity, linearity and stability. (from reference)",
 			   FOV:'60', 
 			   Cost:"0"
 		});
