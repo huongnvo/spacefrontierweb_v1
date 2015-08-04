@@ -670,6 +670,7 @@ var PowerFactory = function(Schema,mongoose) {
   			Cost:'0',
 			Additional_info: ''
   		});
+
 	  	var sp30 = new this.power_parts({
 			Type:'Battery',
 			Name:'NanoPower BPx 1100mAh 6 Cell',
@@ -803,13 +804,13 @@ var PowerFactory = function(Schema,mongoose) {
 		});
 		var sp32 = new this.power_parts({
 			Type:'Power Control Unit',
-			Name:'NanoPower P31us',
+			Name:'NanoPower P31u-s',
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/gs-ds-nanopower-p31u-9.0.pdf',
 			Description:'Flown on GomX-1,Funcube,Triton-1. Optimized for 1U,2U,3U cubesats,12-16.8 V batteries,4+ solar cells',
 			Mass:'270',
 			Power:'0',
-			Volume:'0.225',
+			Volume:'0.22464',
 			Proportions:'96x90x26',
 			Efficiency:'',
 			Objectives:'Power control,housekeeping',
@@ -822,14 +823,33 @@ var PowerFactory = function(Schema,mongoose) {
 
 		var sp33 = new this.power_parts({
 			Type:'Power Control Unit',
-			Name:'NanoPower P31u',
+			Name:'NanoPower P31u with Batteries',
 			Manufacturer:'GOMspace',
 			Reference:'http://gomspace.com/documents/gs-ds-nanopower-p31u-9.0.pdf',
 			Description:'Flown on GomX-1,Funcube,Triton-1. Optimized for 1U,2U,3U cubesats,6-8.4 V batteries. Includes batteries',
 			Mass:'200',
 			Power:'0',
-			Volume:'0.138',
-			Proportions:'96x90x16',
+			Volume:'0.22464',
+			Proportions:'96x90x26',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp54 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'NanoPower P31u',
+			Manufacturer:'GOMspace',
+			Reference:'http://gomspace.com/documents/gs-ds-nanopower-p31u-9.0.pdf',
+			Description:'Flown on GomX-1,Funcube,Triton-1. Optimized for 1U,2U,3U cubesats,6-8.4 V batteries. Includes batteries',
+			Mass:'100',
+			Power:'0',
+			Volume:'0.22464',
+			Proportions:'96x90x26',
 			Efficiency:'',
 			Objectives:'Power control,housekeeping',
 			Energy_Storage:'0',
@@ -841,14 +861,184 @@ var PowerFactory = function(Schema,mongoose) {
 
 		var sp34 = new this.power_parts({
 			Type:'Power Control Unit',
-			Name:'CubeSat EPS (Available for 1,1.5,2,and 3U)',
+			Name:'CubeSat EPS 1U 20 Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'229',
+			Power:'0.1',
+			Volume:'Unknown',
+			Proportions:'22.0 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp55 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 1U',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'83',
+			Power:'0.1',
+			Volume:'Unknown',
+			Proportions:'12.7 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+		var sp56 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 1U 10Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'163',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'15.4 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'10',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp57 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 1U 10Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'87',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'12.7 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp58 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 1.5U 10Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'167',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'15.4 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'10',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp59 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 1.5U 20Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'231',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'22.0 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'20',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp60 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 2U',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'87',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'12.7 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'0',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp61 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 2U 10Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'167',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'15.4 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'10',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp62 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 2U 20Whr Battery',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
+			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
+			Mass:'233',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'22.0 mm height',
+			Efficiency:'',
+			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
+			Energy_Storage:'20',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp63 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'CubeSat EPS 3U',
 			Manufacturer:'Clyde',
 			Reference:'http://www.clyde-space.com/cubesat_shop/eps/8_1u-cubesat-eps',
 			Description:'over 200 sold. TRL 7-9. Compatible w/ lithium ion and lithium polymer batteries.. Can be operated in parallel for increased power handling',
 			Mass:'83',
 			Power:'0',
-			Volume:'110',
-			Proportions:'',
+			Volume:'Unknown',
+			Proportions:'15.3 mm height',
 			Efficiency:'',
 			Objectives:'Power control,housekeeping,BRC Eff 03-91%',
 			Energy_Storage:'0',
@@ -860,13 +1050,32 @@ var PowerFactory = function(Schema,mongoose) {
 
 		var sp35 = new this.power_parts({
 			Type:'Battery',
-			Name:'Cubesat Standalone Battery',
+			Name:'Cubesat Standalone Battery 30Whr',
 			Manufacturer:'Clyde',
 			Reference:'http://www.clyde-space.com/cubesat_shop/batteries/16_cubesat-standalone-battery',
 			Description:'Lithium polymer battery. Many versions,including custom. Integrated battery heater. Can be connected in parallel.',
-			Mass:'133.3',
+			Mass:'260',
 			Power:'0',
-			Volume:'0',
+			Volume:'0.17672323',
+			Proportions:'90.17x95.885x20.44',
+			Efficiency:'',
+			Objectives:'Power storage',
+			Energy_Storage:'30',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp65 = new this.power_parts({
+			Type:'Battery',
+			Name:'Cubesat Standalone Battery 10Whr',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/batteries/16_cubesat-standalone-battery',
+			Description:'Lithium polymer battery. Many versions,including custom. Integrated battery heater. Can be connected in parallel.',
+			Mass:'67',
+			Power:'0',
+			Volume:'Unknown',
 			Proportions:'',
 			Efficiency:'',
 			Objectives:'Power storage',
@@ -874,7 +1083,26 @@ var PowerFactory = function(Schema,mongoose) {
 			PperWing:'0',
 			Wings:'0',
 			Cost:'0',
-			Additional_info: ''
+			Additional_info: 'Estimated mass from 150Wh/kg'
+		});
+
+		var sp64 = new this.power_parts({
+			Type:'Battery',
+			Name:'Cubesat Standalone Battery 20Whr',
+			Manufacturer:'Clyde',
+			Reference:'http://www.clyde-space.com/cubesat_shop/batteries/16_cubesat-standalone-battery',
+			Description:'Lithium polymer battery. Many versions,including custom. Integrated battery heater. Can be connected in parallel.',
+			Mass:'134',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'',
+			Efficiency:'',
+			Objectives:'Power storage',
+			Energy_Storage:'20',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: 'Estimated mass from 150Wh/kg'
 		});
 
 		var sp36 = new this.power_parts({
@@ -883,9 +1111,9 @@ var PowerFactory = function(Schema,mongoose) {
 			Manufacturer:'Clyde',
 			Reference:'http://www.clyde-space.com/cubesat_shop/batteries/210_remote-battery-board',
 			Description:'Lithium polymer battery. Integrated heater',
-			Mass:'66.6',
+			Mass:'Unknown',
 			Power:'0',
-			Volume:'0',
+			Volume:'Unknown',
 			Proportions:'',
 			Efficiency:'',
 			Objectives:'Power storage',
@@ -902,13 +1130,13 @@ var PowerFactory = function(Schema,mongoose) {
 			Manufacturer:'',
 			Reference:'',
 			Description:'Flown on MCubed',
-			Mass:'0',
+			Mass:'Unknown',
 			Power:'0',
-			Volume:'0',
+			Volume:'Unknown',
 			Proportions:'',
 			Efficiency:'',
 			Objectives:'',
-			Energy_Storage:'3.9',
+			Energy_Storage:'3.89',
 			PperWing:'0',
 			Wings:'0',
 			Cost:'0',
@@ -916,12 +1144,12 @@ var PowerFactory = function(Schema,mongoose) {
 		});
 		var sp38 = new this.power_parts({
 			Type:'Deployed Solar Panels',
-			Name:'HaWK Nanosat Solar Array',
+			Name:'HaWK Nanosat Solar Array 3U',
 			Manufacturer:'MMA Design',
 			Reference:'http://www.mmadesignllc.com/products/hawk-and-e-hawk-nanosat-solar-arrays',
 			Description:'TRL 4-6. Planned flight on Ors-2 cubesat,2015. Includes Sun tracker',
 			Mass:'500',
-			Power:'36',
+			Power:'70',
 			Volume:'3',
 			Proportions:'',
 			Efficiency:'',
@@ -930,17 +1158,17 @@ var PowerFactory = function(Schema,mongoose) {
 			PperWing:'3',
 			Wings:'2',
 			Cost:'0',
-			Additional_info: ''
+			Additional_info: 'Power Estimated from 140W/kg'
 		});
 
 		var sp39 = new this.power_parts({
 			Type:'Deployed Solar Panels',
-			Name:'HaWK Nanosat Solar Array',
+			Name:'HaWK Nanosat Solar Array 6U',
 			Manufacturer:'MMA Design',
 			Reference:'http://www.mmadesignllc.com/products/hawk-and-e-hawk-nanosat-solar-arrays',
 			Description:'TRL 4-6. Planned flight on Ors-2 cubesat,2015. Includes Sun tracker',
 			Mass:'500',
-			Power:'36',
+			Power:'70',
 			Volume:'6',
 			Proportions:'',
 			Efficiency:'',
@@ -949,28 +1177,68 @@ var PowerFactory = function(Schema,mongoose) {
 			PperWing:'3',
 			Wings:'2',
 			Cost:'0',
-			Additional_info: ''
+			Additional_info: 'Power Estimated from 140W/kg'
 		});
 		var sp40 = new this.power_parts({
 			Type:'Power Control Unit',
-			Name:'XEPS CubeSat Electrical Power System',
+			Name:'XEPS CubeSat Electrical Power System 12V',
 			Manufacturer:'Blue Canyon Technology',
-			Reference:'http://bluecanyontech.com/wp-content/uploads/2013/06/BCT-EPS-Board-Information-Sheet-1.0.pdf',
+			Reference:'http://bluecanyontech.com/wp-content/uploads/2015/05/EPS-Data-Sheet_1.0.pdf',
 			Description:'charge algorith BCT Lithium-Ion MaxLife',
-			Mass:'0',
+			Mass:'Unknown',
 			Power:'0',
-			Volume:'0',
+			Volume:'Unknown',
 			Proportions:'',
 			Efficiency:'',
 			Objectives:'',
-			Energy_Storage:'0',
+			Energy_Storage:'31.2',
 			PperWing:'0',
 			Wings:'0',
 			Cost:'0',
 			Additional_info: ''
 		});
+
+		var sp66 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'XEPS CubeSat Electrical Power System 5V',
+			Manufacturer:'Blue Canyon Technology',
+			Reference:'http://bluecanyontech.com/wp-content/uploads/2015/05/EPS-Data-Sheet_1.0.pdf',
+			Description:'charge algorith BCT Lithium-Ion MaxLife',
+			Mass:'Unknown',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'',
+			Efficiency:'',
+			Objectives:'',
+			Energy_Storage:'13',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp67 = new this.power_parts({
+			Type:'Power Control Unit',
+			Name:'XEPS CubeSat Electrical Power System 3.3V',
+			Manufacturer:'Blue Canyon Technology',
+			Reference:'http://bluecanyontech.com/wp-content/uploads/2015/05/EPS-Data-Sheet_1.0.pdf',
+			Description:'charge algorith BCT Lithium-Ion MaxLife',
+			Mass:'Unknown',
+			Power:'0',
+			Volume:'Unknown',
+			Proportions:'',
+			Efficiency:'',
+			Objectives:'',
+			Energy_Storage:'8.58',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
 		var sp41 = new this.power_parts({
-			Type:'Cubesat Bus',Name:'Intrepid Platform (3U)',
+			Type:'Cubesat Bus',
+			Name:'Intrepid Platform (3U)',
 			Manufacturer:'Tyvak',
 			Reference:'http://tyvak.com/intrepid-suite-1-1/',
 			Description:'',
@@ -980,7 +1248,45 @@ var PowerFactory = function(Schema,mongoose) {
 			Proportions:'',
 			Efficiency:'',
 			Objectives:'',
+			Energy_Storage:'Unknown',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp68 = new this.power_parts({
+			Type:'Cubesat Bus',
+			Name:'Intrepid Platform (1U)',
+			Manufacturer:'Tyvak',
+			Reference:'http://tyvak.com/intrepid-suite-1-1/',
+			Description:'',
+			Mass:'600',
+			Power:'1',
+			Volume:'1',
+			Proportions:'',
+			Efficiency:'',
+			Objectives:'',
 			Energy_Storage:'15',
+			PperWing:'0',
+			Wings:'0',
+			Cost:'0',
+			Additional_info: ''
+		});
+
+		var sp69 = new this.power_parts({
+			Type:'Cubesat Bus',
+			Name:'Intrepid Platform (2U)',
+			Manufacturer:'Tyvak',
+			Reference:'http://tyvak.com/intrepid-suite-1-1/',
+			Description:'',
+			Mass:'900',
+			Power:'2',
+			Volume:'2',
+			Proportions:'',
+			Efficiency:'',
+			Objectives:'',
+			Energy_Storage:'Unknown',
 			PperWing:'0',
 			Wings:'0',
 			Cost:'0',
@@ -993,7 +1299,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Manufacturer:'Andrews Space',
 			Reference:'http://andrews-space.com/solar-panels/',
 			Description:'Comes with sun sensors. 16 High Efficiency (30%) Triple Junction GaAs solar cells with cover glass',
-			Mass:'0',
+			Mass:'300',
 			Power:'19.4',
 			Volume:'6',
 			Proportions:'340x180x2.4',
@@ -1014,7 +1320,7 @@ var PowerFactory = function(Schema,mongoose) {
 			Description:'Supports Andrews solar panels. Xilinx Virtex 4LX FPGA',
 			Mass:'341',
 			Power:'3.08',
-			Volume:'0',
+			Volume:'.320416',
 			Proportions:'105.4x160x19',
 			Efficiency:'',
 			Objectives:'Lifetime 3 yrs on orbit,15 krad total dose',
@@ -1068,6 +1374,32 @@ var PowerFactory = function(Schema,mongoose) {
 		sp41.save();
 		sp42.save();
 		sp43.save();
+		sp44.save();
+		sp45.save();
+		sp46.save();
+		sp47.save();
+		sp48.save();
+		sp49.save();
+		sp50.save();
+		sp51.save();
+		sp52.save();
+		sp53.save();
+		sp54.save();
+		sp55.save();
+		sp56.save();
+		sp57.save();
+		sp58.save();
+		sp59.save();
+		sp60.save();
+		sp61.save();
+		sp62.save();
+		sp63.save();
+		sp64.save();
+		sp65.save();
+		sp66.save();
+		sp67.save();
+		sp68.save();
+		sp69.save();
 	}
 
 	this.getPart = function(query,res) {
