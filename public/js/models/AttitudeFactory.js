@@ -19,7 +19,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 			Angle_prec: String,
 			Ac_sensors: String,
 			Scientific_obj: String,
-			Cost: Number
+			Cost: String
 		});
 		this.attitude_parts = mongoose.model('attitude_parts', Schema);
 	}
@@ -39,7 +39,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.5', 
 		    Ac_sensors:'114 deg', 
 		    Scientific_obj:'Determines Sun angle vector, attitude/location, Need 6 for full sky coverage, 10 krad total dose', 
-		    Cost:0
+		    Cost:"0"
 	  	});
 		
 		var sensor2 = new this.attitude_parts({ 
@@ -56,7 +56,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'140 deg', 
 		    Scientific_obj:'Determines Sun angle vector, attitude/location in 2 axes, 20 krad total dose, 16 grms random vibration, 5000 g shock', 
-		    Cost:0
+		    Cost:"0"
 	  	});
 
 	  	var actuator1 = new this.attitude_parts({ 
@@ -73,7 +73,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'Max torque .635 mNm', 
 		    Scientific_obj:'Precise aiming/stability in 3 axes, Must dump angular momentum, 30 krad total dose, >12 grms', 
-		    Cost:0
+		    Cost:"0"
 	  	});
 
 		var actuator2 = new this.attitude_parts({ 
@@ -90,7 +90,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'Magnetic moment >.2 Am^2, Lifetime > 10 yrs', 
 		    Scientific_obj:'Attitude control in 3 axes, momentum dumping of reaction wheels, magnetic field required for attitude control. Bonded directly to PCB',  
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var sensor3 = new this.attitude_parts({ 
@@ -108,7 +108,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.001667', 
 		    Ac_sensors:'9x12 deg', 
 		    Scientific_obj:'Bore-sight: 6 arcsec Roll axis: 40 arcsec. Detects stars as dim as 7 M, star identification. Includes >10,000 star catalog onboard, standby mode (.25 W). Lifetime > 1 yr, 2 sec attitude determination time',  
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var sensor4 = new this.attitude_parts({ 
@@ -125,7 +125,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Designed with a revolutionary micro size, power, and mass. The Thin Slice Nano Tracker is creating a new level of performance for Nano size spacecraft', 
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var acs1a = new this.attitude_parts({ 
@@ -142,7 +142,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'Max torque .635 mNm.', 
 		    Scientific_obj:'Precise aiming/stability in 3 axes in a fully autonomouse system. Detumbling of spacecraft on release, Must dump angular momentum, 30 krad total dose, >10 grms', 
-		    Cost:0
+		    Cost:"0"
 	  	});
 
 		var acs1b = new this.attitude_parts({ 
@@ -159,7 +159,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'Max torque .635 mNm.', 
 		    Scientific_obj:'Precise aiming/stability in 3 axes in a fully autonomouse system. Detumbling of spacecraft on release, Must dump angular momentum, 30 krad total dose, >10 grms', 
-		    Cost:0
+		    Cost:"0"
 	  	});
 
 		var acs2 = new this.attitude_parts({ 
@@ -176,7 +176,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'112 mNm', 
 		    Scientific_obj:'', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		var acs3 = new this.attitude_parts({ 
@@ -193,7 +193,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.003',  
 		    Ac_sensors:'Can rotate 8 kg cubesat at more than 10 deg/s', 
 		    Scientific_obj:'.003 deg in 2 axes, .007 deg in 3d axis. Precise attitude determination/control in 3 axes, lifetime > 1 yr. Standby mode (.85 W)', 
-		    Cost:0
+		    Cost:"0"
 		});
 
   		var acs4 = new this.attitude_parts({
@@ -210,7 +210,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.2', 
 		    Ac_sensors:'Max torque .625 mNm and addition magnetic moment arm .15 Am^2', 
 		    Scientific_obj:'Magnetometer +- 30000 nT, sun sensor +- 1 deg, Earth sensor +-.2 deg. Attitude determination and control, multiple uses for parts', 
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var acs6 = new this.attitude_parts({ 
@@ -227,7 +227,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.002', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'10 m, .15 m/s. Supports precision orbit propagation of multiple target objects with flexible pointing commands to enable a wide range of missions',
-		    Cost:0
+		    Cost:"0"
   		});
 
 		var sensor5 = new this.attitude_parts({ 
@@ -244,7 +244,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Absolute position to 10 m, velocity to .15 m/s. Orbital information (position, velocity, time). Designed for use in LEO with a patch antenna (antenna bought separately, quadrifilar antenna included), 10 krad, 90-180 s to first pitch', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		var sensor6 = new this.attitude_parts({ 
@@ -261,7 +261,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Absolute position to 10 m, velocity to .15 m/s. Orbital information (position, velocity, time). Designed for use in LEO with a patch antenna (antenna included), 7 yrs in LEO, 10 krad, 90-180 s to first pitch', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		var sensor7 = new this.attitude_parts({ 
@@ -278,7 +278,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Range +-60 uT, Sensitivity +-10 nT. Attitude determination, magnetic field measurement. Designed for attitude sensing in LEO missions, 7 yrs in LEO', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		var sensor8 = new this.attitude_parts({ 
@@ -295,7 +295,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.1', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Dip angle: .1 deg .5 deg accuracy in 2 axes. Designed for use in LEO, requires temperature gradient in atmosphere edge, 30 krad, 10 grms', 
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var sensor9 = new this.attitude_parts({ 
@@ -312,7 +312,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Estimation. measures 10-50,000 nT. Detect and measure magnetic fields. Attitude determination in Earth orbit',  
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var sensor10 = new this.attitude_parts({ 
@@ -329,7 +329,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'13 nT resolution', 
 		    Scientific_obj:'Estimation +-50,000 nT. 10 krad total dose, 16g rms random vibration', 
-		    Cost:0
+		    Cost:"0"
 	  	});
 
 	  	var sensor11 = new this.attitude_parts({ 
@@ -346,7 +346,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'',
 		    Scientific_obj:'Detect and measure magnetic fields. Attitude determination in Earth orbit, Vector mode, Scalar mode', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		var sensor12 = new this.attitude_parts({ 
@@ -363,7 +363,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'Precision 25 nT attitude mode, 2-10 nT science mode.', 
 		    Scientific_obj:'Estimation. Measures up to 57000 nT. Detect and measure magnetic fields. Attitude determination in Earth orbit. Designed to be mounted on boom for less spacecraft interference. Orbital', 
-		    Cost:0
+		    Cost:"0"
   		});
 
 		var sensor13 = new this.attitude_parts({ 
@@ -380,7 +380,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'70 uG', 
 		    Scientific_obj:'Estimation +- 200000 nT. Detect and measure magnetic fields. Attitude determination in Earth orbit', 
-   			Cost:0
+   			Cost:"0"
   		});
 
   		var sensor14 = new this.attitude_parts({ 
@@ -397,7 +397,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'40 uG', 
 		    Scientific_obj:'Estimation +- 200000 nT', 
-		    Cost:0
+		    Cost:"0"
 		});
 
   		var sensor15a = new this.attitude_parts({ 
@@ -414,7 +414,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'40 uG', 
 		    Scientific_obj:'Estimation +- 200000 nT', 
-		    Cost:0
+		    Cost:"0"
 		});
 
   		var sensor15b = new this.attitude_parts({ 
@@ -431,7 +431,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'1', 
 		    Ac_sensors:'40 uG', 
 		    Scientific_obj:'Estimation +- 200000 nT', 
-		    Cost:0
+		    Cost:"0"
 		});
 
 		var sensor16 = new this.attitude_parts({ 
@@ -448,7 +448,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'0.1', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'140 deg FOV, 20 krad total dose', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		var sensor17 = new this.attitude_parts({ 
@@ -465,7 +465,7 @@ var AttitudeFactory = function(Schema,mongoose) {
 		    Angle_prec:'Unknown', 
 		    Ac_sensors:'', 
 		    Scientific_obj:'Position accuracy <10 m, velocity accuracy <25 cm/s. 10 krad total dose', 
-		    Cost:0
+		    Cost:"0"
   		});
 
   		sensor1.save();
