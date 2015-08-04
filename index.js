@@ -219,7 +219,7 @@ app.delete('/parts/cdh/:_id', function(req, res) {
 var CommFactory = require('./public/js/models/CommFactory.js');
 var commfactory = new CommFactory(Schema,mongoose);
 commfactory.createSchemas();
-// commfactory.insertPart();
+ commfactory.insertPart();
 
 app.get('/parts/comm', function(req, res) {
     var resp = commfactory.getPart({},res);
@@ -307,7 +307,7 @@ app.delete('/parts/propulsion/:_id', function(req, res) {
 var StationFactory = require('./public/js/models/StationFactory.js');
 var stationfactory = new StationFactory(Schema,mongoose);
 stationfactory.createSchemas();
-// stationfactory.insertPart();
+ stationfactory.insertPart();
 
 app.get('/parts/station', function(req, res) {
     var resp = stationfactory.getPart({},res);

@@ -556,8 +556,7 @@ var CommFactory = function(Schema, mongoose) {
 	  	transceiver8.save();
 	  	transceiver9.save();
 	  	transceiver10.save();
-	  	transceiver11.save();
-	  	transceiver12.save();
+
 	  	transceiver13.save();
 	  	transceiver14.save();
 	  	transmitter1.save();
