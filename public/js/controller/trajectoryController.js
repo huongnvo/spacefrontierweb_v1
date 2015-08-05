@@ -92,15 +92,22 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
 
     $scope.okType = function(part) {
         var okType = false;
-        if ($scope.Thruster && part.Type == 'Thruster')
-        {
+        if ($scope.ignorefilters){
             okType = true;
         }
-        else if ($scope.Sail && part.Type == 'Sail')
-        {
-            okType = true;
+        else{
+            if ($scope.Thruster && part.Type == 'Thruster')
+            {
+                okType = true;
+            }
+            else if ($scope.Sail && part.Type == 'Sail')
+            {
+                okType = true;
+            }
         }
+        
         return okType;
+
     };
     $(document).ready(function(){
         // Activate Carousel

@@ -63,15 +63,21 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
     $scope.okType = function(part) {
         var okType = false;
-        if ($scope.ACS && part.Type == 'ACS') {
+        if ($scope.ignorefilters){
             okType = true;
         }
-        else if ($scope.Actuator && part.Type == 'Actuator') {
-            okType = true;
+        else{
+            if ($scope.ACS && part.Type == 'ACS') {
+                okType = true;
+            }
+            else if ($scope.Actuator && part.Type == 'Actuator') {
+                okType = true;
+            }
+            else if ($scope.Sensor && part.Type == 'Sensor') {
+                okType = true;
+            }
         }
-        else if ($scope.Sensor && part.Type == 'Sensor') {
-            okType = true;
-        }
+        
         return okType;
     };
 
