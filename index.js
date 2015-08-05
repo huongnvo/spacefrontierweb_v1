@@ -70,6 +70,18 @@ app.delete('/parts/cubesat/:_id', function(req, res) {
     var resp = cubesatfactory.removePart(req, res);
 });
 
+app.put('/parts/cubesat-mass/:_id', function(req, res) {
+    var resp = cubesatfactory.updateMass(req, res);
+});
+
+app.put('/parts/cubesat-power/:_id', function(req, res) {
+    var resp = cubesatfactory.updatePower(req, res);
+});
+
+app.put('/parts/cubesat-volume/:_id', function(req, res) {
+    var resp = cubesatfactory.updateVolume(req, res);
+});
+
 app.put('/parts/cubesat-name/:_id', function(req, res) {
     var resp = cubesatfactory.updateName(req, res);
 });
@@ -248,7 +260,7 @@ app.delete('/parts/power/:_id', function(req, res) {
 var PropulsionFactory = require('./public/js/models/PropulsionFactory.js');
 var propulsionfactory = new PropulsionFactory(Schema,mongoose);
 propulsionfactory.createSchemas();
-//propulsionfactory.insertPart();
+// propulsionfactory.insertPart();
 
 app.get('/parts/propulsion', function(req, res) {
     var resp = propulsionfactory.getPart({},res);

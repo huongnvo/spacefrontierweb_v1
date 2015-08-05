@@ -11,7 +11,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-            
+
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
@@ -28,12 +28,12 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
             $scope.busPart = partextracted['Bus'];
             $scope.deployerPart = partextracted['Deployer'];
             $scope.thermalPart = partextracted['Thermal'];
-
         }); 
     };
     $scope.updateData();
 
     $scope.parts = [];
+
     $scope.init = function() { 
         $http.get('/parts/attitude').then(function(result) { 
             $scope.parts = result.data; 
@@ -51,27 +51,33 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
 
     $scope.okAngle = function(part) {
-        if(part.Angle_prec != 'Unknown'){
-            return parseFloat(part.Angle_prec) <= aControl;
-        }
-
         if($scope.ignorefilters){
             return true;
+        } else {
+            if(part.Angle_prec != 'Unknown'){
+                return parseFloat(part.Angle_prec) <= aControl;
+            }
         }
         return false;
     };
 
     $scope.okType = function(part) {
         var okType = false;
-        if ($scope.ACS && part.Type == 'ACS') {
+        if ($scope.ignorefilters){
             okType = true;
         }
-        else if ($scope.Actuator && part.Type == 'Actuator') {
-            okType = true;
+        else{
+            if ($scope.ACS && part.Type == 'ACS') {
+                okType = true;
+            }
+            else if ($scope.Actuator && part.Type == 'Actuator') {
+                okType = true;
+            }
+            else if ($scope.Sensor && part.Type == 'Sensor') {
+                okType = true;
+            }
         }
-        else if ($scope.Sensor && part.Type == 'Sensor') {
-            okType = true;
-        }
+        
         return okType;
     };
 
@@ -95,7 +101,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     $scope.addPart = function() {
         $http.put('/parts/cubesat-attitude/' + idstring, $scope.selectedPart)
             .success(function(data) {
-                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+
             })
         $scope.updateData();
     };

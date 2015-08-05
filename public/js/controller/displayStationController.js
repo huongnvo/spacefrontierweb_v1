@@ -16,33 +16,68 @@ spaceFrontierApp.controller("displayStationController", function($scope, $http) 
         $scope.predicate = predicate;
     };
 
+    $scope.cancelEdit = function() {
+        $scope.edit = false;
+
+        $scope.id = '';
+        $scope.name = '';
+        $scope.uplink = '';
+        $scope.eirp = '';
+        $scope.down = '';
+        $scope.gain = '';
+        $scope.pgain = '';
+        $scope.dia = '';
+        $scope.loc = '';
+        $scope.band = '';
+    }
+
+    $scope.openEdit = function(part) {
+        window.scrollTo(0, 0);
+
+        $scope.edit = true;
+
+        $scope.id = part._id;
+        $scope.name = part.Name;
+        $scope.uplink = part.Uplink_freq;
+        $scope.eirp = part.EIRP;
+        $scope.down = part.Downlink_freq;
+        $scope.gain = part.Gain;
+        $scope.pgain = part.Per_gain;
+        $scope.dia = part.Diameter;
+        $scope.loc = part.Loc;
+        $scope.band = part.Band;
+    }
+
+    $scope.editPart = function() {
+        $scope.addPart();
+        $scope.deletePart($scope.id);
+        $scope.edit = false;
+    }
+
     $scope.addPart = function() {
         $scope.newPart = {
             Name: $scope.name,
             Uplink_freq: $scope.uplink, 
             EIRP: $scope.eirp, 
-            EIRP_ave: $scope.eirpave, 
             Downlink_freq: $scope.down, 
             Gain: $scope.gain, 
             Per_gain: $scope.pgain, 
             Diameter: $scope.dia, 
             Loc: $scope.loc, 
             Band: $scope.band,
-            Coordinates: $scope.coor
         };
         $http.post('/parts/station', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.name = '';
                 $scope.uplink = '';
                 $scope.eirp = '';
-                $scope.eirpave = '';
                 $scope.down = '';
                 $scope.gain = '';
                 $scope.pgain = '';
                 $scope.dia = '';
                 $scope.loc = '';
                 $scope.band = '';
-                $scope.coor = '';
                 $http.get('/parts/station').then(function(result) { 
                     $scope.parts = result.data; 
                 });
