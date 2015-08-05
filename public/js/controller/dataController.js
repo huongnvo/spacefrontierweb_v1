@@ -129,14 +129,19 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
     $scope.okType=function(part){
         var okType=false;
-        if ($scope.OBC && part.Type == 'On-Board Computer (OBC)'){
+        if ($scope.ignorefilters) {
             okType = true;
         }
-        else if ($scope.bus && part.Type == 'Cubesat Bus'){
-            okType = true;
-        }
-        else if ($scope.imageprocessor && part.Type == 'Image Processor'){
-            okType = true;
+        else{
+            if ($scope.OBC && part.Type == 'On-Board Computer (OBC)'){
+                okType = true;
+            }
+            else if ($scope.bus && part.Type == 'Cubesat Bus'){
+                okType = true;
+            }
+            else if ($scope.imageprocessor && part.Type == 'Image Processor'){
+                okType = true;
+            }
         }
         return okType;
     };
