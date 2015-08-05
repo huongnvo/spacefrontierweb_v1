@@ -66,6 +66,7 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     $scope.init();
 
     $scope.loading = false;
+
     $scope.myClick = function() {
         $scope.showDatabase = true;
     };
@@ -96,19 +97,16 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
             okType = true;
         }
         else{
-            if ($scope.Thruster && part.Type == 'Thruster')
-            {
+            if ($scope.Thruster && part.Type == 'Thruster'){
                 okType = true;
             }
-            else if ($scope.Sail && part.Type == 'Sail')
-            {
+            else if ($scope.Sail && part.Type == 'Sail'){
                 okType = true;
             }
         }
-        
         return okType;
-
     };
+
     $(document).ready(function(){
         // Activate Carousel
         $("#carousel1").carousel({interval: false});
@@ -295,13 +293,12 @@ spaceFrontierApp.controller("trajectoryController", function($scope,$http) {
     $scope.okdV = function(part) {
         if ($scope.ignorefilters){
             return true;
+        } else {
+            var dV = parseFloat($scope.totaldV);
+            if(part.DeltaV != 'Unknown'){
+                return parseFloat(part.DeltaV) >= dV;
+            }
         }
-        
-        dV = parseInt($scope.totaldV);
-        if(part.DeltaV!='Unknown'){
-            return part.parseInt(DeltaV) >= dV;
-        }
-
         return false;
     };
 
