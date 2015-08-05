@@ -16,12 +16,60 @@ spaceFrontierApp.controller("displayPowerController", function($scope, $http) {
         $scope.predicate = predicate;
     };
 
+    $scope.cancelEdit = function() {
+        $scope.edit = false;
+
+        $scope.id = '';
+        $scope.type = '';
+        $scope.name = '';
+        $scope.manu = '';
+        $scope.ref = '';
+        $scope.def = '';
+        $scope.mass = '';
+        $scope.power = '';
+        $scope.vol = '';
+        $scope.prop = '';
+        $scope.eff = '';
+        $scope.obj = '';
+        $scope.ener = '';
+        $scope.pper = '';
+        $scope.wings= '';     
+    }
+
+    $scope.openEdit = function(part) {
+        window.scrollTo(0, 0);
+
+        $scope.edit = true;
+
+        $scope.id = part._id;
+        $scope.type = part.Type;
+        $scope.name = part.Name;
+        $scope.manu = part.Manufacturer;
+        $scope.ref = part.Reference;
+        $scope.def = part.Description;
+        $scope.mass = part.Mass;
+        $scope.power = part.Power;
+        $scope.vol = part.Volume;
+        $scope.prop = part.Proportions;
+        $scope.eff = part.Efficiency;
+        $scope.obj = part.Objectives;
+        $scope.ener = part.Energy_Storage;
+        $scope.pper = part.PperWing;
+        $scope.wings = part.Wings;
+    }
+
+    $scope.editPart = function() {
+        $scope.addPart();
+        $scope.deletePart($scope.id);
+        $scope.edit = false;
+    }
+
     $scope.addPart = function() {
         $scope.newPart = {
             Type: $scope.type,
             Name: $scope.name,
             Manufacturer: $scope.manu,
-            Website: $scope.ref,
+            Reference: $scope.ref,
             Description: $scope.def,
             Mass: $scope.mass,
             Power: $scope.power,
@@ -37,23 +85,18 @@ spaceFrontierApp.controller("displayPowerController", function($scope, $http) {
         };
         $http.post('/parts/power', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.type = '';
                 $scope.name = '';
                 $scope.manu = '';
                 $scope.ref = '';
                 $scope.def = '';
                 $scope.mass = '';
-                $scope.masscont = '';
                 $scope.power = '';
-                $scope.powercont = '';
                 $scope.vol = '';
                 $scope.prop = '';
-                $scope.volcont = '';
                 $scope.eff = '';
                 $scope.obj = '';
-                $scope.therm = '';
-                $scope.low = '';
-                $scope.high = '';
                 $scope.ener = '';
                 $scope.pper = '';
                 $scope.wings= '';        
@@ -65,7 +108,7 @@ spaceFrontierApp.controller("displayPowerController", function($scope, $http) {
 
     $scope.deletePart = function(id) {
         $http.delete('/parts/power/' + id)
-            .success(function(data) {
+            .then(function(result) {
                 $http.get('/parts/power').then(function(result) { 
                     $scope.parts = result.data; 
                 });

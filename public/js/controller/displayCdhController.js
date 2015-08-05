@@ -17,6 +17,56 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
         $scope.predicate = predicate;
     };
 
+    $scope.cancelEdit = function() {
+        $scope.edit = false;
+
+        $scope.id = '';
+        $scope.type = ''; 
+        $scope.name = ''; 
+        $scope.manu = ''; 
+        $scope.ref = '';
+        $scope.her = '';
+        $scope.mass = '';
+        $scope.power = '';
+        $scope.vol = '';
+        $scope.prop = '';
+        $scope.mips = '';
+        $scope.mhz = '';
+        $scope.process = '';
+        $scope.mem = '';
+        $scope.sci = '';
+        $scope.info = '';
+    }
+
+    $scope.editPart = function() {
+        $scope.addPart();
+        $scope.deletePart($scope.id);
+        $scope.edit = false;
+    }
+
+    $scope.openEdit = function(part) {
+        window.scrollTo(0, 0);
+
+        $scope.edit = true;
+
+        $scope.id = part._id;
+        $scope.type = part.Type;
+        $scope.name = part.Name;
+        $scope.manu = part.Manufacturer;
+        $scope.ref = part.Reference;
+        $scope.her = part.Heritage;
+        $scope.mass = part.Mass;
+        $scope.power = part.Power;
+        $scope.vol = part.Volume;
+        $scope.prop = part.Proportions;
+        $scope.mips = part.MIPS;
+        $scope.mhz = part.MHz;
+        $scope.process = part.Processing_further;
+        $scope.mem = part.Memory;
+        $scope.sci = part.Scientific_obj;
+        $scope.info = part.Additional_info;
+    }
+
     $scope.addPart = function() {
         $scope.newPart = {
             Type: $scope.type, 
@@ -30,14 +80,15 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
             Proportions: $scope.prop, 
             MIPS: $scope.mips, 
             MHz: $scope.mhz, 
-            Processing_further: $scope.proc, 
+            Processing_further: $scope.process, 
             Memory: $scope.mem, 
             Scientific_obj: $scope.sci,
-            Additional_info: $info, 
+            Additional_info: $scope.info, 
             Cost: "0"
         };
         $http.post('/parts/cdh', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.type = ''; 
                 $scope.name = ''; 
                 $scope.manu = ''; 
@@ -49,7 +100,7 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
                 $scope.prop = '';
                 $scope.mips = '';
                 $scope.mhz = '';
-                $scope.proc = '';
+                $scope.process = '';
                 $scope.mem = '';
                 $scope.sci = '';
                 $scope.info = '';
@@ -86,7 +137,7 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
         modal.find('.modal-prop input').val(part.Proportions)
         modal.find('.modal-mips input').val(part.MIPS)
         modal.find('.modal-mhz input').val(part.MHz)
-        modal.find('.modal-proc input').val(part.Processing_further)
+        modal.find('.modal-process input').val(part.Processing_further)
         modal.find('.modal-mem input').val(part.Memory)
         modal.find('.modal-sci input').val(part.Scientific_obj)
         modal.find('.modal-cost input').val(part.Cost)
