@@ -11,10 +11,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-            
-            $scope.Mass = partextracted['Mass'];
-            $scope.Power = partextracted['Power'];
-            $scope.Volume = partextracted['Volume'];
+
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
@@ -102,71 +99,6 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
             })
         $scope.updateData();
-
-        var newMass = 500;
-        var newPower = 5;
-        var newVolume = 0.5;
-
-        if ($scope.selectedPart.Mass != 'Unknown') {
-            newMass = parseFloat($scope.selectedPart.Mass);
-        }
-
-        if (!passed) {
-            var prevMass = 0;
-        } else if ($scope.attitudePart.Mass != 'Unknown') {
-            var prevMass = parseFloat($scope.attitudePart.Mass);
-        } else {
-            var prevMass = newMass;
-        }
-
-        if ($scope.selectedPart.Power != 'Unknown') {
-            newPower = parseFloat($scope.selectedPart.Power);
-        } 
-
-        if ($scope.attitudePart.Power != 'Unknown') {
-            prevPower = parseFloat($scope.attitudePart.Power);
-        } else {
-            var prevMass = newMass;
-        }
-
-        if ($scope.selectedPart.Volume != 'Unknown') {
-            newVolume = parseFloat($scope.selectedPart.Volume);
-        }
-
-        if ($scope.attitudePart.Volume != 'Unknown') {
-            prevVolume = parseFloat($scope.attitudePart.Volume);
-        } else {
-            var prevMass = newMass;
-        }
-
-        $scope.addMass = [{
-            Mass: ($scope.Mass + newMass - prevMass)
-        }];
-
-        $scope.addPower = [{
-            Power: ($scope.Power + newPower - prevPower)
-        }];
-
-        $scope.addVolume = [{
-            Volume: ($scope.Volume + newVolume - prevVolume)
-        }];
-
-        $http.put('/parts/cubesat-mass/' + idstring, $scope.addMass[0])
-            .success(function(data) {
-                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-            });
-
-        $http.put('/parts/cubesat-power/' + idstring, $scope.addPower[0])
-            .success(function(data) {
-                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-             });
-
-        $http.put('/parts/cubesat-volume/' + idstring, $scope.addVolume[0])
-            .success(function(data) {
-                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-            });
-        $scope.updateData();
-        passed = true;
     };
 
     $scope.nextPage = function() {

@@ -178,9 +178,6 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
             var partextracted = {};
             partextracted = $scope.cubesat[0];
 
-            $scope.Mass = partextracted['Mass'];
-            $scope.Power = partextracted['Power'];
-            $scope.Volume = partextracted['Volume'];
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
@@ -410,50 +407,6 @@ spaceFrontierApp.controller("instrumentsController", function($scope, $http, $lo
 
     $scope.addInstrument = function() {
         $http.put('/parts/cubesat-instrument/' + idstring, $scope.selectedInstrument)
-            .success(function(data) {
-                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-            });
-        $scope.updateData();
-
-        var partMass = 500;
-        var partPower = 5;
-        var partVolume = 1;
-
-        if ($scope.selectedInstrument.Mass != 'Unknown') {
-            partMass = parseFloat($scope.selectedInstrument.Mass); 
-        }
-
-        if ($scope.selectedInstrument.Power != 'Unknown') {
-            partPower = parseFloat($scope.selectedInstrument.Power);
-        }
-
-        if ($scope.selectedInstrument.Volume != 'Unknown') {
-            partVolume = parseFloat($scope.selectedInstrument.Volume);
-        }
-
-        $scope.addMass = [{
-            Mass: partMass
-        }];
-
-        $scope.addPower = [{
-            Power: partPower
-        }];
-
-        $scope.addVolume = [{
-            Volume: partVolume
-        }];
-
-        $http.put('/parts/cubesat-mass/' + idstring, $scope.addMass[0])
-            .success(function(data) {
-                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-            });
-
-        $http.put('/parts/cubesat-power/' + idstring, $scope.addPower[0])
-            .success(function(data) {
-                // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
-            });
-
-        $http.put('/parts/cubesat-volume/' + idstring, $scope.addVolume[0])
             .success(function(data) {
                 // $scope.selectedInstrument = {}; // clear the form so our user is ready to enter another
             });

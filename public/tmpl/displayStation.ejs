@@ -64,23 +64,6 @@
                         </form>
                     </div>
                     <div class="dividersmall"></div>
-                    <div class="modal-eirp-ave">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-2"
-                                    <label for="message-text" class="control-label">EIRP (ave.):</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="eirpave">
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="dividersmall"></div>
                     <div class="modal-down">
                         <form>
                             <div class="row">
@@ -176,23 +159,6 @@
                                 </div>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" data-ng-model="band">
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="dividersmall"></div>
-                    <div class="modal-coor">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-2"
-                                    <label for="message-text" class="control-label">Coordinates:</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="coor">
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -265,23 +231,6 @@
                         </form>
                     </div>
                     <div class="dividersmall"></div>
-                    <div class="modal-eirp-ave">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-2"
-                                    <label for="message-text" class="control-label">EIRP (ave.):</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="eirpave">
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="dividersmall"></div>
                     <div class="modal-down">
                         <form>
                             <div class="row">
@@ -377,23 +326,6 @@
                                 </div>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" data-ng-model="band">
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="dividersmall"></div>
-                    <div class="modal-coor">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-2"
-                                    <label for="message-text" class="control-label">Coordinates:</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="coor">
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -801,7 +733,10 @@
                         <a href="" ng-click="order('Loc')">Location</a>
                         <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
                     </th>
-                    <th></th>
+                    <th> 
+                        <a href="" ng-click="order('EIRP')">EIRP</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -810,6 +745,7 @@
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Band}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Name}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Loc}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.EIRP}}</td>
                  <!--   <td> <a type="button" type="button" data-toggle="modal" data-target="#editPartModal" ng-click="deletePart(part._id)" data-whatever={{part}} class="btn btn-warning">Edit</a> </td> 
                     <td> <a type="button" class="btn btn-danger" ng-click="deletePart(part._id)">Delete</a> </td>-->
                 </tr>
