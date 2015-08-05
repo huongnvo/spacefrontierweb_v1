@@ -300,7 +300,7 @@
                                 <label for="message-text" class="control-label">Name:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Name">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Name">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -317,7 +317,7 @@
                                 <label for="message-text" class="control-label">Type:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Type">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Type">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -334,7 +334,7 @@
                                 <label for="message-text" class="control-label">Manufacturer:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Manufacturer">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Manufacturer">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -351,7 +351,7 @@
                                 <label for="message-text" class="control-label">Reference:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Website">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Website">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -368,7 +368,7 @@
                                 <label for="message-text" class="control-label">Description:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Description">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Description">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -385,27 +385,10 @@
                                 <label for="message-text" class="control-label">Mass:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Mass">
-                                    <div class="input-group-addon">g</div>
-                                </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
-                <div class="modal-mass-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Mass (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Mass_further">
+                                 <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Mass">
+                                        <div class="input-group-addon">g</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -423,26 +406,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Power">
-                                    <div class="input-group-addon">W</div>
-                                </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
-                <div class="modal-power-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Power (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Power_further">
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Power">
+                                        <div class="input-group-addon">W</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -460,26 +426,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Volume">
-                                    <div class="input-group-addon">U</div>
-                                </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
-                <div class="modal-vol-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Volume (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Volume_further">
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Volume">
+                                        <div class="input-group-addon">U</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -497,9 +446,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Proportions">
-                                    <div class="input-group-addon">(mm^3)</div>
-                                </div>
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Proportions">
+                                        <div class="input-group-addon">(mm^3)</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -517,9 +466,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Efficiency">
-                                    <div class="input-group-addon">of time</div>
-                                </div>
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Efficiency">
+                                        <div class="input-group-addon">of time</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -536,7 +485,7 @@
                                 <label for="message-text" class="control-label">Objectives:</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Objectives">
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Objectives">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -544,36 +493,19 @@
                     </form>
                 </div>
                 <div class="dividersmall"></div>
-                <div class="modal-therm">
+                <div class="modal-ener">
                     <form>
                         <div class="row">
                             <div class="col-md-1">
                             </div>
                             <div class="col-md-2"
-                                <label for="message-text" class="control-label">Thermal:</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBatteries.Thermal_further">
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
-                <div class="modal-low">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Temp (low):</label>
+                                <label for="message-text" class="control-label">Energy Storage:</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Temp_low">
-                                    <div class="input-group-addon">degrees Celcius</div>
-                                </div>
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Energy_Storage">
+                                        <div class="input-group-addon">Whr</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -581,19 +513,39 @@
                     </form>
                 </div>
                 <div class="dividersmall"></div>
-                <div class="modal-high">
+                <div class="modal-pper">
                     <form>
                         <div class="row">
                             <div class="col-md-1">
                             </div>
                             <div class="col-md-2"
-                                <label for="message-text" class="control-label">Temp (high):</label>
+                                <label for="message-text" class="control-label">Panels/Wing:</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedBatteries.Temp_high">
-                                    <div class="input-group-addon">degrees Celcius</div>
-                                </div>
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.PperWing">
+                                        <div class="input-group-addon">panels per wing</div>
+                                 </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-wing">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Wings:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Wings">
+                                        <div class="input-group-addon">wings</div>
+                                 </div>
                             </div>
                             <div class="col-md-1">
                             </div>
