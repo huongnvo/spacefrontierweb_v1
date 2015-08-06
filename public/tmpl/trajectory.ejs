@@ -166,10 +166,7 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
-                                    <div class="input-group-addon">(mm^3)</div>
-                                </div>
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -476,6 +473,18 @@
             </div>
         </div>
         <hr>
+    </div>
+
+    <div ng-show="propulsionPart.Mass == 'Unknown'">
+        <div class="alert alert-info" role="alert">The part you are choosing does not have the associated propellant tank, and control electronics. We will be using a standard mass of 2500 g for when calculating the final mass of the CubeSat.</div>
+    </div>
+
+    <div ng-show="propulsionPart.Power == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated power for this propulsion system. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+    </div>
+
+    <div ng-show="propulsionPart.Volume == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated volume for this propulsion system. We will be using a standard power of 2.5 U when calculating the final power of the CubeSat.</div>
     </div>
 
     <div ng-show="showDatabase">

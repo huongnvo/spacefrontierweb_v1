@@ -169,10 +169,7 @@
                                 <label for="message-text" class="control-label">Proportions:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Proportions">
-                                        <div class="input-group-addon">(mm^3)</div>
-                                 </div>
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Proportions">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -189,10 +186,7 @@
                                 <label for="message-text" class="control-label">Efficiency:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Efficiency">
-                                        <div class="input-group-addon">of time</div>
-                                 </div>
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Efficiency">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -246,10 +240,7 @@
                                 <label for="message-text" class="control-label">Panels/Wing:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                        <input type="text" class="form-control" data-ng-model="selectedPanels.PperWing">
-                                        <div class="input-group-addon">panels per wing</div>
-                                 </div>
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.PperWing">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -266,10 +257,7 @@
                                 <label for="message-text" class="control-label">Wings:</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                        <input type="text" class="form-control" data-ng-model="selectedPanels.Wings">
-                                        <div class="input-group-addon">wings</div>
-                                 </div>
+                                <input type="text" class="form-control" data-ng-model="selectedPanels.Wings">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -1161,6 +1149,18 @@
         </div>
     </div>
 
+    <div ng-show="panelsPart.Mass == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated mass for this solar panel. We will be using a standard mass of 800 g when calculating the final mass of the CubeSat.</div>
+    </div>
+
+    <div ng-show="panelsPart.Power == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated power for this solar panel. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+    </div>
+
+    <div ng-show="panelsPart.Volume == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated volume for this solar panel. We will be using a standard power of 0.25 U when calculating the final power of the CubeSat.</div>
+    </div>
+
     <div ng-show="showPanels">
         <div class="row">
             <div class="col-lg-6">
@@ -1285,6 +1285,14 @@
         <hr>
     </div>
 
+    <div ng-show="batteriesPart.Mass == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated mass for this battery. We will be using a standard mass of 400 g when calculating the final mass of the CubeSat.</div>
+    </div>
+
+    <div ng-show="batteriesPart.Volume == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated volume for this battery. We will assume that the battery is of negligible volume.</div>
+    </div>
+
     <div ng-show="showBatteries">
         <div class="row">
             <div class="col-lg-6">
@@ -1342,6 +1350,18 @@
             </div>
         </div>
         <hr>
+    </div>
+
+    <div ng-show="epsPart.Mass == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated mass for this part. We will be using a standard mass of 2000 g when calculating the final mass of the CubeSat.</div>
+    </div>
+
+    <div ng-show="epsPart.Power == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated power for this part. We will be using a standard power of 0.01 W when calculating the final power of the CubeSat.</div>
+    </div>
+
+    <div ng-show="epsPart.Volume == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated volume for this part. We will be using a standard volume of 0.5 U when calculating the final power of the CubeSat.</div>
     </div>
 
     <div ng-show="showEPS">

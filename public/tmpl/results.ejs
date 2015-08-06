@@ -18,9 +18,10 @@
             </div>
             <div class="col-lg-6">
                 <div class="list-group">
-                    <div class="list-group-item">Mass: {{attitude.Mass + antenna.Mass + receiver.Mass + cdh.Mass + instrument.Mass + panels.Mass + batteries.Mass + eps.Mass + propulsion.Mass + bus.Mass + deployer.Mass + thermal.Mass}} g</div>
-                    <div class="list-group-item">Power: {{attitude.Power + antenna.Power + receiver.Power + cdh.Power + instrument.Power - panels.Power - batteries.Power - eps.Power + propulsion.Power + bus.Power + deployer.Power + thermal.Power}} W</div>
-                    <div class="list-group-item">Volume: {{attitude.Volume + antenna.Volume + receiver.Volume + cdh.Volume + instrument.Volume+ batteries.Volume + eps.Volume + propulsion.Volume + thermal.Volume }} U</div>
+                    <div class="list-group-item">Mass Without Deployer: {{mass}} g</div>
+                    <div class="list-group-item">Mass With Deployer: {{massW}} g</div>
+                    <div class="list-group-item">Power: {{power}} W</div>
+                    <div class="list-group-item">Volume: {{volume}} U</div>
                 </div>
             </div>
         </div>
