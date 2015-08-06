@@ -106,14 +106,14 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
                 totalPower = totalPower + parseFloat($scope.attitude.Power);
             }
             if ($scope.receiver.Name == $scope.attitude.Name) {
-                totalMass = totalMass;
+                totalPower = totalPower;
             } else if ($scope.receiver.Power == 'Unknown') {
                 totalPower += 20;
             } else {
                 totalPower += parseFloat($scope.receiver.Power);
             }
             if ($scope.cdh.Name == $scope.attitude.Name || $scope.cdh.Name == $scope.receiver.Name) {
-                totalMass = totalMass;
+                totalPower = totalPower;
             } else if ($scope.cdh.Power == 'Unknown') {
                 totalPower += 5;
             } else {
@@ -130,7 +130,7 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
                 totalPower += parseFloat($scope.propulsion.Power);
             }
             if ($scope.bus.Name == $scope.attitude.Name || $scope.bus.Name == $scope.receiver.Name || $scope.bus.Name == $scope.cdh.Name || $scope.bus.Name == $scope.eps.Name) {
-                totalMass = totalMass;
+                totalPower = totalPower;
             } else if ($scope.bus.Power == 'Unknown') {
                 totalPower += 0;
             } else {
@@ -139,6 +139,7 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
             if ($scope.panels.Power == 'Unknown') {
                 totalPower -= parseFloat($scope.panels.Power);
             }
+
 
             if ($scope.attitude.Volume == 'Unknown') {
                 totalVolume += parseFloat($scope.attitude.Volume);
@@ -149,14 +150,14 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
                 totalVolume += parseFloat($scope.antenna.Volume);
             }
             if ($scope.receiver.Name == $scope.attitude.Name) {
-                totalMass = totalMass;
+                totalVolume = totalVolume;
             } else if ($scope.receiver.Volume == 'Unknown') {
                 totalVolume += 0.5;
             } else {
                 totalVolume += parseFloat($scope.receiver.Volume);
             }
             if ($scope.cdh.Name == $scope.attitude.Name || $scope.cdh.Name == $scope.receiver.Name) {
-                totalMass = totalMass;
+                totalVolume = totalVolume;
             } else if ($scope.cdh.Volume == 'Unknown') {
                 totalVolume += 0.75;
             } else {
@@ -174,7 +175,7 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
                 totalVolume += parseFloat($scope.batteries.Volume);
             }
             if ($scope.eps.Name == $scope.attitude.Name || $scope.eps.Name == $scope.cdh.Name || $scope.eps.Name == $scope.receiver.Name) {
-                totalMass = totalMass;
+                totalVolume = totalVolume;
             } else if ($scope.eps.Volume == 'Unknown') {
                 totalVolume += 0.5;
             } else {
@@ -186,7 +187,7 @@ spaceFrontierApp.controller("resultsController", function($scope, $http) {
                 totalVolume += parseFloat($scope.propulsion.Volume);
             }
             if ($scope.bus.Name == $scope.attitude.Name || $scope.bus.Name == $scope.receiver.Name || $scope.bus.Name == $scope.cdh.Name || $scope.bus.Name == $scope.eps.Name) {
-                totalMass = totalMass;
+                totalVolume = totalVolume;
             } else if ($scope.bus.Volume == 'Unknown') {
                 totalVolume += 0;
             } else {
