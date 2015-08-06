@@ -9,9 +9,6 @@ var CubesatFactory = function(Schema,mongoose) {
 			Mission_Name: Object,
 			Mission_Objectives: Object,
 			Target: String,
-			Mass: Number,
-			Power: Number,
-			Volume: Number,
 			Attitude: {
 				Type: String,
 				Type_further: String,
@@ -713,9 +710,6 @@ var CubesatFactory = function(Schema,mongoose) {
 			Mission_Name: undefined,
 			Mission_Objectives: undefined,
 			Target: undefined,
-			Mass: 0,
-			Power: 0,
-			Volume: 0,
 			Attitude: {
 				Type: undefined,
 				Type_further: undefined,

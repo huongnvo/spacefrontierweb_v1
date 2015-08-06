@@ -51,12 +51,12 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
 
     $scope.okAngle = function(part) {
-        if(part.Angle_prec != 'Unknown'){
-            return parseFloat(part.Angle_prec) <= aControl;
-        }
-
         if($scope.ignorefilters){
             return true;
+        } else {
+            if(part.Angle_prec != 'Unknown'){
+                return parseFloat(part.Angle_prec) <= aControl;
+            }
         }
         return false;
     };
@@ -98,7 +98,6 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
         $scope.selectedPart = part;
     }
 
-    var passed = false;
     $scope.addPart = function() {
         $http.put('/parts/cubesat-attitude/' + idstring, $scope.selectedPart)
             .success(function(data) {

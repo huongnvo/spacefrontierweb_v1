@@ -17,16 +17,26 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
         $scope.predicate = predicate;
     };
 
-    $scope.showValues = function () {
-        alert('oldValue = ' + $scope.oldValue);
-        alert('newValue = ' + $scope.editName);
-    }
-
     $scope.cancelEdit = function() {
         $scope.edit = false;
+
+        $scope.id = '';
+        $scope.type = '';
+        $scope.typecont = '';
+        $scope.name = '';
+        $scope.manu = '';
+        $scope.ref = '';
+        $scope.her = '';
+        $scope.mass = '';
+        $scope.power = '';
+        $scope.vol = '';
+        $scope.prop = '';
+        $scope.angle = '';
+        $scope.ac = '';
+        $scope.sci = '';
     }
 
-    $scope.poop = function(part) {
+    $scope.openEdit = function(part) {
         window.scrollTo(0, 0);
 
         $scope.edit = true;
@@ -72,6 +82,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
         };
         $http.post('/parts/attitude', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.type = '';
                 $scope.typecont = '';
                 $scope.name = '';

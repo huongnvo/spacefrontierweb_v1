@@ -121,23 +121,6 @@
                     </form>
                 </div>
                 <div class="dividersmall"></div>
-                <div class="modal-mass-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Mass (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Mass_further">
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
                 <div class="modal-power">
                     <form>
                         <div class="row">
@@ -158,23 +141,6 @@
                     </form>
                 </div>
                 <div class="dividersmall"></div>
-                <div class="modal-power-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Power (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Power_further">
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
                 <div class="modal-vol">
                     <form>
                         <div class="row">
@@ -188,23 +154,6 @@
                                         <input type="text" class="form-control" data-ng-model="selectedBus.Volume">
                                         <div class="input-group-addon">U</div>
                                 </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
-                <div class="modal-vol-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Volume (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedBus.Volume_further">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -368,23 +317,6 @@
                     </form>
                 </div>
                 <div class="dividersmall"></div>
-                <div class="modal-mass-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Mass (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Mass_further">
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
                 <div class="modal-power">
                     <form>
                         <div class="row">
@@ -405,23 +337,6 @@
                     </form>
                 </div>
                 <div class="dividersmall"></div>
-                <div class="modal-power-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Power (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Power_further">
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
                 <div class="modal-vol">
                     <form>
                         <div class="row">
@@ -435,23 +350,6 @@
                                         <input type="text" class="form-control" data-ng-model="selectedDeployer.Volume">
                                         <div class="input-group-addon">U</div>
                                 </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="dividersmall"></div>
-                <div class="modal-vol-further">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-2"
-                                <label for="message-text" class="control-label">Volume (cont.):</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Volume_further">
                             </div>
                             <div class="col-md-1">
                             </div>
@@ -700,7 +598,7 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="16">
+                        <select multiple class="form-control" size="19">
                             <option ng-click="saveBus(part)" ng-repeat="part in parts|filter:busType">
                                 {{part.Name}}
                             </option>
@@ -716,10 +614,7 @@
                 <h3>Current Design</h3>
                 <h6>Bus Selection<br>Page 7/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="16">
-                    <option>Current Mass: {{instrumentPart.Mass+attitudePart.Mass+propulsionPart.Mass+antennaPart.Mass+recieverPart.Mass}}</option>
-                    <option>Current Power: {{instrumentPart.Mass+attitudePart.Power+propulsionPart.Power+antennaPart.Power+recieverPart.Power}}</option>
-                    <option>Current Volume: {{instrumentPart.Mass+attitudePart.Volume+propulsionPart.Volume+antennaPart.Volume+recieverPart.Volume}}</option>
+                <select multiple class="form-control" size="19">
                     <option>Name: {{Name}}</option>
                     <option>Objectives: {{Objectives}}</option>
                     <option>Target: {{target}}</option>
@@ -763,7 +658,7 @@
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
 
-                        <select multiple class="form-control" size="16">
+                        <select multiple class="form-control" size="19">
                             <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: deployerType">
                                 {{part.Name}}
 
@@ -779,10 +674,7 @@
                 <h3>Current Design</h3>
                 <h6>Deployer Selection<br>Page 7/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="16">
-                    <option>Current Mass: {{instrumentPart.Mass+attitudePart.Mass+propulsionPart.Mass+antennaPart.Mass+recieverPart.Mass}}</option>
-                    <option>Current Power: {{instrumentPart.Mass+attitudePart.Power+propulsionPart.Power+antennaPart.Power+recieverPart.Power}}</option>
-                    <option>Current Volume: {{instrumentPart.Mass+attitudePart.Volume+propulsionPart.Volume+antennaPart.Volume+recieverPart.Volume}}</option>
+                <select multiple class="form-control" size="19">
                     <option>Name: {{Name}}</option>
                     <option>Objectives: {{Objectives}}</option>
                     <option>Target: {{target}}</option>
@@ -825,7 +717,7 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="16">
+                        <select multiple class="form-control" size="19">
                             <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter: thermalType">
                                    {{part.Name}}
                             </option>
@@ -841,10 +733,7 @@
                 <h3>Current Design</h3>
                 <h6>Thermal Selection<br>Page 7/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="16">
-                        <option>Current Mass: {{instrumentPart.Mass+attitudePart.Mass+propulsionPart.Mass+antennaPart.Mass+recieverPart.Mass+cdhPart.Mass+panelsPart.Mass+batteriesPart.Mass+epsPart.Mass+busPart.Mass+deployerPart.Mass+thermalPart.Mass}}</option>
-                        <option>Current Power: {{instrumentPart.Mass+attitudePart.Power+propulsionPart.Power+antennaPart.Power+recieverPart.Power+cdhPart.Power+panelsPart.Power+batteriesPart.Power+epsPart.Power+busPart.Power+deployerPart.Power+thermalPart.Power}}</option>
-                        <option>Current Volume: {{instrumentPart.Mass+attitudePart.Volume+propulsionPart.Volume+antennaPart.Volume+recieverPart.Volume+cdhPart.Volume+panelsPart.Volume+batteriesPart.Volume+epsPart.Volume+busPart.Volume+deployerPart.Volume+thermalPart.Volume}}</option>
+                <select multiple class="form-control" size="19">
                         <option>Name: {{Name}}</option>
                         <option>Objectives: {{Objectives}}</option>
                         <option>Target: {{target}}</option>

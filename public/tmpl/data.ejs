@@ -271,20 +271,6 @@
                     </div>
                     <div class="dividersmall"></div>
                     <div class="modal-proc">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-2"
-                                    <label for="message-text" class="control-label">Cost:</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" data-ng-model="selectedPart.Cost">
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                            </div>
-                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -587,7 +573,7 @@
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
-                        <select multiple class="form-control" size="16">
+                        <select multiple class="form-control" size="19">
                             <option ng-click="savePart(part)" ng-repeat="part in cdhparts|filter:okType|filter:okData|orderBy:order">
                                 {{part.Name}}
                             </option>
@@ -603,10 +589,7 @@
                 <h3>Current Design</h3>
                 <h6>Command & Data Handling Selection<br>Page 5/7</h6>
                 <div class = "dividersmall"></div>
-                <select multiple class="form-control" size="16">
-                        <option>Current Mass: {{instrumentPart.Mass+attitudePart.Mass+propulsionPart.Mass+antennaPart.Mass+recieverPart.Mass+cdhPart.Mass}}</option>
-                        <option>Current Power: {{instrumentPart.Mass+attitudePart.Power+propulsionPart.Power+antennaPart.Power+recieverPart.Power+cdhPart.Power}}</option>
-                        <option>Current Volume: {{instrumentPart.Mass+attitudePart.Volume+propulsionPart.Volume+antennaPart.Volume+recieverPart.Volume+cdhPart.Volume}}</option>
+                <select multiple class="form-control" size="19">
                         <option>Name: {{Name}}</option>
                         <option>Objectives: {{Objectives}}</option>
                         <option>Target: {{target}}</option>

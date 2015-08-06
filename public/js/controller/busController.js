@@ -50,14 +50,14 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
 
     $scope.busType = function(part){
         if(part.Volume!='Unknown'){
-            return part.parseInt(Volume) == $scope.volume && part.Type == 'Cubesat Bus';
+            return parseFloat(part.Volume) == $scope.volume && part.Type == 'Cubesat Bus';
         }
         return false;
     };
 
     $scope.deployerType = function(part){
         if(part.Volume!='Unknown'){
-            return part.parseInt(Volume) == $scope.volume && part.Type == 'Deployer';
+            return parseFloat(part.Volume) == $scope.volume && part.Type == 'Deployer';
         }
         return false;
     };

@@ -16,6 +16,54 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
         $scope.predicate = predicate;
     };
 
+    $scope.cancelEdit = function() {
+        $scope.edit = false;
+
+        $scope.id = '';
+        $scope.type = '';
+        $scope.name = '';
+        $scope.manu = '';
+        $scope.ref = '';
+        $scope.her = '';
+        $scope.mass = '';
+        $scope.power = '';
+        $scope.vol = '';
+        $scope.prop = '';
+        $scope.meas = '';
+        $scope.res = '';
+        $scope.pix = '';
+        $scope.obj = '';
+        $scope.fov = '';
+    }
+
+    $scope.openEdit = function(part) {
+        window.scrollTo(0, 0);
+
+        $scope.edit = true;
+
+        $scope.id = part._id;
+        $scope.type = part.Type;
+        $scope.name = part.Name;
+        $scope.manu = part.Manufacturer;
+        $scope.ref = part.Reference;
+        $scope.her = part.Heritage;
+        $scope.mass = part.Mass;
+        $scope.power = part.Power;
+        $scope.vol = part.Volume;
+        $scope.prop = part.Proportions;
+        $scope.meas = part.Measurement;
+        $scope.res = part.Resolution;
+        $scope.pix = part.Pixels;
+        $scope.obj = part.Objectives;
+        $scope.fov = part.FOV;
+    }
+
+    $scope.editPart = function() {
+        $scope.addPart();
+        $scope.deletePart($scope.id);
+        $scope.edit = false;
+    }
+
     $scope.addPart = function() {
         $scope.newPart = {
             Type: $scope.type,
@@ -36,6 +84,7 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
         };
         $http.post('/parts/instruments', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.type = '';
                 $scope.name = '';
                 $scope.manu = '';

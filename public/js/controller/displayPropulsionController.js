@@ -16,6 +16,51 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
         $scope.predicate = predicate;
     };
 
+    $scope.cancelEdit = function() {
+        $scope.edit = false;
+
+        $scope.id = '';
+        $scope.type = '';
+        $scope.name = '';
+        $scope.manu = '';
+        $scope.ref = '';
+        $scope.her = '';
+        $scope.mass = '';
+        $scope.power = '';
+        $scope.vol = '';
+        $scope.prop = '';
+        $scope.isp = '';
+        $scope.dv = '';
+        $scope.obj = '';
+    }
+
+    $scope.openEdit = function(part) {
+        window.scrollTo(0, 0);
+
+        $scope.edit = true;
+
+        $scope.id = part._id;
+        $scope.type = part.Type;
+        $scope.name = part.Name;
+        $scope.manu = part.Manufacturer;
+        $scope.ref = part.Reference;
+        $scope.her = part.Heritage;
+        $scope.mass = part.Mass;
+        $scope.power = part.Power;
+        $scope.vol = part.Volume;
+        $scope.prop = part.Proportions;
+        $scope.isp = part.Specific_Impulse;
+        $scope.dv = part.DeltaV;
+        $scope.obj = part.Objectives;
+    }
+
+    $scope.editPart = function() {
+        $scope.addPart();
+        $scope.deletePart($scope.id);
+        $scope.edit = false;
+    }
+
+
     $scope.addPart = function() {
         $scope.newPart = {
             Type: $scope.type,
@@ -34,6 +79,7 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
         };
         $http.post('/parts/propulsion', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.type = '';
                 $scope.name = '';
                 $scope.manu = '';

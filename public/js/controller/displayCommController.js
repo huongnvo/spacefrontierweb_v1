@@ -16,6 +16,56 @@ spaceFrontierApp.controller("displayCommController", function($scope, $http) {
         $scope.predicate = predicate;
     };
 
+     $scope.cancelEdit = function() {
+        $scope.edit = false;
+
+        $scope.id = '';
+        $scope.type = '';
+        $scope.name = '';
+        $scope.manu = '';
+        $scope.ref = '';
+        $scope.her = '';
+        $scope.mass = '';
+        $scope.power = '';
+        $scope.vol = '';
+        $scope.prop = '';
+        $scope.freq = '';
+        $scope.data = '';
+        $scope.rec = '';
+        $scope.transmit = '';
+        $scope.band = '';
+        $scope.gain = '';
+    }
+
+    $scope.openEdit = function(part) {
+        window.scrollTo(0, 0);
+
+        $scope.edit = true;
+
+        $scope.id = part._id;
+        $scope.type = part.Type;
+        $scope.name = part.Name;
+        $scope.manu = part.Manufacturer;
+        $scope.ref = part.Reference;
+        $scope.her = part.Heritage;
+        $scope.mass = part.Mass;
+        $scope.power = part.Power;
+        $scope.vol = part.Volume;
+        $scope.prop = part.Proportions;
+        $scope.freq = part.Frequency;
+        $scope.data = part.Data_and_Objectives;
+        $scope.rec = part.Receiver_Sensitivity;
+        $scope.transmit = part.Transmit_Power;
+        $scope.band = part.Beamwidth;
+        $scope.gain = part.Gain;
+    }
+
+    $scope.editPart = function() {
+        $scope.addPart();
+        $scope.deletePart($scope.id);
+        $scope.edit = false;
+    }
+
     $scope.addPart = function() {
         $scope.newPart = {
             Type: $scope.type,
@@ -37,6 +87,7 @@ spaceFrontierApp.controller("displayCommController", function($scope, $http) {
         };
         $http.post('/parts/comm', $scope.newPart)
             .success(function(data) {
+                $scope.id = '';
                 $scope.type = '';
                 $scope.name = '';
                 $scope.manu = '';
