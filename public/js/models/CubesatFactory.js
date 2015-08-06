@@ -10,286 +10,210 @@ var CubesatFactory = function(Schema,mongoose) {
 			Mission_Objectives: Object,
 			Target: String,
 			Attitude: {
-				id: String,
 				Type: String,
 				Type_further: String,
 				Name: String,
 				Manufacturer: String,
 				Reference: String,
 				Heritage: String,
-				Mass: Number,
-				Mass_further: String,
-				Power: Number,
-				Power_further: String,
-				Volume: Number,
+				Mass: String,
+				Power: String,
+				Volume: String,
 				Proportions: String,
-				Volume_further: String,
-				Angle_prec: Number,
-				Attitude_control_further: String,
+				Angle_prec: String,
 				Ac_sensors: String,
 				Scientific_obj: String,
-				Venue: String,
-				Temp_low: Number,
-				Temp_high: Number,
-				Datarate: Number,
-				Cost: Number
+				Cost: String
 			},
 			Antenna: {
-				id: String,
-				Type: String,
-				Name: String,
-				Manufacturer: String,
-				Website: String,
-				Heritage: String,
-				Mass: Number,
-				Mass_further: String,
-				Power: Number,
-				Power_further: String,
-				Volume: Number,
-				Proportions: String,
-				Volume_further: String,
-				Frequency: String,
-				Data_and_Objectives: String,
-				Receiver_Sensitivity: Number,
-				Transmit_Power: Number,
-				Transmit_Power_further: String,
-				Beamwidth: Number,
-				Gain: Number,
-				Gain_further: String,
-				Life_and_Use: String,
-				Temp_Low: Number,
-				Temp_High: Number
-			},
-			Receiver: {
-				id: String,
-				Type: String,
-				Name: String,
-				Manufacturer: String,
-				Website: String,
-				Heritage: String,
-				Mass: Number,
-				Mass_further: String,
-				Power: Number,
-				Power_further: String,
-				Volume: Number,
-				Proportions: String,
-				Volume_further: String,
-				Frequency: String,
-				Data_and_Objectives: String,
-				Receiver_Sensitivity: Number,
-				Transmit_Power: Number,
-				Transmit_Power_further: String,
-				Beamwidth: Number,
-				Gain: Number,
-				Gain_further: String,
-				Life_and_Use: String,
-				Temp_Low: Number,
-				Temp_High: Number
-			},
-			Cdh: {
-				id: String,
-				Type: String, 
-			    Name: String, 
-			    Manufacturer: String, 
-			    Reference: String, 
-			    Heritage: String, 
-			    Mass: Number, 
-			    Mass_further: String, 
-			    Power: Number, 
-			    Power_further: String, 
-			    Volume: Number, 
-			    Proportions: String, 
-			    Volume_further: String, 
-			    MIPS: Number, 
-			    MHz: Number, 
-			    Processing_further: String, 
-			    Memory: String, 
-			    Temp_low: Number, 
-			    Temp_high: Number, 
-			    Scientific_obj: String, 
-			    Cost: Number
-			},
-			Instrument: {
-				id: String,
-				Type: String,
-				Name:String,
-				Manufacturer:String,
-				Reference:String,
-				Heritage:String,
-				Mass:Number, 
-				Mass_further:String,
-				Power:Number, 
-				Power_further:String,
-				Volume:Number,
-				Proportions:String,
-				Volume_further:String,
-				Measurement:String,
-				Sensitivity:String,
-				Resolution:String,
-				Pixels:String,
-				Objectives:String,
-				Venue:String,
-				FOV:String, 
-				T_lo:Number, 
-				T_hi:Number, 
-				Thermal_further:String,
-				Datarate:Number, 
-				Cost:Number
-			},
-			Panels: {
-				id: String,
-				Type: String,
-			    Name: String,
-			    Manufacturer: String,
-			    Website: String,
-			    Description: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
-			    Proportions: String,
-			    Volume_further: String,
-			    Efficiency: String,
-			    Objectives: String,
-			    Thermal_further: String,
-			    Temp_low: Number,
-			    Temp_high: Number,
-			    Energy_Storage: Number,
-			    PperWing: Number,
-			    Wings: Number,
-			    Cost: Number
-			},
-			Batteries: {
-				id: String,
-				Type: String,
-			    Name: String,
-			    Manufacturer: String,
-			    Website: String,
-			    Description: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
-			    Proportions: String,
-			    Volume_further: String,
-			    Efficiency: String,
-			    Objectives: String,
-			    Thermal_further: String,
-			    Temp_low: Number,
-			    Temp_high: Number,
-			    Energy_Storage: Number,
-			    PperWing: Number,
-			    Wings: Number,
-			    Cost: Number
-			},
-			EPS: {
-				id: String,
-				Type: String,
-			    Name: String,
-			    Manufacturer: String,
-			    Website: String,
-			    Description: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
-			    Proportions: String,
-			    Volume_further: String,
-			    Efficiency: String,
-			    Objectives: String,
-			    Thermal_further: String,
-			    Temp_low: Number,
-			    Temp_high: Number,
-			    Energy_Storage: Number,
-			    PperWing: Number,
-			    Wings: Number,
-			    Cost: Number
-			},
-			Propulsion: {
-				id: String,
 				Type: String,
 				Name: String,
 				Manufacturer: String,
 				Reference: String,
 				Heritage: String,
-				Mass: Number,
-				Mass_further: String,
-				Power: Number,
-				Power_further: String,
-				Volume: Number,
+				Mass: String,
+				Power: String,
+				Volume: String,
 				Proportions: String,
-				Volume_further: String,
-				Specific_Impulse: Number,
-				DeltaV: Number,
-				Objectives: String,
-				Thermal_Issues: String,
-				Total_Impulse: Number,
-				Cost: Number
+				Frequency: String,
+				Data_and_Objectives: String,
+				Receiver_Sensitivity: String,
+				Transmit_Power: String,
+				Beamwidth: String,
+				Gain: String,
+				Cost: String
+			},
+			Receiver: {
+				Type: String,
+				Name: String,
+				Manufacturer: String,
+				Reference: String,
+				Heritage: String,
+				Mass: String,
+				Power: String,
+				Volume: String,
+				Proportions: String,
+				Frequency: String,
+				Data_and_Objectives: String,
+				Receiver_Sensitivity: String,
+				Transmit_Power: String,
+				Beamwidth: String,
+				Gain: String,
+				Cost: String
+			},
+			Cdh: {
+			    Type: String, 
+			    Name: String, 
+			    Manufacturer: String, 
+			    Reference: String, 
+			    Heritage: String, 
+			    Mass: String, 
+			    Power: String,  
+			    Volume: String,
+			    Proportions: String, 
+			    MIPS: String, 
+			    MHz: String, 
+			    Processing_further: String, 
+			    Memory: String,  
+			    Scientific_obj: String, 
+			    Cost: String,
+			    Additional_info: String
+			},
+			Instrument: {
+				Type: String,
+				Name:String,
+				Manufacturer:String,
+				Reference:String,
+				Heritage:String,
+				Mass:String, 
+				Power:String, 
+				Volume:String,
+				Proportions:String,
+				Measurement:String,
+				Resolution:String,
+				Pixels:String,
+				Objectives:String,
+				FOV:String, 
+				Cost:String
+			},
+			Panels: {
+			    Type: String,
+			    Name: String,
+			    Manufacturer: String,
+			    Reference: String,
+			    Description: String,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
+			    Proportions: String,
+			    Efficiency: String,
+			    Objectives: String,
+			    Energy_Storage: String,
+			    PperWing: String,
+			    Wings: String,
+			    Cost: String,
+			    Additional_info: String
+			},
+			Batteries: {
+			    Type: String,
+			    Name: String,
+			    Manufacturer: String,
+			    Reference: String,
+			    Description: String,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
+			    Proportions: String,
+			    Efficiency: String,
+			    Objectives: String,
+			    Energy_Storage: String,
+			    PperWing: String,
+			    Wings: String,
+			    Cost: String,
+			    Additional_info: String
+			},
+			EPS: {
+			    Type: String,
+			    Name: String,
+			    Manufacturer: String,
+			    Reference: String,
+			    Description: String,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
+			    Proportions: String,
+			    Efficiency: String,
+			    Objectives: String,
+			    Energy_Storage: String,
+			    PperWing: String,
+			    Wings: String,
+			    Cost: String,
+			    Additional_info: String
+			},
+			Propulsion: {
+				Type: String,
+	            Name: String,
+	            Manufacturer: String,
+	            Reference: String,
+	            Heritage: String,
+	            Mass: String,
+	            Power: String,
+	            Volume: String,
+	            Proportions: String,
+	            Specific_Impulse: String,
+	            DeltaV: String,
+	            Objectives: String,
+	            Cost: String
 			},
 			Station: {
-				id: String,
 				Name: String,
 			    Uplink_freq: String, 
 			    EIRP: String, 
-			    EIRP_ave: String, 
 			    Downlink_freq: String, 
 			    Gain: String, 
 			    Per_gain: String, 
 			    Diameter: String, 
 			    Loc: String, 
-			    Band: String,
-			    Coordinates: String
+			    Band: String
 			},
 			Bus: {
-				id: String,
 				Type: String,
 			    Name: String,
 			    Manufacturer: String,
-			    Website: String,
+			    Reference: String,
 			    Heritage: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
-			    Volume_further: String,
-			    Objectives: String
+			    Additional_info: String,
+			    Cost:String
 			},
 			Deployer: {
-				id: String,
 				Type: String,
 			    Name: String,
 			    Manufacturer: String,
-			    Website: String,
+			    Reference: String,
 			    Heritage: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
-			    Volume_further: String,
-			    Objectives: String
+			    Additional_info: String,
+			    Cost:String
 			},
 			Thermal: {
-				id: String,
 				Type: String,
 			    Name: String,
 			    Manufacturer: String,
-			    Website: String,
+			    Reference: String,
 			    Heritage: String,
-			    Mass: Number,
-			    Mass_further: String,
-			    Power: Number,
-			    Power_further: String,
-			    Volume: Number,
+			    Mass: String,
+			    Power: String,
+			    Volume: String,
 			    Proportions: String,
-			    Volume_further: String,
-			    Objectives: String
+			    Additional_info: String,
+			    Cost:String
 			}
 		});
 		this.cubesat = mongoose.model('cubesat', Schema);
@@ -334,6 +258,42 @@ var CubesatFactory = function(Schema,mongoose) {
 		});
 	}
 
+	this.updateMass = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Mass: req.body.Mass}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
+
+	this.updatePower = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Power: req.body.Power}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
+
+	this.updateVolume = function(req, res) {
+		this.cubesat.update(
+		{
+			_id: req.params._id
+		}, 
+		{$set: 
+			{Volume: req.body.Volume}
+		}, function(error, output) {
+			res.json(output);
+		});
+	}
+
 	this.updateTarget = function(req, res) {
 		this.cubesat.update(
 		{
@@ -355,7 +315,6 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Attitude:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 					Type_further: req.body.Type_further,
 					Name: req.body.Name,
@@ -363,23 +322,15 @@ var CubesatFactory = function(Schema,mongoose) {
 					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass,
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power,
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
-					Volume_further: req.body.Volume_further,
 					Angle_prec: req.body.Angle_prec,
-					Attitude_control_further: req.body.Attitude_control_further,
 					Ac_sensors: req.body.Ac_sensors,
 					Scientific_obj: req.body.Scientific_obj,
-					Venue: req.body.Venue,
-					Temp_low: req.body.Temp_low,
-					Temp_high: req.body.Temp_high,
-					Datarate: req.body.Datarate,
 					Cost: req.body.Cost
 	    		}
-	    	}
+	 	   }
 		}, function(error, output) {
 			res.json(output);
 		});
@@ -394,30 +345,22 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Antenna:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 					Name: req.body.Name,
 					Manufacturer: req.body.Manufacturer,
-					Website: req.body.Website,
+					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass,
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power,
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
-					Volume_further: req.body.Volume_further,
 					Frequency: req.body.Frequency,
 					Data_and_Objectives: req.body.Data_and_Objectives,
 					Receiver_Sensitivity: req.body.Receiver_Sensitivity,
 					Transmit_Power: req.body.Transmit_Power,
-					Transmit_Power_further: req.body.Transmit_Power_further,
 					Beamwidth: req.body.Beamwidth,
 					Gain: req.body.Gain,
-					Gain_further: req.body.Gain_further,
-					Life_and_Use: req.body.Life_and_Use,
-					Temp_Low: req.body.Temp_Low,
-					Temp_High: req.body.Temp_High
+					Cost: req.body.Cost
 	    		}
 	    	}
 		}, function(error, output) {
@@ -434,30 +377,22 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Receiver:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 					Name: req.body.Name,
 					Manufacturer: req.body.Manufacturer,
-					Website: req.body.Website,
+					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass,
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power,
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
-					Volume_further: req.body.Volume_further,
 					Frequency: req.body.Frequency,
 					Data_and_Objectives: req.body.Data_and_Objectives,
 					Receiver_Sensitivity: req.body.Receiver_Sensitivity,
 					Transmit_Power: req.body.Transmit_Power,
-					Transmit_Power_further: req.body.Transmit_Power_further,
 					Beamwidth: req.body.Beamwidth,
 					Gain: req.body.Gain,
-					Gain_further: req.body.Gain_further,
-					Life_and_Use: req.body.Life_and_Use,
-					Temp_Low: req.body.Temp_Low,
-					Temp_High: req.body.Temp_High
+					Cost: req.body.Cost
 	    		}
 	    	}
 		}, function(error, output) {
@@ -474,27 +409,22 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Cdh:
 				{
-					id: req.body._id,
 					Type: req.body.Type, 
 				    Name: req.body.Name, 
 				    Manufacturer: req.body.Manufacturer, 
 				    Reference: req.body.Reference, 
 				    Heritage: req.body.Heritage, 
 				    Mass: req.body.Mass, 
-				    Mass_further: req.body.Mass_further, 
 				    Power: req.body.Power, 
-				    Power_further: req.body.Power_further, 
 				    Volume: req.body.Volume, 
-				    Proportions: req.body.Proportions, 
-				    Volume_further: req.body.Volume_further, 
+				    Proportions: req.body.Proportions,  
 				    MIPS: req.body.MIPS, 
 				    MHz: req.body.MHz, 
 				    Processing_further: req.body.Processing_further, 
 				    Memory: req.body.Memory, 
-				    Temp_low: req.body.Temp_low, 
-				    Temp_high: req.body.Temp_high, 
 				    Scientific_obj: req.body.Scientific_obj, 
-				    Cost: req.body.Cost
+				    Cost: req.body.Cost,
+				    Additional_info: req.body.Additional_info
 	    		} 
     		}
 		}, function(error, output) {
@@ -511,30 +441,20 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Instrument:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 					Name: req.body.Name,
 					Manufacturer: req.body.Manufacturer,
 					Reference: req.body.Reference,
 					Heritage: req.body.Heritage,
 					Mass: req.body.Mass, 
-					Mass_further: req.body.Mass_further,
 					Power: req.body.Power, 
-					Power_further: req.body.Power_further,
 					Volume: req.body.Volume,
 					Proportions: req.body.Proportions,
-					Volume_further: req.body.Volume_further,
 					Measurement: req.body.Measurement,
-					Sensitivity: req.body.Sensitivity,
 					Resolution: req.body.Resolution,
 					Pixels: req.body.Pixels,
 					Objectives: req.body.Objectives,
-					Venue: req.body.Venue,
 					FOV: req.body.FOV, 
-					T_lo: req.body.T_lo, 
-					T_hi: req.body.T_hi, 
-					Thermal_further: req.body.Thermal_further,
-					Datarate: req.body.Datarate, 
 					Cost: req.body.Cost
 	    		} 
     		}
@@ -552,28 +472,22 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Panels:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 				    Name: req.body.Name,
 				    Manufacturer: req.body.Manufacturer,
-				    Website: req.body.Website,
+				    Reference: req.body.Reference,
 				    Description: req.body.Description,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Efficiency: req.body.Efficiency,
 				    Objectives: req.body.Objectives,
-				    Thermal_further: req.body.Thermal_further,
-				    Temp_low: req.body.Temp_low,
-				    Temp_high: req.body.Temp_high,
 				    Energy_Storage: req.body.Energy_Storage,
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
-				    Cost: req.body.Cost
+				    Cost: req.body.Cost,
+				    Additional_info: req.body.Additional_info
 	    		} 
     		}
 		}, function(error, output) {
@@ -590,29 +504,23 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Batteries:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 				    Name: req.body.Name,
 				    Manufacturer: req.body.Manufacturer,
-				    Website: req.body.Website,
+				    Reference: req.body.Reference,
 				    Description: req.body.Description,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Efficiency: req.body.Efficiency,
 				    Objectives: req.body.Objectives,
-				    Thermal_further: req.body.Thermal_further,
-				    Temp_low: req.body.Temp_low,
-				    Temp_high: req.body.Temp_high,
 				    Energy_Storage: req.body.Energy_Storage,
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
-				    Cost: req.body.Cost
-	    		} 
+				    Cost: req.body.Cost,
+				    Additional_info: req.body.Additional_info
+	    		}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -628,29 +536,23 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				EPS:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 				    Name: req.body.Name,
 				    Manufacturer: req.body.Manufacturer,
-				    Website: req.body.Website,
+				    Reference: req.body.Reference,
 				    Description: req.body.Description,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
 				    Efficiency: req.body.Efficiency,
 				    Objectives: req.body.Objectives,
-				    Thermal_further: req.body.Thermal_further,
-				    Temp_low: req.body.Temp_low,
-				    Temp_high: req.body.Temp_high,
 				    Energy_Storage: req.body.Energy_Storage,
 				    PperWing: req.body.PperWing,
 				    Wings: req.body.Wings,
-				    Cost: req.body.Cost
-	    		} 
+				    Cost: req.body.Cost,
+				    Additional_info: req.body.Additional_info
+	    		}
     		}
 		}, function(error, output) {
 			res.json(output);
@@ -666,24 +568,18 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Propulsion:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 		            Name: req.body.Name,
 		            Manufacturer: req.body.Manufacturer,
 		            Reference: req.body.Reference,
 		            Heritage: req.body.Heritage,
 		            Mass: req.body.Mass,
-		            Mass_further: req.body.Mass_further,
 		            Power: req.body.Power,
-		            Power_further: req.body.Power_further,
 		            Volume: req.body.Volume,
 		            Proportions: req.body.Proportions,
-		            Volume_further: req.body.Volume_further,
 		            Specific_Impulse: req.body.Specific_Impulse,
 		            DeltaV: req.body.DeltaV,
 		            Objectives: req.body.Objectives,
-		            Thermal_Issues: req.body.Thermal_Issues,
-		            Total_Impulse: req.body.Total_Impulse,
 		            Cost: req.body.Cost
 	    		} 
     		}
@@ -701,18 +597,15 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Station:
 				{
-					id: req.body._id,
 					Name: req.body.Name,
 				    Uplink_freq: req.body.Uplink_freq, 
 				    EIRP: req.body.EIRP, 
-				    EIRP_ave: req.body.EIRP_ave, 
 				    Downlink_freq: req.body.Downlink_freq, 
 				    Gain: req.body.Gain, 
 				    Per_gain: req.body.Per_gain, 
 				    Diameter: req.body.Diameter, 
 				    Loc: req.body.Loc, 
-				    Band: req.body.Band,
-				    Coordinates: req.body.Coordinates
+				    Band: req.body.Band
 	    		} 
     		}
 		}, function(error, output) {
@@ -729,20 +622,17 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Thermal:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 				    Name: req.body.Name,
 				    Manufacturer: req.body.Manufacturer,
-				    Website: req.body.Website,
+				    Reference: req.body.Reference,
 				    Heritage: req.body.Heritage,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
-				    Objectives: req.body.Objectives
+				    Additional_info: req.body.Additional_info,
+				    Cost: req.body.Cost
 	    		} 
     		}
 		}, function(error, output) {
@@ -759,20 +649,17 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Bus:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 				    Name: req.body.Name,
 				    Manufacturer: req.body.Manufacturer,
-				    Website: req.body.Website,
+				    Reference: req.body.Reference,
 				    Heritage: req.body.Heritage,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
-				    Objectives: req.body.Objectives
+				    Additional_info: req.body.Additional_info,
+				    Cost: req.body.Cost
 	    		} 
     		}
 		}, function(error, output) {
@@ -789,20 +676,17 @@ var CubesatFactory = function(Schema,mongoose) {
 			{
 				Deployer:
 				{
-					id: req.body._id,
 					Type: req.body.Type,
 				    Name: req.body.Name,
 				    Manufacturer: req.body.Manufacturer,
-				    Website: req.body.Website,
+				    Reference: req.body.Reference,
 				    Heritage: req.body.Heritage,
 				    Mass: req.body.Mass,
-				    Mass_further: req.body.Mass_further,
 				    Power: req.body.Power,
-				    Power_further: req.body.Power_further,
 				    Volume: req.body.Volume,
 				    Proportions: req.body.Proportions,
-				    Volume_further: req.body.Volume_further,
-				    Objectives: req.body.Objectives
+				    Additional_info: req.body.Additional_info,
+				    Cost: req.body.Cost
 	    		} 
     		}
 		}, function(error, output) {
@@ -823,9 +707,10 @@ var CubesatFactory = function(Schema,mongoose) {
 
 	this.insertEmptyPart = function(req, res) {
 		var Inst1 = new this.cubesat({
+			Mission_Name: undefined,
+			Mission_Objectives: undefined,
 			Target: undefined,
 			Attitude: {
-				id: undefined,
 				Type: undefined,
 				Type_further: undefined,
 				Name: undefined,
@@ -833,73 +718,49 @@ var CubesatFactory = function(Schema,mongoose) {
 				Reference: undefined,
 				Heritage: undefined,
 				Mass: undefined,
-				Mass_further: undefined,
 				Power: undefined,
-				Power_further: undefined,
 				Volume: undefined,
 				Proportions: undefined,
-				Volume_further: undefined,
 				Angle_prec: undefined,
-				Attitude_control_further: undefined,
 				Ac_sensors: undefined,
 				Scientific_obj: undefined,
-				Venue: undefined,
-				Temp_low: undefined,
-				Temp_high: undefined,
-				Datarate: undefined,
 				Cost: undefined
 			},
 			Antenna: {
-				id: undefined,
 				Type: undefined,
 				Name: undefined,
 				Manufacturer: undefined,
-				Website: undefined,
+				Reference: undefined,
 				Heritage: undefined,
 				Mass: undefined,
-				Mass_further: undefined,
 				Power: undefined,
-				Power_further: undefined,
 				Volume: undefined,
 				Proportions: undefined,
-				Volume_further: undefined,
 				Frequency: undefined,
 				Data_and_Objectives: undefined,
 				Receiver_Sensitivity: undefined,
 				Transmit_Power: undefined,
-				Transmit_Power_further: undefined,
 				Beamwidth: undefined,
 				Gain: undefined,
-				Gain_further: undefined,
-				Life_and_Use: undefined,
-				Temp_Low: undefined,
-				Temp_High: undefined
+				Cost: undefined
 			},
 			Receiver: {
-				id: undefined,
 				Type: undefined,
 				Name: undefined,
 				Manufacturer: undefined,
-				Website: undefined,
+				Reference: undefined,
 				Heritage: undefined,
 				Mass: undefined,
-				Mass_further: undefined,
 				Power: undefined,
-				Power_further: undefined,
 				Volume: undefined,
 				Proportions: undefined,
-				Volume_further: undefined,
 				Frequency: undefined,
 				Data_and_Objectives: undefined,
 				Receiver_Sensitivity: undefined,
 				Transmit_Power: undefined,
-				Transmit_Power_further: undefined,
 				Beamwidth: undefined,
 				Gain: undefined,
-				Gain_further: undefined,
-				Life_and_Use: undefined,
-				Temp_Low: undefined,
-				Temp_High: undefined
+				Cost: undefined
 			},
 			Cdh: {
 				Type: undefined, 
@@ -908,20 +769,16 @@ var CubesatFactory = function(Schema,mongoose) {
 			    Reference: undefined, 
 			    Heritage: undefined, 
 			    Mass: undefined, 
-			    Mass_further: undefined, 
 			    Power: undefined, 
-			    Power_further: undefined, 
 			    Volume: undefined, 
 			    Proportions: undefined, 
-			    Volume_further: undefined, 
 			    MIPS: undefined, 
 			    MHz: undefined, 
 			    Processing_further: undefined, 
 			    Memory: undefined, 
-			    Temp_low: undefined, 
-			    Temp_high: undefined, 
 			    Scientific_obj: undefined, 
-			    Cost: undefined
+			    Cost: undefined,
+			    Additional_info: undefined
 			},
 			Instrument: {
 				Type: undefined,
@@ -930,96 +787,69 @@ var CubesatFactory = function(Schema,mongoose) {
 				Reference: undefined,
 				Heritage: undefined,
 				Mass: undefined, 
-				Mass_further: undefined,
 				Power: undefined, 
-				Power_further: undefined,
 				Volume: undefined,
 				Proportions: undefined,
-				Volume_further: undefined,
 				Measurement: undefined,
-				Sensitivity: undefined,
 				Resolution: undefined,
 				Pixels: undefined,
 				Objectives: undefined,
-				Venue: undefined,
 				FOV: undefined, 
-				T_lo: undefined, 
-				T_hi: undefined, 
-				Thermal_further: undefined,
-				Datarate: undefined, 
 				Cost: undefined
 			},
 			Panels: {
-				id: undefined,
 				Type: undefined,
 			    Name: undefined,
 			    Manufacturer: undefined,
-			    Website: undefined,
+			    Reference: undefined,
 			    Description: undefined,
 			    Mass: undefined,
-			    Mass_further: undefined,
 			    Power: undefined,
-			    Power_further: undefined,
 			    Volume: undefined,
 			    Proportions: undefined,
-			    Volume_further: undefined,
 			    Efficiency: undefined,
 			    Objectives: undefined,
-			    Thermal_further: undefined,
-			    Temp_low: undefined,
-			    Temp_high: undefined,
 			    Energy_Storage: undefined,
 			    PperWing: undefined,
 			    Wings: undefined,
-			    Cost: undefined
+			    Cost: undefined,
+			    Additional_info: undefined
 			},
 			Batteries: {
-				id: undefined,
 				Type: undefined,
 			    Name: undefined,
 			    Manufacturer: undefined,
-			    Website: undefined,
+			    Reference: undefined,
 			    Description: undefined,
 			    Mass: undefined,
-			    Mass_further: undefined,
 			    Power: undefined,
-			    Power_further: undefined,
 			    Volume: undefined,
 			    Proportions: undefined,
-			    Volume_further: undefined,
 			    Efficiency: undefined,
 			    Objectives: undefined,
-			    Thermal_further: undefined,
-			    Temp_low: undefined,
-			    Temp_high: undefined,
 			    Energy_Storage: undefined,
 			    PperWing: undefined,
 			    Wings: undefined,
-			    Cost: undefined
+			    Cost: undefined,
+			    Additional_info: undefined
 			},
 			EPS: {
-				id: undefined,
 				Type: undefined,
 			    Name: undefined,
 			    Manufacturer: undefined,
-			    Website: undefined,
+			    Reference: undefined,
 			    Description: undefined,
 			    Mass: undefined,
-			    Mass_further: undefined,
 			    Power: undefined,
-			    Power_further: undefined,
 			    Volume: undefined,
 			    Proportions: undefined,
-			    Volume_further: undefined,
 			    Efficiency: undefined,
 			    Objectives: undefined,
-			    Thermal_further: undefined,
-			    Temp_low: undefined,
-			    Temp_high: undefined,
 			    Energy_Storage: undefined,
 			    PperWing: undefined,
 			    Wings: undefined,
-			    Cost: undefined
+			    Cost: undefined,
+			    Additional_info: undefined
 			},
 			Propulsion: {
 				Type: undefined,
@@ -1028,78 +858,63 @@ var CubesatFactory = function(Schema,mongoose) {
 				Reference: undefined,
 				Heritage: undefined,
 				Mass: undefined,
-				Mass_further: undefined,
 				Power: undefined,
-				Power_further: undefined,
 				Volume: undefined,
 				Proportions: undefined,
-				Volume_further: undefined,
 				Specific_Impulse: undefined,
 				DeltaV: undefined,
 				Objectives: undefined,
-				Thermal_Issues: undefined,
-				Total_Impulse: undefined,
 				Cost: undefined
 			},
 			Station: {
 				Name: undefined,
 			    Uplink_freq: undefined, 
 			    EIRP: undefined, 
-			    EIRP_ave: undefined, 
 			    Downlink_freq: undefined, 
 			    Gain: undefined, 
 			    Per_gain: undefined, 
 			    Diameter: undefined, 
 			    Loc: undefined, 
-			    Band: undefined,
-			    Coordinates: undefined
+			    Band: undefined
 			},
 			Bus: {
-				id: undefined,
 				Type: undefined,
 			    Name: undefined,
 			    Manufacturer: undefined,
-			    Website: undefined,
+			    Reference: undefined,
 			    Heritage: undefined,
 			    Mass: undefined,
-			    Mass_further: undefined,
 			    Power: undefined,
-			    Power_further: undefined,
 			    Volume: undefined,
 			    Proportions: undefined,
-			    Volume_further: undefined,
-			    Objectives: undefined
+			    Additional_info: undefined,
+			    Cost: undefined
 			},
 			Deployer: {
-				id: undefined,
 				Type: undefined,
 			    Name: undefined,
 			    Manufacturer: undefined,
-			    Website: undefined,
+			    Reference: undefined,
 			    Heritage: undefined,
 			    Mass: undefined,
-			    Mass_further: undefined,
 			    Power: undefined,
-			    Power_further: undefined,
 			    Volume: undefined,
 			    Proportions: undefined,
-			    Volume_further: undefined,
-			    Objectives: undefined
+			    Additional_info: undefined,
+			    Cost: undefined
 			},
 			Thermal: {
 				Type: undefined,
 			    Name: undefined,
 			    Manufacturer: undefined,
-			    Website: undefined,
+			    Reference: undefined,
 			    Heritage: undefined,
 			    Mass: undefined,
-			    Mass_further: undefined,
 			    Power: undefined,
-			    Power_further: undefined,
 			    Volume: undefined,
 			    Proportions: undefined,
-			    Volume_further: undefined,
-			    Objectives: undefined
+			    Additional_info: undefined,
+			    Cost: undefined
 		    }
 		});
 		Inst1.save(function (error, output) {

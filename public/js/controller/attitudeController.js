@@ -11,7 +11,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
             $scope.cubesat = result.data;
             var partextracted = {};
             partextracted = $scope.cubesat[0];
-            
+
             $scope.Name = partextracted['Mission_Name'];
             $scope.Objectives = partextracted['Mission_Objectives'];
             $scope.target = partextracted['Target'];
@@ -28,25 +28,12 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
             $scope.busPart = partextracted['Bus'];
             $scope.deployerPart = partextracted['Deployer'];
             $scope.thermalPart = partextracted['Thermal'];
-
         }); 
     };
     $scope.updateData();
 
-    var slides = $scope.slides = [];
-    $scope.addSlide = function() {
-        var newWidth = 600 + slides.length + 1;
-        slides.push({
-            image: 'http://placekitten.com/' + newWidth + '/300',
-            text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-                ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-        });
-    };
-    for (var i=0; i<4; i++) {
-        $scope.addSlide();
-    }
-
     $scope.parts = [];
+
     $scope.init = function() { 
         $http.get('/parts/attitude').then(function(result) { 
             $scope.parts = result.data; 
@@ -64,37 +51,47 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     };
 
     $scope.okAngle = function(part) {
-        if(part.Angle_prec!=null){
-            return part.Angle_prec <= aControl;
+        if($scope.ignorefilters){
+            return true;
+        } else {
+            if(part.Angle_prec != 'Unknown'){
+                return parseFloat(part.Angle_prec) <= aControl;
+            }
         }
         return false;
     };
 
     $scope.okType = function(part) {
         var okType = false;
-        if ($scope.ACS && part.Type == 'ACS') {
+        if ($scope.ignorefilters){
             okType = true;
         }
-        else if ($scope.Actuator && part.Type == 'Actuator') {
-            okType = true;
+        else{
+            if ($scope.ACS && part.Type == 'ACS') {
+                okType = true;
+            }
+            else if ($scope.Actuator && part.Type == 'Actuator') {
+                okType = true;
+            }
+            else if ($scope.Sensor && part.Type == 'Sensor') {
+                okType = true;
+            }
         }
-        else if ($scope.Sensor && part.Type == 'Sensor') {
-            okType = true;
-        }
+        
         return okType;
     };
 
     $scope.order = function(part) {
         if ($scope.sort == "Mass") {
-            return part.Mass;
+            return parseFloat(part.Mass);
         }
         else if ($scope.sort == "Power") {
-            return part.Power;
+            return parseFloat(part.Power);
         }
         else if ($scope.sort == "Volume") {
-            return part.Volume;
+            return parseFloat(part.Volume);
         }
-        return part.Mass;
+        return parseFloat(part.Mass);
     };
 
     $scope.savePart = function(part) {
@@ -104,7 +101,7 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     $scope.addPart = function() {
         $http.put('/parts/cubesat-attitude/' + idstring, $scope.selectedPart)
             .success(function(data) {
-                // $scope.selectedPart = {}; // clear the form so our user is ready to enter another
+
             })
         $scope.updateData();
     };
@@ -122,30 +119,35 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 
 $(function () {
       $('[data-toggle="popover"]').popover()
-})
+      setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide');
+      }, 9000);
+});
+
 
 spaceFrontierApp.directive('validNumber', function() {
-  return {
-    require: '?ngModel',
-    link: function(scope, element, attrs, ngModelCtrl) {
-      if(!ngModelCtrl) {
-        return; 
-      }
-      
-      ngModelCtrl.$parsers.push(function(val) {
-        var clean = val.replace( /[^0-9.]+/g, '');
-        if (val !== clean) {
-          ngModelCtrl.$setViewValue(clean);
-          ngModelCtrl.$render();
+    return {
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+        if(!ngModelCtrl) {
+            return; 
         }
-        return clean;
-      });
       
-      element.bind('keypress', function(event) {
-        if(event.keyCode === 32) {
-          event.preventDefault();
-        }
-      });
+        ngModelCtrl.$parsers.push(function(val) {
+            var clean = val.replace( /[^0-9.]+/g, '');
+            if (val !== clean) {
+                ngModelCtrl.$setViewValue(clean);
+                ngModelCtrl.$render();
+            }
+            return clean;
+        });
+      
+        element.bind('keypress', function(event) {
+            if(event.keyCode === 32) {
+                event.preventDefault();
+            }
+        });
     }
-  };
+};
+
 });

@@ -49,15 +49,15 @@ spaceFrontierApp.controller("busController", function($scope, $http) {
     };
 
     $scope.busType = function(part){
-        if(part.Volume!==null){
-            return part.Volume == $scope.volume && part.Type == 'Cubesat Bus';
+        if(part.Volume!='Unknown'){
+            return parseFloat(part.Volume) == $scope.volume && part.Type == 'Cubesat Bus';
         }
         return false;
     };
 
     $scope.deployerType = function(part){
-        if(part.Volume!==null){
-            return part.Volume == $scope.volume&&part.Type == 'Deployer';
+        if(part.Volume!='Unknown'){
+            return parseFloat(part.Volume) == $scope.volume && part.Type == 'Deployer';
         }
         return false;
     };

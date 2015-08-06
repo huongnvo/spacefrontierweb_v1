@@ -41,6 +41,9 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     $scope.init(); 
 
     $scope.filterSolar = function(part) { 
+       if($scope.ignorefilters){
+            return part.Type == 'Solar Panels';
+       }
        if (!$scope.dep) {
             return part.Type == 'Solar Panels' && $scope.volume == part.Volume;
        } else {
@@ -59,7 +62,8 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
                 wings = 2;
             }
             return part.Type == 'Deployed Solar Panels' && part.PperWing == ppw && part.Wings == wings && $scope.volume == part.Volume;
-       };
+       }
+       return false;
 
     }; 
 
@@ -117,6 +121,7 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
     };
 
     $scope.filterEPS = function(part) {
+        // return part.Type=='Power Control Unit' && part.Volume==$scope.volume;
         return part.Type=='Power Control Unit';
     };
 

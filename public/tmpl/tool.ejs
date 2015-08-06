@@ -5,7 +5,7 @@
 
 <body data-ng-controller="toolController">
     <% include navbar %>
-    <div class="jumbotron" style="background-image: url(/img/toolcube2.jpg);background-size: 100%; height: 700px">
+    <div class="jumbotron" style="background-image: url(/img/gal4.png);background-size: 100%; height: 700px">
         <div id="carousel1" class = "carousel slide">
             <div class="carousel-inner" role="listbox" style="height: 450px">
                 <div class="item active">
@@ -100,9 +100,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>Propulsion Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you calculate the total &#916V required to get to your desired science orbit. For a more complicated trajectory, the total &#916V can be calculated from a linear sum of individual &#916V, also taking into account a change in inclination (if required). We have used some generalizations to generate the &#916V for trajectories, which will be explained on the page. Once the final value has been calculated (or given by the user), we can filter down and find the appropriate propulsion mechanisms according to the &#916V budget.</p> <!-- &#916V budget is calculated by adding the required &#916V to reach the target to the required &#916V to reach science orbit and adjust inclination. There are some generalizations used to generate the &#916V for trajectories, these are explained on the page.</h4> -->
-       <!--                      <h3>What to Do:</h3>
-                            <h4>Select one of the tabs; "Input Specifics" or "Input Own &#916V". These tabs allow you to use the tool to generate a dV estimate or simply add your own if you have one. Fill out all required fields and then press "Caculate Results". Then, select an appropriate subsystem.</h4> -->
+                            <p>This section will let you calculate the total &#916V required to get to your desired science orbit. For a more complicated trajectory, the total &#916V can be calculated from a linear sum of individual &#916V, also taking into account a change in inclination (if required). We have used some generalizations to generate the &#916V for trajectories, which will be explained on the page. Once the final value has been calculated (or given by the user), we can filter down and find the appropriate propulsion mechanisms according to the &#916V budget.</p>
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -128,9 +126,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>Communication Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you choose an antenna, receiver, and ground station from a selected band. We currently have parts for the VHF, UVF, S, and X band, which ranges from .3 GHz to 12 GHz. Once the antenna, receiver, and ground station are chosen for an associated band, we will calculate a free-path space loss term, a receive power term, a signal to noise ratio, and a maximum bit rate achievable by the chosen subsystem using known values of the chosen parts (such as EIRP, gain, frequency, bandwidth, and transmit power).</p> <!-- The space loss (dB) is proportional to the square of the distance between transmitter and receiver, as well as the square of the frequency of the signal. The receiver power term (dBW) is calculated by summing up the EIRP of the station, the gain of the antenna, and the negative of the space loss. The signal to noise ratio (dB) is the sum of </h4> -->
-<!--                             <h3>What to Do:</h3>
-                            <h4>Just select your prefered band!</h4> -->
+                            <p>This section will let you choose an antenna, receiver, and ground station from a selected band. We currently have parts for the VHF, UVF, S, and X band, which ranges from .3 GHz to 12 GHz. Once the antenna, receiver, and ground station are chosen for an associated band, we will calculate a free-path space loss term, a receive power term, a signal to noise ratio, and a maximum bit rate achievable by the chosen subsystem using known values of the chosen parts (such as EIRP, gain, frequency, bandwidth, and transmit power).</p> 
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -190,12 +186,8 @@
                         <div class="container" id="indexjumbo">
                             <h1>Power Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you find an appropriate power system for your design, consisting of solar panels, batteries, and an electronic power system. The volume and a desirable configurable (deployable vs. nondeployable) will determine the applicable solar panels for your design. Following that selection, all batteries and electronic power systems will be displayed for your choosing.
-<!--                             <h3>Algorithm: </h3>
-                            <h4>Filters out solar panels by volume and whether they are Non Deployable/Deployable. If they are deployable panels are filtered by how many wings you specify and hoy many panels per wing you specify. All On Board Computers and Batteries are displayed.</h4>
-                            <h3>What to Do:</h3>
-                            <h4>Select the Volume of your cubesat and whether your solar panels will be deployable. If you chose Deployable panels, you must specify how many wings and how many panels per wing you want.</h4>
- -->                        </div>
+                            <p>This section will let you find an appropriate power system for your design, consisting of solar panels, batteries, and an electronic power system. The volume and a desirable configurable (deployable vs. nondeployable) will determine the applicable solar panels for your design. Following that selection, all batteries and electronic power systems will be displayed for your choosing.</p>
+                        </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="row" style="height: 200px">
@@ -220,21 +212,9 @@
                         <div class="container" id="indexjumbo">
                             <h1>Frame Selection</h1>
                             <div class="divider"></div>
-<!--                             <h3>Algorithm: </h3>
-                            <h4>Filters out potential buses and deployers based on your specified cubesat volume. All available thermal equipment is displayed.</h4>
-                            <h3>What to Do:</h3>
-                            <h4>Just select your cubesat volume!</h4> -->
                             <p>For the final step of the CubeSat design, you will be guided to choose a frame, deployer, and thermal system for your design. Again, these choices are dependent on the desired volume of your CubeSat design. Once that volume is chosen, all available parts matching that description wil be shown.</p>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-2">
-                        <div class="row" style="height: 200px">
-                        </div>
-                        <p align="right"><a class="btn btn-lg" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only"></span>
-                        </a></p>
-                    </div> -->
                 </div>
             </div>
         </div>

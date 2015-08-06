@@ -10,7 +10,7 @@ var config = {
     "USER"    : "",           
     "PASS"    : "",
     "HOST"    : "ec2-52-2-119-158.compute-1.amazonaws.com",  
-    "PORT"    : "47782", 
+    "PORT"    : "29793", 
     // "DATABASE" : "cubesat_v1"
 };
 
@@ -31,7 +31,8 @@ app.use(bodyParser.json());
 /* Setting up the database connection ------------------------------------------------*/
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
+// mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
+mongoose.connect('mongodb://user:cubesats4ever@ds029793.mongolab.com:29793/cubesat_v2', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -67,6 +68,18 @@ app.post('/parts/cubesat', function(req, res) {
 
 app.delete('/parts/cubesat/:_id', function(req, res) {
     var resp = cubesatfactory.removePart(req, res);
+});
+
+app.put('/parts/cubesat-mass/:_id', function(req, res) {
+    var resp = cubesatfactory.updateMass(req, res);
+});
+
+app.put('/parts/cubesat-power/:_id', function(req, res) {
+    var resp = cubesatfactory.updatePower(req, res);
+});
+
+app.put('/parts/cubesat-volume/:_id', function(req, res) {
+    var resp = cubesatfactory.updateVolume(req, res);
 });
 
 app.put('/parts/cubesat-name/:_id', function(req, res) {
@@ -137,7 +150,7 @@ app.put('/parts/cubesat-deployer/:_id', function(req, res) {
 var AttitudeFactory = require('./public/js/models/AttitudeFactory.js');
 var attitudefactory = new AttitudeFactory(Schema,mongoose);
 attitudefactory.createSchemas();
-//attitudefactory.insertPart();
+// attitudefactory.insertPart();
 
 app.get('/parts/attitude', function(req, res) {
     var resp = attitudefactory.getPart({},res);
@@ -159,7 +172,7 @@ app.delete('/parts/attitude/:_id', function(req, res) {
 var CdhFactory = require('./public/js/models/CdhFactory.js');
 var cdhfactory = new CdhFactory(Schema,mongoose);
 cdhfactory.createSchemas();
-// cdhfactory.insertPart();
+//cdhfactory.insertPart();
 
 app.get('/parts/cdh', function(req, res) {
     var resp = cdhfactory.getPart({},res);
@@ -225,7 +238,7 @@ app.delete('/parts/instruments/:_id', function(req, res) {
 var PowerFactory = require('./public/js/models/PowerFactory.js');
 var powerfactory = new PowerFactory(Schema,mongoose);
 powerfactory.createSchemas();
-// powerfactory.insertPart();
+ //powerfactory.insertPart();
 
 app.get('/parts/power', function(req, res) {
     var resp = powerfactory.getPart({},res);
@@ -407,8 +420,20 @@ app.get('/gallery', function (req, res) {
     res.render('../public/tmpl/gallery.ejs', { title: 'Gallery' });
 });
 
-app.get('/signin', function (req, res) {
-    res.render('../public/tmpl/signin.ejs', { title: 'Sign In' });
+// app.get('/signin', function (req, res) {
+//     res.render('../public/tmpl/signin.ejs', { title: 'Sign In' });
+// });
+
+app.get('/login', function(req, res) {
+    res.render('../public/tmpl/login.ejs', { title: 'Log In' });
+});
+
+app.get('/signup', function(req, res) {
+    res.render('../public/tmpl/signup.ejs', { title: 'Sign Up' });
+});
+
+app.get('/google5d616e0e6bb5bc2a.html', function(req, res) {
+    res.sendfile('public/tmpl/google5d616e0e6bb5bc2a.html')
 });
 
 app.listen(port);
