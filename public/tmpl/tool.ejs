@@ -15,7 +15,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>Welcome to the SPACE Tool</h1>
                             <br><br><br><br><br><br><br><br><br>
-                            <p>Flip through these slides to learn more about our algorithms<br>or click the button below to get started.</p>
+                            <p>Flip through these slides to learn more about the subsystem pages<br>or click the button below to get started.</p>
                         </div>
                     </div>
                     <div class="col-lg-1">
@@ -43,7 +43,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>Instruments Selection</h1>
                             <div class="divider"></div>
-                            <p>The instrumentation is the central part of our CubeSat. We will guide you through the selection of an instrument by first asking what part of the electromagnetic spectrum you would like to observe. The spectrum is divided into five distinct regions, based on the energy production mechanisms, detection methods, as well as analysis technique associated -- these will be explained further on the page. After choosing a region, we will narrow down the parts capable of working with the associated wavelength, as well as the scale of process you will be able to observe.</p>
+                            <p>Instrumentation is the central part of our CubeSat. The first part of our instrument selection process asks what part of the electromagnetic spectrum you would like to observe. The spectrum is divided into five distinct regions, based on the energy production mechanisms, detection methods, and analysis techniques. These will be explained further on the page. After you choose a region, we will narrow down the parts capable of working with the associated wavelength, as well as the scale of process you will be able to observe.</p>
                         </div>
                         <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>Attitude Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you find an appropriate attitude control subsystem for your CubeSat. The algorithm asks for an altitude that your instrument will be stationed at, along with a maximum spatial resolution for your instrument. From these two fields, we will calculate an angle of knowledge, which will act as a driver for the angle of control (generally, the angle of knowledge needs to be 10 times better than the angle of control). <!-- Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge. -->From there, we will display all subsystems that has an angle of precision lesser than or equal to the calculated angle of knowledge.</p>
+                            <p>This section helps you find the appropriate attitude control subsystem for your CubeSat. The page asks for the altitude of your science orbit (at periapsis, if you have an elliptical orbit), along with the maximum spatial resolution that you need for measurment. From these inputs, we will calculate your angle of knowledge and angle of control (generally, the angle of knowledge needs to be 10 times better than the angle of control). <!-- Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge. -->We will display all subsystems that have an angle of precision lesser than or equal to the calculated angle of knowledge.</p>
                             <!-- <h3>What to Do: </h3>
                             <h4>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</h4> -->
                         </div>
