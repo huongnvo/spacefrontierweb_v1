@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+
+
+<body class="container" data-ng-controller="trajectoryController">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Reference">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-her">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Heritage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Heritage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedPart.Mass">
+                                        <div class="input-group-addon">g</div>
+                                 </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Volume">
+                                    <div class="input-group-addon">U</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Proportions">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-isp">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Specific Impulse:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.Specific_Impulse">
+                                    <div class="input-group-addon">s</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-dv">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">DeltaV:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedPart.DeltaV">
+                                    <div class="input-group-addon">km/s</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedPart.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include navbar %>
+    <h1>Propulsion Selection</h1>
+    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own &#916V", if not please fill out "Input Specifications" and we will make an estimate for you.
+    </p>
+    <p>Under "Input Specifications", pick a trajectory (Direct/Indirect/User Input). The direct trajectory is an estimate generated using the orbit speed about the Sun or Earth that the CubeSat would need to meet to reach the target. The indirect trajectory assumes that an expert could lower this requirement (2 km/s for Mars, Mercury, and Venus, .02 km/s for the Moon). The trajectories for Earth orbits assume the CubeSat will be delivered to the appropriate altitude. </p>
+    <hr>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>User Input</h3>
+            <!-- <p>Input Specifications:<br>
+            Please estimate the Periapsis and Apoapsis of your science orbit. Periapsis will be close the distance at which you want to take measurement. Apoapsis will adjust your orbit period."(this explanation must be expanded/it may make sense to include orbit period in the input boxes)<br>
+            Please select whether you would like to take a longer, "indirect" route with a very low deltaV budget, or a faster, "direct" route with a high deltaV budget. If you have an independent trajectory deltaV calculation, input that instead.<br>
+            If your orbit requires a change in inclination at any point, please input that specification here -->
+            <div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1">Input Specfics</a></li>
+                    <li>               <a href="#tab2">Input Own &#916V</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <section id="tab2" class="tab-content hide">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="divider"></div>
+                <label>Specific &#916V</label>
+                <div class="input-group">
+                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the total &#916V for your trip. Suggested: 0.2-5.0 km/s">
+                            <a style="color:skyblue">?</a>
+                    </div>
+                    <input type="text" class="form-control" data-ng-model="inputown" aria-describedby="basic-addon2" valid-number/>
+                    
+                    <span class="input-group-addon" id="basic-addon2">km/s</span>
+                </div>
+            </div>
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="tabOWN()" title="Show Parts" ng-disabled="inputown.length==0||inputown==null">
+                        Select Propulsion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tab1" class="tab-content active">
+        <div id="carousel1" class = "carousel" data-ride="carousel" interval="false">
+            <div class="carousel-inner" style="height: 240px">
+                <div class="item active">
+                    <div class="dividersmall"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label>Trajectory Type </label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio1"/>
+                                </span>
+                                <span class="input-group-addon">Pick Trajectory:</span>
+                                <select class="form-control" data-ng-model="picktrajectory">
+                                    <option value="direct">Direct</option>
+                                    <option value="indirect">Indirect</option>
+                                </select>
+                                <div class="dividersmall"></div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="radio" name="picktrajectoryRadioo" value="trajectoryoption1" data-ng-model="picktrajectoryRadio2"/>
+                                </span>
+                                <span class="input-group-addon">
+                                    Input Trajectory &#916V:
+                                </span>
+                                <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the &#916V required to reach the target. Suggested: 0.01 - 3.0 km/s">
+                                        <a style="color:skyblue">?</a>
+                                </div>
+                                <input type="text" class="form-control" data-ng-model="inputtrajectorydV" valid-number />
+                                
+                                <span class="input-group-addon" id="dvaddon">km/s</span>
+                            </div>   
+                            <div class="divider"></div>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id ="round" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dividersmall"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label>Orbit Specifications</label>
+                            <div class="input">
+                                Apoapsis Altitude
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="The apoapsis value will alter orbit period. See the table for suggested values.">
+                                            <a style="color:skyblue">?</a>
+                                    </div>
+                                    <input type="text" class="form-control" data-ng-model="apoapsis" valid-number>
+                                    
+                                    <span class="input-group-addon" id="orbitaddon1">km</span>
+                                </div>
+                            </div>
+                            <div class="dividersmall"></div>
+                            <div class = "input">
+                                Periapsis Altitude
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the distance from the surface where the CubeSat takes measurments. Suggested: 50-500 km">
+                                            <a style="color:skyblue">?</a>
+                                    </div>
+                                    <input type="text" class="form-control" data-ng-model="periapsis" valid-number/>
+                                    
+                                    <span class="input-group-addon" id="orbitaddon2">km</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id = "round" data-slide = "prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id="round" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                        </div>
+                        <div class="col-lg-3"> 
+                            <div class="row"> 
+                                <label><b>Suggested Values</b></label>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="row"><b>Target</b></div>
+                                    <div class="row">Moon:</div>
+                                    <div class="row">Earth-Low:</div>
+                                    <div class="row">Earth-Med:</div>
+                                    <div class="row">Earth-High:</div>
+                                    <div class="row">Mercury:</div>
+                                    <div class="row">Mars:</div>
+                                    <div class="row">Venus:</div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="row"><b>Apoapsis</b></div>
+                                    
+                                    <div class="row">5000</div>
+                                    <div class="row">2000</div>
+                                    <div class="row">20200</div>
+                                    <div class="row">35000</div>
+                                    <div class="row">8400</div>
+                                    <div class="row">11500</div>
+                                    <div class="row">24000</div>
+                                </div> 
+                                <div class="col-lg-4">
+                                    <div class="row"><b>Periapsis</b></div>
+                                    
+                                    <div class="row">100</div>
+                                    <div class="row">2000</div>
+                                    <div class="row">20200</div>
+                                    <div class="row">35000</div>
+                                    <div class="row">100</div>
+                                    <div class="row">100</div>
+                                    <div class="row">100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "item">
+                    <div class="dividersmall"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label>Required Inclination Change</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This field represents any inclination change that will occur after the CubeSat reaches science orbit. Suggested: 0-0.001 rad">
+                                            <a style="color:skyblue">?</a>
+                                    </div>
+                                    <input type="text" class="form-control" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
+                                    
+                                    <span class="input-group-addon" id="basic-addon2">rad</span>
+                                </div>
+                            <div class="divider"></div>
+                            <a class="btn btn-primary btn-xs" href="#carousel1" role="button" id="round" data-slide = "prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-10">
+                        </div>
+                        <div class="col-lg-2">
+                            <div class = "dividerlarge"></div>
+                            <div id="button" ng-show="picktrajectoryRadio1">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="picktrajectory==null||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0" title="Show Total &#916V">
+                                    Calculate Results
+                                </button>
+                            </div>
+                            <div id="button" ng-show="picktrajectoryRadio2">
+                                <button type="button" style="margin-top:60px" class="btn btn-primary btn-block" id="round" ng-click="tabSPECIFICS()" ng-disabled="inputtrajectorydV==null||inputtrajectorydV.length==0||apoapsis==null||periapsis==null||angle==null||apoapsis.length==0||periapsis.length==0||angle.length==0" title="Show Total &#916V">
+                                    Calculate Results
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section> 
+    <hr>
+
+    <div ng-show="calculation">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Calculation Results</h3>
+                &#916V:
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-model="totaldV" valid-number ng-disabled="true"/>
+                    <span class="input-group-addon" id="totdV">km/s</span>
+                </div>
+            </div>   
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="myClick()" title="Show Parts">
+                        Select Propulsion
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div ng-show="propulsionPart.Mass == 'Unknown'">
+        <div class="alert alert-info" role="alert">The part you are choosing does not have the associated propellant tank, and control electronics. We will be using a standard mass of 2500 g for when calculating the final mass of the CubeSat.</div>
+    </div>
+
+    <div ng-show="propulsionPart.Power == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated power for this propulsion system. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+    </div>
+
+    <div ng-show="propulsionPart.Volume == 'Unknown'">
+        <div class="alert alert-info" role="alert">We could not find an associated volume for this propulsion system. We will be using a standard power of 2.5 U when calculating the final power of the CubeSat.</div>
+    </div>
+
+    <div ng-show="showDatabase">
+        <div class="row">
+            <div class= "col-lg-12">
+                <div class="alert alert-info" role="alert">Please click the 'Show' dropdown and select the systems you would like to pick to see results. You may also use the 'Sort By' dropdown to select by mass. power, or volume.</div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Propulsion 
+                    <div class="btn-group">
+                      <label class="btn btn-default btn-xs">
+                            <input type="checkbox" autocomplete="off" data-ng-model="ignorefilters"> Show All
+                      </label>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Show: 
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class = "checkbox">
+                                <label>
+                                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios1" value = "type1" data-ng-model = "Thruster"/>
+                                        Thruster
+                                </label>
+                            </div>
+                            <div class = "checkbox">
+                                <label>
+                                    <input type = "checkbox" name = "trajectoryoptionsRadios" id = "trajectoryoptionsRadios2" value = "type2" data-ng-model = "Sail"/>
+                                        Sail
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort By: 
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
+                                        Mass
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
+                                        Power
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
+                                        Volume
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="19">
+                            <option ng-click="savePart(part)" ng-repeat="part in trajectoryparts|filter:okType|filter:okdV">
+                               {{part.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addPart()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Propulsion Selection<br>Page 3/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="19">
+                        <option>Name: {{Name}}</option>
+                        <option>Objectives: {{Objectives}}</option>
+                        <option>Target: {{target}}</option>
+                        <option>Instrumentation: {{instrumentPart.Name}}</option>
+                        <option>Attitude: {{attitudePart.Name}}</option>
+                        <option>Propulsion: {{propulsionPart.Name}}</option>
+                        <option>Ground Station: {{stationPart.Name}}</option>
+                        <option>Antenna: {{antennaPart.Name}}</option>
+                        <option>Receiver: {{receiverPart.Name}}</option>
+                        <option>CDH: {{cdhPart.Name}}</option>
+                        <option>Solar Panels: {{panelsPart.Name}}</option>
+                        <option>Batteries: {{batteriesPart.Name}}</option>
+                        <option>EPS: {{epsPart.Name}}</option>
+                        <option>Bus: {{busPart.Name}}</option>
+                        <option>Deployer: {{deployerPart.Name}}</option>
+                        <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="dividersmall"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class = "dividersmaller"></div>
+            <nav>
+            <ul class="pager">
+                <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Previous Page </button>
+
+                <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null" title="Communication">Next Page <span aria-hidden="true">&rarr;</span></button>
+            </ul>
+            </nav>  
+        </div>
+    </div>
+    <hr>
+    <% include footer %>
+    <div class = "divider"></div>
+</body>
+
+
+</html>

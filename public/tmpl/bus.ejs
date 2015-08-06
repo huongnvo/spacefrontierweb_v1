@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+
+<body class="container" data-ng-controller="busController">
+    <% include navbar %>
+    <h1>Frame Selection</h1>
+    <p>Select the volume of your cubesat to view available buses, deployers, and thermal equipment. Notice, thermal equipment is not filtered by volume like buses and deployers are. We will assume the thermal management and deployer will take up negligible volume of the CubeSat, and set aside 1200 g for these subsystems.</p>
+    <hr>
+
+    <div class="modal fade" id="busModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Information</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBus.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBus.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBus.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBus.Website">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-her">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Heritage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBus.Heritage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedBus.Mass">
+                                     <div class="input-group-addon">g</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedBus.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedBus.Volume">
+                                        <div class="input-group-addon">U</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedBus.Proportions">
+                                        <div class="input-group-addon">(mm^3)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedBus.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deployerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Website">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-her">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Heritage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Heritage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedDeployer.Mass">
+                                        <div class="input-group-addon">g</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                               <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedDeployer.Power">
+                                        <div class="input-group-addon">W</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedDeployer.Volume">
+                                        <div class="input-group-addon">U</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedDeployer.Proportions">
+                                        <div class="input-group-addon">(mm^3)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-obj">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedDeployer.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="thermalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-name">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedThermal.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-type">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedThermal.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-manu">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedThermal.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-ref">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedThermal.Website">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-her">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Heritage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedThermal.Heritage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-mass">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedThermal.Mass">
+                                        <div class="input-group-addon">g</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-power">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedThermal.Power">
+                                        <div class="input-group-addon">W</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-vol">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedThermal.Volume">
+                                        <div class="input-group-addon">U</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="dividersmall"></div>
+                <div class="modal-prop">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="selectedThermal.Proportions">
+                                        <div class="input-group-addon">(mm^3)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="showBus">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Available Bus
+                <div class="btn-group">
+                    <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    CubeSat Vol (U):
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><input type="number" style="width:144px; margin-left:8px" class="form-control" placeholder="0 U" data-ng-model="volume" /></li>
+                    </ul>
+                </div>
+
+                </h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="19">
+                            <option ng-click="saveBus(part)" ng-repeat="part in parts|filter:busType">
+                                {{part.Name}}
+                            </option>
+                        </select>       
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" data-toggle="modal" data-target="#busModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addBus()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Bus Selection<br>Page 7/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="19">
+                    <option>Name: {{Name}}</option>
+                    <option>Objectives: {{Objectives}}</option>
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation: {{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class = "dividersmall"></div>
+        <div class = "row">
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextDep()" ng-disabled="busPart==null" title="Show Parts">
+                        Search Deployer
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div ng-show="showDeployer">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Available Deployer</h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+
+                        <select multiple class="form-control" size="19">
+                            <option ng-click="saveDeployer(part)" ng-repeat="part in parts|filter: deployerType">
+                                {{part.Name}}
+
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" data-toggle="modal" data-target="#deployerModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addDeployer()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Deployer Selection<br>Page 7/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="19">
+                    <option>Name: {{Name}}</option>
+                    <option>Objectives: {{Objectives}}</option>
+                    <option>Target: {{target}}</option>
+                    <option>Instrumentation: {{instrumentPart.Name}}</option>
+                    <option>Attitude: {{attitudePart.Name}}</option>
+                    <option>Propulsion: {{propulsionPart.Name}}</option>
+                    <option>Ground Station: {{stationPart.Name}}</option>
+                    <option>Antenna: {{antennaPart.Name}}</option>
+                    <option>Receiver: {{receiverPart.Name}}</option>
+                    <option>CDH: {{cdhPart.Name}}</option>
+                    <option>Solar Panels: {{panelsPart.Name}}</option>
+                    <option>Batteries: {{batteriesPart.Name}}</option>
+                    <option>EPS: {{epsPart.Name}}</option>
+                    <option>Bus: {{busPart.Name}}</option>
+                    <option>Deployer: {{deployerPart.Name}}</option>
+                    <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class = "dividersmall"></div>
+        <div class = "row">
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextTherm()" ng-disabled="deployerPart==null" title="Show Parts">
+                        Search Thermal
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div ng-show="showThermal">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Available Thermal</h3>
+                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class = "dividersmall"></div>
+                        <select multiple class="form-control" size="19">
+                            <option ng-click="saveThermal(part)" ng-repeat="part in parts|filter: thermalType">
+                                   {{part.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <a type="button" data-toggle="modal" data-target="#thermalModal" id="pushdown1" class="btn btn-sm btn-default" title="Info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                        <a type="button" ng-click="addThermal()" id="pushdown2" class="btn btn-sm btn-default" title="Add Part"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Current Design</h3>
+                <h6>Thermal Selection<br>Page 7/7</h6>
+                <div class = "dividersmall"></div>
+                <select multiple class="form-control" size="19">
+                        <option>Name: {{Name}}</option>
+                        <option>Objectives: {{Objectives}}</option>
+                        <option>Target: {{target}}</option>
+                        <option>Instrumentation: {{instrumentPart.Name}}</option>
+                        <option>Attitude: {{attitudePart.Name}}</option>
+                        <option>Propulsion: {{propulsionPart.Name}}</option>
+                        <option>Ground Station: {{stationPart.Name}}</option>
+                        <option>Antenna: {{antennaPart.Name}}</option>
+                        <option>Receiver: {{receiverPart.Name}}</option>
+                        <option>CDH: {{cdhPart.Name}}</option>
+                        <option>Solar Panels: {{panelsPart.Name}}</option>
+                        <option>Batteries: {{batteriesPart.Name}}</option>
+                        <option>EPS: {{epsPart.Name}}</option>
+                        <option>Bus: {{busPart.Name}}</option>
+                        <option>Deployer: {{deployerPart.Name}}</option>
+                        <option>Thermal: {{thermalPart.Name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class = "dividersmall"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class = "dividersmaller"></div>
+            <nav>
+            <ul class="pager">
+                <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Power"><span aria-hidden="true">&larr;</span>Previous Page </button>
+
+                <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="thermalPart==null" title="Results">Next Page <span aria-hidden="true">&rarr;</span></button>
+            </ul>
+            </nav>  
+        </div>
+    </div>
+    <hr>
+    <% include footer %>
+    <div class = "divider"></div>
+</body>
+ 
+</html>

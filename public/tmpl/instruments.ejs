@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+
+    <body class="container" data-ng-controller="instrumentsController">
+
+        <% include navbar %>
+        <h1>Instrument Selection</h1> 
+        <p><!-- On this page please enter any specifications you have for your science instrument. Several fields, such as the periodic table and wavelength chart, ask for the type of data you would like to collect. When satisfied with your selection, please click the "select instruments" button, and we will populate the window with the appropriate instrumentation/detector. -->On this page, please first select a section of the electromagnetic spectrum you would like to observe. Once this selection has been made, there will be descriptions for the the type of measurements/observations that can be made in this wavelength range. If you would like to look at things that are not specifically found within the spectrum, such as magnetic interactions, or particle detection, please mark these off in the section below the spectrum. When satisfied with your selection, please click the "selection instruments" button, and we will populate the window with the appropriate instrumentation/detector.</p>
+        <hr>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">More Information: {{selectedInstrument.Name}}</h4>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Name:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Name">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Type:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Type">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Manufacturer:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Manufacturer">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Reference:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Reference">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Heritage:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Heritage">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Mass:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Mass">
+                                    <div class="input-group-addon">g</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Power:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Power">
+                                    <div class="input-group-addon">W</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Volume:</label>
+                            </div>
+                            <div class="col-md-8">
+                               <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="selectedInstrument.Volume">
+                                    <div class="input-group-addon">U</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Proportions:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-ng-model="selectedInstrument.Proportions">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Measurement:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Measurement">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Resolution:</label>
+                            </div>
+                            <div class="col-md-8">
+                                
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.Resolution">
+                                    <div class="input-group-addon">(Spectral, Amplitude)</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Pixels:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.Pixels">
+                                    <div class="input-group-addon">(Spectral, Amplitude)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Objectives:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" ng-model="selectedInstrument.Objectives">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dividersmall"></div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2"
+                                <label for="message-text" class="control-label">Field of View:</label>
+                            </div>
+                            <div class="col-md-8">
+                               <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="selectedInstrument.FOV">
+                                    <div class="input-group-addon">deg</div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Electromagnetic Spectrum</h3>
+        <div class="divider"></div>
+
+        <div class="grid">
+            <div class="grid-item">Ray Region
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners3" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showRay()"><span style="margin-top:5px" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></div>
+                </div>
+            </div>
+            <div class="grid-item grid-item--width2">Circumvisible Region
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners3" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showVisible()"><span style="margin-top:5px" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></div>
+                </div>
+            </div>
+            <div class="grid-item grid-item--width3">Infrared Region
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners2" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showInfrared()"><span style="margin-top:5px" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></div>
+                </div>
+            </div>
+            <div class="grid-item grid-item--width4">Longwave Region
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners2" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showLongwave()"><span style="margin-top:5px" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></div>
+                </div>
+            </div>
+            <div class="grid-item">Acoustic Region
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners3" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showAcoustic()"><span style="margin-top:5px" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="ray">
+            <div class="grid-item grid-item--width5" style="background: hsl( 288, 3%, 50%); height: 380px"><div style="font-size:30px">Ray Region: 10<sup>-14</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>-7</sup> m.</div>  
+                <br>    
+                <div style="font-size:20px">This is the highest energy region, consisting of gamma-rays, X-rays, and ultraviolet. The energies reflected from this surface in this region can result from the interaction of <span style="color:white">high energy solar rays</span> or <span style="color:white">cosmic solar rays</span>. The energy spectra associated is produced from properties intrinsic to the individial atoms that are being observed, which can provide direct information on <span style="color:white">elemental abundance</span>. Gamma rays and X-rays are completely absorbed by a body's atmosphere -- never reaching the surface of planets, which makes it more suitable for studying <span style="color:white">atmosphereless bodies</span>.</div>
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showMoreRay()">Choose this region</div> 
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="visible">
+            <div class="grid-item grid-item--width6" style="background: hsl( 252, 3%, 50%); height: 380px"><div style="font-size:30px">Circumvisible Region: 10<sup>-7</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>-5</sup> m.</div> 
+                <br>
+                <div style="font-size:20px">This region consists of visible, near IR (NIR), and short IR (SIR). <!-- The depth of penetration of this region is very small, ranging from <span style="color:yellow">microns</span> to <span style="color:yellow">tens of microns</span>. --> The source can come from natural light, artifical light, or lasers. The energy spectra associated can be produced by transition in energy states of an individual atom's outermost electrons from the absorption of light -- this occurs for elements in the alkali, alkali earth, and transition metals group. Thus, instruments measuring visible/NIR reflectance can obtain the relative abundance of those minerals. By observing the albedo of said minerals, we can also obtain information about the reflectivity, as well as the age of the deposit.</div>
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showMoreVisible()">Choose this region</div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="infrared">
+            <div class="grid-item grid-item--width7" style="background: hsl( 216, 3%, 50%); height:380px"><div style="font-size:30px">Infrared Region: 10<sup>-5</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>-2</sup> m </div>
+                <br>
+                <div style="font-size:20px">This region consists of mid to far IR (MIR and FIR).<!--  The depth of penetration is in the <span style="color:yellow">tens of microns</span>. --> The energy spectra associated can be produced naturally from the absorption and transmittance of ambient solar infrared energy, or induced by an active source (laser) leading to interactions between and amongst atoms on the <span style="color:white">molecular level</span>. Due to the scale of natural processes occuring within this region, we are also able to look at fundamental molecular vibrations associated with <span style="color:white">minerals</span>, as well as <span style="color:white">water</span> and <span style="color:white">hydroxyl</span>. The infrared signatures can also be used to distinguish between <span style="color:white">chemical groups</span>, <span style="color:white">structural groups</span>, and <span style="color:white">polymorphs</span>.</div>
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showMoreInfrared()">Choose this region</div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="longwave">
+            <div class="grid-item grid-item--width8" style="background: hsl( 180, 3%, 50%); height: 430px"><div style="font-size:30px">Longwave Region: 10<sup>-2</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>6</sup> m </div>
+                <br>
+                <div style="font-size: 20px">This region consists of thermal, microwave, and radio.<!-- . The depth of penetration of this region ranges from <span style="color:yellow">hundreds of microns</span> to <span style="color:yellow">meters</span>. --> The source can come from natural background radiation, emission from target, or from transmitters. The energy spectra associated can be produced by acceleration of free electrons due to inelastic collisions, as well as variations in EM fields of molecules. Due to the longer wavelength, and lower energies produced, we are able to observe <span style="color:white">much larger scale processes</span> in various phases. In the atmosphere, by observing a characteristic frequency, we can determine the <span style="color:white">composition and density of the medium</span>. In a liquid body, we can record its <span style="color:white">salinity</span>, and <span style="color:white">wave strength</span>. In a solid body, we can look at a <span style="color:white">surface roughness</span>, as well as <span style="color:white">variation in moisture content</span>. If a thermal measurement is included, the <span style="color:white">particle size distribution of a surface</span> can also be characterized. </div>
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showMoreLongwave()">Choose this region</div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="acoustic">
+            <div class="grid-item grid-item--width9" style="background: hsl( 144, 3%, 50%); height: 280px"><div style="font-size:30px">Acoustic Region: 10<sup>6</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>8</sup> m </div>
+                <br>
+                <div style="font-size:20px">This is the lowest energy region, consisting of sound, and seismic waves. The signals in this region can be generated passively by electromagnetic or gravitational field interactions, or actively by low frequency waves. To measure <span style="color:white">gravitational interaction</span> between bodies, we can track the variation in calculated vs. actual motion of a spacecraft with a radio transmitter. We can also use acoustic instruments to interact with a surrounding material, and look at the <span style="color:white">underlying composition</span> of a celestial body.</div> <!-- There are currently no CubeSat part associated with this wavelength in our database. Please let us know if you would like to contribute to our database by adding instruments capable of taking measurements in this region. -->
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="moreRay">
+            <div class="grid-item grid-item--width10" style="background: hsl( 144, 0%, 80%)">
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-10">
+                        Choose a sub-region: 
+                        <div class="button-group">                             
+                            <button class="button" ng-click="activeButton('Gamma')" id='Gamma' ng-model="gamma"> Gamma </button>
+                            <button class="button" ng-click="activeButton('X-ray')" id='X-ray' ng-model="xRay"> X-Ray </button>   
+                            <button class="button" ng-click="activeButton('UV')" id='UV' ng-model="ultraviolet"> Ultraviolet </button>
+                        </div>
+                        <br>
+
+                        Or choose an interaction:
+                        <div class="button-group">                             
+                            <button class="button" ng-click="activeButton('Cosmic')" id='Cosmic' ng-model="cosmic">High Energy Cosmic Rays</button>  
+                        </div>
+                        <br>
+                        <div ng-show="gamma">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this sub-region will let you observe radioactive elements with natural decay lines such as <strong>potassium</strong>, <strong>thorium</strong>, or <strong>uranium</strong>.
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="xray">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this sub-region will let you observe elements with characteristic fluorescent X-ray lines such as <strong>magnesium</strong>, <strong>aluminum</strong>, <strong>silicon</strong>, <strong>calcium</strong>, <strong>sulfur</strong>, <strong>titanium</strong>, or <strong>iron</strong>.
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="uv">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Historically, UV wavelengths have been used to study <strong>ozone</strong>, <strong>sulfur dioxide</strong>, and <strong>trace gases</strong>, in addition to <strong>airglow</strong>, <strong>auroral atmosphere</strong> and <strong>ionizating radiation</strong>. 
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="cosmic">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Cosmic rays can generate a cascade of small particles (including neutrons), which can interact with nuclei of elements with large cross-sections (such as <strong>iron</strong>, <strong>titanium</strong>, and <strong>rare earth elements</strong>), generating characteristic secondary gamma-ray lines. 
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                    </div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="moreVisible">
+            <div class="grid-item grid-item--width10" style="background: hsl( 144, 0%, 80%)">
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-11">
+                        Choose a sub-region: 
+                        <div class="button-group">
+                            <button class="button" ng-click="activeButton('Visible')" id='Visible' ng-model="visible"> Visible </button>
+                            <button class="button" ng-click="activeButton('Near-IR')" id='Near-IR' ng-model="nearIR"> Near-IR </button>
+                            <button class="button" ng-click="activeButton('Short-IR')" id='Short-IR' ng-model="shortIR"> Short-IR </button>
+                        </div>
+                        <br>
+                        <div ng-show="visibleinfo">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this sub-region (which is the only region of light that can be seen with the naked eye) can tell you many things, including <strong>flora/fauna identification</strong>, <strong>rock and soil mineralogy</strong>, <strong>color</strong>, <strong>texture</strong>, <strong>photogeology</strong>, and <strong>photobotany</strong>.
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="nearirinfo">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Near infrared spectral reflectance are widely used for diagnostic of <strong>rock type in exposed planetary regoliths</strong>. Spectral absorption features are also used to look at <strong>iron</strong>, other cations in <strong>silicate crystal lattices</strong>, as well as <strong>hydroxyl</strong> and <strong>carbonate</strong>, and simple molecules in gaseous state adsorbed or loosely bonded to silicates such as <strong>CO2</strong>, <strong>CO</strong>, <strong>H2O</strong>, and other small <strong>H, C, O bearing molecules</strong>. 
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="shortirinfo">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Short infrared spectral reflectance are widely used for diagnostic of <strong>rock type in exposed planetary regoliths</strong>. Spectral absorption features are also used to look at <strong>iron</strong>, other cations in <strong>silicate crystal lattices</strong>, as well as <strong>hydroxyl</strong> and <strong>carbonate</strong>, and simple molecules in gaseous state adsorbed or loosely bonded to silicates such as <strong>CO2</strong>, <strong>CO</strong>, <strong>H2O</strong>, and other small <strong>H, C, O bearing molecules</strong>. 
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="moreInfrared">
+            <div class="grid-item grid-item--width10" style="background: hsl( 144, 0%, 80%)">
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-11">
+                        Choose a sub-region: 
+                        <div class="button-group">
+                            <button class="button" ng-click="activeButton('Mid-IR')" id='Mid-IR' ng-model="midIR"> Mid-IR </button>
+                            <button class="button" ng-click="activeButton('Long-IR')" id='Long-IR' ng-model="longIR"> Long-IR </button>
+                            <button class="button" ng-click="activeButton('Far-IR')" id='Far-IR' ng-model="farIR"> Far-IR </button>
+                        </div>
+                        <br>
+                        <div ng-show="midir">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this sub-region will let you see characteristic 'fingerprints' associated with larger, more <strong>complex minerals</strong>, <strong>silicate, and non-silicate</strong>.
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="longir">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this sub-region, especially for very long wavelengths associated with heat transporting properties will let you see the <strong>particular size, density, and thermal conductivity of the surface</strong>. 
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="farir">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this sub-region, especially for very long wavelengths associated with heat transporting properties will let you see the <strong>particular size, density, and thermal conductivity of the surface</strong>.
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <div ng-show="moreLongwave">
+            <div class="grid-item grid-item--width10" style="background: hsl( 144, 0%, 80%)">
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-11">
+                        Choose a sub-region: 
+                        <div class="button-group">
+                            <button class="button" ng-click="activeButton('Radiowave')" id='Radiowave' ng-model="radiowave"> Radiowave </button>
+                            <button class="button" ng-click="activeButton('Microwave')" id='Microwave' ng-model="microwave"> Microwave </button>
+                        </div>
+                        <br>
+                        <div ng-show="radio">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this subregion will let you look at the <strong>surface roughness at interfaces</strong>, on scales from millimeters to meters. Because of the longer wavelengths, you can also determine the <strong>speed/direction of objects</strong>, as well as the <strong>atmosphere</strong> and <strong>weather condition</strong>.
+                            <br>
+                            <br>
+                        </div>
+                        <div ng-show="micro">
+                            <span class="glyphicon glyphicon-asterisk" style="font-size:0.5em" aria-hidden="true"></span>Looking at this subregion will tell you the <strong>reflection and absorption of liquids or solids</strong> associated with dielectric properties, particulary at interfaces between fases, liquids, and solids.
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="dividersmall"></div>       
+        </div>
+
+        <div ng-show="moreAcoustic">
+            <div class="grid-item grid-item--width10" style="background: hsl( 144, 20%, 70%)"><div style="font-size:40px">Acoustic Region: 10<sup>6</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>8</sup> m </div>
+                <br>
+                <p></p>
+                <div class="row" style="text-align:center; color: white">
+                    <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="showMoreAcoustic()">Choose this region</div>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+
+        <hr>
+        <h3>Fields, Particles, and Altimetry</h3>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <ul class="nav nav-tabs">
+<!--                         <li>             <a href="#tab2">Elements</a></li>
+                        <li class="active"> <a href="#tab1">Wavelengths</a></li>
+                        <li>               <a href="#tab3">Compounds</a></li> -->
+                        <li class="active"><a href="#tab4">Particles</a></li>
+                        <li>               <a href="#tab5">Fields</a></li>
+                        <li>               <a href="#tab6">Altimetry</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section id="tab4" class="tab-content active">
+            <div class="dividersmall"></div>
+            <div class = "row">
+                <div class="col-lg-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="ions">
+                                    ions
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="electrons">
+                                    electrons
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="neutrons">
+                                    neutrons
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="decayParticles">
+                                    decay particles
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="neutralAtoms">
+                                    neutral atoms
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab5" class="tab-content hide">
+            <div class="dividersmall"></div>
+            <div class = "row">
+                <div class="col-lg-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="magnetic">
+                                magnetic fields
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab6" class="tab-content hide">
+            <div class="dividersmall"></div>
+            <div class = "row">
+                <div class="col-lg-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsRadios" ng-model="altimetry">
+                                    altimetry
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2">
+                <div class = "dividerlarge"></div>
+                <div id="button">
+                    <button type="button" class="btn btn-primary btn-block" id="round" ng-click="nextInstrumentation()" ng-disabled="!click()">
+                        Select Instruments
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div ng-show="instrumentPart.Type == 'Detector'">
+            <div class="alert alert-info" role="alert">The part you are choosing is a detector. Please note that you will need to dedicate more mass, volume, and power for subsequent add-on subsystems.</div>
+        </div>
+
+        <div ng-show="instrumentPart.Mass == 'Unknown'">
+            <div class="alert alert-danger" role="alert">We could not find an associated mass for this instrument. We will be using a standard mass of 500 g when calculating the final mass of the CubeSat.
+            </div>
+        </div>
+
+        <div ng-show="instrumentPart.Power == 'Unknown'">
+            <div class="alert alert-danger" role="alert">We could not find an associated power for this instrument. We will be using a standard power of 5 W when calculating the final power of the CubeSat.
+            </div>
+        </div>
+
+        <div ng-show="instrumentPart.Volume == 'Unknown'">
+            <div class="alert alert-danger" role="alert">We could not find an associated volume for this instrument. We will be using a standard mass of 1 U when calculating the final volume of the CubeSat.
+            </div>
+        </div>
+
+        <div ng-show="showInstrumentation">
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Instruments
+                        <div class="btn-group">
+                          <label class="btn btn-default btn-xs">
+                                <input type="checkbox" autocomplete="off" data-ng-model="ignorefilters"> Show All
+                          </label>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort By: 
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Mass">
+                                            Mass
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Power">
+                                            Power
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" ng-model= "sort" value="Volume">
+                                            Volume
+                                    </label>
+                                </div>
+                            </ul>
+                        </div>
+                    </h3>
+
+                    <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                    <div class="row">
+                        <div class="col-lg-11">
+                            <div class = "dividersmall"></div>
+                            <select multiple class="form-control" size = "19">
+                                <option ng-click="saveInstrument(instrument)" data-ng-model="chosenPart" ng-repeat="instrument in instruments|filter:searchInstruments|orderBy:order"> 
+                                    {{instrument.Name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-lg-1">
+                            <a type="button" data-toggle="modal" data-target="#exampleModal" id="pushdown1" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                            <a type="button" ng-click="addInstrument()" id="pushdown2" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Current Design</h3>
+                    <h6>Instrument Selection<br>Page 1/7</h6>
+                    <div class = "dividersmall"></div>
+                    <select multiple class="form-control" size="19">
+                        <option>Name: {{Name}}</option>
+                        <option>Objectives: {{Objectives}}</option>
+                        <option>Target: {{target}}</option>
+                        <option>Instrumentation: {{instrumentPart.Name}}</option>
+                        <option>Attitude: {{attitudePart.Name}}</option>
+                        <option>Propulsion: {{propulsionPart.Name}}</option>
+                        <option>Ground Station: {{stationPart.Name}}</option>
+                        <option>Antenna: {{antennaPart.Name}}</option>
+                        <option>Receiver: {{receiverPart.Name}}</option>
+                        <option>CDH: {{cdhPart.Name}}</option>
+                        <option>Solar Panels: {{panelsPart.Name}}</option>
+                        <option>Batteries: {{batteriesPart.Name}}</option>
+                        <option>EPS: {{epsPart.Name}}</option>
+                        <option>Bus: {{busPart.Name}}</option>
+                        <option>Deployer: {{deployerPart.Name}}</option>
+                        <option>Thermal: {{thermalPart.Name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="dividersmall"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <nav>
+                <ul class="pager">
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false"><span aria-hidden="true">&larr;</span> Prev Page </button>
+
+                    <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="instrumentPart==null" title="Attitude">Next Page <span aria-hidden="true">&rarr;</span></button>
+                </ul>
+                </nav>  
+            </div>
+        </div>
+        <hr>
+        <% include footer %>
+    <div class = "divider"></div>
+    </body>
+ 
+</html>

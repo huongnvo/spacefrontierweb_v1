@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+
+<body class="container" data-ng-controller="resultsController">
+    <% include navbar %>
+
+    <div class="jumbotron">
+        <h1>Mission: {{Name}}</h1>
+        <p>Final CubeSat Configuration</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="list-group">
+                    <div class="list-group-item">Target: {{target}}</div>
+                    <div class="list-group-item">Objectives: {{Objectives}}</div>
+                    <div class="list-group-item">Instrumentation: {{instrument.Name}}</div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="list-group">
+                    <div class="list-group-item">Mass Without Deployer: {{mass}} g</div>
+                    <div class="list-group-item">Mass With Deployer: {{massW}} g</div>
+                    <div class="list-group-item">Power: {{power}} W</div>
+                    <div class="list-group-item">Volume: {{volume}} U</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>Subsystems</h2>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>INSTRUMENTATION</strong></div> 
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{instrument.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{instrument.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{instrument.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{instrument.Reference}}</li>
+                    <li class="list-group-item">Mass: {{instrument.Mass}} g</li>
+                    <li class="list-group-item">Power: {{instrument.Power}} W</li>
+                    <li class="list-group-item">Volume: {{instrument.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>ATTITUDE CONTROL</strong></div> 
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{attitude.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{attitude.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{attitude.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{attitude.Reference}}</li>
+                    <li class="list-group-item">Mass: {{attitude.Mass}} g</li>
+                    <li class="list-group-item">Power: {{attitude.Power}} W</li>
+                    <li class="list-group-item">Volume: {{attitude.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>ANTENNA</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{antenna.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{antenna.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{antenna.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{antenna.Website}}</li>
+                    <li class="list-group-item">Mass: {{antenna.Mass}} g</li>
+                    <li class="list-group-item">Power: {{antenna.Power}} W</li>
+                    <li class="list-group-item">Volume: {{antenna.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>RECEIVER</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{receiver.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{receiver.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{receiver.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{receiver.Website}}</li>
+                    <li class="list-group-item">Mass: {{receiver.Mass}} g</li>
+                    <li class="list-group-item">Power: {{receiver.Power}} W</li>
+                    <li class="list-group-item">Volume: {{receiver.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>COMMAND & DATA HANDLING</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{cdh.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{cdh.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{cdh.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{cdh.Reference}}</li>
+                    <li class="list-group-item">Mass: {{cdh.Mass}} g</li>
+                    <li class="list-group-item">Power: {{cdh.Power}} W</li>
+                    <li class="list-group-item">Volume: {{cdh.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>SOLAR PANELS</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{panels.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{panels.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{panels.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{panels.Website}}</li>
+                    <li class="list-group-item">Mass: {{panels.Mass}} g</li>
+                    <li class="list-group-item">Power: {{panels.Power}} W</li>
+                    <li class="list-group-item">Volume: {{panels.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>BATTERIES</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{batteries.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{batteries.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{batteries.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{batteries.Website}}</li>
+                    <li class="list-group-item">Mass: {{batteries.Mass}} g</li>
+                    <li class="list-group-item">Power: {{batteries.Power}} W</li>
+                    <li class="list-group-item">Volume: {{batteries.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>EPS</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{eps.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{eps.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{eps.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{eps.Website}}</li>
+                    <li class="list-group-item">Mass: {{eps.Mass}} g</li>
+                    <li class="list-group-item">Power: {{eps.Power}} W</li>
+                    <li class="list-group-item">Volume: {{eps.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>THERMAL</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{thermal.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{thermal.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{thermal.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{thermal.Website}}</li>
+                    <li class="list-group-item">Mass: {{thermal.Mass}} g</li>
+                    <li class="list-group-item">Power: {{thermal.Power}} W</li>
+                    <li class="list-group-item">Volume: {{thermal.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>PROPULSION</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{propulsion.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{propulsion.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{propulsion.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{propulsion.Reference}}</li>
+                    <li class="list-group-item">Mass: {{propulsion.Mass}} g</li>
+                    <li class="list-group-item">Power: {{propulsion.Power}} W</li>
+                    <li class="list-group-item">Volume: {{propulsion.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>DEPLOYER</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{deployer.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{deployer.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{deployer.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{deployer.Reference}}</li>
+                    <li class="list-group-item">Mass: {{deployer.Mass}} g</li>
+                    <li class="list-group-item">Power: {{deployer.Power}} W</li>
+                    <li class="list-group-item">Volume: {{deployer.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>BUS</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{bus.Name}}</li>
+                    <li class="list-group-item">Manufacturer: {{bus.Manufacturer}}</li>
+                    <li class="list-group-item">Type: {{bus.Type}}</li>
+                    <li class="list-group-item" id="myDiv">Reference: {{bus.Reference}}</li>
+                    <li class="list-group-item">Mass: {{bus.Mass}} g</li>
+                    <li class="list-group-item">Power: {{bus.Power}} W</li>
+                    <li class="list-group-item">Volume: {{bus.Volume}} U</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>GROUND STATION</strong></div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name: {{station.Name}}</li>
+                    <li class="list-group-item">Band: {{station.Band}}</li>
+                    <li class="list-group-item">Location: {{station.Loc}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class = "divider"></div>
+            <div id="button">
+                <a type="button" href="/tool" class="btn btn-default">Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+    <div class = "divider"></div>
+    <hr>
+    <% include footer %>
+    <div class = "divider"></div>
+</body>
+
+</html>
