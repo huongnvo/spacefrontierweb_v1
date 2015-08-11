@@ -764,7 +764,6 @@
         </div>
     </div>
 
-
     <div class="modal fade" id="EPSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -1149,6 +1148,7 @@
         </div>
     </div>
 
+    <div class="alert alert-success" role="alert">The current volume of your design is {{volumeNoRound}}. {{message}} All parts have been filtered to fit the current design, however, you may change it with the dropdown menu below.</div>
     <div ng-show="panelsPart.Mass == 'Unknown'">
         <div class="alert alert-info" role="alert">We could not find an associated mass for this solar panel. We will be using a standard mass of 800 g when calculating the final mass of the CubeSat.</div>
     </div>
@@ -1230,7 +1230,7 @@
                 </div>
 
                 </h3>
-                <h6>>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
+                <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>

@@ -28,6 +28,50 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
             $scope.busPart = partextracted['Bus'];
             $scope.deployerPart = partextracted['Deployer'];
             $scope.thermalPart = partextracted['Thermal'];
+
+            var totalVolume = 0;
+            if ($scope.attitudePart.Volume == 'Unknown') {
+                totalVolume += 0.75;
+            } else {
+                totalVolume += parseFloat($scope.attitudePart.Volume);
+            }
+            if ($scope.antennaPart.Volume == 'Unknown') {
+                totalVolume += 0.1;
+            } else {
+                totalVolume += parseFloat($scope.antennaPart.Volume);
+            }
+            if ($scope.receiverPart.Name == $scope.attitudePart.Name) {
+                totalVolume = totalVolume;
+            } else if ($scope.receiverPart.Volume == 'Unknown') {
+                totalVolume += 0.5;
+            } else {
+                totalVolume += parseFloat($scope.receiverPart.Volume);
+            }
+            if ($scope.cdhPart.Name == $scope.attitudePart.Name || $scope.cdhPart.Name == $scope.receiverPart.Name) {
+                totalVolume = totalVolume;
+            } else if ($scope.cdhPart.Volume == 'Unknown') {
+                totalVolume += 0.75;
+            } else {
+                totalVolume += parseFloat($scope.cdhPart.Volume);
+            }
+            if ($scope.instrumentPart.Volume == 'Unknown') {
+                totalVolume += 0.75;
+            } else {
+                totalVolume += parseFloat($scope.instrumentPart.Volume);
+            }
+            if ($scope.propulsionPart.Volume == 'Unknown' || parseFloat($scope.propulsionPart.Volume) < 1) {
+                totalVolume += 2;
+            } else {
+                totalVolume += parseFloat($scope.propulsionPart.Volume);
+            }
+            if (Math.round(totalVolume) == 4 || Math.round(totalVolume) == 5) {
+                $scope.volume = 6; 
+                $scope.message = "However, we have no part in our database of this volume, so we will use 6 U instead."
+            } else {
+                $scope.volume = Math.round(totalVolume);
+                $scope.message = "We will round to" + $scope.volume + ".";
+            }
+            $scope.volumeNoRound = totalVolume.toFixed(3);
         }); 
     };
     $scope.updateData();
