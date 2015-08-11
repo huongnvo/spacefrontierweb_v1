@@ -64,12 +64,15 @@ spaceFrontierApp.controller("powerController", function($scope, $http) {
             } else {
                 totalVolume += parseFloat($scope.propulsionPart.Volume);
             }
-            if (Math.round(totalVolume) == 4 || Math.round(totalVolume) == 5) {
+            if (Math.floor(totalVolume) == 4 || Math.floor(totalVolume) == 5) {
                 $scope.volume = 6; 
-                $scope.message = "However, we have no part in our database of this volume, so we will use 6 U instead."
+                $scope.message = "However, we have no part in our database of this volume, so we will use 6 U instead.";
+            } else if (Math.floor(totalVolume) > 6) {
+                $scope.volume = 6;
+                $scope.message = "However, we have no part in our database of this volume, so we will use 6 U instead.";
             } else {
-                $scope.volume = Math.round(totalVolume);
-                $scope.message = "We will round to" + $scope.volume + ".";
+                $scope.volume = Math.floor(totalVolume);
+                $scope.message = "We will round to " + $scope.volume + " U.";
             }
             $scope.volumeNoRound = totalVolume.toFixed(3);
         }); 
