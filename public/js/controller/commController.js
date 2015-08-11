@@ -116,7 +116,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             frequency = 0.165*Math.pow(10,9);
         }
         
-        $scope.spaceLoss = 20 * Math.log10(4 * Math.PI * dist * frequency / c);
+        $scope.spaceLoss = (20 * Math.log10(4 * Math.PI * dist * frequency / c)).toFixed(2);
         
         var eirp = 81.16;
         var stationGain = 35.94;
@@ -141,16 +141,27 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
         var d = 0.5;
         var antennaGain = 20 * Math.log10(Math.PI * d / lambda);
 
-        $scope.receiver = transmitterOutput + antennaGain - parseFloat($scope.spaceLoss) + parseFloat(stationGain);
+        $scope.receiver = (transmitterOutput + antennaGain - parseFloat($scope.spaceLoss) + parseFloat(stationGain)).toFixed(2);
     
         var k = 1.3807 * Math.pow(10, -23);
         var T = 290;
         var noisePower = 10 * Math.log10(k * T * band * Math.pow(10, 6));
-        $scope.sigNoise = $scope.receiver - noisePower;
+        $scope.sigNoise = ($scope.receiver - noisePower).toFixed(2);
 
         var EbN0 = 9.6;
 
-        $scope.bitRate = (10 * Math.pow(10, 3) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000;
+        if($scope.frequency=="UHF"){
+            $scope.bitRate = ((10 * Math.pow(10, 5) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);        
+        }
+        else if($scope.frequency=="S-Band"){
+            $scope.bitRate = ((10 * Math.pow(10, 4) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);
+        }
+        else if($scope.frequency=="X-Band"){
+            $scope.bitRate = ((10 * Math.pow(10, 3) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);
+        }
+        else if($scope.frequency=="VHF"){
+            $scope.bitRate = ((10 * Math.pow(10, 6) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);
+        }
 
         $scope.selectedStation = {};    
         $scope.selectedAntenna = {}; 

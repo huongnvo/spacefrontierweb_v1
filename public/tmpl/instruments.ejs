@@ -6,7 +6,7 @@
 
         <% include navbar %>
         <h1>Instrument Selection</h1> 
-        <p><!-- On this page please enter any specifications you have for your science instrument. Several fields, such as the periodic table and wavelength chart, ask for the type of data you would like to collect. When satisfied with your selection, please click the "select instruments" button, and we will populate the window with the appropriate instrumentation/detector. -->On this page, please first select a section of the electromagnetic spectrum you would like to observe. Once this selection has been made, there will be descriptions for the the type of measurements/observations that can be made in this wavelength range. If you would like to look at things that are not specifically found within the spectrum, such as magnetic interactions, or particle detection, please mark these off in the section below the spectrum. When satisfied with your selection, please click the "selection instruments" button, and we will populate the window with the appropriate instrumentation/detector.</p>
+        <p>On this page, please first select a section of the electromagnetic spectrum you would like to observe. Once this selection has been made, there will be descriptions for the the type of measurements/observations that can be made in this wavelength range. If you would like to look at things that are not specifically found within the spectrum, such as magnetic interactions, or particle detection, please mark these off in the section below the spectrum. When satisfied with your selection, please click the "selection instruments" button, and we will populate the window with the appropriate instrumentation/detector.</p>
         <hr>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -331,7 +331,7 @@
         <div ng-show="acoustic">
             <div class="grid-item grid-item--width9" style="background: hsl( 144, 3%, 50%); height: 280px"><div style="font-size:30px">Acoustic Region: 10<sup>6</sup> m <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> 10<sup>8</sup> m </div>
                 <br>
-                <div style="font-size:20px">This is the lowest energy region, consisting of sound, and seismic waves. The signals in this region can be generated passively by electromagnetic or gravitational field interactions, or actively by low frequency waves. To measure <span style="color:white">gravitational interaction</span> between bodies, we can track the variation in calculated vs. actual motion of a spacecraft with a radio transmitter. We can also use acoustic instruments to interact with a surrounding material, and look at the <span style="color:white">underlying composition</span> of a celestial body.</div> <!-- There are currently no CubeSat part associated with this wavelength in our database. Please let us know if you would like to contribute to our database by adding instruments capable of taking measurements in this region. -->
+                <div style="font-size:20px">This is the lowest energy region, consisting of sound, and seismic waves. The signals in this region can be generated passively by electromagnetic or gravitational field interactions, or actively by low frequency waves. To measure <span style="color:white">gravitational interaction</span> between bodies, we can track the variation in calculated vs. actual motion of a spacecraft with a radio transmitter. We can also use acoustic instruments to interact with a surrounding material, and look at the <span style="color:white">underlying composition</span> of a celestial body.</div>
             </div>
             <div class="dividersmall"></div>
         </div>
@@ -501,9 +501,6 @@
             <div class="col-lg-12">
                 <div>
                     <ul class="nav nav-tabs">
-<!--                         <li>             <a href="#tab2">Elements</a></li>
-                        <li class="active"> <a href="#tab1">Wavelengths</a></li>
-                        <li>               <a href="#tab3">Compounds</a></li> -->
                         <li class="active"><a href="#tab4">Particles</a></li>
                         <li>               <a href="#tab5">Fields</a></li>
                         <li>               <a href="#tab6">Altimetry</a></li>
@@ -597,7 +594,7 @@
         </div>
 
         <div ng-show="instrumentPart.Mass == 'Unknown'">
-            <div class="alert alert-danger" role="alert">We could not find an associated mass for this instrument. We will be using a standard mass of 500 g when calculating the final mass of the CubeSat.
+            <div class="alert alert-danger" role="alert">We could not find an associated mass for this instrument. We will be using a standard mass of 1000 g when calculating the final mass of the CubeSat.
             </div>
         </div>
 
@@ -607,7 +604,7 @@
         </div>
 
         <div ng-show="instrumentPart.Volume == 'Unknown'">
-            <div class="alert alert-danger" role="alert">We could not find an associated volume for this instrument. We will be using a standard mass of 1 U when calculating the final volume of the CubeSat.
+            <div class="alert alert-danger" role="alert">We could not find an associated volume for this instrument. We will be using a standard mass of 0.75 U when calculating the final volume of the CubeSat.
             </div>
         </div>
 
@@ -649,7 +646,7 @@
                         </div>
                     </h3>
 
-                    <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                    <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                     <div class="row">
                         <div class="col-lg-11">
                             <div class = "dividersmall"></div>

@@ -72,9 +72,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>Attitude Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you find an appropriate attitude control subsystem for your CubeSat. The algorithm asks for an altitude that your instrument will be stationed at, along with a maximum spatial resolution for your instrument. From these two fields, we will calculate an angle of knowledge, which will act as a driver for the angle of control (generally, the angle of knowledge needs to be 10 times better than the angle of control). <!-- Angle of Knowledge is calculated as: arctan(resolution/(1000*attitude)). The angle is represented in degrees. Angle of control is calculated as 10x(Calculated Angle of Knowledge). Instruments are displayed if their angle of precision is greater than or equal to the calculated angle of knowledge. -->From there, we will display all subsystems that has an angle of precision lesser than or equal to the calculated angle of knowledge.</p>
-                            <!-- <h3>What to Do: </h3>
-                            <h4>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</h4> -->
+                            <p>This section will let you find an appropriate attitude control subsystem for your CubeSat. The algorithm asks for an altitude that your instrument will be stationed at, along with a maximum spatial resolution for your instrument. From these two fields, we will calculate an angle of knowledge, which will act as a driver for the angle of control (generally, the angle of knowledge needs to be 10 times better than the angle of control). From there, we will display all subsystems that has an angle of precision lesser than or equal to the calculated angle of knowledge.</p>
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -152,15 +150,7 @@
                         <div class="container" id="indexjumbo">
                             <h1>CDH Selection</h1>
                             <div class="divider"></div>
-                            <p>This section will let you find an appropriate command and data handling subsystem capable of processing and storing the data generated during the mission. First, the algorithm will ask you to fill in some information about the collection system in order to find the minimum number of kilobits generated per second during the process of acquiring data. This value will then be used to calculate total data volume per day by looking at the amount of time the satellite is actively generating data. From there, we will display all parts with the appropriate datarate.</p>
-                            <!-- <h3>Algorithm: </h3>
-                            <h4>
-                            <h5>Displayed Parts only have a processing capability greater than the # of bits per second of information you need to transmit and can handle more millions of instructions per second than your mission needs. Bits per Second can be calculated by our program in the 3 ways shown below:</h5>
-                            <h5>Bits per Second = # Channels x Bits/Channel x Integrations per second</h4>
-                            <h5>Bits per Second = (pixel array in x direction) * (pixel array in y direction) *  (Integrations per second)</h4>
-                            <h5>Bits per Second = inputted Bits/Second</h4>
-                            <h3>What to Do:</h3>
-                            <h5>Select which way you would like to calculate bits per second based on your current knowledge of specifications and input how many millions of instructions per second your part must handle.</h5> -->
+                            <p>This section will let you find an appropriate command and data handling subsystem capable of processing and storing the data generated during the mission. First, the algorithm will ask you to fill in some information about the collection system in order to find the minimum number of kilobits generated per second during the process of acquiring data. This value will then be used to calculate total data volume per day by looking at the amount of time the satellite is actively generating data. From there, we will display all parts with the appropriate datarate.</p>s
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -220,22 +210,10 @@
         </div>
         <div class="container">
             <div class="row" style="text-align:center; color: white">
-                <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF;" ng-click="buildCubesat()">Let's Begin!</div>
+                <div id="rcorners" href="/tool" class="btn btn-lg" style="color: #FFFFFF; background: rgba(0, 0, 0, 0.5);" ng-click="buildCubesat()">Let's Begin!</div>
             </div>
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4">
-            <div id="button">
-                <a type="button" ng-click="buildCubesat()" class="btn btn-lg btn-success btn-circle">Get Started!</a>
-            </div>
-
-        </div>
-        <div class="col-lg-4">
-        </div>
-    </div>-->
     <div class="container">
         <% include footer %>
     </div>

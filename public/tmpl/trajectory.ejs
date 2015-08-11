@@ -239,18 +239,15 @@
 
     <% include navbar %>
     <h1>Propulsion Selection</h1>
-    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the deltaV budget to achieve this, please enter it under "Input Own &#916V", if not please fill out "Input Specifications" and we will make an estimate for you.
+    <p>In order to perform its mission, the CubeSat will need to reach a science orbit. If you have an outside estimate of the &#916V budget to achieve this, please enter it under the "Input Own &#916V" tab. Otherwise, please fill out the "Input Specifications" tab and we will make an estimate for you.
     </p>
-    <p>Under "Input Specifications", pick a trajectory (Direct/Indirect/User Input). The direct trajectory is an estimate generated using the orbit speed about the Sun or Earth that the CubeSat would need to meet to reach the target. The indirect trajectory assumes that an expert could lower this requirement (2 km/s for Mars, Mercury, and Venus, .02 km/s for the Moon). The trajectories for Earth orbits assume the CubeSat will be delivered to the appropriate altitude. </p>
+    <p>Under "Input Specifics", you will be asked to pick a trajectory (Direct/Indirect/User Input). The direct trajectory is an estimate generated using the orbit speed about the Sun or Earth that the CubeSat would need to meet to reach the target. The indirect trajectory assumes that an expert could lower this requirement (2 km/s for Mars, Mercury, and Venus, .02 km/s for the Moon). The trajectories for Earth orbits assume the CubeSat will be delivered to the appropriate altitude.</p>
+    <p>Once satisfied with your &#916V budget, please click the "selection Propulsion" button, and we will populate the window with the appropriate thruster/sail. By default, no types are selected, so please select the systems you would like to include in your CubeSat under the 'Show' dropdown menu.</p>
     <hr>
 
     <div class="row">
         <div class="col-lg-12">
             <h3>User Input</h3>
-            <!-- <p>Input Specifications:<br>
-            Please estimate the Periapsis and Apoapsis of your science orbit. Periapsis will be close the distance at which you want to take measurement. Apoapsis will adjust your orbit period."(this explanation must be expanded/it may make sense to include orbit period in the input boxes)<br>
-            Please select whether you would like to take a longer, "indirect" route with a very low deltaV budget, or a faster, "direct" route with a high deltaV budget. If you have an independent trajectory deltaV calculation, input that instead.<br>
-            If your orbit requires a change in inclination at any point, please input that specification here -->
             <div>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1">Input Specfics</a></li>
@@ -348,7 +345,7 @@
                             <div class = "input">
                                 Periapsis Altitude
                                 <div class="input-group">
-                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the distance from the surface where the CubeSat takes measurments. Suggested: 50-500 km">
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="The periapsis value will alter orbit period. See the table for suggested values.">
                                             <a style="color:skyblue">?</a>
                                     </div>
                                     <input type="text" class="form-control" data-ng-model="periapsis" valid-number/>
@@ -415,7 +412,7 @@
                         <div class="col-lg-6">
                             <label>Required Inclination Change</label>
                                 <div class="input-group">
-                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This field represents any inclination change that will occur after the CubeSat reaches science orbit. Suggested: 0-0.001 rad">
+                                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This field represents any inclination change that will occur after the CubeSat reaches science orbit. Suggested: 0-0.001 rad.">
                                             <a style="color:skyblue">?</a>
                                     </div>
                                     <input type="text" class="form-control" data-ng-model="angle" aria-describedby="basic-addon2" valid-number/>
@@ -476,22 +473,19 @@
     </div>
 
     <div ng-show="propulsionPart.Mass == 'Unknown'">
-        <div class="alert alert-info" role="alert">The part you are choosing does not have the associated propellant tank, and control electronics. We will be using a standard mass of 2500 g for when calculating the final mass of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">The part you are choosing does not have the associated propellant tank, and control electronics. We will be using a standard mass of 2500 g for when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="propulsionPart.Power == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated power for this propulsion system. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated power for this propulsion system. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
     </div>
 
     <div ng-show="propulsionPart.Volume == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated volume for this propulsion system. We will be using a standard power of 2.5 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this propulsion system. We will be using a standard power of 2.5 U when calculating the final power of the CubeSat.</div>
     </div>
 
     <div ng-show="showDatabase">
         <div class="row">
-            <div class= "col-lg-12">
-                <div class="alert alert-info" role="alert">Please click the 'Show' dropdown and select the systems you would like to pick to see results. You may also use the 'Sort By' dropdown to select by mass. power, or volume.</div>
-            </div>
             <div class="col-lg-6">
                 <h3>Propulsion 
                     <div class="btn-group">
@@ -546,7 +540,7 @@
                         </ul>
                     </div>
                 </h3>
-                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -593,7 +587,7 @@
             <div class = "dividersmaller"></div>
             <nav>
             <ul class="pager">
-                <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Previous Page </button>
+                <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Attitude"><span aria-hidden="true">&larr;</span> Prev Page </button>
 
                 <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="propulsionPart==null" title="Communication">Next Page <span aria-hidden="true">&rarr;</span></button>
             </ul>

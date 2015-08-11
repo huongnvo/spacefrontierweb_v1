@@ -77,11 +77,11 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
     $scope.tabBPS = function() {
         bits=parseFloat($scope.bitssecond);
-        $scope.totalbits=bits+"";
+        $scope.totalbits=(bits/1000).toFixed(2);
 
         memory=(parseFloat($scope.resolution3)/100)*86400;
         downlink=bits*memory;
-        $scope.totaldownlink=downlink+"";
+        $scope.totaldownlink=(downlink/1000000).toFixed(2);
         if($scope.length==0){
             mips=parseFloat($scope.mips)+"";
         }
@@ -91,10 +91,10 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
     $scope.tabARRAY=function(){
         bits=parseFloat($scope.sizex)*parseFloat($scope.sizey)*parseFloat($scope.integrations2);
-        $scope.totalbits=bits+"";
+        $scope.totalbits=(bits/1000).toFixed(2);
         memory=(parseFloat($scope.resolution2)/100)*86400;
         downlink=bits*memory;
-        $scope.totaldownlink=downlink+"";
+        $scope.totaldownlink=(downlink/1000000).toFixed(2);
         if($scope.length==0){
             mips=parseFloat($scope.mips)+"";
         }
@@ -104,10 +104,10 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
 
     $scope.tabCHANNELS=function(){
         bits=parseFloat($scope.channel)*parseFloat($scope.bitschannel)*parseFloat($scope.integrations1);
-        $scope.totalbits=bits+"";
+        $scope.totalbits=(bits/1000).toFixed(2);
         memory=(parseFloat($scope.resolution1)/100)*86400;
         downlink=bits*memory;
-        $scope.totaldownlink=downlink+"";
+        $scope.totaldownlink=((downlink/1000000)).toFixed(2);
         if($scope.length==0){
             mips=parseFloat($scope.mips)+"";
         }
@@ -156,11 +156,12 @@ spaceFrontierApp.controller("dataController", function($scope, $http) {
         return false;
 
     }
+
     $(function () {
-      $('[data-toggle="popover"]').popover()
-      setTimeout(function(){
-        $('[data-toggle="popover"]').popover('hide');
-      }, 9000);
+        $('[data-toggle="popover"]').popover()
+        setTimeout(function(){
+            $('[data-toggle="popover"]').popover('hide');
+        }, 1000);
     });
 
     $scope.order = function(part) {

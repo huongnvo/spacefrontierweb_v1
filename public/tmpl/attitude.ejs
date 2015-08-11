@@ -274,14 +274,14 @@
 
         <% include navbar %>
         <h1>Attitude Control Systems Selection</h1>
-        <p>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems.</p>
+        <p>On this page please input the altitude at which you would like to take measurements, and the maximum spatial resolution of your instrument. With this information we will calculate the required angle of knowledge and angle of control for your mission. This will allow us to search for acceptable attitude control systems. By default, no types are selected, so please select the systems you would like to include in your CubeSat under the 'Show' dropdown menu.</p>
         <hr>
         <div class="row">
             <div class="col-lg-6">
                 <h3>User Input</h3>
                 Altitude:
                 <div class="input-group">
-                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the distance from the surface where the CubeSat takes measurements. Suggested: 50-500km">
+                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the distance from the surface where the CubeSat takes measurements. Suggested: 50-500 km.">
                             <a style="color:skyblue">?</a>
                     </div>
                     <input type="text" class="form-control" data-ng-model="attitude" valid-number/>
@@ -291,7 +291,7 @@
                 <div class = "divider"></div>
                 Maximum Spatial Resolution:
                 <div class="input-group">
-                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="Spatial Resolution is the size of the pixels in the instrument ground footprint. Suggested: 10-100 m">
+                    <div class="input-group-addon" data-toggle="popover" data-placement="right" data-content="This is the size of the pixels in the instrument ground footprint. Suggested: 10-100 m.">
                             <a style="color:skyblue">?</a>
                     </div>
                     <input type="text" class="form-control" data-ng-model="resolution"valid-number/>
@@ -328,9 +328,6 @@
 
         <div ng-show="showDatabase">
             <div class="row">
-                <div class= "col-lg-12">
-                     <div class="alert alert-info" role="alert">Please click the 'Show' dropdown and select the systems you would like to pick to see results. You may also use the 'Sort By' dropdown to select by mass. power, or volume.</div>
-                </div>
                 <div class="col-lg-6">
                     <h3>Attitude Subsystems 
                         <div class="btn-group">
@@ -391,7 +388,7 @@
                             </ul>
                         </div>
                     </h3>
-                    <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                    <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                     <div class="row">
                         <div class="col-lg-11">
                             <div class = "dividersmall"></div>
@@ -440,7 +437,7 @@
                 <div class = "dividersmaller"></div>
                 <nav>
                 <ul class="pager">
-                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Instruments"><span aria-hidden="true">&larr;</span> Previous Page </button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Instruments"><span aria-hidden="true">&larr;</span> Prev Page </button>
 
                     <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="attitudePart==null" title="Propulsion">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>

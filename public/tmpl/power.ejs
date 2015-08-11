@@ -5,7 +5,7 @@
 <body class="container" data-ng-controller="powerController">
     <% include navbar %>
     <h1>Power Selection</h1>
-    <p>Every CubeSat needs a way to power its mission. Please select your CubeSat's volume and investigate the options for solar panel configuration. Next, select a battery to store the generated power. Finally, select an electrical power system to manage power collection and distribution.</p>
+    <p>Every CubeSat needs a way to power its mission. Please select your CubeSat's volume and investigate the options for solar panel configuration. Next, select a battery to store the generated power. Finally, select an electrical power system to manage power collection and distribution. By default, no volume is chosen, so please select the volume based on the suggested volume we have calculated for you based on the current design.</p>
     <hr>
     <div class="modal fade" id="panelsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-lg" role="document">
@@ -1230,7 +1230,7 @@
                 </div>
 
                 </h3>
-                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <h6>>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -1297,7 +1297,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Available Batteries</h3>
-                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -1368,7 +1368,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>Available EPS</h3>
-                <h6>Double click on the info button to learn more about a part, or on the right arrow to add it to the existing CubeSat.</h6>
+                <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
                         <div class = "dividersmall"></div>
@@ -1415,7 +1415,7 @@
                 <div class = "dividersmaller"></div>
                 <nav>
                 <ul class="pager">
-                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Data"><span aria-hidden="true">&larr;</span> Previous Page </button>
+                    <button type="button" class='btn btn-default' id="round" ng-click="prevPage()" style="float: left; color:#0099CC; border: false" title="Data"><span aria-hidden="true">&larr;</span> Prev Page </button>
 
                     <button type="button" class='btn btn-default' id="round" ng-click="nextPage()" style="float: right; color:#0099CC; border: false" ng-disabled="epsPart==null" title="Frame">Next Page <span aria-hidden="true">&rarr;</span></button>
                 </ul>
