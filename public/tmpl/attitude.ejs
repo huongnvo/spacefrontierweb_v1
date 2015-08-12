@@ -326,6 +326,21 @@
         </div>
         <hr>
 
+        <div ng-show="attitudePart.Mass == 'Unknown'">
+            <div class="alert alert-danger" role="alert">We could not find an associated mass for this attitude control system. We will be using an approximation of 2000 g when calculating the final mass of the CubeSat.
+            </div>
+        </div>
+
+        <div ng-show="attitudePart.Power == 'Unknown'">
+            <div class="alert alert-danger" role="alert">We could not find an associated power requirement for this attitude control system. We will be using an approximation of 5 W when calculating the final power budget of the CubeSat.
+            </div>
+        </div>
+
+        <div ng-show="attitudePart.Volume == 'Unknown'">
+            <div class="alert alert-danger" role="alert">We could not find an associated volume for this attitude control system. We will be using an approximation of 0.75 U when calculating the final volume of the CubeSat.
+            </div>
+        </div>
+
         <div ng-show="showDatabase">
             <div class="row">
                 <div class="col-lg-6">

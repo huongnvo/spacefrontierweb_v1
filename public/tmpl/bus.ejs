@@ -4,8 +4,8 @@
 
 <body class="container" data-ng-controller="busController">
     <% include navbar %>
-    <h1>Frame Selection</h1>
-    <p>Select the volume of your cubesat to view available buses, deployers, and thermal equipment. Notice, thermal equipment is not filtered by volume like buses and deployers are. We will assume the thermal management and deployer will take up negligible volume of the CubeSat, but will dedicate some of the mass budget for these subsystems. By default, the parts will be filtered based on an approximation of the current volume.</p>
+    <h1>Frame, Deployer & Thermal Selection</h1>
+    <p>Select the volume of your cubesat to view available frames, deployers, and thermal equipment. Notice, thermal equipment is not filtered by volume like the frames and deployers are. We will assume the thermal management and deployer will take up negligible volume of the CubeSat, but will dedicate some of the mass budget for these subsystems. By default, the frames and deployers will be pre-filtered based on an approximation of the current volume.</p>
     <hr>
 
     <div class="alert alert-success" role="alert">The current volume of your design is {{volumeNoRound}}. {{message}} All parts have been filtered to fit the current design, however, you may change it with the dropdown menu below.</div>
@@ -581,10 +581,18 @@
         </div>
     </div>
 
+    <div ng-show="busPart.Mass == 'Unknown'">
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this frame. We will be using an approximation of 500 g per U when calculating the final mass of the CubeSat.</div>
+    </div>
+
+    <div ng-show="busPart.Volume == 'Unknown'">
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this frame. We will be using an approximation of 0.25 U when calculating the final volume of the CubeSat.</div>
+    </div>
+
     <div ng-show="showBus">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Bus
+                <h3>Frame
                 <div class="btn-group">
                     <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     CubeSat Vol (U):
@@ -651,10 +659,14 @@
         <hr>
     </div>
 
+    <div ng-show="deployerPart.Mass == 'Unknown'">
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this deployer. We will be using an approximation of 1000 g when calculating the final mass of the CubeSat with the deployer.</div>
+    </div>
+
     <div ng-show="showDeployer">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Deployer</h3>
+                <h3>Deployer</h3>
                 <h6>Click on the info button to learn more about a part, or on double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
@@ -712,9 +724,10 @@
     </div>
 
     <div ng-show="showThermal">
+        <div class="alert alert-danger" role="alert">We could be allocating 1200 g for the thermal protection when calculating the final mass of the CubeSat.</div>
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Thermal</h3>
+                <h3>Thermal</h3>
                 <h6>Click on the info button to learn more about a part, or on double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">

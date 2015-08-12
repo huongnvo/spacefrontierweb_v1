@@ -794,22 +794,10 @@
     </div>
     <hr> 
 
-    <div ng-show="stationPart.Mass == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated mass for this antenna. We will be using a standard mass of 100 g when calculating the final mass of the CubeSat.</div>
-    </div>
-
-    <div ng-show="stationPart.Power == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated power for this antenna. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
-    </div>
-
-    <div ng-show="stationPart.Volume == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated volume for this antenna. We will be using a standard power of 0.1 U when calculating the final power of the CubeSat.</div>
-    </div>
-
     <div ng-show="showStation">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Stations</h3>
+                <h3>Stations</h3>
                 <h6>Click on the info button to learn more about a part, or on double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
@@ -866,21 +854,17 @@
     </div>
 
     <div ng-show="antennaPart.Mass == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated mass for this antenna. We will be using a standard mass of 100 g when calculating the final mass of the CubeSat.</div>
-    </div>
-
-    <div ng-show="antennaPart.Power == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated power for this antenna. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this antenna. We will be using an approximation of 100 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="antennaPart.Volume == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated volume for this antenna. We will be using a standard power of 0.1 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this antenna. We will be using an approximation of 0.1 U when calculating the final volume of the CubeSat.</div>
     </div>
 
     <div ng-show="showAntenna">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Antennas</h3>
+                <h3>Antennas</h3>
                 <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
@@ -937,21 +921,21 @@
     </div>
 
     <div ng-show="receiverPart.Mass == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated mass for this receiver. We will be using a standard mass of 500 g when calculating the final mass of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this receiver. We will be using an approximation of 500 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="receiverPart.Power == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated power for this receiver. We will be using a standard power of 20 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated power requirement for this receiver. We will be using an approximation of 20 W when calculating the final power budget of the CubeSat.</div>
     </div>
 
     <div ng-show="receiverPart.Volume == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated volume for this receiver. We will be using a standard power of 0.5 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this receiver. We will be using an approximation of 0.5 U when calculating the final power of the CubeSat.</div>
     </div>
 
     <div ng-show="showReceiver">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Receivers</h3>
+                <h3>Receivers</h3>
                 <h6>Click on the info button to learn more about a part, or on double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">

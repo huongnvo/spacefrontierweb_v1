@@ -468,7 +468,7 @@
 
                 <div class="input-group">
                     <input type="text" class="form-control" data-ng-model="totalbits" readonly="readonly" valid-number/>
-                    <div class="input-group-addon">Kilobits/Second</div>
+                    <div class="input-group-addon">Kbps</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -496,15 +496,15 @@
     </div>
 
     <div ng-show="cdhPart.Mass == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated mass for this command & data handling subsystem. We will be using a standard mass of 500 g when calculating the final mass of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this command & data handling system. We will be using an approximation of 350 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="cdhPart.Power == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated power for this command & data handling subsystem. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated power for this command & data handling system. We will be using an approximation of 5 W when calculating the final power budget of the CubeSat.</div>
     </div>
 
     <div ng-show="cdhPart.Volume == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated volume for this command & data handling subsystem. We will be using a standard power of 0.75 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this command & data handling system. We will be using an approximation of 0.75 U when calculating the final volume of the CubeSat.</div>
     </div>
 
     <div ng-show="showDatabase">

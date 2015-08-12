@@ -590,21 +590,21 @@
         <hr>
 
         <div ng-show="instrumentPart.Type == 'Detector'">
-            <div class="alert alert-info" role="alert">The part you are choosing is a detector. Please note that you will need to dedicate more mass, volume, and power for subsequent add-on subsystems.</div>
+            <div class="alert alert-info" role="alert">The part you are choosing is a detector. Please note that we will dedicate more mass, volume, and power for subsequent add-on subsystems for this design.</div>
         </div>
 
         <div ng-show="instrumentPart.Mass == 'Unknown'">
-            <div class="alert alert-danger" role="alert">We could not find an associated mass for this instrument. We will be using a standard mass of 1000 g when calculating the final mass of the CubeSat.
+            <div class="alert alert-danger" role="alert">We could not find an associated mass for this instrument. We will be using an approximation of 1000 g when calculating the final mass of the CubeSat.
             </div>
         </div>
 
         <div ng-show="instrumentPart.Power == 'Unknown'">
-            <div class="alert alert-danger" role="alert">We could not find an associated power for this instrument. We will be using a standard power of 5 W when calculating the final power of the CubeSat.
+            <div class="alert alert-danger" role="alert">We could not find an associated power requirement for this instrument. We will be using an approximation of 5 W when calculating the final power budget of the CubeSat.
             </div>
         </div>
 
         <div ng-show="instrumentPart.Volume == 'Unknown'">
-            <div class="alert alert-danger" role="alert">We could not find an associated volume for this instrument. We will be using a standard mass of 0.75 U when calculating the final volume of the CubeSat.
+            <div class="alert alert-danger" role="alert">We could not find an associated volume for this instrument. We will be using an approximation of 0.75 U when calculating the final volume of the CubeSat.
             </div>
         </div>
 

@@ -157,7 +157,7 @@ spaceFrontierApp.controller("commController", function($scope, $http) {
             $scope.bitRate = ((10 * Math.pow(10, 4) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);
         }
         else if($scope.frequency=="X-Band"){
-            $scope.bitRate = ((10 * Math.pow(10, 3) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);
+            $scope.bitRate = ((10 * Math.pow(10, 4) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);
         }
         else if($scope.frequency=="VHF"){
             $scope.bitRate = ((10 * Math.pow(10, 6) * Math.log2(1 + (Math.pow(10, (($scope.sigNoise - 33.3) / 10))))) / 1000).toFixed(2);

@@ -472,16 +472,20 @@
         <hr>
     </div>
 
+    <div ng-show="propulsionPart.Mass < 500 || propulsionPart.Volume < 0.5">
+        <div class="alert alert-danger" role="alert">The part you are choosing does not have the associated propellant tank, and control electronics. We will be using an approximation of 2000 g and 2 U when calculating the final mass and volume of the CubeSat.</div>
+    </div>
+
     <div ng-show="propulsionPart.Mass == 'Unknown'">
-        <div class="alert alert-danger" role="alert">The part you are choosing does not have the associated propellant tank, and control electronics. We will be using a standard mass of 2500 g for when calculating the final mass of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this propulsion system. We will be using an approximation 2000 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="propulsionPart.Power == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated power for this propulsion system. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated power requirement for this propulsion system. We will be using an approximation of 60 W when calculating the final power budget of the CubeSat.</div>
     </div>
 
     <div ng-show="propulsionPart.Volume == 'Unknown'">
-        <div class="alert alert-danger" role="alert">We could not find an associated volume for this propulsion system. We will be using a standard power of 2.5 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this propulsion system. We will be using an approximation of 2 U when calculating the final volume of the CubeSat.</div>
     </div>
 
     <div ng-show="showDatabase">

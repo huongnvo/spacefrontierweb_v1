@@ -1149,16 +1149,17 @@
     </div>
 
     <div class="alert alert-success" role="alert">The current volume of your design is {{volumeNoRound}}. {{message}} All parts have been filtered to fit the current design, however, you may change it with the dropdown menu below.</div>
+
     <div ng-show="panelsPart.Mass == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated mass for this solar panel. We will be using a standard mass of 800 g when calculating the final mass of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this solar panel. We will be using an approximation of 800 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="panelsPart.Power == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated power for this solar panel. We will be using a standard power of 5 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated power production for this solar panel. We will be using an approximation of -20 W when calculating the final power budget of the CubeSat.</div>
     </div>
 
     <div ng-show="panelsPart.Volume == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated volume for this solar panel. We will be using a standard power of 0.25 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this solar panel. We will be using an approximation of 0.25 U when calculating the final volume of the CubeSat.</div>
     </div>
 
     <div ng-show="showPanels">
@@ -1286,17 +1287,13 @@
     </div>
 
     <div ng-show="batteriesPart.Mass == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated mass for this battery. We will be using a standard mass of 400 g when calculating the final mass of the CubeSat.</div>
-    </div>
-
-    <div ng-show="batteriesPart.Volume == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated volume for this battery. We will assume that the battery is of negligible volume.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this battery. We will be using an approximation of 400 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="showBatteries">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available Batteries</h3>
+                <h3>Batteries</h3>
                 <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
@@ -1353,21 +1350,21 @@
     </div>
 
     <div ng-show="epsPart.Mass == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated mass for this part. We will be using a standard mass of 2000 g when calculating the final mass of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated mass for this part. We will be using an approximation of 2000 g when calculating the final mass of the CubeSat.</div>
     </div>
 
     <div ng-show="epsPart.Power == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated power for this part. We will be using a standard power of 0.01 W when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated power requirement for this part. We will be using an approximation of 0.01 W when calculating the final power budget of the CubeSat.</div>
     </div>
 
     <div ng-show="epsPart.Volume == 'Unknown'">
-        <div class="alert alert-info" role="alert">We could not find an associated volume for this part. We will be using a standard volume of 0.5 U when calculating the final power of the CubeSat.</div>
+        <div class="alert alert-danger" role="alert">We could not find an associated volume for this part. We will be using an approximation of 0.5 U when calculating the final volume of the CubeSat.</div>
     </div>
 
     <div ng-show="showEPS">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Available EPS</h3>
+                <h3>EPS</h3>
                 <h6>Click on the info button to learn more about a part, or double click on the right arrow to add it to the existing CubeSat.</h6>
                 <div class="row">
                     <div class="col-lg-11">
