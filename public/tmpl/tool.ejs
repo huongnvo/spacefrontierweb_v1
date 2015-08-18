@@ -2,9 +2,8 @@
 <html data-ng-app="spaceFrontierApp">
 <% include header %>
  
+<body id="home" data-ng-controller="toolController">
 
-<body data-ng-controller="toolController">
-    <% include navbar %>
     <div class="jumbotron" style="background-image: url(/img/gal4.png);background-size: 100%; height: 700px">
         <div id="carousel1" class = "carousel slide">
             <div class="carousel-inner" role="listbox" style="height: 450px">
@@ -203,6 +202,34 @@
                             <h1>Frame Selection</h1>
                             <div class="divider"></div>
                             <p>For the final step of the CubeSat design, you will be guided to choose a frame, deployer, and thermal system for your design. Again, these choices are dependent on the desired volume of your CubeSat design. Once that volume is chosen, all available parts matching that description wil be shown.</p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 200px">
+                        </div>
+                        <p align="right"><a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="next">
+                            <span style="font-size:3.5em" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="col-lg-2">
+                        <div class="row" style="height: 200px">
+                        </div>
+                        <a class="btn btn-sm" style="color: #FFFFFF; height: 30px" href="#carousel1" role="button" id="round" data-slide="prev">
+                            <span style="font-size:3.5em" class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row"></div>
+                        <div class="container" id="indexjumbo">
+                            <h1>Want to Learn More?</h1>
+                            <div class="divider"></div>
+                            <a type="button" href="/img/manual.pdf" style="color:white"><p>Click here to read our full user manual.</p></a>
                         </div>
                     </div>
                 </div>

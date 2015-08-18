@@ -1,4 +1,3 @@
-
 spaceFrontierApp.controller("attitudeController", function($scope, $http) {
     var idstring = window.location.search.slice(1);
     var cubesatPath = '/parts/cubesat/' + idstring;
@@ -118,10 +117,10 @@ spaceFrontierApp.controller("attitudeController", function($scope, $http) {
 });
 
 $(function () {
-      $('[data-toggle="popover"]').popover()
-      setTimeout(function(){
-        $('[data-toggle="popover"]').popover('hide');
-      }, 9000);
+    $('[data-toggle="popover"]').popover()
+    setTimeout(function(){
+        $('[data-toggle="popover"]').popover('hide'); 
+    }, 9000);
 });
 
 

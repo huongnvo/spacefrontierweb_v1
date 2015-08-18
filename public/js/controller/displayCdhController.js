@@ -3,6 +3,13 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
     $scope.newPart = {};
     $scope.editNewPart = {};
 
+    var token = window.location.search.slice(1);
+
+    $scope.backMain = function() {
+        var newPath = '/listAdmin?' + token;
+        window.location = newPath;    
+    };
+
     $scope.init = function() { 
 		$http.get('/parts/cdh').then(function(result) { 
 			$scope.parts = result.data; 

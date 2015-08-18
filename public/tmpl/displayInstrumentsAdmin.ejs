@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+
+    <body class="container" data-ng-controller="displayInstrumentsController">
+        <% include navbar %>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-name">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Name:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="name">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-type">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Type:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="type">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-manu">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Manufacturer:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="manu">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-ref">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Reference:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="ref">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-her">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Heritage:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="her">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-mass">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Mass:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="mass">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-power">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Power:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="power">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-vol">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Volume:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="vol">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-prop">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Proportions:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="prop">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-meas">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Measurement:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="meas">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-res">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Resolution:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="res">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-pix">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Pixels:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="pix">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-obj">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Objectives:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="obj">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-fov">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Field of View:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="fov">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="addNewPartModal" tabindex="-1" role="dialog" aria-labelledby="addNewPartModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Add New Part</h4>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-name">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Name:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="name">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-type">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Type:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="type">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-manu">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Manufacturer:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="manu">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-ref">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Reference:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="ref">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-her">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Heritage:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="her">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-mass">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Mass:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="mass">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-power">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Power:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="power">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-vol">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Volume:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="vol">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-prop">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Proportions:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="prop">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-meas">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Measurement:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="meas">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-res">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Resolution:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="res">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-pix">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Pixels:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="pix">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-obj">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Objectives:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="obj">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dividersmall"></div>
+                    <div class="modal-fov">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-2"
+                                    <label for="message-text" class="control-label">Field of View:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" data-ng-model="fov">
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" ng-click="addPart()" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1>Instrumentation</h1>
+        <h4>Click on each line to learn more about the part</h4>
+        <hr>
+
+        <div ng-show="edit">
+            <h2>Edit Part: {{name}}</h2>
+            <div class="dividersmall"></div>
+            <div class="modal-name">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Name:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="name">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-type">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Type:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="type">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-manu">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Manufacturer:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="manu">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-ref">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Reference:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="ref">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-her">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Heritage:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="her">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-mass">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Mass:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="mass">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-power">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Power:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="power">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-vol">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Volume:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="vol">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-prop">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Proportions:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="prop">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-meas">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Measurement:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="meas">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-res">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Resolution:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="res">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-pix">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Pixels:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="pix">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-obj">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Objectives:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="obj">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dividersmall"></div>
+            <div class="modal-fov">
+                <form>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2"
+                            <label for="message-text" class="control-label">Field of View:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" data-ng-model="fov">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div id="button">
+                <button type="button" class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-click="editPart()" data-dismiss="modal">Submit</button>
+            </div>
+            <hr>
+        </div>
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th> 
+                        <a href="" ng-click="order('Type')">Type</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th> 
+                        <a href="" ng-click="order('Name')">Name</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th> 
+                        <a href="" ng-click="order('Manufacturer')">Manufacturer</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        <a href="" ng-click="order('Mass')">Mass</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        <a href="" ng-click="order('Power')">Power</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        <a href="" ng-click="order('Volume')">Volume</a>
+                        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat ="part in parts | orderBy:predicate:reverse">
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Type}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Name}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Manufacturer}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Mass}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Power}}</td>
+                    <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Volume}}</td>
+                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning">Edit</a></td>
+                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)">Delete</a> </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div id="button">
+            <a type="button" ng-click="backMain()" class="btn btn-default">Return to Main</a>
+            <a type="button" data-toggle="modal" data-target="#addNewPartModal" class="btn btn-success">Add New Part</a>
+        </div>
+        <hr>
+        <% include footer %>
+        <div class = "divider"></div>
+
+    </body>
+ 
+</html>

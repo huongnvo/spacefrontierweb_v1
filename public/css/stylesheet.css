@@ -1,3 +1,7 @@
+#loginaddon {
+    min-width:50px;
+    text-align:left;
+}
 .activeButton {
     background-color:#000;
 }

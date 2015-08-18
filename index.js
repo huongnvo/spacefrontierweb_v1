@@ -1,19 +1,16 @@
+/* Getting all packages -------------------------------------------------------------*/
+var jwt = require("jsonwebtoken");
+var morgan = require("morgan");
+var config = require('./config');
+var bodyParser = require('body-parser');
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+var express = require("express");
+var fs = require('fs');
+
 /* Setting up the express app -------------------------------------------------------*/
-
-var express = require("express"),
-    fs = require('fs'),
-    port = process.env.PORT || 3000;
- 
+var port = process.env.PORT || 3000;
 var app = express();
-
-var config = {
-    "USER"    : "",           
-    "PASS"    : "",
-    "HOST"    : "ec2-52-2-119-158.compute-1.amazonaws.com",  
-    "PORT"    : "29793", 
-    // "DATABASE" : "cubesat_v1"
-};
-
 app.use(express.logger());
 app.use(express.json());
 app.use(express.urlencoded());
@@ -21,7 +18,8 @@ app.set("view options", {
     layout: false
 });
 
-var bodyParser = require('body-parser');
+// use morgan to log requests to the console
+app.use(morgan("dev"));
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -29,17 +27,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /* Setting up the database connection ------------------------------------------------*/
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
-// mongoose.connect('mongodb://user:cubesats4ever@ds047782.mongolab.com:47782/cubesat_v1', function(err) {
-mongoose.connect('mongodb://user:cubesats4ever@ds029793.mongolab.com:29793/cubesat_v2', function(err) {
+mongoose.connect(config.database, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
         console.log('connection successful');
     }
 });
-
+app.set('superSecret', config.secret); // secret variable
 var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function (callback) {
@@ -49,9 +44,58 @@ var db = mongoose.connection;
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
+/* Route middleware to verify a token -------------------------------------------------*/
+function verifyToken(req, res, next) {
+    // check header or url parameters or post parameters for token
+    var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+    // decode token
+    if (token) {
+        // verifies secret and checks exp
+        jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+            if (err) {
+                return res.json({ 
+                    success: false, 
+                    message: 'Failed to authenticate token.' 
+                });    
+            } else {
+                // if everything is good, save to request for use in other routes
+                req.decoded = decoded;    
+                next();
+            }
+        });
+    } else {
+        return res.status(403).send({ 
+            success: false, 
+            message: 'No token provided.' 
+        });
+    }
+};
+
+/* Setting up the database for all users  ---------------------------------------------*/
+var UserFactory = require('./public/js/models/UserFactory.js');
+var userfactory = new UserFactory(Schema, mongoose);
+userfactory.createSchemas();
+
+app.post('/authenticate', function(req, res) {
+    var resp = userfactory.getOneUser(req, res, jwt, app);
+});
+
+app.get('/users', verifyToken, function(req, res) {
+    var resp = userfactory.getAllUsers({}, res);
+});
+
+app.post('/users', function(req, res) {
+    var resp = userfactory.createUser(req, res);
+});
+
+app.post('/exists', function(req, res) {
+    var resp = userfactory.checkIfExists(req, res);
+});
+
 /* Setting up the database for all created cubesats -----------------------------------*/
 var CubesatFactory = require('./public/js/models/CubesatFactory.js');
-var cubesatfactory = new CubesatFactory(Schema,mongoose);
+var cubesatfactory = new CubesatFactory(Schema, mongoose);
 cubesatfactory.createSchemas();
 
 app.get('/parts/cubesat', function(req, res) {
@@ -148,7 +192,7 @@ app.put('/parts/cubesat-deployer/:_id', function(req, res) {
 
 /* Setting up the database for attitude selection -------------------------------------*/
 var AttitudeFactory = require('./public/js/models/AttitudeFactory.js');
-var attitudefactory = new AttitudeFactory(Schema,mongoose);
+var attitudefactory = new AttitudeFactory(Schema, mongoose);
 attitudefactory.createSchemas();
 // attitudefactory.insertPart();
 
@@ -164,13 +208,13 @@ app.put('/parts/attitude/:_id', function(req, res) {
     var resp = attitudefactory.updatePart(req, res);
 });
 
-app.delete('/parts/attitude/:_id', function(req, res) {
+app.delete('/parts/attitude/:_id', verifyToken, function(req, res) {
     var resp = attitudefactory.removePart(req, res);
 });
 
 /* Setting up the database for command and data handling ------------------------------*/
 var CdhFactory = require('./public/js/models/CdhFactory.js');
-var cdhfactory = new CdhFactory(Schema,mongoose);
+var cdhfactory = new CdhFactory(Schema, mongoose);
 cdhfactory.createSchemas();
 //cdhfactory.insertPart();
 
@@ -186,13 +230,13 @@ app.put('/parts/cdh/:_id', function(req, res) {
     var resp = cdhfactory.updatePart(req, res);
 });
 
-app.delete('/parts/cdh/:_id', function(req, res) {
+app.delete('/parts/cdh/:_id', verifyToken, function(req, res) {
     var resp = cdhfactory.removePart(req, res);
 });
 
 /* Setting up the database for communication subsystem ------------------------------------*/
 var CommFactory = require('./public/js/models/CommFactory.js');
-var commfactory = new CommFactory(Schema,mongoose);
+var commfactory = new CommFactory(Schema, mongoose);
 commfactory.createSchemas();
 // commfactory.insertPart();
 
@@ -208,13 +252,13 @@ app.put('/parts/comm/:_id', function(req, res) {
     var resp = commfactory.updatePart(req, res);
 });
 
-app.delete('/parts/comm/:_id', function(req, res) {
+app.delete('/parts/comm/:_id', verifyToken, function(req, res) {
     var resp = commfactory.removePart(req, res);
 });
 
 /* Setting up the database for instrumentation ----------------------------------------------*/
 var InstrumentsFactory = require('./public/js/models/InstrumentsFactory.js');
-var instrumentsfactory = new InstrumentsFactory(Schema,mongoose);
+var instrumentsfactory = new InstrumentsFactory(Schema, mongoose);
 instrumentsfactory.createSchemas();
 // instrumentsfactory.insertPart();
 
@@ -230,13 +274,13 @@ app.put('/parts/instruments/:_id', function(req, res) {
     var resp = instrumentsfactory.updatePart(req, res);
 });
 
-app.delete('/parts/instruments/:_id', function(req, res) {
+app.delete('/parts/instruments/:_id', verifyToken, function(req, res) {
     var resp = instrumentsfactory.removePart(req, res);
 });
 
 /* Setting up the database for power parts ----------------------------------------------*/
 var PowerFactory = require('./public/js/models/PowerFactory.js');
-var powerfactory = new PowerFactory(Schema,mongoose);
+var powerfactory = new PowerFactory(Schema, mongoose);
 powerfactory.createSchemas();
  //powerfactory.insertPart();
 
@@ -252,13 +296,13 @@ app.put('/parts/power/:_id', function(req, res) {
     var resp = powerfactory.updatePart(req, res);
 });
 
-app.delete('/parts/power/:_id', function(req, res) {
+app.delete('/parts/power/:_id', verifyToken, function(req, res) {
     var resp = powerfactory.removePart(req, res);
 });
 
 /* Setting up the database for propulsion parts ------------------------------------------*/
 var PropulsionFactory = require('./public/js/models/PropulsionFactory.js');
-var propulsionfactory = new PropulsionFactory(Schema,mongoose);
+var propulsionfactory = new PropulsionFactory(Schema, mongoose);
 propulsionfactory.createSchemas();
 // propulsionfactory.insertPart();
 
@@ -274,13 +318,13 @@ app.put('/parts/propulsion/:_id', function(req, res) {
     var resp = propulsionfactory.updatePart(req, res);
 });
 
-app.delete('/parts/propulsion/:_id', function(req, res) {
+app.delete('/parts/propulsion/:_id', verifyToken, function(req, res) {
     var resp = propulsionfactory.removePart(req, res);
 });
 
 /* Setting up the database for station subsystem----------- ------------------------------*/
 var StationFactory = require('./public/js/models/StationFactory.js');
-var stationfactory = new StationFactory(Schema,mongoose);
+var stationfactory = new StationFactory(Schema, mongoose);
 stationfactory.createSchemas();
 // stationfactory.insertPart();
 
@@ -296,13 +340,13 @@ app.put('/parts/station/:_id', function(req, res) {
     var resp = stationfactory.updatePart(req, res);
 });
 
-app.delete('/parts/station/:_id', function(req, res) {
+app.delete('/parts/station/:_id', verifyToken, function(req, res) {
     var resp = stationfactory.removePart(req, res);
 });
 
 /* Setting up the database for thermal and mechanical parts ----------------------------*/
 var ThermalFactory = require('./public/js/models/ThermalFactory.js');
-var thermalfactory = new ThermalFactory(Schema,mongoose);
+var thermalfactory = new ThermalFactory(Schema, mongoose);
 thermalfactory.createSchemas();
 // thermalfactory.insertPart();
 
@@ -318,12 +362,11 @@ app.put('/parts/thermal/:_id', function(req, res) {
     var resp = thermalfactory.updatePart(req, res);
 });
 
-app.delete('/parts/thermal/:_id', function(req, res) {
+app.delete('/parts/thermal/:_id', verifyToken, function(req, res) {
     var resp = thermalfactory.removePart(req, res);
 });
 
 /* Setting the routes and html file paths -----------------------------------------------*/
-//app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
@@ -416,14 +459,6 @@ app.get('/thermal', function (req, res) {
     res.render('../public/tmpl/displayThermal.ejs', { title: 'Thermal Subsystem' });
 });
 
-app.get('/gallery', function (req, res) {
-    res.render('../public/tmpl/gallery.ejs', { title: 'Gallery' });
-});
-
-// app.get('/signin', function (req, res) {
-//     res.render('../public/tmpl/signin.ejs', { title: 'Sign In' });
-// });
-
 app.get('/login', function(req, res) {
     res.render('../public/tmpl/login.ejs', { title: 'Log In' });
 });
@@ -434,6 +469,42 @@ app.get('/signup', function(req, res) {
 
 app.get('/google5d616e0e6bb5bc2a.html', function(req, res) {
     res.sendfile('public/tmpl/google5d616e0e6bb5bc2a.html')
+});
+
+app.get('/listAdmin', verifyToken, function (req, res) {
+    res.render('../public/tmpl/searchAdmin.ejs', { title: 'Subsystem Lists' });
+});
+
+app.get('/attitudeAdmin', function (req, res) {
+    res.render('../public/tmpl/displayAttitudeAdmin.ejs', { title: 'Attitude Subsystem' });
+});
+
+app.get('/cdhAdmin', function (req, res) {
+    res.render('../public/tmpl/displayCdhAdmin.ejs', { title: 'CDH Subsystem' });
+});
+
+app.get('/commAdmin', function (req, res) {
+    res.render('../public/tmpl/displayCommAdmin.ejs', { title: 'Communication Subsystem' });
+});
+
+app.get('/instrumentsAdmin', function (req, res) {
+    res.render('../public/tmpl/displayInstrumentsAdmin.ejs', { title: 'Instrumentations' });
+});
+
+app.get('/powerAdmin', function (req, res) {
+    res.render('../public/tmpl/displayPowerAdmin.ejs', { title: 'Power Subsystem' });
+});
+
+app.get('/propulsionAdmin', function (req, res) {
+    res.render('../public/tmpl/displayPropulsionAdmin.ejs', { title: 'Propulsion Subsystem' });
+});
+
+app.get('/stationAdmin', function (req, res) {
+    res.render('../public/tmpl/displayStationAdmin.ejs', { title: 'Ground Stations' });
+});
+
+app.get('/thermalAdmin', function (req, res) {
+    res.render('../public/tmpl/displayThermalAdmin.ejs', { title: 'Thermal Subsystem' });
 });
 
 app.listen(port);

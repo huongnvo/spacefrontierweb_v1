@@ -258,42 +258,6 @@ var CubesatFactory = function(Schema,mongoose) {
 		});
 	}
 
-	this.updateMass = function(req, res) {
-		this.cubesat.update(
-		{
-			_id: req.params._id
-		}, 
-		{$set: 
-			{Mass: req.body.Mass}
-		}, function(error, output) {
-			res.json(output);
-		});
-	}
-
-	this.updatePower = function(req, res) {
-		this.cubesat.update(
-		{
-			_id: req.params._id
-		}, 
-		{$set: 
-			{Power: req.body.Power}
-		}, function(error, output) {
-			res.json(output);
-		});
-	}
-
-	this.updateVolume = function(req, res) {
-		this.cubesat.update(
-		{
-			_id: req.params._id
-		}, 
-		{$set: 
-			{Volume: req.body.Volume}
-		}, function(error, output) {
-			res.json(output);
-		});
-	}
-
 	this.updateTarget = function(req, res) {
 		this.cubesat.update(
 		{
