@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html data-ng-app="spaceFrontierApp">
+<% include header %>
+<% include navbar %>
+<div class="container" data-ng-controller="signupController">
+    <div ng-show="!showInfo">
+        <div class="dividerlargest"></div>   
+    </div>
+    <div ng-show="showInfo">
+        <div class="divider"></div>
+        <div class="alert alert-danger" role="alert">This email is already registered. Want to <a href="/login">login</a> instead?</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            <h2 class="text-center"><i class="ion-person-add"></i> Sign up</h2>
+            <div class="divider"></div>
+            <input type="text" class="form-control" placeholder = "Name" ng-model="name"/>
+            <div class="dividersmall"></div>
+            <input type="email" class="form-control" placeholder = "Email Address" ng-model="email"/>
+            <div class="dividersmall"></div>
+            <input type="text" class="form-control" placeholder = "Affiliation" ng-model="affiliation"/>
+            <div class="dividersmall"></div>
+            <input type="text" class="form-control" placeholder = "Title" ng-model="title"/>
+            <div class="dividersmall"></div>
+            <input type="password" class="form-control" placeholder = "Password" ng-model="password"/>
+            <div class="dividersmall"></div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="signUp()" ng-disabled="name==null||email==null||affiliation==null||title==null||password==null">
+                Sign Up
+            </button>
+            <hr>
+
+            <p class="text-center text-muted"><small>Already have an account? <a href="/login">Log in now</a></small></p>
+            <hr>
+            </form>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+</div>
+</html>

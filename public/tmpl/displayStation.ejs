@@ -343,168 +343,6 @@
         <h1>Ground Station</h1>
         <h4>Click on each line to learn more about the part</h4>
         <hr>
-        <div ng-show="edit">
-            <div class="dividersmall"></div>
-            <div class="modal-name">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Name:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="name">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-uplink">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Uplink Frequency:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="uplink">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-eirp">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">EIRP:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="eirp">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-down">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Downlink Frequency:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="down">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-gain">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Gain:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="gain">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-pergain">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Per Gain:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="pgain">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-dia">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Diameter:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="dia">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-loc">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Location:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="loc">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="dividersmall"></div>
-            <div class="modal-band">
-                <form>
-                    <div class="row">
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-2"
-                            <label for="message-text" class="control-label">Band:</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" data-ng-model="band">
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <hr>
-            <div id="button">
-                <button type="button" class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
-                <button type="button" class="btn btn-primary" ng-click="editPart()" data-dismiss="modal">Submit</button>
-            </div>
-            <hr>
-        </div>
-
 
         <table class="table table-hover">
             <thead>
@@ -525,7 +363,6 @@
                         <a href="" ng-click="order('EIRP')">EIRP</a>
                         <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
                     </th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -534,8 +371,6 @@
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Name}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Loc}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.EIRP}}</td>
-                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning">Edit</a></td>
-                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)">Delete</a> </td>
                 </tr>
             </tbody>
         </table>

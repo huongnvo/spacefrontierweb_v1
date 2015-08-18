@@ -1,6 +1,13 @@
 spaceFrontierApp.controller("displayStationController", function($scope, $http) {
     $scope.parts = [];
     $scope.newPart = {};
+    
+    var token = window.location.search.slice(1);
+
+    $scope.backMain = function() {
+        var newPath = '/listAdmin?' + token;
+        window.location = newPath;    
+    };
 
     $scope.init = function() {
 		$http.get('/parts/station').then(function(result) { 
