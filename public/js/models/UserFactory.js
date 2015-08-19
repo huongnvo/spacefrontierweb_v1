@@ -72,7 +72,12 @@ var UserFactory = function(Schema, mongoose) {
 							message: 'Authentication failed. Wrong password.'
 						});
 					} else {
-						var token = jwt.sign(output, app.get('superSecret'), {
+						var encrypt = {
+							name: output.name,
+							email: output.email,
+							admin: output.admin
+						}
+						var token = jwt.sign(encrypt, app.get('superSecret'), {
 							expiresInMinutes: 1440
 						});
 						res.json({

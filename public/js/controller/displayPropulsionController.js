@@ -62,8 +62,40 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
+        $scope.newPart = {
+            Type: $scope.type,
+            Name: $scope.name,
+            Manufacturer: $scope.manu,
+            Reference: $scope.ref,
+            Heritage: $scope.her,
+            Mass: $scope.mass,
+            Power: $scope.power,
+            Volume: $scope.vol,
+            Proportions: $scope.prop,
+            Specific_Impulse: $scope.isp,
+            DeltaV: $scope.dv,
+            Objectives: $scope.obj,
+            Cost: 0
+        };
+        $http.put('/parts/propulsion/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.type = '';
+                $scope.name = '';
+                $scope.manu = '';
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.power = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.isp = '';
+                $scope.dv = '';
+                $scope.obj = '';
+                $http.get('/parts/propulsion').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });        
         $scope.edit = false;
     }
 
@@ -84,7 +116,7 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
             Objectives: $scope.obj,
             Cost: 0
         };
-        $http.post('/parts/propulsion', $scope.newPart)
+        $http.post('/parts/propulsion' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.type = '';
@@ -102,11 +134,11 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
                 $http.get('/parts/propulsion').then(function(result) { 
                     $scope.parts = result.data; 
                 });
-            });
+        });
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/propulsion/' + id)
+        $http.delete('/parts/propulsion/' + id + '?' + token)
             .success(function(data) {
                 $http.get('/parts/propulsion').then(function(result) { 
                     $scope.parts = result.data; 

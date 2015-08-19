@@ -46,8 +46,46 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
+        $scope.newPart = {
+            Type: $scope.type, 
+            Name: $scope.name, 
+            Manufacturer: $scope.manu, 
+            Reference: $scope.ref, 
+            Heritage: $scope.her, 
+            Mass: $scope.mass, 
+            Power: $scope.power, 
+            Volume: $scope.vol, 
+            Proportions: $scope.prop, 
+            MIPS: $scope.mips, 
+            MHz: $scope.mhz, 
+            Processing_further: $scope.process, 
+            Memory: $scope.mem, 
+            Scientific_obj: $scope.sci,
+            Additional_info: $scope.info, 
+            Cost: "0"
+        };
+        $http.put('/parts/cdh/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.type = ''; 
+                $scope.name = ''; 
+                $scope.manu = ''; 
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.power = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.mips = '';
+                $scope.mhz = '';
+                $scope.process = '';
+                $scope.mem = '';
+                $scope.sci = '';
+                $scope.info = '';
+                $http.get('/parts/cdh').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });
         $scope.edit = false;
     }
 
@@ -93,7 +131,7 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
             Additional_info: $scope.info, 
             Cost: "0"
         };
-        $http.post('/parts/cdh', $scope.newPart)
+        $http.post('/parts/cdh' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.type = ''; 
@@ -118,7 +156,7 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/cdh/' + id)
+        $http.delete('/parts/cdh/' + id + '?' + token)
             .success(function(data) {
                 $http.get('/parts/cdh').then(function(result) { 
                     $scope.parts = result.data; 

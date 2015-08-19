@@ -200,11 +200,11 @@ app.get('/parts/attitude', function(req, res) {
     var resp = attitudefactory.getPart({},res);
 });
 
-app.post('/parts/attitude', function(req, res) {
+app.post('/parts/attitude', verifyToken, function(req, res) {
     var resp = attitudefactory.putPart(req, res);
 });
 
-app.put('/parts/attitude/:_id', function(req, res) {
+app.put('/parts/attitude/:_id', verifyToken, function(req, res) {
     var resp = attitudefactory.updatePart(req, res);
 });
 
@@ -222,11 +222,11 @@ app.get('/parts/cdh', function(req, res) {
     var resp = cdhfactory.getPart({},res);
 });
 
-app.post('/parts/cdh', function(req, res) {
+app.post('/parts/cdh', verifyToken, function(req, res) {
     var resp = cdhfactory.putPart(req, res);
 });
 
-app.put('/parts/cdh/:_id', function(req, res) {
+app.put('/parts/cdh/:_id', verifyToken, function(req, res) {
     var resp = cdhfactory.updatePart(req, res);
 });
 
@@ -244,11 +244,11 @@ app.get('/parts/comm', function(req, res) {
     var resp = commfactory.getPart({},res);
 });
 
-app.post('/parts/comm', function(req, res) {
+app.post('/parts/comm', verifyToken, function(req, res) {
     var resp = commfactory.putPart(req, res);
 });
 
-app.put('/parts/comm/:_id', function(req, res) {
+app.put('/parts/comm/:_id', verifyToken, function(req, res) {
     var resp = commfactory.updatePart(req, res);
 });
 
@@ -266,11 +266,11 @@ app.get('/parts/instruments', function(req, res) {
     var resp = instrumentsfactory.getPart({},res);
 });
 
-app.post('/parts/instruments', function(req, res) {
+app.post('/parts/instruments', verifyToken, function(req, res) {
     var resp = instrumentsfactory.putPart(req, res);
 });
 
-app.put('/parts/instruments/:_id', function(req, res) {
+app.put('/parts/instruments/:_id', verifyToken, function(req, res) {
     var resp = instrumentsfactory.updatePart(req, res);
 });
 
@@ -288,11 +288,11 @@ app.get('/parts/power', function(req, res) {
     var resp = powerfactory.getPart({},res);
 });
 
-app.post('/parts/power', function(req, res) {
+app.post('/parts/power', verifyToken, function(req, res) {
     var resp = powerfactory.putPart(req, res);
 });
 
-app.put('/parts/power/:_id', function(req, res) {
+app.put('/parts/power/:_id', verifyToken, function(req, res) {
     var resp = powerfactory.updatePart(req, res);
 });
 
@@ -310,11 +310,11 @@ app.get('/parts/propulsion', function(req, res) {
     var resp = propulsionfactory.getPart({},res);
 });
 
-app.post('/parts/propulsion', function(req, res) {
+app.post('/parts/propulsion', verifyToken, function(req, res) {
     var resp = propulsionfactory.putPart(req, res);
 });
 
-app.put('/parts/propulsion/:_id', function(req, res) {
+app.put('/parts/propulsion/:_id', verifyToken, function(req, res) {
     var resp = propulsionfactory.updatePart(req, res);
 });
 
@@ -332,11 +332,11 @@ app.get('/parts/station', function(req, res) {
     var resp = stationfactory.getPart({},res);
 });
 
-app.post('/parts/station', function(req, res) {
+app.post('/parts/station', verifyToken, function(req, res) {
     var resp = stationfactory.putPart(req, res);
 });
 
-app.put('/parts/station/:_id', function(req, res) {
+app.put('/parts/station/:_id', verifyToken, function(req, res) {
     var resp = stationfactory.updatePart(req, res);
 });
 
@@ -354,11 +354,11 @@ app.get('/parts/thermal', function(req, res) {
     var resp = thermalfactory.getPart({},res);
 });
 
-app.post('/parts/thermal', function(req, res) {
+app.post('/parts/thermal', verifyToken, function(req, res) {
     var resp = thermalfactory.putPart(req, res);
 });
 
-app.put('/parts/thermal/:_id', function(req, res) {
+app.put('/parts/thermal/:_id', verifyToken, function(req, res) {
     var resp = thermalfactory.updatePart(req, res);
 });
 
@@ -421,6 +421,10 @@ app.get('/tool7', function (req, res) {
 
 app.get('/tool8', function (req, res) {
     res.render('../public/tmpl/results.ejs', { title: 'Results Selection' });
+});
+
+app.get('/partslist', function(req, res) {
+    res.render('../public/tmpl/loginsignup.ejs', { title: 'Parts List'});
 });
 
 app.get('/list', function (req, res) {

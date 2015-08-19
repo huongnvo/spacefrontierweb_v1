@@ -58,8 +58,36 @@ spaceFrontierApp.controller("displayThermalController", function($scope, $http) 
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
+        $scope.newPart = {
+            Type: $scope.type,
+            Name: $scope.name,
+            Manufacturer: $scope.manu,
+            Reference: $scope.ref,
+            Heritage: $scope.her,
+            Mass: $scope.mass,
+            Power: $scope.power,
+            Volume: $scope.vol,
+            Proportions: $scope.prop,
+            Additional_info: $scope.obj,
+            Cost: "0"
+        };
+        $http.put('/parts/thermal/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.type = '';
+                $scope.name = '';
+                $scope.manu = '';
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.power = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.obj = '';
+                $http.get('/parts/thermal').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });
         $scope.edit = false;
     }
 
@@ -77,7 +105,7 @@ spaceFrontierApp.controller("displayThermalController", function($scope, $http) 
             Additional_info: $scope.obj,
             Cost: "0"
         };
-        $http.post('/parts/thermal', $scope.newPart)
+        $http.post('/parts/thermal' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.type = '';
@@ -93,11 +121,11 @@ spaceFrontierApp.controller("displayThermalController", function($scope, $http) 
                 $http.get('/parts/thermal').then(function(result) { 
                     $scope.parts = result.data; 
                 });
-            });
+        });
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/thermal/' + id)
+        $http.delete('/parts/thermal/' + id  + '?' + token)
             .success(function(data) {
                 $http.get('/parts/thermal').then(function(result) { 
                     $scope.parts = result.data; 

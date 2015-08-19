@@ -656,7 +656,7 @@ var ThermalFactory = function(Schema,mongoose) {
 
 	this.putPart = function(req, res) {
         var newpart = new this.thermal_parts({
-        	Cost:req.body.Cost,
+        	Cost: req.body.Cost,
 		    Type: req.body.Type,
 		    Name: req.body.Name,
 		    Manufacturer: req.body.Manufacturer,
@@ -679,7 +679,7 @@ var ThermalFactory = function(Schema,mongoose) {
             _id: req.params._id
         }, 
         {
-        	Cost:req.body.Cost,
+        	Cost: req.body.Cost,
 		    Type: req.body.Type,
 		    Name: req.body.Name,
 		    Manufacturer: req.body.Manufacturer,

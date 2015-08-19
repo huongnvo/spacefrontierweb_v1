@@ -427,7 +427,7 @@ var CdhFactory = function(Schema,mongoose) {
 	this.updatePart = function(req, res) {
 		this.cdh_parts.update(
  		{
-      		_id: mongoose.ObjectId(req.params._id)
+      		_id: req.params._id
     	}, 
     	{
 			Type: req.body.Type, 

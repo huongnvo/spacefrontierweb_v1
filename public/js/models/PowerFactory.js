@@ -1434,7 +1434,7 @@ var PowerFactory = function(Schema,mongoose) {
 	};
 
 	this.updatePart = function(req, res) {
-		this.power_parts.remove({
+		this.power_parts.update({
             _id: req.params._id
         }, 
     	{

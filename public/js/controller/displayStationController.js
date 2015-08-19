@@ -56,8 +56,33 @@ spaceFrontierApp.controller("displayStationController", function($scope, $http) 
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
+        $scope.newPart = {
+            Name: $scope.name,
+            Uplink_freq: $scope.uplink, 
+            EIRP: $scope.eirp, 
+            Downlink_freq: $scope.down, 
+            Gain: $scope.gain, 
+            Per_gain: $scope.pgain, 
+            Diameter: $scope.dia, 
+            Loc: $scope.loc, 
+            Band: $scope.band,
+        };
+        $http.put('/parts/station/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.name = '';
+                $scope.uplink = '';
+                $scope.eirp = '';
+                $scope.down = '';
+                $scope.gain = '';
+                $scope.pgain = '';
+                $scope.dia = '';
+                $scope.loc = '';
+                $scope.band = '';
+                $http.get('/parts/station').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });        
         $scope.edit = false;
     }
 
@@ -73,7 +98,7 @@ spaceFrontierApp.controller("displayStationController", function($scope, $http) 
             Loc: $scope.loc, 
             Band: $scope.band,
         };
-        $http.post('/parts/station', $scope.newPart)
+        $http.post('/parts/station' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.name = '';
@@ -88,11 +113,11 @@ spaceFrontierApp.controller("displayStationController", function($scope, $http) 
                 $http.get('/parts/station').then(function(result) { 
                     $scope.parts = result.data; 
                 });
-            });
+        });
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/station/' + id)
+        $http.delete('/parts/station/' + id + '?' + token)
             .success(function(data) {
                 $http.get('/parts/station').then(function(result) { 
                     $scope.parts = result.data; 

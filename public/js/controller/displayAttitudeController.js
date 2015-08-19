@@ -65,9 +65,43 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
-        $scope.edit = false;
+        $scope.newPart = {
+            Type: $scope.type,
+            Type_further: $scope.typecont,
+            Name: $scope.name,
+            Manufacturer: $scope.manu,
+            Reference: $scope.ref,
+            Heritage: $scope.her,
+            Mass: $scope.mass,
+            Power: $scope.power,
+            Volume: $scope.vol,
+            Proportions: $scope.prop,
+            Angle_prec: $scope.angle,
+            Ac_sensors: $scope.ac,
+            Scientific_obj: $scope.sci,
+            Cost: "0"
+        };
+        $http.put('/parts/attitude/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.type = '';
+                $scope.typecont = '';
+                $scope.name = '';
+                $scope.manu = '';
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.power = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.angle = '';
+                $scope.ac = '';
+                $scope.sci = '';
+                $http.get('/parts/attitude').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+            });
+        $scope.edit = false;    
     }
 
     $scope.addPart = function() {
@@ -87,7 +121,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
             Scientific_obj: $scope.sci,
             Cost: "0"
         };
-        $http.post('/parts/attitude', $scope.newPart)
+        $http.post('/parts/attitude' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.type = '';
@@ -110,7 +144,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/attitude/' + id)
+        $http.delete('/parts/attitude/' + id + '?' + token)
             .success(function(data) {
                 $http.get('/parts/attitude').then(function(result) { 
                     $scope.parts = result.data; 

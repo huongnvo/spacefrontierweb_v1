@@ -843,14 +843,12 @@ var StationFactory = function(Schema,mongoose) {
 			Name: req.body.Name,
 		    Uplink_freq: req.body.Uplink_freq, 
 		    EIRP: req.body.EIRP, 
-		    EIRP_ave: req.body.EIRP_ave, 
 		    Downlink_freq: req.body.Downlink_freq, 
 		    Gain: req.body.Gain, 
 		    Per_gain: req.body.Per_gain, 
 		    Diameter: req.body.Diameter, 
 		    Loc: req.body.Loc, 
-		    Band: req.body.Band,
-		    Coordinates: req.body.Coordinates
+		    Band: req.body.Band
         });
         newpart.save(function (error, output) {
             res.json(output);
@@ -866,14 +864,12 @@ var StationFactory = function(Schema,mongoose) {
 			Name: req.body.Name,
 		    Uplink_freq: req.body.Uplink_freq, 
 		    EIRP: req.body.EIRP, 
-		    EIRP_ave: req.body.EIRP_ave, 
 		    Downlink_freq: req.body.Downlink_freq, 
 		    Gain: req.body.Gain, 
 		    Per_gain: req.body.Per_gain, 
 		    Diameter: req.body.Diameter, 
 		    Loc: req.body.Loc, 
-		    Band: req.body.Band,
-		    Coordinates: req.body.Coordinates
+		    Band: req.body.Band
         },
         function(error, output) {
             res.json(output);

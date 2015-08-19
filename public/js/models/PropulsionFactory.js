@@ -453,17 +453,12 @@ var PropulsionFactory = function(Schema,mongoose) {
             Reference: req.body.Reference,
             Heritage: req.body.Heritage,
             Mass: req.body.Mass,
-            Mass_further: req.body.Mass_further,
             Power: req.body.Power,
-            Power_further: req.body.Power_further,
             Volume: req.body.Volume,
             Proportions: req.body.Proportions,
-            Volume_further: req.body.Volume_further,
             Specific_Impulse: req.body.Specific_Impulse,
             DeltaV: req.body.DeltaV,
             Objectives: req.body.Objectives,
-            Thermal_Issues: req.body.Thermal_Issues,
-            Total_Impulse: req.body.Total_Impulse,
             Cost: req.body.Cost
         });
         newpart.save(function (error, output) {
@@ -483,17 +478,12 @@ var PropulsionFactory = function(Schema,mongoose) {
             Reference: req.body.Reference,
             Heritage: req.body.Heritage,
             Mass: req.body.Mass,
-            Mass_further: req.body.Mass_further,
             Power: req.body.Power,
-            Power_further: req.body.Power_further,
             Volume: req.body.Volume,
             Proportions: req.body.Proportions,
-            Volume_further: req.body.Volume_further,
             Specific_Impulse: req.body.Specific_Impulse,
             DeltaV: req.body.DeltaV,
             Objectives: req.body.Objectives,
-            Thermal_Issues: req.body.Thermal_Issues,
-            Total_Impulse: req.body.Total_Impulse,
             Cost: req.body.Cost
         }, 
         function(error, output) {

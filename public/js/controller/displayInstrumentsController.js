@@ -66,8 +66,44 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
+        $scope.newPart = {
+            Type: $scope.type,
+            Name: $scope.name,
+            Manufacturer: $scope.manu,
+            Reference: $scope.ref,
+            Heritage: $scope.her,
+            Mass: $scope.mass, 
+            Power: $scope.power, 
+            Volume: $scope.vol,
+            Proportions: $scope.prop,
+            Measurement: $scope.meas,
+            Resolution: $scope.res,
+            Pixels: $scope.pix,
+            Objectives: $scope.obj,
+            FOV: $scope.fov, 
+            Cost: "0"
+        };
+        $http.put('/parts/instruments/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.type = '';
+                $scope.name = '';
+                $scope.manu = '';
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.power = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.meas = '';
+                $scope.res = '';
+                $scope.pix = '';
+                $scope.obj = '';
+                $scope.fov = '';
+                $http.get('/parts/instruments').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });
         $scope.edit = false;
     }
 
@@ -89,7 +125,7 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
             FOV: $scope.fov, 
             Cost: "0"
         };
-        $http.post('/parts/instruments', $scope.newPart)
+        $http.post('/parts/instruments' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.type = '';
@@ -109,11 +145,11 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
                 $http.get('/parts/instruments').then(function(result) { 
                     $scope.parts = result.data; 
                 });
-            });
+        });
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/instruments/' + id)
+        $http.delete('/parts/instruments/' + id + '?' + token)
             .success(function(data) {
                 $http.get('/parts/instruments').then(function(result) { 
                     $scope.parts = result.data; 

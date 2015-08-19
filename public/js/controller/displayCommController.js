@@ -68,8 +68,46 @@ spaceFrontierApp.controller("displayCommController", function($scope, $http) {
     }
 
     $scope.editPart = function() {
-        $scope.addPart();
-        $scope.deletePart($scope.id);
+        $scope.newPart = {
+            Type: $scope.type,
+            Name: $scope.name,
+            Manufacturer: $scope.manu,
+            Reference: $scope.ref,
+            Heritage: $scope.her,
+            Mass: $scope.mass,
+            Power: $scope.power,
+            Volume: $scope.vol,
+            Proportions: $scope.prop,
+            Frequency: $scope.freq,
+            Data_and_Objectives: $scope.data,
+            Receiver_Sensitivity: $scope.rec,
+            Transmit_Power: $scope.transmit,
+            Beamwidth: $scope.band,
+            Gain: $scope.gain,
+            Cost: "0"
+        };
+        $http.put('/parts/comm/' + $scope.id + '?' + token, $scope.newPart)
+            .success(function(data) {
+                $scope.id = '';
+                $scope.type = '';
+                $scope.name = '';
+                $scope.manu = '';
+                $scope.ref = '';
+                $scope.her = '';
+                $scope.mass = '';
+                $scope.power = '';
+                $scope.vol = '';
+                $scope.prop = '';
+                $scope.freq = '';
+                $scope.data = '';
+                $scope.rec = '';
+                $scope.transmit = '';
+                $scope.band = '';
+                $scope.gain = '';
+                $http.get('/parts/comm').then(function(result) { 
+                    $scope.parts = result.data; 
+                });
+        });
         $scope.edit = false;
     }
 
@@ -92,7 +130,7 @@ spaceFrontierApp.controller("displayCommController", function($scope, $http) {
             Gain: $scope.gain,
             Cost: "0"
         };
-        $http.post('/parts/comm', $scope.newPart)
+        $http.post('/parts/comm' + '?' + token, $scope.newPart)
             .success(function(data) {
                 $scope.id = '';
                 $scope.type = '';
@@ -117,7 +155,7 @@ spaceFrontierApp.controller("displayCommController", function($scope, $http) {
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/comm/' + id)
+        $http.delete('/parts/comm/' + id + '?' + token)
             .success(function(data) {
                 $http.get('/parts/comm').then(function(result) { 
                     $scope.parts = result.data; 
