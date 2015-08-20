@@ -1,8 +1,23 @@
 spaceFrontierApp.controller("displayThermalController", function($scope, $http) {
     $scope.parts = [];
     $scope.newPart = {};
+    $scope.notAdmin = false;
     
     var token = window.location.search.slice(1);
+
+    $scope.remove = function() {
+        $scope.notAdmin = false;
+    }
+
+    $scope.decode = function() {
+        var payload = token.split('=')[1];
+        var base64Url = payload.split('.')[1];
+        var output = JSON.parse(atob(base64Url));
+        $scope.name = output.name;
+        $scope.email = output.email;
+        $scope.admin = output.admin;
+    };
+    $scope.decode();
 
     $scope.backMain = function() {
         var newPath = '/listAdmin?' + token;
@@ -71,24 +86,41 @@ spaceFrontierApp.controller("displayThermalController", function($scope, $http) 
             Additional_info: $scope.obj,
             Cost: "0"
         };
-        $http.put('/parts/thermal/' + $scope.id + '?' + token, $scope.newPart)
-            .success(function(data) {
-                $scope.id = '';
-                $scope.type = '';
-                $scope.name = '';
-                $scope.manu = '';
-                $scope.ref = '';
-                $scope.her = '';
-                $scope.mass = '';
-                $scope.power = '';
-                $scope.vol = '';
-                $scope.prop = '';
-                $scope.obj = '';
-                $http.get('/parts/thermal').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
-        });
-        $scope.edit = false;
+        if ($scope.admin) {
+            $http.put('/parts/thermal/' + $scope.id + '?' + token, $scope.newPart)
+                .success(function(data) {
+                    $scope.id = '';
+                    $scope.type = '';
+                    $scope.name = '';
+                    $scope.manu = '';
+                    $scope.ref = '';
+                    $scope.her = '';
+                    $scope.mass = '';
+                    $scope.power = '';
+                    $scope.vol = '';
+                    $scope.prop = '';
+                    $scope.obj = '';
+                    $http.get('/parts/thermal').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
+                    $scope.edit = false;
+            });
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to edit this item';
+            $scope.id = '';
+            $scope.type = '';
+            $scope.name = '';
+            $scope.manu = '';
+            $scope.ref = '';
+            $scope.her = '';
+            $scope.mass = '';
+            $scope.power = '';
+            $scope.vol = '';
+            $scope.prop = '';
+            $scope.obj = '';
+            $scope.edit = false;
+        }
     }
 
     $scope.addPart = function() {
@@ -125,12 +157,17 @@ spaceFrontierApp.controller("displayThermalController", function($scope, $http) 
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/thermal/' + id  + '?' + token)
-            .success(function(data) {
-                $http.get('/parts/thermal').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
+        if ($scope.admin) {
+            $http.delete('/parts/thermal/' + id  + '?' + token)
+                .success(function(data) {
+                    $http.get('/parts/thermal').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
             });
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to delete this item';
+        }
     };
 
     $('#exampleModal').on('show.bs.modal', function (event) {

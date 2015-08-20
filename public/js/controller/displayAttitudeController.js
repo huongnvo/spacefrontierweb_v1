@@ -1,8 +1,23 @@
 spaceFrontierApp.controller("displayAttitudeController", function($scope, $http) {
     $scope.parts = {};
     $scope.newPart = {};
+    $scope.notAdmin = false;
 
     var token = window.location.search.slice(1);
+
+    $scope.remove = function() {
+        $scope.notAdmin = false;
+    }
+
+    $scope.decode = function() {
+        var payload = token.split('=')[1];
+        var base64Url = payload.split('.')[1];
+        var output = JSON.parse(atob(base64Url));
+        $scope.name = output.name;
+        $scope.email = output.email;
+        $scope.admin = output.admin;
+    };
+    $scope.decode();
 
     $scope.backMain = function() {
         var newPath = '/listAdmin?' + token;
@@ -81,27 +96,48 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
             Scientific_obj: $scope.sci,
             Cost: "0"
         };
-        $http.put('/parts/attitude/' + $scope.id + '?' + token, $scope.newPart)
-            .success(function(data) {
-                $scope.id = '';
-                $scope.type = '';
-                $scope.typecont = '';
-                $scope.name = '';
-                $scope.manu = '';
-                $scope.ref = '';
-                $scope.her = '';
-                $scope.mass = '';
-                $scope.power = '';
-                $scope.vol = '';
-                $scope.prop = '';
-                $scope.angle = '';
-                $scope.ac = '';
-                $scope.sci = '';
-                $http.get('/parts/attitude').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
+        if ($scope.admin) {
+            $http.put('/parts/attitude/' + $scope.id + '?' + token, $scope.newPart)
+                .success(function(data) {
+                    $scope.id = '';
+                    $scope.type = '';
+                    $scope.typecont = '';
+                    $scope.name = '';
+                    $scope.manu = '';
+                    $scope.ref = '';
+                    $scope.her = '';
+                    $scope.mass = '';
+                    $scope.power = '';
+                    $scope.vol = '';
+                    $scope.prop = '';
+                    $scope.angle = '';
+                    $scope.ac = '';
+                    $scope.sci = '';
+                    $http.get('/parts/attitude').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
+                    $scope.edit = false;  
+
             });
-        $scope.edit = false;    
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to edit this item';
+            $scope.id = '';
+            $scope.type = '';
+            $scope.typecont = '';
+            $scope.name = '';
+            $scope.manu = '';
+            $scope.ref = '';
+            $scope.her = '';
+            $scope.mass = '';
+            $scope.power = '';
+            $scope.vol = '';
+            $scope.prop = '';
+            $scope.angle = '';
+            $scope.ac = '';
+            $scope.sci = '';
+            $scope.edit = false;  
+        }  
     }
 
     $scope.addPart = function() {
@@ -140,16 +176,21 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
                 $http.get('/parts/attitude').then(function(result) { 
                     $scope.parts = result.data; 
                 });
-            });
+        });
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/attitude/' + id + '?' + token)
-            .success(function(data) {
-                $http.get('/parts/attitude').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
+        if ($scope.admin) {
+            $http.delete('/parts/attitude/' + id + '?' + token)
+                .success(function(data) {
+                    $http.get('/parts/attitude').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
             });
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to delete this item';
+        } 
     };
 
     $('#exampleModal').on('show.bs.modal', function (event) {

@@ -1,8 +1,23 @@
 spaceFrontierApp.controller("displayPropulsionController", function($scope, $http) {
     $scope.parts = [];
     $scope.newPart = {};
+    $scope.admin = false;
 
     var token = window.location.search.slice(1);
+
+    $scope.remove = function() {
+        $scope.notAdmin = false;
+    }
+
+    $scope.decode = function() {
+        var payload = token.split('=')[1];
+        var base64Url = payload.split('.')[1];
+        var output = JSON.parse(atob(base64Url));
+        $scope.name = output.name;
+        $scope.email = output.email;
+        $scope.admin = output.admin;
+    };
+    $scope.decode();
 
     $scope.backMain = function() {
         var newPath = '/listAdmin?' + token;
@@ -77,26 +92,45 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
             Objectives: $scope.obj,
             Cost: 0
         };
-        $http.put('/parts/propulsion/' + $scope.id + '?' + token, $scope.newPart)
-            .success(function(data) {
-                $scope.id = '';
-                $scope.type = '';
-                $scope.name = '';
-                $scope.manu = '';
-                $scope.ref = '';
-                $scope.her = '';
-                $scope.mass = '';
-                $scope.power = '';
-                $scope.vol = '';
-                $scope.prop = '';
-                $scope.isp = '';
-                $scope.dv = '';
-                $scope.obj = '';
-                $http.get('/parts/propulsion').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
-        });        
-        $scope.edit = false;
+        if ($scope.admin) {
+            $http.put('/parts/propulsion/' + $scope.id + '?' + token, $scope.newPart)
+                .success(function(data) {
+                    $scope.id = '';
+                    $scope.type = '';
+                    $scope.name = '';
+                    $scope.manu = '';
+                    $scope.ref = '';
+                    $scope.her = '';
+                    $scope.mass = '';
+                    $scope.power = '';
+                    $scope.vol = '';
+                    $scope.prop = '';
+                    $scope.isp = '';
+                    $scope.dv = '';
+                    $scope.obj = '';
+                    $http.get('/parts/propulsion').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
+                    $scope.edit = false;
+            });  
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to edit this item';
+            $scope.id = '';
+            $scope.type = '';
+            $scope.name = '';
+            $scope.manu = '';
+            $scope.ref = '';
+            $scope.her = '';
+            $scope.mass = '';
+            $scope.power = '';
+            $scope.vol = '';
+            $scope.prop = '';
+            $scope.isp = '';
+            $scope.dv = '';
+            $scope.obj = '';
+            $scope.edit = false;
+        }     
     }
 
 
@@ -138,12 +172,17 @@ spaceFrontierApp.controller("displayPropulsionController", function($scope, $htt
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/propulsion/' + id + '?' + token)
-            .success(function(data) {
-                $http.get('/parts/propulsion').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
+        if ($scope.admin) {
+            $http.delete('/parts/propulsion/' + id + '?' + token)
+                .success(function(data) {
+                    $http.get('/parts/propulsion').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
             });
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to delete this item';
+        }
     };
 
     $('#exampleModal').on('show.bs.modal', function (event) {

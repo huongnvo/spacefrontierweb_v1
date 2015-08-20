@@ -1,8 +1,23 @@
 spaceFrontierApp.controller("displayPowerController", function($scope, $http) {
     $scope.parts = [];
     $scope.newPart = {};
+    $scope.admin = false;
 
     var token = window.location.search.slice(1);
+
+    $scope.remove = function() {
+        $scope.notAdmin = false;
+    }
+
+    $scope.decode = function() {
+        var payload = token.split('=')[1];
+        var base64Url = payload.split('.')[1];
+        var output = JSON.parse(atob(base64Url));
+        $scope.name = output.name;
+        $scope.email = output.email;
+        $scope.admin = output.admin;
+    };
+    $scope.decode();
 
     $scope.backMain = function() {
         var newPath = '/listAdmin?' + token;
@@ -84,28 +99,49 @@ spaceFrontierApp.controller("displayPowerController", function($scope, $http) {
             Cost: "0",
             Additional_info: ""
         };
-        $http.put('/parts/power/' + $scope.id + '?' + token, $scope.newPart)
-            .success(function(data) {
-                $scope.id = '';
-                $scope.type = '';
-                $scope.name = '';
-                $scope.manu = '';
-                $scope.ref = '';
-                $scope.def = '';
-                $scope.mass = '';
-                $scope.power = '';
-                $scope.vol = '';
-                $scope.prop = '';
-                $scope.eff = '';
-                $scope.obj = '';
-                $scope.ener = '';
-                $scope.pper = '';
-                $scope.wings= '';        
-                $http.get('/parts/power').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
-        });
-        $scope.edit = false;
+        if ($scope.admin) {
+            $http.put('/parts/power/' + $scope.id + '?' + token, $scope.newPart)
+                .success(function(data) {
+                    $scope.id = '';
+                    $scope.type = '';
+                    $scope.name = '';
+                    $scope.manu = '';
+                    $scope.ref = '';
+                    $scope.def = '';
+                    $scope.mass = '';
+                    $scope.power = '';
+                    $scope.vol = '';
+                    $scope.prop = '';
+                    $scope.eff = '';
+                    $scope.obj = '';
+                    $scope.ener = '';
+                    $scope.pper = '';
+                    $scope.wings= '';        
+                    $http.get('/parts/power').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
+                    $scope.edit = false;
+            });
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to edit this item';
+            $scope.id = '';
+            $scope.type = '';
+            $scope.name = '';
+            $scope.manu = '';
+            $scope.ref = '';
+            $scope.def = '';
+            $scope.mass = '';
+            $scope.power = '';
+            $scope.vol = '';
+            $scope.prop = '';
+            $scope.eff = '';
+            $scope.obj = '';
+            $scope.ener = '';
+            $scope.pper = '';
+            $scope.wings= ''; 
+            $scope.edit = false;
+        }
     }
 
     $scope.addPart = function() {
@@ -151,12 +187,17 @@ spaceFrontierApp.controller("displayPowerController", function($scope, $http) {
     };
 
     $scope.deletePart = function(id) {
-        $http.delete('/parts/power/' + id + '?' + token)
-            .then(function(result) {
-                $http.get('/parts/power').then(function(result) { 
-                    $scope.parts = result.data; 
-                });
+        if ($scope.admin) {
+            $http.delete('/parts/power/' + id + '?' + token)
+                .then(function(result) {
+                    $http.get('/parts/power').then(function(result) { 
+                        $scope.parts = result.data; 
+                    });
             });
+        } else {
+            $scope.notAdmin = true;
+            $scope.message = 'You do not have permission to delete this item';
+        }
     };
 
     $('#exampleModal').on('show.bs.modal', function (event) {

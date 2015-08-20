@@ -4,8 +4,6 @@
 
     <body class="container" data-ng-controller="displayInstrumentsController">
         <% include navbar %>
-        {{token}}
-        {{decoded}}
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -516,6 +514,19 @@
         <h4>Click on each line to learn more about the part</h4>
         <hr>
 
+        <div ng-show="notAdmin">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <div class="row">
+                    <div class="col-lg-11">
+                        {{message}}
+                    </div>
+                    <div class="col-lg-1">
+                        <div type="button" ng-click="remove()"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div ng-show="edit">
             <h2>Edit Part: {{name}}</h2>
             <div class="dividersmall"></div>
@@ -804,8 +815,8 @@
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Mass}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Power}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Volume}}</td>
-                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning">Edit</a></td>
-                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)">Delete</a> </td>
+                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning" ng-disabled="!admin">Edit</a></td>
+                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)" ng-disabled="!admin">Delete</a> </td>
                 </tr>
             </tbody>
         </table>
