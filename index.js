@@ -11,6 +11,8 @@ var fs = require('fs');
 /* Setting up the express app -------------------------------------------------------*/
 var port = process.env.PORT || 3000;
 var app = express();
+
+app.use(express.compress());
 app.use(express.logger());
 app.use(express.json());
 app.use(express.urlencoded());
