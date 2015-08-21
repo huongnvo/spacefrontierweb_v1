@@ -2,6 +2,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
     $scope.parts = {};
     $scope.newPart = {};
     $scope.notAdmin = false;
+    $scope.showInfo = false;
 
     var token = window.location.search.slice(1);
 
@@ -101,6 +102,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
             $scope.name = output.name;
             $scope.email = output.email;
             $scope.admin = output.admin;
+            $scope.showInfo = true;
         }
     };
     $scope.decode();

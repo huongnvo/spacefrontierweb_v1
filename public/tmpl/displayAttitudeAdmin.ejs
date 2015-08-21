@@ -5,6 +5,7 @@
     <body class="container" data-ng-controller="displayAttitudeController">
         <% include navbarLogin %>
 
+        <!-- <div ng-show="showInfo">{{name}}{{email}}</div> -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -766,8 +767,8 @@
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Mass}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Power}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Volume}}</td>
-                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning" ng-disabled="!admin">Edit</a></td>
-                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)" ng-disabled="!admin">Delete</a> </td>
+                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning" ng-show="!admin">Edit</a></td>
+                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)" ng-show="!admin">Delete</a> </td>
                 </tr>
             </tbody>
         </table>

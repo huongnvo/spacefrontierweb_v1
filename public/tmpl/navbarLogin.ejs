@@ -1,7 +1,6 @@
 <div class = "navbar navbar-fixed-top" style="background-color: white; border-color: skyblue">
     <div class = "container">
         <div class = "navbar-header">
-
             <button type = "button" class = "navbar-toggle" data-toggle = "collapse"
                 data-target = ".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -14,7 +13,6 @@
             <a class = "navbar-brand" href = "http://www.nasa.gov/centers/goddard/home/index.html">
                 <img src = "/img/GSFClogo.jpg" alt = "NASA Icon" style = "width:90px; height:25px; float:left">
             </a>
-
         </div>
 
         <div class = "navbar-collapse collapse">
@@ -43,8 +41,8 @@
                         Parts List
                     </a>
                 </li>
-                
             </ul>
+            <div ng-show="showInfo"><p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user"></span> Hello, {{name}}</a></p></div>
         </div>
     </div>
 </div>

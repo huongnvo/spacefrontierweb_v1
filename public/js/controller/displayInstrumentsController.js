@@ -101,6 +101,7 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
             $scope.name = output.name;
             $scope.email = output.email;
             $scope.admin = output.admin;
+            $scope.showInfo = true;
         }
     };
     $scope.decode();

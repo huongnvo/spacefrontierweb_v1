@@ -101,6 +101,7 @@ spaceFrontierApp.controller("displayCdhController", function($scope, $http) {
             $scope.name = output.name;
             $scope.email = output.email;
             $scope.admin = output.admin;
+            $scope.showInfo = true;
         }
     };
     $scope.decode();

@@ -1,5 +1,17 @@
 spaceFrontierApp.controller("searchController", function($scope, $window, $rootScope, $auth) {
     var token = window.location.search.slice(1);
+    $scope.decode = function() {
+        if (token != '') {
+            var payload = token.split('=')[1];
+            var base64Url = payload.split('.')[1];
+            var output = JSON.parse(atob(base64Url));
+            $scope.name = output.name;
+            $scope.email = output.email;
+            $scope.admin = output.admin;
+            $scope.showInfo = true;
+        }
+    };
+    $scope.decode();
 
     $scope.attitude = function() {
         var newPath = '/attitudeAdmin?' + token;
