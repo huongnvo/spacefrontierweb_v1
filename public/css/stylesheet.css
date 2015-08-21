@@ -153,7 +153,7 @@ section.module.parallax-3 {
     background-image: url("/img/cubesat.jpg");
 }
 section.module.parallax-4 {
-    background-image: url("/img/gal4.png");
+    background-image: url("/img/cubesat5.png");
 }
 @media all and (min-width: 600px) {
     section.module h2 {
