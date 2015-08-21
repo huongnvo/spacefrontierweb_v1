@@ -1,0 +1,50 @@
+<div class = "navbar navbar-fixed-top" style="background-color: white; border-color: skyblue">
+    <div class = "container">
+        <div class = "navbar-header">
+
+            <button type = "button" class = "navbar-toggle" data-toggle = "collapse"
+                data-target = ".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class = "icon-bar"></span> 
+                <span class = "icon-bar"></span> 
+                <span class = "icon-bar"></span>
+                <span class = "icon-bar"></span>
+            </button>
+
+            <a class = "navbar-brand" href = "http://www.nasa.gov/centers/goddard/home/index.html">
+                <img src = "/img/GSFClogo.jpg" alt = "NASA Icon" style = "width:90px; height:25px; float:left">
+            </a>
+
+        </div>
+
+        <div class = "navbar-collapse collapse">
+            <ul class = "nav navbar-nav">
+
+                <li id = "home">
+                    <a ng-click="logOutHome()">
+                        Home
+                    </a>
+                </li>
+
+                <li id = "tool">
+                    <a ng-click="logOutTool()">
+                        SPACE Tool
+                    </a>
+                </li>
+
+                <li id = "about">
+                    <a ng-click="logOutAbout()">
+                        About
+                    </a>
+                </li>
+
+                <li id = "partslist">
+                    <a ng-click="logOutParts()">
+                        Parts List
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
