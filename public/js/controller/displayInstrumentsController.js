@@ -1,7 +1,8 @@
 spaceFrontierApp.controller("displayInstrumentsController", function($scope, $http) {
     $scope.parts = [];
     $scope.newPart = {};
-    $scope.notAdmin = false;
+    $scope.notAdmin = false;    
+    $scope.showInfo = false;
 
     var token = window.location.search.slice(1);
 
@@ -98,7 +99,7 @@ spaceFrontierApp.controller("displayInstrumentsController", function($scope, $ht
             var payload = token.split('=')[1];
             var base64Url = payload.split('.')[1];
             var output = JSON.parse(atob(base64Url));
-            $scope.name = output.name;
+            $scope.userName = output.name;
             $scope.email = output.email;
             $scope.admin = output.admin;
             $scope.showInfo = true;

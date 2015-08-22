@@ -99,7 +99,7 @@ spaceFrontierApp.controller("displayAttitudeController", function($scope, $http)
             var payload = token.split('=')[1];
             var base64Url = payload.split('.')[1];
             var output = JSON.parse(atob(base64Url));
-            $scope.name = output.name;
+            $scope.userName = output.name;
             $scope.email = output.email;
             $scope.admin = output.admin;
             $scope.showInfo = true;

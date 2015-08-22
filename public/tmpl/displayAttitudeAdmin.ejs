@@ -760,15 +760,14 @@
             </thead>
             <tbody>
                 <tr ng-repeat ="part in parts | orderBy:predicate:reverse">
-                    <!-- <td>{{$index + 1}}</td> -->
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Type}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Name}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Manufacturer}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Mass}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Power}}</td>
                     <td data-toggle="modal" data-target="#exampleModal" data-whatever={{part}}>{{part.Volume}}</td>
-                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning" ng-show="!admin">Edit</a></td>
-                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)" ng-show="!admin">Delete</a> </td>
+                    <td><a type="button" ng-click="openEdit(part)" class="btn btn-warning" ng-disabled="!admin">Edit</a></td>
+                    <td><a type="button" class="btn btn-danger" ng-click="deletePart(part._id)" ng-disabled="!admin">Delete</a> </td>
                 </tr>
             </tbody>
         </table>
